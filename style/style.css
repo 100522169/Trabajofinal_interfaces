@@ -1,0 +1,99 @@
+/* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
+* {
+  margin: 0;              /* Quita margen por defecto */
+  padding: 0;             /* Quita padding por defecto */
+  box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
+}
+/* Tipografía base para todo el cuerpo */
+body {
+  font-family: Arial, sans-serif; 
+  background-color: #fff;          
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Contenedor principal que envuelve header, main y footer */
+main {
+    flex: 1;
+    width: 100%;
+}
+/* Evita que header y footer se encojan */
+header, footer {
+    flex-shrink: 0;           /* evita que se encojan */
+}
+/* Estilo general para enlaces */
+header {
+    width: 100%;              /* ocupa todo el ancho */
+    height: 100px;            /* altura fija: prueba con 100px */
+    background: #006400;
+    margin-bottom: 10px;      /* separa el header del contenido */
+    text-align: left;
+    align-items: center;      /* centra verticalmente el contenido */
+    color: white;
+    padding: 0 20px;          /* espacio interno arriba y abajo */
+    display: flex;            
+    justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
+}
+/* Marca (izquierda) */
+header .titulo{
+  font-size: 18px;          /* tamaño legible sin ser gigante */
+  font-family: "montserrat", sans-serif;  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
+  font-weight: 700;          /* peso negrita */
+  text-transform: uppercase; 
+  margin-right: 50px;
+}
+/* Menú centrado (fila horizontal de enlaces) */
+header nav{ 
+  padding: 0;
+}
+/* Lista de elementos del menú */
+header nav ul{
+  list-style: none;          /* sin viñetas */
+  display: flex;             /* pone los <li> en fila */
+  font-weight: 500;          /* peso semi-negrita */
+  text-transform: uppercase; 
+  gap: 1rem;                 /* separación entre elementos del menú */
+  margin-right: 400px;
+}
+/* Cada enlace del menú */
+header nav a{
+  text-decoration: none;     /* sin subrayado */
+  color: #fff;             /* color de texto del menú */
+  border-radius: .375rem;    /* esquinas suaves para el hover */
+}
+/* Utilidades (derecha): logo + selector de idioma en fila */
+header .logo_idioma{
+  display: flex;             /* elementos en línea: imagen + select */
+  align-items: center;       /* verticalmente centrados */
+  gap: .5rem;                /* separación entre logo y select */
+  padding:0;
+}
+/* Logo y selector de idioma */
+header .logo_idioma img{
+  width: 120px; height: auto; /* tamaño consistente del logo */
+}
+/* Selector de idioma */
+header .logo_idioma select{
+  font: inherit;              /* que el select use la misma fuente que la página */
+  border: 1px solid #cbd5e1;
+  border-radius: .375rem;
+  background-color: white;
+}
+/* Efecto hover y focus en enlaces del menú */
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;   /* subrayado al pasar el ratón o enfocar con teclado */
+}
+/* Ocultar checkbox y botón de hamburguesa en escritorio */
+.menu-toggle,
+.hamburger-btn {
+    display: none;
+}
+/* Oculta las utilidades en la versión de escritorio */
+.nav-menu .nav-utils {
+    display: none;
+}
