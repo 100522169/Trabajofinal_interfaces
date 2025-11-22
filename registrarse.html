@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head></head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
+    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="style/style.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
+    <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
+</head> 
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Logotipo del sitio">
+        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Otros rincones</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Mi cuenta</a></li>
+                
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class ="contenedor-principal2">
+            <form class="registro-form">
+                <h1>Crear cuenta</h1>
+                <!-- División para agrupar los datos personales -->
+                <div class="datos-personales">Datos personales</div>
+                <input type="text" name="nombre" placeholder="Nombre" required />
+                <input type="text" name="apellido" placeholder="Apellidos" required />
+                <input type="text" name="email" placeholder="Correo electrónico" required />
+                <input type="text" name="confirmar_email" placeholder="Confirmar correo" required />
+
+                <!-- Campo para la fecha de nacimiento -->
+                <div class="fecha-nacimiento">Fecha de nacimiento</div>
+                <input type="date" name="fecha_nacimiento" required>
+
+                <!-- División para agrupar los datos de acceso -->
+                <div class="acceso">Acceso</div>
+                <input type="text" name="usuario" placeholder="Usuario" required />
+                <input type="password" name="contraseña" placeholder="Contraseña" required />
+
+                <!-- Campo para subir una imagen de perfil -->
+                <div class="subir-imagen">Subir imagen de perfil</div>
+                <input type="file" name="imagen" required>
+
+                <!-- Checkbox para aceptar la política de privacidad -->
+                <div class="checkbox-privacidad">
+                    <input type="checkbox" required/> Acepto la <a href="#">política de privacidad</a> 
+                </div>
+
+                <button type="submit">Guardar datos y acceder</button>
+                <span>*Todos los campos son obligatorios</span>
+            </form>
+        </section>
+
+
+
+    </main>
+
+
+     <footer>
+        <nav>
+            <a href="#">Ayuda</a>
+            <a href="#">Contacto</a>
+            <a href="#">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+</html>

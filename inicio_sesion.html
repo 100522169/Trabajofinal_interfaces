@@ -39,13 +39,6 @@
             </ul>
         </nav>
 
-        <section>
-            <div class="botones_header">
-                <a href="inicio_sesion.html">Iniciar sesión</a>
-                <a href="registrarse.html">Registrarse</a>
-            </div>
-        </section>
-        
         <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
@@ -59,56 +52,25 @@
     </header>
 
     <main class ="contenedor-principal">
-        <section class="columna-izquierda">
-            <!-- Carrusel de imagenes -->
-            <div class = "carrusel">
-                <h1>Descubre tu próximo destino</h1>
-                <h3>Filtra por destino, precio o tipo de experiencia</h3>
+         <section class="columna-izquierda2">
+            <!--Dentro de esta clase tenemos un banner con un fondo-->
+            <div class = "banner-bienvenida">
+                <h1>Bienvenido de vuelta</h1>
+                <p>Te echábamos de menos. Entra para ver que hay de nuevo.</p>
             </div>
-            <!-- Filtros estáticos (no funcionales) -->
-            <div class="filtros">
-                <div class="chip">Destino <span class="arrow">▾</span></div>
-                <div class="chip">Duración <span class="arrow">▾</span></div>
-                <div class="chip">Rango de precio <span class="arrow">▾</span></div>
-                <label class="chip checkbox"><input type="checkbox" disabled> Mascotas</label>
-                <div class="chip">Tipo de viaje <span class="arrow">▾</span></div>
-            </div>
-            <!-- Buscador estático (no funcional) -->
-            <div class="search">
-                <span class="icono">🔍</span>
-                <button type="search_button">Buscar viajes</button>
-            </div>
-        </section>
-
-        <section class="columna-derecha">
-            <h1>Viajes en grupo</h1>
-            <!-- Lista de tarjetas estáticas -->
-            <div class="columna-tarjeta">
-                <article class="tarjeta">
-                    <img class="tarjeta-img" src="images/patagonia.jpg" alt="Patagonia">
-                    <div class="tarjeta-body">
-                        <h3 class="tarjeta-titulo">Viaje a la Patagonia</h3>
-                        <div class="tarjeta-rating">★ ★ ★ ★ ☆</div>
-                    </div>
-                </article>
-
-                <article class="tarjeta">
-                    <img class="tarjeta-img" src="images/maldivas.jpg" alt="Maldivas">
-                    <div class="tarjeta-body">
-                        <h3 class="tarjeta-titulo">Viaje a las Maldivas</h3>
-                        <div class="tarjeta-rating">★ ★ ★ ★ ☆</div>
-                    </div>
-                </article>
-
-                <article class="tarjeta">
-                    <img class="tarjeta-img" src="images/cataratas_iguazu.jpg" alt="Cataratas del Iguazú">
-                    <div class="tarjeta-body">
-                        <h3 class="tarjeta-titulo">Viaje a las Cataratas del Iguazú</h3>
-                        <div class="tarjeta-rating">★ ★ ★ ★ ☆</div>
-                    </div>
-                </article>
-            </div>
-        </section>
+         </section>
+         <section class="columna-derecha2">
+            <form class = "inicio-sesion-form">
+                <h1>Inicio de sesión</h1>
+                    <!--Campos para usuario y contraseña-->
+                    <input type="text" placeholder="Usuario" required>
+                    <input type="password" placeholder="Contraseña" required>
+                <!--Botón para enviar el formulario-->
+                <button type="submit">Confirmar</button>
+                <!--Enlace para registrarse si no se tiene cuenta-->
+                <h3>Nuevo usuario<span class="flecha">➔</span><a href="#">Regístrate aquí</a></span></h3>
+            </form>
+         </section>
     </main>
 
     <footer>
