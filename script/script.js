@@ -9,8 +9,74 @@ if (!usuarioActual) {
   });
 }
 
+// Definir los viajes disponibles
+const viajes = [
+  { destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Ruta por las 3 grandes de España' },
+  { destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Pirineos, Picos de Europa' },
+  { destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago' },
+  { destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Horizontes Andinos' },
+  { destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Secretos de la Ciudad Perdida' },
+  { destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kimonos y templos' },
+  { destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japan 360º' }
+];
+
+
+/*Página home.html*/
+if (window.location.pathname.includes("home.html")) {
+  // Lógica para habilitar/deshabilitar el botón de buscar viajes
+  const botonsearch = document.getElementById('buscar-viajes');
+  // IDs de los select a verificar
+  const seleccionado = ['destino-home', 'duracion-home', 'rango-precio-home', 'mascotas-home', 'tipo-viaje-home'];
+
+  // Función para verificar si todos los select tienen una opción seleccionada
+  function checkFiltros() {
+    const allSeleccionado = seleccionado.every(id => document.getElementById(id).selectedIndex > 0);  // Verifica que todos los select tengan una opción seleccionada que no sea la predeterminada
+    botonsearch.disabled = !allSeleccionado;
+    document.getElementById('mensaje-filtros').style.display = allSeleccionado ? 'none' : 'block';   // Mostrar u ocultar el mensaje de error
+  }
+
+  // Inicializar
+  checkFiltros();
+
+  // Agregar listeners
+  seleccionado.forEach(id => {
+    document.getElementById(id).addEventListener('change', checkFiltros);  // Verificar al cambiar cualquier select
+  });
+
+  botonsearch.addEventListener('click', () => {
+    const destino = document.getElementById('destino-home').value;
+    const duracion = document.getElementById('duracion-home').value;
+    const precio = document.getElementById('rango-precio-home').value;
+    const mascotas = document.getElementById('mascotas-home').value;
+    const tipo = document.getElementById('tipo-viaje-home').value;
+
+    // Filtrar viajes
+    let filtrados = viajes;
+    if (destino) filtrados = filtrados.filter(v => v.destino === destino);
+    // Filtrar por duración
+    if (duracion) {
+      if (duracion === '1-3') filtrados = filtrados.filter(v => v.duracion >= 1 && v.duracion <= 3);        //Si la duración es de 1 a 3 días
+      else if (duracion === '4-7') filtrados = filtrados.filter(v => v.duracion >= 4 && v.duracion <= 7);
+      else if (duracion === '8-14') filtrados = filtrados.filter(v => v.duracion >= 8 && v.duracion <= 14);
+      else if (duracion === '+15') filtrados = filtrados.filter(v => v.duracion >= 15);
+    }
+    if (precio) {
+      if (precio === '100-200') filtrados = filtrados.filter(v => v.precio >= 100 && v.precio <= 200);
+      else if (precio === '201-400') filtrados = filtrados.filter(v => v.precio >= 201 && v.precio <= 400);
+      else if (precio === '401-600') filtrados = filtrados.filter(v => v.precio >= 401 && v.precio <= 600);
+      else if (precio === '+600') filtrados = filtrados.filter(v => v.precio >= 601);
+    }
+    if (mascotas) filtrados = filtrados.filter(v => v.mascotas === mascotas);
+    if (tipo) filtrados = filtrados.filter(v => v.tipo === tipo);
+
+    // Guardar en localStorage
+    localStorage.setItem('viajesFiltrados', JSON.stringify(filtrados));
+    window.location.href = 'listado_viajes.html';
+  });
+}
+
+
 /*Pagina inicio_sesion.html*/
-// Función para manejar el inicio de sesión
 if (window.location.pathname.includes("inicio_sesion.html")) {
   const botonIniciarSesion = document.querySelector(".inicio-sesion-form button");
 
@@ -197,18 +263,133 @@ if (window.location.pathname.includes("registrarse.html")) {
           imagen: e.target.result                   // Guardar la imagen como una cadena en base64
         };
 
-        usuarios.push(nuevoUsuario);               // Agregar el nuevo usuario al array de usuarios
+        usuarios.push(nuevoUsuario);                // Agregar el nuevo usuario al array de usuarios
 
         localStorage.setItem("usuarios", JSON.stringify(usuarios));          // Guardar el array actualizado en localStorage
         localStorage.setItem("usuarioActual", JSON.stringify(nuevoUsuario)); // Guardar el usuario actual en localStorage
 
         alert("Datos guardados correctamente");           // Mostrar mensaje de éxito
-        window.location.href = "home.html";          // Redirigir a la página version_b.html
+        window.location.href = "home.html";               // Redirigir a la página home.html
       };
 
       lector.readAsDataURL(archivo); // Leer el archivo como una URL de datos (base64)
     } else {
       formulario.reportValidity();   // Mostrar mensajes de validación si el formulario no es válido
+    }
+  });
+}
+
+
+/*Pagina listado_viajes.html*/
+// Ajustes específicos para evitar que el padding del contenedor principal empuje la columna de filtros
+if (window.location.pathname.includes("listado_viajes.html")) {
+  const contenedor = document.querySelector('.contenedor-principal');
+  if (contenedor) {
+    // quitar padding lateral que pueda empujar la columna de filtros
+    contenedor.style.paddingLeft = '0';
+  }
+
+  // Botón de vuelta atrás a home.html
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
+  botonVueltaAtras.addEventListener('click', () => {
+    window.location.href = 'home.html';
+  });
+
+  // Generar los divs de viajes dinámicamente
+  const viajesFiltrados = JSON.parse(localStorage.getItem('viajesFiltrados')) || viajes; // Si no hay filtrados, mostrar todos
+  const columnaListado = document.querySelector('.columna-listado-viajes');
+  const ratings = {5: '★★★★★', 4: '★★★★☆', 3: '★★★☆☆'};
+  let currentFiltrados = [...viajesFiltrados];     // Copia de los viajes filtrados inicialmente
+
+  // Función para renderizar los viajes
+  function renderViajes(filtrados) {
+    columnaListado.innerHTML = '';
+    filtrados.forEach(viaje => {
+      const div = document.createElement('div');   // Crear un nuevo div para cada viaje
+      div.className = 'viaje';
+      div.setAttribute('data-destino', viaje.destino);
+      div.setAttribute('data-duracion', viaje.duracion);
+      div.setAttribute('data-precio', viaje.precio);
+      div.setAttribute('data-tipo', viaje.tipo);
+      div.setAttribute('data-mascotas', viaje.mascotas);
+      div.setAttribute('data-valoracion', viaje.valoracion);
+      // Rellenar el contenido del viaje con innerHTML
+      div.innerHTML = `                           
+        <img src="${viaje.imagen}" alt="${viaje.titulo}">
+        <div class="info-fila">
+          <span>${viaje.titulo}</span>
+          <span>${viaje.duracion} días</span>
+        </div>
+        <div class="info-fila">
+          <span>${viaje.precio} €</span>
+          <span>${viaje.tipo}</span>
+        </div>
+        <div class="info-fila">
+          <span>Mascotas: ${viaje.mascotas === 'si' ? 'Sí' : 'No'}</span>
+          <span class="valoracion-estrellas">${ratings[viaje.valoracion]}</span>
+        </div>
+        <button class="ver-detalles">Ver detalles</button>
+      `;
+      columnaListado.appendChild(div);   // Agregar el div al contenedor de listado
+    });
+  }
+
+  // Render inicial
+  renderViajes(currentFiltrados);       // Renderizar los viajes filtrados inicialmente
+
+  // Función para aplicar filtros
+  function applyFilters() {
+    const destino = document.getElementById('destino').value;
+    const duracion = document.getElementById('duracion').value;
+    const precio = document.getElementById('rango-precio').value;
+    const tipo = document.getElementById('tipo-viajes').value;
+    const mascotas = document.getElementById('mascotas').value;
+    const valoracion = document.getElementById('valoracion').value;
+
+    // Partir siempre de TODOS los viajes disponibles, no solo de los pre-filtrados
+    let filtrados = [...viajes];   
+
+    if (destino && destino !== '') filtrados = filtrados.filter(v => v.destino === destino);   //Si se ha seleccionado un destino y es diferente de cadena vacía, entonces filtrar por destino
+    if (duracion && duracion !== '') {
+      if (duracion === '1-3') filtrados = filtrados.filter(v => v.duracion >= 1 && v.duracion <= 3);
+      else if (duracion === '4-7') filtrados = filtrados.filter(v => v.duracion >= 4 && v.duracion <= 7);
+      else if (duracion === '8-14') filtrados = filtrados.filter(v => v.duracion >= 8 && v.duracion <= 14);
+      else if (duracion === '+15') filtrados = filtrados.filter(v => v.duracion >= 15);
+    }
+    if (precio && precio !== '') {
+      if (precio === '100-200') filtrados = filtrados.filter(v => v.precio >= 100 && v.precio <= 200);
+      else if (precio === '201-400') filtrados = filtrados.filter(v => v.precio >= 201 && v.precio <= 400);
+      else if (precio === '401-600') filtrados = filtrados.filter(v => v.precio >= 401 && v.precio <= 600);
+      else if (precio === '+600') filtrados = filtrados.filter(v => v.precio >= 601);
+    }
+    if (tipo && tipo !== '') filtrados = filtrados.filter(v => v.tipo === tipo);
+    if (mascotas && mascotas !== '') filtrados = filtrados.filter(v => v.mascotas === mascotas);
+    if (valoracion && valoracion !== '') filtrados = filtrados.filter(v => v.valoracion == valoracion);
+
+    currentFiltrados = filtrados;   // Actualizar los viajes filtrados actuales
+    renderViajes(currentFiltrados); // Renderizar los viajes filtrados
+  }
+
+  // Aplicar filtros con el botón
+  const aplicarFiltrosBoton = document.getElementById('aplicar-filtros');
+  aplicarFiltrosBoton.addEventListener('click', () => {
+    const filtroSelector = ['destino', 'duracion', 'rango-precio', 'tipo-viajes', 'mascotas', 'valoracion'];
+    // Verificar si hay al menos un filtro seleccionado (incluyendo "Todos")
+    const TieneFiltro = filtroSelector.some(id => {  
+    const select = document.getElementById(id);       // Obtener el elemento select por su ID
+    return select.selectedIndex > 0;                  // Verificar si el índice seleccionado es mayor que 0 (es decir, no es la opción por defecto)
+    });
+    
+    if (TieneFiltro) {
+      applyFilters();
+      document.getElementById('mensaje-filtros-listado').style.display = 'none';
+      
+      // Restablecer todos los selectores a su opción por defecto
+      filtroSelector.forEach(id => {
+        document.getElementById(id).selectedIndex = 0;
+      });
+    } else {
+      document.getElementById('mensaje-filtros-listado').style.display = 'block';
     }
   });
 }
