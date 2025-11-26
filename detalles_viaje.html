@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head></head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
+    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="style/style.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
+    <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
+</head> 
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Logotipo del sitio">
+        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Otros rincones</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Mi cuenta</a></li>
+                
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <!--botón marcha atrás-->
+    <section class="columna-boton-atras-detalles">
+        <button type="button">⬅</button>
+    </section>
+        
+    <main class="contenedor-detalles">
+        <!-- Primera fila: Título y galería de imágenes -->
+        <section class="titulo-detalles">
+            <h1>Detalles del viaje</h1>
+            <article class="galeria-imagenes">
+                <div class="imagen"></div>
+                <div class="imagen"></div>
+                <div class="imagen"></div>
+                <div class="imagen"></div>
+                <div class="imagen"></div>
+                <div class="imagen"></div>
+            </article>
+        </section>
+
+        <!-- Segunda fila: 3 columnas de información -->
+        <section class="fila-informacion">
+            <!-- Columna 1: Itinerario del viaje -->
+            <div class="columna-itinerario">
+                <h2>Itinerario del viaje</h2>
+                <div class="contenedor-itinerario">
+                    <!-- Los días se generarán dinámicamente -->
+                </div>
+                <div class="titulo-condiciones">Condiciones del viaje</div>
+                <div class="contenedor-condiciones">
+                    <!-- Las condiciones se generarán dinámicamente -->
+                </div>
+                
+            </div>
+
+            <!-- Columna 2: Información sobre el guía -->
+            <div class="columna-guia">
+                <h2>Información sobre el guía</h2>
+                <div class="contenedor-info-guia">
+                    <!-- La información del guía se generará dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Columna 3: Reseñas de otros usuarios -->
+            <div class="columna-reseñas">
+                <h2>Reseñas de otros usuarios</h2>
+                <div class="contenedor-reseñas">
+                    <!-- Las reseñas se generarán dinámicamente -->
+                </div>
+                <button class="boton-ver-mas">Ver más reseñas</button>
+                <button class="boton-reservar">Reservar ahora →</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal para ver todas las reseñas -->
+    <div class="modal-reseñas">
+        <div class="modal-contenido">
+            <span class="modal-cerrar">X</span>
+            <h2>Todas las reseñas</h2>
+            <div class="modal-contenedor-reseñas">
+                <!-- Todas las reseñas se mostrarán aquí -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <nav>
+            <a href="#">Ayuda</a>
+            <a href="#">Contacto</a>
+            <a href="#">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,13 +1,13 @@
 /* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
-* {
+  * {
   margin: 0;              /* Quita margen por defecto */
   padding: 0;             /* Quita padding por defecto */
   box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
 }
-  /* Evitar scroll horizontal accidental */
-  html, body {
-    overflow-x: hidden;  /* previene scroll horizontal */
-  }
+/* Evitar scroll horizontal accidental */
+html, body {
+  overflow-x: hidden;  /* previene scroll horizontal */
+}
 /* Tipografía base para todo el cuerpo */
 body {
   font-family: Arial, sans-serif; 
@@ -22,8 +22,8 @@ body {
 }
 /* Variables CSS para alturas de header y footer */
 :root {
-  --header-h: 110px; /* altura del header usada para padding-top */
-  --footer-h: 100px; /* altura del footer usada para padding-bottom */
+  --header-h: 110px; /* altura del header usada para margin-top */
+  --footer-h: 100px; /* altura del footer usada para margin-bottom */
 }
 /* Contenedor principal que envuelve header, main y footer */
 main {
@@ -50,6 +50,7 @@ header {
   padding: 0 20px;          /* espacio interno arriba y abajo */
   display: flex;            
   justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
+  z-index: 1000;                         /* asegura que esté por encima de todo el contenido */
 }
 /* Estilo general para footer, similar al header */
 footer {
@@ -130,17 +131,23 @@ header nav a:focus-visible {
     display: none;
 }
 /* Estilo para el enlace de iniciar sesión */
-header .botones_header a {
+header .botones_header button {
     text-decoration: none;
-    color: white;
+    color: black;
+    background-color: white;
     font-weight: 700;
     text-transform: uppercase;
     margin-right: 10px;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
+    cursor: pointer;
 }
-/* Efecto hover en el botón del newsletter */
+/* Efecto hover en el botón de iniciar sesión */
+header .botones_header button:hover {
+    background-color: #e0e0e0;
+}
+/* Estilo de la info del footer*/
 footer nav a {
   font-weight: 500;
   text-transform: uppercase;
@@ -640,4 +647,324 @@ footer nav a:focus-visible {
 /* Estilo para las estrellas de valoración */
 .valoracion-estrellas {
   color: gold; /* Cambia el color de las estrellas a dorado */
+}
+
+
+/*detalle_viaje styles*/
+/* Estilos para la columna del boton-atras de detalles del viaje */
+.columna-boton-atras-detalles{
+  position: relative;   /* fijo en la pantalla, no se mueve con scroll */
+  top: 140px;           /* margen desde la parte superior */
+  left: 20px;           /* margen desde la izquierda */
+  display: flex;                 
+  flex-direction: column; 
+}
+/* Estilos para el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button {
+   width: 60px;
+   height: 50px;
+   border: 1px solid black;
+   border-radius: 10px;
+   background: #006400;
+   color: white;
+   font-size: 30px;
+   cursor: pointer;
+}
+/* Efecto hover en el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button:hover {
+   background: #004d00;
+}
+/* Estilos para el contenedor de detalles del viaje */
+.contenedor-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;         /* centra el contenedor horizontalmente */
+  margin-top: var(--header-h);     /* Espacio adicional para que el contenido no quede pegado al header */
+  margin-bottom: var(--footer-h);  /* Espacio adicional para que el contenido no quede cortado por el footer */
+}
+/* Primera fila: Título y galería de imágenes */
+.titulo-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Estilo para el título del viaje */
+.titulo-detalles h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+/* Galería de imágenes */
+.galeria-imagenes {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+}
+/* Estilo para cada imagen en la galería */
+.imagen {
+  width: 250px;
+  height: 150px;
+  background-color: #d3d3d3;
+  border: 2px solid #999;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Segunda fila: 3 columnas de información */
+.fila-informacion {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start; /* Alinea las columnas al inicio, evita que se estiren verticalmente */
+}
+/* Columna 1: Itinerario del viaje */
+.columna-itinerario {
+  flex: 1;                /* ocupa el mismo espacio que las otras columnas */
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-right: 10px;
+}
+/* Estilo para el título de la columna de itinerario */
+.columna-itinerario h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* Contenedor del itinerario */
+.contenedor-itinerario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Estilo para cada día del itinerario */
+.dia-itinerario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Estilo para el boton de mas detalles */
+.boton-mas-detalles {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;            /* evita que el texto se divida en varias líneas */
+}
+/* Efecto hover en el botón de más detalles */
+.boton-mas-detalles:hover {
+  background-color: #333;
+}
+/* Estilo para el título de condiciones */
+.titulo-condiciones {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* Contenedor de condiciones */
+.contenedor-condiciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Estilo para el contenedor de condiciones */
+.contenedor-condiciones p {
+  text-align: justify;          /* justifica el texto */
+}
+/* Columna 2: Información sobre el guía */
+.columna-guia {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* Estilo para el título de la columna de guía */
+.columna-guia h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.contenedor-info-guia {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* Estilo para la información del guía */
+.info-guia {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+/* Estilo para el avatar del guía */
+.avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* info del guía dentro del avatar */
+.info-guia-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* Estilo para los párrafos dentro de la info del guía */
+.info-guia-texto p {
+  margin: 0;
+  font-weight: bold;
+}
+/* Estilo para los párrafos dentro de la columna de guía */
+.info-adicional-guia {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Estilo para los párrafos dentro de la info adicional del guía */
+.info-adicional-guia p {
+  margin: 0;
+  font-size: 15px;
+}
+/* Estilo para las redes sociales del guía */
+.redes-sociales {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+}
+/* Columna 3: Reseñas de otros usuarios */
+.columna-reseñas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Estilo del titulo de las reseñas*/
+.columna-reseñas h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* Estilo para el contenedor de las reseñas*/
+.contenedor-reseñas{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* Estilo para cada reseña */
+.reseña {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+/* Estilo para la imagen de cada persona*/
+.reseña-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;               /* Evita que el avatar se enconja*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Estilo para el comentario*/
+.reseña-comentario {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* Estilo para el texto del comentario*/
+.reseña-comentario p {
+  font-size: 14px;
+}
+/* Estilo para el boton ver mas*/
+.boton-ver-mas {
+  background-color: #006400;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  width: 100%;
+}
+/* Efecto hover para el boton ver mas*/
+.boton-ver-mas:hover {
+  background-color: #004d00;
+}
+/* Estilo para el boton reservar*/
+.boton-reservar {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Efecto hover para el boton de reserva*/
+.boton-reservar:hover {
+  background-color: #333;
+}
+/* Estilos para el modal */
+.modal-reseñas {
+  display: none;
+  position: fixed;
+  z-index: 1001;      /*por encima del resto del contenido*/
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+/* Contenido del modal*/
+.modal-contenido {
+  background-color: white;
+  margin: 6.6% auto;   
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-height: 75vh;    /* Altura del viewport*/
+  overflow-y: auto;    /* Evita que el contenido se salga del contenedor*/
+  position: relative;     
+}
+/* Estilo para la X para salir del modal*/
+.modal-cerrar {
+  color: black;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* Efecto hover en la X*/
+.modal-cerrar:hover {
+  color: red;
+}
+/* Estilo para las reseñas dentro del modal*/
+.modal-contenedor-reseñas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+/* Bloquear scroll del body cuando el modal está abierto */
+body.modal-abierto {
+  overflow: hidden;
+  position: fixed;
 }

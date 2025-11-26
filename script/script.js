@@ -73,6 +73,17 @@ if (window.location.pathname.includes("home.html")) {
     localStorage.setItem('viajesFiltrados', JSON.stringify(filtrados));
     window.location.href = 'listado_viajes.html';
   });
+
+  // Botones de iniciar sesión y registrarse en el header
+  const botoniniciosesion = document.querySelector('header .botones_header button:first-child');
+  botoniniciosesion.addEventListener('click', () => {
+    window.location.href = 'inicio_sesion.html';
+  });
+
+  const botonregistrarse = document.querySelector('header .botones_header button:last-child');
+  botonregistrarse.addEventListener('click', () => {
+    window.location.href = 'registrarse.html';
+  });
 }
 
 
@@ -391,5 +402,238 @@ if (window.location.pathname.includes("listado_viajes.html")) {
     } else {
       document.getElementById('mensaje-filtros-listado').style.display = 'block';
     }
+  });
+}
+
+
+
+/*Página detalles_viaje.html*/
+if (window.location.pathname.includes("detalles_viaje.html")) {
+  
+  // Función para generar el itinerario dinámicamente
+  function generarItinerario(numeroDias, actividades = []) {
+    const contenedor = document.querySelector('.contenedor-itinerario');
+    contenedor.innerHTML = ''; // Limpiar contenido previo
+    
+    // Bucle para crear cada día del itinerario
+    for (let i = 1; i <= numeroDias; i++) {
+      // Crear el div para cada día
+      const diaDiv = document.createElement('div');
+      diaDiv.className = 'dia-itinerario';            // Asignar clase CSS
+      
+      // Crear el span con la descripción del día
+      const spanDia = document.createElement('span');
+      // Si hay actividades definidas, usarlas; si no, usar texto por defecto
+      spanDia.textContent = actividades[i-1]    // Índice i-1 porque el array empieza en 0
+        ? `Día ${i}: ${actividades[i-1]}`       // Usar la actividad definida para el día
+        : `Día ${i}: [Actividad]`;              // Texto por defecto si no hay actividad definida
+      
+      // Crear el botón "Más detalles"
+      const botonmasdetalles = document.createElement('button');
+      botonmasdetalles.className = 'boton-mas-detalles';
+      botonmasdetalles.textContent = 'Más detalles';        // Texto del botón
+      botonmasdetalles.addEventListener('click', () => {
+        alert(`Detalles del día ${i}`); // Aquí puedes personalizar la acción
+      });
+      
+      // Agregar elementos al div del día
+      diaDiv.appendChild(spanDia);
+      diaDiv.appendChild(botonmasdetalles);
+      
+      // Agregar el día al contenedor
+      contenedor.appendChild(diaDiv);
+    }
+  }
+
+  // Función para generar las condiciones del viaje dinámicamente
+  function generarCondiciones(texto = '') {
+    const contenedor = document.querySelector('.contenedor-condiciones');
+    contenedor.innerHTML = ''; // Limpiar contenido previo
+    
+    // Si no hay texto definido, usar uno por defecto
+    if (!texto) {
+      texto = 'Descripción de eventos que podrían suceder durante la travesía';
+    }
+    
+    // Crear un único párrafo con todo el texto
+    const parrafo = document.createElement('p');
+    parrafo.textContent = texto;
+    contenedor.appendChild(parrafo);
+  }
+
+  // Función para generar la información del guía dinámicamente
+  function generarInfoGuia(guia = {}) {
+    const contenedor = document.querySelector('.contenedor-info-guia');
+    contenedor.innerHTML = ''; // Limpiar contenido previo
+    
+    // Valores por defecto si no se proporcionan
+    const {
+      nombre = 'Nombre y apellidos',
+      edad = 'Edad',
+      experiencia = 'Años de experiencia',
+      experiencias = 'Tour por montañas y experto en gastronomía local',
+      idiomas = 'B2(Inglés) y C2(Español)',
+      contacto = '+34 XXX XXX XXX',
+      redesSociales = ['📱', '💼', '📷'],
+      valoracion = 3
+    } = guia;
+    
+    // Crear sección de info básica
+    const infoGuiaDiv = document.createElement('div');
+    infoGuiaDiv.className = 'info-guia';
+    
+    // Crear avatar
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar';
+    
+    // Crear sección de texto info básica
+    const infoTexto = document.createElement('div');
+    infoTexto.className = 'info-guia-texto';
+    infoTexto.innerHTML = `
+      <p>${nombre}</p>
+      <p>${edad}</p>
+      <p>${experiencia}</p>
+    `;
+    
+    // Agregar avatar e info texto al div de info básica
+    infoGuiaDiv.appendChild(avatar);
+    infoGuiaDiv.appendChild(infoTexto);
+    
+    
+    // Crear sección de info adicional
+    const infoAdicionalDiv = document.createElement('div');
+    infoAdicionalDiv.className = 'info-adicional-guia';
+    
+    // Crear párrafos de info adicional
+    const parrafoExperiencias = document.createElement('p');
+    parrafoExperiencias.textContent = `Experiencias: ${experiencias}`;
+    
+    const parrafoIdiomas = document.createElement('p');
+    parrafoIdiomas.textContent = `Idiomas: ${idiomas}`;
+    
+    const parrafoContacto = document.createElement('p');
+    parrafoContacto.textContent = `Contactos: ${contacto}`;
+    
+    // Crear redes sociales
+    const redesDiv = document.createElement('div');
+    redesDiv.className = 'redes-sociales';
+    redesSociales.forEach(icono => {
+      const span_redes_sociales = document.createElement('span');
+      span_redes_sociales.textContent = icono;
+      redesDiv.appendChild(span_redes_sociales);
+    });
+    
+    // Crear valoración con estrellas
+    const valoracionDiv = document.createElement('p');
+    const estrellas = '★'.repeat(valoracion) + '☆'.repeat(5 - valoracion);    // Generar estrellas llenas y vacías
+    valoracionDiv.innerHTML = `Valoración: <span class="valoracion-estrellas">${estrellas}</span>`;  //Empleamos el span class para aplicar el estilo de las estrellas
+    
+    // Agregar todos los párrafos e info adicional al div
+    infoAdicionalDiv.appendChild(parrafoExperiencias);
+    infoAdicionalDiv.appendChild(parrafoIdiomas);
+    infoAdicionalDiv.appendChild(parrafoContacto);
+    infoAdicionalDiv.appendChild(redesDiv);
+    infoAdicionalDiv.appendChild(valoracionDiv);
+    
+    // Agregar todo al contenedor
+    contenedor.appendChild(infoGuiaDiv);
+    contenedor.appendChild(infoAdicionalDiv);
+  }
+
+  // Generar itinerario para 4 días con actividades definidas
+  generarItinerario(4, ['Visita al museo', 'Tour por la ciudad', 'Excursión a la montaña', 'Día de relax en la playa']);
+  
+  // Generar condiciones del viaje
+  generarCondiciones('El viaje incluye seguro médico internacional. Se requiere un nivel físico medio para las actividades. Las condiciones climáticas pueden variar, llevar ropa adecuada. No incluye comidas, solo desayuno.');
+  
+  // Generar información del guía
+  generarInfoGuia({
+    nombre: 'Juan Pérez García',
+    edad: '35 años',
+    experiencia: '10 años de experiencia',
+    experiencias: 'Tour por montañas y experto en gastronomía local',
+    idiomas: 'B2(Inglés) y C2(Español)',
+    contacto: '+34 666 777 888',
+    redesSociales: ['📱', '💼', '📷'],
+    valoracion: 4
+  });
+
+
+  // Array para las reseñas
+  const todasLasReseñas = [
+    { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.' },
+    { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' },
+    { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.' },
+    { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.' },
+    { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.' },
+    { nombre: 'Pedro Sánchez', comentario: 'Volvería sin dudarlo. Destacar la atención al detalle en cada actividad.' }
+  ];
+
+  // Función para crear una reseña
+  function crearReseña(nombre, comentario) {
+    // Crear el contenedor de la reseña
+    const reseñaDiv = document.createElement('div');
+    reseñaDiv.className = 'reseña';
+    
+    // Crear el avatar
+    const avatar = document.createElement('div');
+    avatar.className = 'reseña-avatar';
+    
+    // Crear el comentario
+    const comentarioDiv = document.createElement('div');
+    comentarioDiv.className = 'reseña-comentario';
+    comentarioDiv.innerHTML = `
+      <p><strong>${nombre}</strong></p>
+      <p>${comentario}</p>
+    `;
+    
+    // Añadir imagen, nombre y comentario 
+    reseñaDiv.appendChild(avatar);
+    reseñaDiv.appendChild(comentarioDiv);
+    
+    return reseñaDiv;
+  }
+
+  // Función para generar las primeras 3 reseñas
+  function generarReseñasIniciales(reseñas) {
+    const contenedor = document.querySelector('.contenedor-reseñas');
+    contenedor.innerHTML = '';
+    
+    // Mostrar solo las primeras 3 reseñas
+    const reseñasIniciales = reseñas.slice(0, 3);  // Obtener las primeras 3 reseñas
+    reseñasIniciales.forEach(reseña => {
+      contenedor.appendChild(crearReseña(reseña.nombre, reseña.comentario));
+    });
+  }
+
+  // Función para mostrar todas las reseñas en el modal
+  function mostrarTodasReseñas(reseñas) {
+    const modalContenedor = document.querySelector('.modal-contenedor-reseñas');
+    modalContenedor.innerHTML = '';
+    
+    reseñas.forEach(reseña => {
+      modalContenedor.appendChild(crearReseña(reseña.nombre, reseña.comentario));
+    });
+  }
+
+  // Generar las primeras 3 reseñas
+  generarReseñasIniciales(todasLasReseñas);
+
+  // Configurar el modal
+  const modal = document.querySelector('.modal-reseñas');
+  const botonVerMas = document.querySelector('.boton-ver-mas');
+  const botonCerrar = document.querySelector('.modal-cerrar');
+
+  // Abrir modal al hacer clic en "Ver más reseñas"
+  botonVerMas.addEventListener('click', () => {
+    mostrarTodasReseñas(todasLasReseñas);
+    modal.style.display = 'block';
+    document.body.classList.add('modal-abierto');      // Bloquear scroll del body
+  });
+
+  // Cerrar modal al hacer clic en la X
+  botonCerrar.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.classList.remove('modal-abierto');   // Restaurar scroll del body
   });
 }
