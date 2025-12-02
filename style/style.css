@@ -709,6 +709,8 @@ footer nav a:focus-visible {
   width: 250px;
   height: 150px;
   background-color: #d3d3d3;
+  background-size: cover;
+  background-position: center;
   border: 2px solid #999;
   border-radius: 10px;
   display: flex;

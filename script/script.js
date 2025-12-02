@@ -11,13 +11,126 @@ if (!usuarioActual) {
 
 // Definir los viajes disponibles
 const viajes = [
-  { destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Ruta por las 3 grandes de España' },
-  { destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Pirineos, Picos de Europa' },
-  { destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago' },
-  { destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Horizontes Andinos' },
-  { destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Secretos de la Ciudad Perdida' },
-  { destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kimonos y templos' },
-  { destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japan 360º' }
+  { 
+    destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, 
+    imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla',
+    galeria: ['images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg'],
+    itinerario: ['Madrid: Prado y Retiro', 'Barcelona: Sagrada Familia', 'Barrio Gótico y Rambla', 'Sevilla: Giralda', 'Real Alcázar', 'Plaza de España', 'Día libre'],
+    itinerarioDetallado: [
+      'Llegada a Madrid. Visita guiada al Museo del Prado con las obras de Velázquez y Goya. Por la tarde, paseo relajante por el Parque del Retiro.',
+      'Traslado en AVE a Barcelona. Visita a la impresionante Sagrada Familia y subida al Park Güell para disfrutar de las vistas panorámicas.',
+      'Recorrido por el encantador Barrio Gótico y la animada Rambla. Tiempo libre para tapas y compras en el Mercado de la Boquería.',
+      'Viaje a Sevilla. Visita a la majestuosa Giralda, antigua torre alminar convertida en campanario. Vistas espectaculares desde lo alto.',
+      'Exploración del Real Alcázar, palacio de arquitectura mudéjar. Paseo por sus jardines históricos declarados Patrimonio de la Humanidad.',
+      'Visita a la impresionante Plaza de España. Tarde libre para conocer el barrio de Triana y disfrutar de un espectáculo de flamenco.',
+      'Día libre para actividades personales. Regreso y fin del tour.'
+    ],
+    condiciones: 'Incluye transporte, seguro y desayunos. Mascotas permitidas. Nivel físico: bajo-medio.',
+    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4 }
+  },
+  { 
+    destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, 
+    imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos',
+    galeria: ['images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg'],
+    itinerario: ['Trekking inicial', 'Ascenso a picos', 'Barranquismo y ferratas', 'Ruta final'],
+    itinerarioDetallado: [
+      'Llegada al valle de Ordesa. Trekking de aclimatación de 3 horas por senderos de dificultad media. Briefing de seguridad y revisión de equipo.',
+      'Ascenso temprano a picos de 2.500m de altitud. Técnicas de escalada en roca. Almuerzo en cumbre con vistas panorámicas de los Pirineos.',
+      'Descenso de barrancos en el río Vero. Rapel de 20 metros. Travesía por vías ferratas con puentes colgantes y escaleras verticales.',
+      'Ruta final de trekking hacia el punto de partida. Descenso controlado y ceremonia de despedida del grupo.'
+    ],
+    condiciones: 'Alta intensidad física. Incluye equipo de montaña y guía profesional. No mascotas.',
+    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['📱', '🏔️', '📷'], valoracion: 5 }
+  },
+  { 
+    destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, 
+    imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago',
+    galeria: ['images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg'],
+    itinerario: ['Sarria', 'Portomarín (20km)', 'Paisajes gallegos', 'Pueblos históricos', 'Palas de Rei', 'Arzúa', 'Etapa 7-8', 'Santiago de Compostela', 'Ceremonia'],
+    itinerarioDetallado: [
+      'Inicio del Camino desde Sarria. Recepción de credencial del peregrino. Primera etapa de 22 km con bosques y aldeas gallegas.',
+      'Etapa de 25 km hasta Portomarín cruzando el embalse de Belesar. Almuerzo campestre y llegada al pueblo medieval.',
+      'Caminata de 24 km por paisajes típicamente gallegos con prados verdes y pequeñas iglesias románicas en el camino.',
+      'Visita a pueblos históricos como Melide. Degustación del famoso pulpo a feira. Etapa de 15 km con suave desnivel.',
+      'Llegada a Palas de Rei tras 28 km. Descanso en albergue tradicional. Cena con otros peregrinos compartiendo experiencias.',
+      'Etapa hacia Arzúa de 29 km. Paso por eucaliptos y pinares. Visita a queserías artesanales del famoso queso de Arzúa.',
+      'Etapas 7 y 8: Continuación hacia Santiago. El Camino se hace más transitado conforme nos acercamos a la meta.',
+      'Llegada emocionante a la Catedral de Santiago de Compostela. Abrazo al Apóstol y vista del Botafumeiro.',
+      'Misa del Peregrino en la Catedral. Certificado de Compostela. Tarde libre para explorar la ciudad y celebrar.'
+    ],
+    condiciones: 'Incluye albergues, transporte de mochila y credencial. Buena condición física.',
+    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['📱', '⛪', '📷'], valoracion: 4 }
+  },
+  { 
+    destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, 
+    imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa',
+    galeria: ['images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg'],
+    itinerario: ['City tour en Lima', 'Centro histórico y museos', 'Pachacámac', 'Playas de Miraflores'],
+    itinerarioDetallado: [
+      'Recorrido por Lima moderna: Miraflores y San Isidro. Parque del Amor y Malecón. Introducción a la gastronomía peruana con ceviche.',
+      'Visita al centro histórico Patrimonio de la Humanidad. Plaza Mayor, Catedral y Palacio de Gobierno. Museo Larco con arte precolombino.',
+      'Excursión arqueológica a Pachacámac, antiguo centro ceremonial pre-inca e inca. Templo del Sol y museo de sitio con textiles antiguos.',
+      'Día en las playas de Miraflores. Posibilidad de parapente sobre el Pacífico. Cena de despedida con show de marinera.'
+    ],
+    condiciones: 'Todo incluido. Mascotas pequeñas permitidas. Nivel físico: bajo.',
+    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['📱', '🌄', '📷'], valoracion: 3 }
+  },
+  { 
+    destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, 
+    imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico',
+    galeria: ['images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg'],
+    itinerario: ['Cusco: aclimatación', 'Valle Sagrado', 'Camino Inca día 1', 'Camino Inca día 2', 'Machu Picchu al amanecer', 'Retorno a Cusco'],
+    itinerarioDetallado: [
+      'Llegada a Cusco (3.400m). Día de aclimatación suave. Visita a la Plaza de Armas, Catedral y Qoricancha. Té de coca para la altura.',
+      'Excursión al Valle Sagrado. Pisac y su mercado artesanal. Ollantaytambo, fortaleza inca viviente. Aclimatación progresiva.',
+      'Inicio del Camino Inca clásico. Km 82. Trekking de 12 km hasta el primer campamento. Vistas de nevados. Cena bajo las estrellas.',
+      'Día más exigente: ascenso al paso Warmiwañusca (4.200m). Descenso a campamento. Paisajes de puna y bosque nuboso. 16 km de recorrido.',
+      'Salida a las 4am para llegar a la Puerta del Sol. Amanecer mágico sobre Machu Picchu. Tour completo de 3 horas por la ciudadela.',
+      'Tren panorámico de regreso a Cusco. Tarde libre en Cusco para compras y descanso. Cena de celebración en restaurante típico.'
+    ],
+    condiciones: 'Entrada incluida, equipo de camping. Muy buena condición física requerida.',
+    guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['📱', '⛰️', '📷'], valoracion: 4 }
+  },
+  { 
+    destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, 
+    imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
+    galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
+    itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
+    itinerarioDetallado: [
+      'Llegada a Kioto. Ceremonia tradicional del té en casa de té histórica. Aprende la filosofía del Chado y disfruta matcha auténtico.',
+      'Visita al deslumbrante Kinkaku-ji (Templo Dorado). Tarde en Fushimi Inari con sus 10.000 torii rojos. Ascenso opcional a la montaña.',
+      'Paseo matutino por Gion, distrito de geishas. Clase de vestir kimono correctamente. Sesión fotográfica profesional por calles tradicionales.',
+      'Excursión a Nara en tren. Templo Todai-ji con su Buda gigante. Interacción con los ciervos sagrados del parque. Regreso a Kioto.',
+      'Día libre para explorar a tu ritmo. Sugerencias: Arashiyama, Bamboo Grove, templo Ryoan-ji. Shopping en Gion o Nishiki Market.'
+    ],
+    condiciones: 'Incluye entradas, ceremonia del té y kimono. Mascotas pequeñas permitidas.',
+    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['📱', '🎎', '📷'], valoracion: 5 }
+  },
+  { 
+    destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, 
+    imagen: 'images/japon.jpg', titulo: 'Japón Completo',
+    galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
+    itinerario: ['Tokio: Shibuya', 'Asakusa y Akihabara', 'Monte Fuji', 'Kioto: templos', 'Arashiyama', 'Osaka: castillo', 'Nara', 'Hiroshima', 'Miyajima', 'Vuelta a Tokio', 'TeamLab', 'Harajuku', 'Compras', 'Tsukiji', 'Despedida'],
+    itinerarioDetallado: [
+      'Llegada a Tokio. Cruce de Shibuya, el más transitado del mundo. Torre Hachiko. Exploración nocturna de Shinjuku y sus neones.',
+      'Templo Senso-ji en Asakusa. Compras en Nakamise-dori. Tarde en Akihabara, paraíso del anime y tecnología. Visita a maid café.',
+      'Excursión al Monte Fuji y lago Kawaguchi. Si el clima permite, vistas espectaculares. Paseo en barco y onsen tradicional.',
+      'Tren bala a Kioto. Templos clásicos: Kiyomizu-dera y sus vistas. Paseo filosófico y Ginkaku-ji (Pabellón de Plata).',
+      'Arashiyama: bosque de bambú mágico. Templo Tenryu-ji. Puente Togetsukyo. Posibilidad de ver monos en Iwatayama.',
+      'Tren a Osaka. Castillo de Osaka y museo. Noche en Dōtonbori, zona de comida callejera. Prueba takoyaki y okonomiyaki.',
+      'Excursión a Nara. Todai-ji y Buda gigante. Alimentar ciervos. Santuario Kasuga Taisha con linternas. Regreso a Osaka.',
+      'Tren a Hiroshima. Memorial de la Paz y Museo Conmovedor. Domo de la Bomba Atómica. Parque de la Paz y cenotafio.',
+      'Ferry a Miyajima. Torii flotante de Itsukushima. Templo patrimonio UNESCO. Ascenso en teleférico al Monte Misen. Regreso.',
+      'Shinkansen de vuelta a Tokio. Tarde libre. Sugerencia: Odaiba para compras o explorar barrios como Shimokitazawa.',
+      'TeamLab Borderless: museo de arte digital inmersivo. Experiencia futurista con proyecciones interactivas. Tarde en Odaiba.',
+      'Harajuku y Takeshita Street: moda kawaii. Omotesando para tiendas de diseño. Parque Yoyogi si hay festival.',
+      'Día de compras libre. Ginza para lujo, Shibuya para moda joven, Don Quijote para souvenirs locos. Empaque de maletas.',
+      'Mercado exterior de Tsukiji. Desayuno de sushi fresco. Paseo final por Ginza. Últimas compras de recuerdos.',
+      'Check out y traslado al aeropuerto. Sayonara Japón. Entrega de regalos de despedida del tour.'
+    ],
+    condiciones: 'JR Pass incluido. Nivel físico medio. Largas caminatas diarias.',
+    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['📱', '🗾', '📷'], valoracion: 4 }
+  }
 ];
 
 
@@ -307,7 +420,13 @@ if (window.location.pathname.includes("listado_viajes.html")) {
   });
 
   // Generar los divs de viajes dinámicamente
-  const viajesFiltrados = JSON.parse(localStorage.getItem('viajesFiltrados')) || viajes; // Si no hay filtrados, mostrar todos
+  // Priorizar los viajes filtrados actuales (después de aplicar filtros en la página), luego los de la búsqueda inicial
+  const viajesFiltradosActuales = JSON.parse(localStorage.getItem('viajesFiltradosActuales'));
+  const viajesFiltrados = viajesFiltradosActuales || JSON.parse(localStorage.getItem('viajesFiltrados')) || viajes;
+  // Limpiar los filtrados actuales si se usaron (para que la próxima búsqueda desde home funcione correctamente)
+  if (viajesFiltradosActuales) {
+    localStorage.removeItem('viajesFiltradosActuales');
+  }
   const columnaListado = document.querySelector('.columna-listado-viajes');
   const ratings = {5: '★★★★★', 4: '★★★★☆', 3: '★★★☆☆'};
   let currentFiltrados = [...viajesFiltrados];     // Copia de los viajes filtrados inicialmente
@@ -315,7 +434,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
   // Función para renderizar los viajes
   function renderViajes(filtrados) {
     columnaListado.innerHTML = '';
-    filtrados.forEach(viaje => {
+    filtrados.forEach((viaje, index) => {
       const div = document.createElement('div');   // Crear un nuevo div para cada viaje
       div.className = 'viaje';
       div.setAttribute('data-destino', viaje.destino);
@@ -324,6 +443,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
       div.setAttribute('data-tipo', viaje.tipo);
       div.setAttribute('data-mascotas', viaje.mascotas);
       div.setAttribute('data-valoracion', viaje.valoracion);
+      div.setAttribute('data-index', index);  // Guardar el índice del viaje
       // Rellenar el contenido del viaje con innerHTML
       div.innerHTML = `                           
         <img src="${viaje.imagen}" alt="${viaje.titulo}">
@@ -341,6 +461,17 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         </div>
         <button class="ver-detalles">Ver detalles</button>
       `;
+      
+      // Agregar evento al botón "Ver detalles"
+      const botonVerDetalles = div.querySelector('.ver-detalles');
+      botonVerDetalles.addEventListener('click', () => {
+        // Guardar el viaje seleccionado y los viajes filtrados actuales en localStorage
+        localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+        localStorage.setItem('viajesFiltradosActuales', JSON.stringify(currentFiltrados));
+        // Redirigir a la página de detalles
+        window.location.href = 'detalles_viaje.html';
+      });
+      
       columnaListado.appendChild(div);   // Agregar el div al contenedor de listado
     });
   }
@@ -410,8 +541,55 @@ if (window.location.pathname.includes("listado_viajes.html")) {
 /*Página detalles_viaje.html*/
 if (window.location.pathname.includes("detalles_viaje.html")) {
   
+  // Obtener el viaje seleccionado desde localStorage
+  const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
+  
+  // Si no hay viaje seleccionado, redirigir a la página de listado
+  if (!viajeSeleccionado) {
+    window.location.href = 'listado_viajes.html';
+  }
+  
+  // Botón de vuelta atrás a listado_viajes.html
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      // Simplemente volver atrás en el historial para mantener los filtros
+      window.history.back();
+    });
+  }
+  
+  // Actualizar el título con el nombre del viaje
+  const tituloDetalles = document.querySelector('.titulo-detalles h1');
+  if (tituloDetalles && viajeSeleccionado) {
+    tituloDetalles.textContent = viajeSeleccionado.titulo;
+  }
+  
+  // Función para cargar la galería de imágenes
+  function cargarGaleria(imagenes = []) {
+    const galeria = document.querySelector('.galeria-imagenes');
+    if (!galeria) return;
+    
+    galeria.innerHTML = ''; // Limpiar galería
+    
+    // Si no hay imágenes, usar la imagen principal 6 veces
+    const imagenesGaleria = imagenes.length > 0 ? imagenes : Array(6).fill(viajeSeleccionado.imagen);
+    
+    // Crear los divs de imagen y asignar background
+    imagenesGaleria.forEach((urlImagen, index) => {
+      const divImagen = document.createElement('div');
+      divImagen.className = 'imagen';
+      divImagen.style.backgroundImage = `url('${urlImagen}')`;
+      galeria.appendChild(divImagen);
+    });
+  }
+  
+  // Cargar la galería del viaje seleccionado
+  if (viajeSeleccionado) {
+    cargarGaleria(viajeSeleccionado.galeria || []);
+  }
+  
   // Función para generar el itinerario dinámicamente
-  function generarItinerario(numeroDias, actividades = []) {
+  function generarItinerario(numeroDias, actividades = [], detalles = []) {
     const contenedor = document.querySelector('.contenedor-itinerario');
     contenedor.innerHTML = ''; // Limpiar contenido previo
     
@@ -432,8 +610,10 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       const botonmasdetalles = document.createElement('button');
       botonmasdetalles.className = 'boton-mas-detalles';
       botonmasdetalles.textContent = 'Más detalles';        // Texto del botón
-      botonmasdetalles.addEventListener('click', () => {
-        alert(`Detalles del día ${i}`); // Aquí puedes personalizar la acción
+
+      botonmasdetalles.addEventListener('click', () => {    // Evento al hacer clic en el botón "Más detalles"
+        const detalleTexto = detalles[i-1] || 'No hay información detallada disponible para este día.';     // Usar el detalle definido o un mensaje por defecto
+        alert(`Día ${i}\n\n${detalleTexto}`);
       });
       
       // Agregar elementos al div del día
@@ -540,23 +720,21 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     contenedor.appendChild(infoAdicionalDiv);
   }
 
-  // Generar itinerario para 4 días con actividades definidas
-  generarItinerario(4, ['Visita al museo', 'Tour por la ciudad', 'Excursión a la montaña', 'Día de relax en la playa']);
-  
-  // Generar condiciones del viaje
-  generarCondiciones('El viaje incluye seguro médico internacional. Se requiere un nivel físico medio para las actividades. Las condiciones climáticas pueden variar, llevar ropa adecuada. No incluye comidas, solo desayuno.');
-  
-  // Generar información del guía
-  generarInfoGuia({
-    nombre: 'Juan Pérez García',
-    edad: '35 años',
-    experiencia: '10 años de experiencia',
-    experiencias: 'Tour por montañas y experto en gastronomía local',
-    idiomas: 'B2(Inglés) y C2(Español)',
-    contacto: '+34 666 777 888',
-    redesSociales: ['📱', '💼', '📷'],
-    valoracion: 4
-  });
+  // Generar el contenido del viaje seleccionado
+  if (viajeSeleccionado) {
+    // Generar itinerario con los datos del viaje
+    generarItinerario(
+      viajeSeleccionado.duracion, 
+      viajeSeleccionado.itinerario || [], 
+      viajeSeleccionado.itinerarioDetallado || []
+    );
+    
+    // Generar condiciones del viaje
+    generarCondiciones(viajeSeleccionado.condiciones || '');
+    
+    // Generar información del guía
+    generarInfoGuia(viajeSeleccionado.guia || {});
+  }
 
 
   // Array para las reseñas
