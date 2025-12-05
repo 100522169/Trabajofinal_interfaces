@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
+    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="style/style_formulario_compra2.css" />
+    <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Logotipo del sitio">
+        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Otros rincones</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Mi cuenta</a></li>
+                
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+     <section class="columna-boton-atras-detalles">
+        <button type="button">⬅</button>
+    </section>
+
+    <main>
+        <!-- Título del formulario y etapas -->
+       <h1 class="titulo-formulario">Formulario de compra</h1>
+        <section class="contenedor-etapas">
+            <div class="etapa">
+                <div class="circulo-color">✔</div>
+                <div class="descripcion-etapa">1ºDatos personales</div>
+            </div>
+            <div class="etapa">
+                <div class="circulo-color">✔</div>
+                <div class="descripcion-etapa">2ºAcompañantes/Mascotas/Alergias</div>
+            </div>
+            <div class="etapa">
+                <div class="circulo"></div>
+                <div class="descripcion-etapa">3ºConfirmación/Pago</div>
+            </div>
+        </section>
+
+        <!-- Paso 2: Acompañantes / Mascotas / Alergias -->
+        <h2 class="titulo-paso">Paso 2: Acompañantes / Mascotas / Alergias</h2>
+        <section class="paso-2">
+            <div class="paso2-columnas">
+
+                <!-- Columna de acompañantes -->
+                <div class="columna-acompañantes">
+                    <h3>Acompañantes</h3>
+                    <!-- Campos para añadir acompañantes -->
+                    <div class="input-icon">
+                        <input type="text" placeholder="Nombre y apellidos" required>
+                        <span class="icon">👤</span>
+                    </div>
+                    <div class="input-icon">
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <span class="icon">📧</span>
+                    </div>
+                    <!-- Botón para añadir otro acompañante -->
+                    <button class="boton-añadir" type="button"><span class="mas">+</span> Añadir otro acompañante</button>
+                </div>
+
+                <!-- Columna de mascotas -->
+                <div class="columna-mascotas">
+                    <h3>Mascotas</h3>
+                    <!-- Campos para seleccionar si lleva mascota -->
+                    <div class="viaja-mascota">
+                        <h3>Viaja con mascota:</h3>
+                        <label><input type="radio" name="viajaMascota" value="si"> Sí</label>
+                        <label><input type="radio" name="viajaMascota" value="no"> No</label>
+                    </div>
+                    <!-- Campos para nombre y tipo de mascota -->
+                    <div class="etiqueta2">
+                        <input type="text" placeholder="Nombre de la mascota" required>
+                        <input type="text" placeholder="Tipo de mascota" required>
+                    </div>
+                    <!-- Campo para subir documentación adicional -->
+                    <label class="subir-documentacion">Subir otra documentación (vacunas, pasaporte)
+                        <input type="file">
+                    </label>
+                </div>
+
+                <!-- Columna de alergias -->
+                <div class="columna-alergias">
+                    <h3>Alergias</h3>
+                    <p class="subtitulo-dietas">Comidas adaptadas</p>
+                    <!-- Opciones de dietas -->
+                    <div class="dietas">
+                        <!-- Cada dieta es un div con un icono y una etiqueta -->
+                        <div class="dieta-item">
+                            <div class="dieta-icon"></div>
+                            <span class="dieta-label">Vegano</span>
+                        </div>
+                        <div class="dieta-item">
+                            <div class="dieta-icon"></div>
+                            <span class="dieta-label">Sin gluten</span>
+                        </div>
+                        <div class="dieta-item">
+                            <div class="dieta-icon"></div>
+                            <span class="dieta-label">Sin lactosa</span>
+                        </div>
+                        <div class="dieta-item">
+                            <div class="dieta-icon"></div>
+                            <span class="dieta-label">Sin pescado</span>
+                        </div>
+                        <!-- Botón para más opciones de dietas -->
+                        <button class="dieta-modal" type="button">...</button>
+                    </div>
+                    <label class="etiqueta2">Alergias e intolerancias:
+                        <input type="text" placeholder="Especifica alergias o intolerancias">
+                    </label>
+                </div>
+            </div>
+
+            <div class="contenedor-boton-next">
+                <button class="boton-next" type="button">Siguiente paso</button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <nav>
+            <a href="#">Ayuda</a>
+            <a href="#">Contacto</a>
+            <a href="#">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+</html>

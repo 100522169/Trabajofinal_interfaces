@@ -161,9 +161,7 @@ footer nav a:focus-visible {
   text-decoration: underline;
 }
 
-
-
-/*formulario_compra styles*/
+/*formulario_compra2 styles*/
 /* Estilos para la columna del boton-atras de detalles del viaje */
 .columna-boton-atras-detalles{
   position: relative;   /* fijo en la pantalla, no se mueve con scroll */
@@ -257,56 +255,220 @@ footer nav a:focus-visible {
   padding: 14px;
   margin-bottom: 20px;
 }
-/* Estilo para el contenedor del formulario */
-.formulario-pasos{
-  border: 1px solid black;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-/* Estilo para el título de cada paso */
-.titulo-pasos{
-  font-size: 24px;
+/* Estilos para el título del formulario */
+.titulo-paso{
+  display: flex;
+  text-align: left;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 140px;
 }
-/* Estilo para cada campo del formulario */
-.campo-formulario{
+/* Estilos para el contenedor del paso 2 */
+.paso-2{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* Contenedor de las columnas del paso 2 */
+.paso2-columnas{
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  gap: 30px;
 }
-/* Estilo para la etiqueta y el input */
-.etiqueta{
-  position: relative;
-  left: 3%;
-  flex: 1;
+/* Aplicar sobre las columnas especificadas dentro de .paso2-columnas para igualar ancho/alto */
+.columna-acompañantes,
+.columna-mascotas,
+.columna-alergias {
+  flex: 1;               /* todas las columnas comparten el mismo ancho */
+  min-width: 0;          /* evita overflow por elementos anchos */
+  display: flex;         
+  flex-direction: column;
 }
-/* Estilo para los inputs de la etiqueta */
-.etiqueta input[type="text"],
-.etiqueta input[type="email"],
-.etiqueta input[type="tel"],
-.etiqueta input[type="date"]{
-  width: 70%;
-  height: 40px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 10px;
+/* Estilos para los títulos de la columna acompañantes */
+.columna-acompañantes h3{
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 700;
 }
-/* Estilo para el placeholder de los inputs */
-.etiqueta input::placeholder{
-  font-size: 16px;
+/* Estilos para el contenedor de input con icono */
+.input-icon{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Estilos para los campos de entrada de texto y email */
+.input-icon input[type="text"],
+.input-icon input[type="email"]{
+  padding: 15px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-bottom: 13px;
+  flex: 1;              /* ocupa todo el espacio disponible */
+}
+/* Estilos para el placeholder de los campos de entrada */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder{
+  font-size: 14px;
   font-weight: normal;
   color: black;
 }
-/* Estilo para el contenedor del botón siguiente paso */
-.contenedor-boton-siguiente-paso{
+/* Estilos para el icono dentro de input-icon */
+.input-icon .icon{
+  font-size: 20px;
+}
+/* Estilos para el botón de añadir acompañante */
+.boton-añadir{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 100px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+/* Estilos para el símbolo + dentro del botón añadir */
+.boton-añadir .mas{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  border: 2px solid #fff;
+}
+/* Estilos para los títulos de la columna mascotas */
+.columna-mascotas h3{
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 700;
+}
+/* Estilos para la sección de si viaja mascota */
+.viaja-mascota{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+/* Estilos para el titulo dentro de viaja-mascota */
+.viaja-mascota h3{
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;                           /* Eliminar márgenes por defecto del h3 */
+}
+/* Estilos para las etiquetas dentro de viaja-mascota */
+.viaja-mascota label{ 
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 7px;
+}
+/* Estilos para los inputs radio dentro de viaja-mascota */
+.viaja-mascota input[type="radio"]{
+  margin: 0;                            /* Eliminar márgenes por defecto */
+}
+/* Estilos para las etiquetas de los campos de entrada */
+.etiqueta2{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  font-size: 18px;
+  gap: 10px;
+}
+/* Estilos para los campos de entrada de texto dentro de etiqueta2 */
+.etiqueta2 input[type="text"]{
+  padding: 15px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-bottom: 7px;
+}
+/* Estilo para el titulo de subir documentación */
+.subir-documentacion{
+  display: block;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+/* Estilos para el input file dentro de subir-documentacion */
+.subir-documentacion input[type="file"]{
+  margin-top: 6px;
+  font-size: 15px;
+}
+/* Estilos para los títulos de la columna alergias */
+.columna-alergias h3{
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 700;
+}
+/* Subtítulo de comidas adaptadas */
+.subtitulo-dietas{
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: black;
+}
+/* Contenedor de dietas */
+.dietas{
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+/* Cada item de dieta (icono + texto) */
+.dieta-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 60px;              /* Fija el ancho para mantener espaciado uniforme */
+}
+/* Icono de dieta (círculo con imagen de fondo) */
+.dieta-icon{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  background-size: cover;
+  background-position: center;
+}
+/* Texto debajo del icono */
+.dieta-label{
+  font-size: 15px;
+  text-align: center;
+  color: #222;
+  margin-bottom: 10px;
+}
+/* Botón de más opciones (modal) */
+.dieta-modal{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  background-color: white;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Evita que el botón se encoja */
+}
+/* Efecto hover en el botón de más opciones */
+.dieta-modal:hover{
+  background: #f0f0f0;
+}
+/* Contenedor del botón siguiente paso */
+.contenedor-boton-next{
   display: flex;
   justify-content: center;
 }
-/* Estilo para el botón siguiente paso */
-.boton-siguiente-paso{
+/* Estilos para el botón siguiente paso */
+.boton-next{
   background-color: black;
   color: white;
   border: none;
@@ -317,7 +479,4 @@ footer nav a:focus-visible {
   font-weight: bold;
   margin-top: 17px;
 }
-/* Efecto hover en el botón siguiente paso */
-.boton-siguiente-paso:hover{
-  background-color: #333;
-}
+

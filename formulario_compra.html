@@ -56,25 +56,33 @@
     </section>
 
     <main>
+        <!-- Título principal del formulario de compra -->
        <h1 class="titulo-formulario">Formulario de compra</h1>
+
+       <!-- Contenedor de las etapas del formulario -->
         <section class="contenedor-etapas">
             <div class="etapa">
-                <div class="circulo">✔</div>
+                <!-- Etapa 1: Datos personales -->
+                <div class="circulo-color">✔</div>
                 <div class="descripcion-etapa">1ºDatos personales</div>
             </div>
             <div class="etapa">
+                <!-- Etapa 2: Acompañantes/Mascotas/Alergias -->
                 <div class="circulo"></div>
                 <div class="descripcion-etapa">2ºAcompañantes/Mascotas/Alergias</div>
             </div>
             <div class="etapa">
+                <!-- Etapa 3: Confirmación/Pago -->
                 <div class="circulo"></div>
                 <div class="descripcion-etapa">3ºConfirmación/Pago</div>
             </div>
         </section>
 
+        <!-- Formulario de pasos -->
         <section class="formulario-pasos">
             <h2 class="titulo-pasos">Paso 1: Datos personales</h2>
             <form>
+                <!-- Campos del formulario primera fila -->
                 <div class="campo-formulario">
                     <label class="etiqueta">
                         <input type="text" placeholder="Nombre y apellidos" required>
@@ -89,6 +97,7 @@
                         <span class="icon">📞</span>
                     </label>
                 </div>
+                <!-- Campos del formulario segunda fila -->
                 <div class="campo-formulario">
                     <label class="etiqueta">
                         <input type="text" placeholder="Nacionalidad" required>
@@ -103,17 +112,15 @@
                         <span class="icon">🏠</span>
                     </label>
                 </div>
+                <!-- Contenedor del botón para avanzar al siguiente paso -->
                 <div class="contenedor-boton-siguiente-paso">
                     <button type="submit" class="boton-siguiente-paso">Siguiente paso</button>
                 </div>
             </form>
-
-
         </section>
-        
     </main>
     
-     <footer>
+    <footer>
         <nav>
             <a href="#">Ayuda</a>
             <a href="#">Contacto</a>
