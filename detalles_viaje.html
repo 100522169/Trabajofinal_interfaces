@@ -4,7 +4,7 @@
     <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
     <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
-    <link rel="stylesheet" href="style/style.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
+    <link rel="stylesheet" href="style/style_detalles_viaje.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
     <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
 </head> 
 <body>
@@ -101,6 +101,14 @@
                 </div>
                 <button class="boton-ver-mas">Ver más reseñas</button>
                 <button class="boton-reservar">Reservar ahora →</button>
+                
+                <!-- Formulario para agregar reseñas -->
+                <div class="formulario-reseña">
+                    <h3>Deja tu reseña</h3>
+                    <input type="text" id="nombre-reseña" placeholder="Tu nombre" required>
+                    <input type="text" id="comentario-reseña" placeholder="Escribe tu reseña aquí..." required></textarea>
+                    <button type="submit" id="enviar-reseña">Enviar reseña</button>
+                </div>
             </div>
         </section>
 

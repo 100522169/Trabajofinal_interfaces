@@ -1,0 +1,257 @@
+/* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
+  * {
+  margin: 0;              /* Quita margen por defecto */
+  padding: 0;             /* Quita padding por defecto */
+  box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
+}
+/* Evitar scroll horizontal accidental */
+html, body {
+  overflow-x: hidden;  /* previene scroll horizontal */
+}
+/* Tipografía base para todo el cuerpo */
+body {
+  font-family: Arial, sans-serif; 
+  background-color: #fff;          
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Variables CSS para alturas de header y footer */
+:root {
+  --header-h: 110px; /* altura del header usada para margin-top */
+  --footer-h: 100px; /* altura del footer usada para margin-bottom */
+}
+/* Contenedor principal que envuelve header, main y footer */
+main {
+    flex: 1;
+    width: 100%;
+    margin-top: var(--header-h);                
+    margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
+}
+/* Evita que header y footer se encojan */
+header, footer {
+    flex-shrink: 0;           /* evita que se encojan */
+}
+/* Estilo general para enlaces */
+header {
+  width: 100%;              /* ocupa todo el ancho */
+  height: 100px;            /* altura fija: prueba con 100px */
+  background: #006400;
+  position: fixed;          /* fija el header en la parte superior */
+  top: 0; left:0; right: 0; /* asegura que esté en la parte superior */
+  margin-bottom: 15px;      /* separa el header del contenido */
+  text-align: left;
+  align-items: center;      /* centra verticalmente el contenido */
+  color: white;
+  padding: 0 20px;          /* espacio interno arriba y abajo */
+  display: flex;            
+  justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
+  z-index: 1000;                         /* asegura que esté por encima de todo el contenido */
+}
+/* Estilo general para footer, similar al header */
+footer {
+  width: 100%;              /* ocupa todo el ancho */
+  height: 80px;             /* altura fija: prueba con 100px */
+  background: #006400;
+  position: fixed;          /* fija el footer en la parte inferior */
+  bottom: 0;                /* asegura que esté en la parte inferior */
+  text-align: center;
+  align-items: center;      /* centra verticalmente el contenido */
+  color: white;
+  padding: 20px;            /* espacio interno */
+  display: flex;
+  justify-content: center;  /* centra todo el contenido horizontalmente */
+}
+/* Logo de la página */
+header img{
+  width: 80px;
+  height: 80px;
+}
+/* título de la página */
+header .titulo{
+  font-size: 18px;          /* tamaño legible sin ser gigante */
+  font-family: "montserrat", sans-serif;  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
+  font-weight: 700;          /* peso negrita */
+  text-transform: uppercase; 
+  margin-right: 50px;
+}
+/* Menú centrado (fila horizontal de enlaces) */
+header nav{ 
+  padding: 0;
+}
+/* Lista de elementos del menú */
+header nav ul{
+  list-style: none;          /* sin viñetas */
+  display: flex;             /* pone los <li> en fila */
+  font-weight: 500;          /* peso semi-negrita */
+  text-transform: uppercase; 
+  gap: 2rem;                 /* separación entre elementos del menú */
+  margin-right: 50px;
+}
+/* Cada enlace del menú */
+header nav a{
+  text-decoration: none;     /* sin subrayado */
+  color: #fff;             /* color de texto del menú */
+  border-radius: .375rem;    /* esquinas suaves para el hover */
+}
+/* Utilidades (derecha): logo + selector de idioma en fila */
+header .logo_idioma{
+  display: flex;             /* elementos en línea: imagen + select */
+  align-items: center;       /* verticalmente centrados */
+  gap: .5rem;                /* separación entre logo y select */
+  padding:0;
+}
+/* Logo y selector de idioma */
+header .logo_idioma img{
+  width: 120px; height: auto; /* tamaño consistente del logo */
+}
+/* Selector de idioma */
+header .logo_idioma select{
+  font: inherit;              /* que el select use la misma fuente que la página */
+  border: 1px solid #cbd5e1;
+  border-radius: .375rem;
+  background-color: white;
+}
+/* Efecto hover y focus en enlaces del menú */
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;   /* subrayado al pasar el ratón o enfocar con teclado */
+}
+/* Ocultar checkbox y botón de hamburguesa en escritorio */
+.menu-toggle,
+.hamburger-btn {
+    display: none;
+}
+/* Oculta las utilidades en la versión de escritorio */
+.nav-menu .nav-utils {
+    display: none;
+}
+/* Estilo para el enlace de iniciar sesión */
+header .botones_header button {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+/* Efecto hover en el botón de iniciar sesión */
+header .botones_header button:hover {
+    background-color: #e0e0e0;
+}
+/* Estilo de la info del footer*/
+footer nav a {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0 10rem;
+}
+/* Efecto hover y focus en enlaces del footer */
+footer nav a:hover,
+footer nav a:focus-visible {
+  text-decoration: underline;
+}
+
+
+/*inicio_sesion styles*/
+.contenedor-principal {
+  display: flex;                  /* Flex para columnas */
+  gap: 30px;                      /* Espacio entre columnas */
+  padding: 0 10px;                /* Espacio lateral */
+}
+.columna-izquierda2{
+  flex: 0 0 50%;                  /* ocupa 50% y no se encoge por flex */
+  display: flex;                  /* Flex para bloques dentro */
+  flex-direction: column;         /* Coloca los bloques en columna */
+  gap: 10px;                      /* Espacio vertical entre bloques */
+}
+.columna-derecha2{
+  flex: 0 0 50%;                  /* ocupa 50% y no se encoge por flex */
+  display: flex;                  /* Flex para bloques dentro */
+  flex-direction: column;         /* Coloca los bloques en columna */
+  gap: 10px;                      /* Espacio vertical entre bloques */
+}
+/* Estilo para el banner de bienvenida */
+.banner-bienvenida{
+  width: 100%;
+  height: 100%;
+  border: solid 1px black;
+  background-image: url('../images/fondo_viajes.jpg');
+  background-size: cover;               /* ajusta la imagen para cubrir todo el contenedor */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+/* Estilo para el formulario de inicio de sesión */
+.inicio-sesion-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 40px;
+}
+/* Estilo para el título del formulario */
+.inicio-sesion-form h1{
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+/* Estilo para los inputs y el botón del formulario */
+.inicio-sesion-form input[type="text"],
+.inicio-sesion-form input[type="password"]{
+  width: 80%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 17px;
+}
+/* Estilo para el botón de confirmar */
+.inicio-sesion-form button{
+  width: 80%;
+  height: 70px;
+  background: #006400;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+/* Efecto hover en el botón de confirmar */
+.inicio-sesion-form button:hover{
+  background: #004d00;
+}
+/* Estilo para el texto "Nuevo usuario" y el enlace "Regístrate aquí" */
+.inicio-sesion-form h3 a{
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 80px; /* espacio a la izquierda del enlace */
+}
+/* Estilo para los enlaces dentro del formulario */
+.inicio-sesion-form a{
+  text-decoration: none;
+  color: #006400;
+}
+/* Efecto hover en los enlaces dentro del formulario */
+.inicio-sesion-form a:hover{
+  text-decoration: underline;
+}
+.inicio-sesion-form span{
+  color: red;
+  font-size: 20px;
+  margin-left: 80px;
+}

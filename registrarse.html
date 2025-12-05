@@ -4,7 +4,7 @@
     <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
     <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
-    <link rel="stylesheet" href="style/style.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
+    <link rel="stylesheet" href="style/style_registrarse.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
     <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
 </head> 
 <body>
@@ -52,43 +52,37 @@
     </header>
 
     <main>
-        <section class ="contenedor-principal2">
-            <form class="registro-form">
-                <h1>Crear cuenta</h1>
-                <!-- División para agrupar los datos personales -->
-                <div class="datos-personales">Datos personales</div>
-                <input type="text" name="nombre" placeholder="Nombre" required />
-                <input type="text" name="apellido" placeholder="Apellidos" required />
-                <input type="text" name="email" placeholder="Correo electrónico" required />
-                <input type="text" name="confirmar_email" placeholder="Confirmar correo" required />
+        <form class="registro-form">
+            <h1>Crear cuenta</h1>
+            <!-- División para agrupar los datos personales -->
+            <div class="datos-personales">Datos personales</div>
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="text" name="apellido" placeholder="Apellidos" required />
+            <input type="text" name="email" placeholder="Correo electrónico" required />
+            <input type="text" name="confirmar_email" placeholder="Confirmar correo" required />
 
-                <!-- Campo para la fecha de nacimiento -->
-                <div class="fecha-nacimiento">Fecha de nacimiento</div>
-                <input type="date" name="fecha_nacimiento" required>
+            <!-- Campo para la fecha de nacimiento -->
+            <div class="fecha-nacimiento">Fecha de nacimiento</div>
+            <input type="date" name="fecha_nacimiento" required>
 
-                <!-- División para agrupar los datos de acceso -->
-                <div class="acceso">Acceso</div>
-                <input type="text" name="usuario" placeholder="Usuario" required />
-                <input type="password" name="contraseña" placeholder="Contraseña" required />
+            <!-- División para agrupar los datos de acceso -->
+            <div class="acceso">Acceso</div>
+            <input type="text" name="usuario" placeholder="Usuario" required />
+            <input type="password" name="contraseña" placeholder="Contraseña" required />
 
-                <!-- Campo para subir una imagen de perfil -->
-                <div class="subir-imagen">Subir imagen de perfil</div>
-                <input type="file" name="imagen" required>
+            <!-- Campo para subir una imagen de perfil -->
+            <div class="subir-imagen">Subir imagen de perfil</div>
+            <input type="file" name="imagen" required>
 
-                <!-- Checkbox para aceptar la política de privacidad -->
-                <div class="checkbox-privacidad">
-                    <input type="checkbox" required/> Acepto la <a href="#">política de privacidad</a> 
-                </div>
+            <!-- Checkbox para aceptar la política de privacidad -->
+            <div class="checkbox-privacidad">
+                <input type="checkbox" required/> Acepto la <a href="#">política de privacidad</a> 
+            </div>
 
-                <button type="submit">Guardar datos y acceder</button>
-                <span>*Todos los campos son obligatorios</span>
-            </form>
-        </section>
-
-
-
+            <button type="submit">Guardar datos y acceder</button>
+            <span>*Todos los campos son obligatorios</span>
+        </form>
     </main>
-
 
      <footer>
         <nav>

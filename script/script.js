@@ -12,8 +12,7 @@ if (!usuarioActual) {
 // Definir los viajes disponibles
 const viajes = [
   { 
-    destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, 
-    imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla',
+    destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla',
     galeria: ['images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg'],
     itinerario: ['Madrid: Prado y Retiro', 'Barcelona: Sagrada Familia', 'Barrio Gótico y Rambla', 'Sevilla: Giralda', 'Real Alcázar', 'Plaza de España', 'Día libre'],
     itinerarioDetallado: [
@@ -26,11 +25,14 @@ const viajes = [
       'Día libre para actividades personales. Regreso y fin del tour.'
     ],
     condiciones: 'Incluye transporte, seguro y desayunos. Mascotas permitidas. Nivel físico: bajo-medio.',
-    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4 }
+    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4 },
+    reseñas: [
+      { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.' },
+      { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' }
+    ]
   },
   { 
-    destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, 
-    imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos',
+    destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos',
     galeria: ['images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg'],
     itinerario: ['Trekking inicial', 'Ascenso a picos', 'Barranquismo y ferratas', 'Ruta final'],
     itinerarioDetallado: [
@@ -40,11 +42,13 @@ const viajes = [
       'Ruta final de trekking hacia el punto de partida. Descenso controlado y ceremonia de despedida del grupo.'
     ],
     condiciones: 'Alta intensidad física. Incluye equipo de montaña y guía profesional. No mascotas.',
-    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['📱', '🏔️', '📷'], valoracion: 5 }
+    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['📱', '🏔️', '📷'], valoracion: 5 },
+    reseñas: [
+      { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.' }
+    ]
   },
   { 
-    destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, 
-    imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago',
+    destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago',
     galeria: ['images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg'],
     itinerario: ['Sarria', 'Portomarín (20km)', 'Paisajes gallegos', 'Pueblos históricos', 'Palas de Rei', 'Arzúa', 'Etapa 7-8', 'Santiago de Compostela', 'Ceremonia'],
     itinerarioDetallado: [
@@ -59,11 +63,13 @@ const viajes = [
       'Misa del Peregrino en la Catedral. Certificado de Compostela. Tarde libre para explorar la ciudad y celebrar.'
     ],
     condiciones: 'Incluye albergues, transporte de mochila y credencial. Buena condición física.',
-    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['📱', '⛪', '📷'], valoracion: 4 }
+    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['📱', '⛪', '📷'], valoracion: 4 },
+    reseñas: [
+      { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.' }
+    ]
   },
   { 
-    destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, 
-    imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa',
+    destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa',
     galeria: ['images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg'],
     itinerario: ['City tour en Lima', 'Centro histórico y museos', 'Pachacámac', 'Playas de Miraflores'],
     itinerarioDetallado: [
@@ -73,11 +79,13 @@ const viajes = [
       'Día en las playas de Miraflores. Posibilidad de parapente sobre el Pacífico. Cena de despedida con show de marinera.'
     ],
     condiciones: 'Todo incluido. Mascotas pequeñas permitidas. Nivel físico: bajo.',
-    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['📱', '🌄', '📷'], valoracion: 3 }
+    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['📱', '🌄', '📷'], valoracion: 3 },
+    reseñas: [
+      { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.' }
+    ]
   },
   { 
-    destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, 
-    imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico',
+    destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico',
     galeria: ['images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg'],
     itinerario: ['Cusco: aclimatación', 'Valle Sagrado', 'Camino Inca día 1', 'Camino Inca día 2', 'Machu Picchu al amanecer', 'Retorno a Cusco'],
     itinerarioDetallado: [
@@ -92,8 +100,7 @@ const viajes = [
     guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['📱', '⛰️', '📷'], valoracion: 4 }
   },
   { 
-    destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, 
-    imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
+    destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
     galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
     itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
     itinerarioDetallado: [
@@ -104,11 +111,11 @@ const viajes = [
       'Día libre para explorar a tu ritmo. Sugerencias: Arashiyama, Bamboo Grove, templo Ryoan-ji. Shopping en Gion o Nishiki Market.'
     ],
     condiciones: 'Incluye entradas, ceremonia del té y kimono. Mascotas pequeñas permitidas.',
-    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['📱', '🎎', '📷'], valoracion: 5 }
+    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['📱', '🎎', '📷'], valoracion: 5 },
+    reseñas: []
   },
   { 
-    destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, 
-    imagen: 'images/japon.jpg', titulo: 'Japón Completo',
+    destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo',
     galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
     itinerario: ['Tokio: Shibuya', 'Asakusa y Akihabara', 'Monte Fuji', 'Kioto: templos', 'Arashiyama', 'Osaka: castillo', 'Nara', 'Hiroshima', 'Miyajima', 'Vuelta a Tokio', 'TeamLab', 'Harajuku', 'Compras', 'Tsukiji', 'Despedida'],
     itinerarioDetallado: [
@@ -129,7 +136,8 @@ const viajes = [
       'Check out y traslado al aeropuerto. Sayonara Japón. Entrega de regalos de despedida del tour.'
     ],
     condiciones: 'JR Pass incluido. Nivel físico medio. Largas caminatas diarias.',
-    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['📱', '🗾', '📷'], valoracion: 4 }
+    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['📱', '🗾', '📷'], valoracion: 4 },
+    reseñas: []
   }
 ];
 
@@ -737,15 +745,21 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   }
 
 
-  // Array para las reseñas
-  const todasLasReseñas = [
-    { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.' },
-    { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' },
-    { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.' },
-    { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.' },
-    { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.' },
-    { nombre: 'Pedro Sánchez', comentario: 'Volvería sin dudarlo. Destacar la atención al detalle en cada actividad.' }
-  ];
+  // Función para obtener reseñas del viaje seleccionado
+  function obtenerReseñas(viaje) {
+    const clave = 'reseñas_' + viaje.titulo;
+    const reseñasGuardadas = localStorage.getItem(clave);
+    return reseñasGuardadas ? JSON.parse(reseñasGuardadas) : (viaje.reseñas || []);
+  }
+
+  // Función para guardar reseñas del viaje seleccionado
+  function guardarReseñas(viaje, reseñas) {
+    const clave = 'reseñas_' + viaje.titulo;
+    localStorage.setItem(clave, JSON.stringify(reseñas));
+  }
+
+  // Obtener reseñas del viaje seleccionado
+  let reseñasViaje = obtenerReseñas(viajeSeleccionado);
 
   // Función para crear una reseña
   function crearReseña(nombre, comentario) {
@@ -795,7 +809,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   }
 
   // Generar las primeras 3 reseñas
-  generarReseñasIniciales(todasLasReseñas);
+  generarReseñasIniciales(reseñasViaje);
 
   // Configurar el modal
   const modal = document.querySelector('.modal-reseñas');
@@ -804,7 +818,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
 
   // Abrir modal al hacer clic en "Ver más reseñas"
   botonVerMas.addEventListener('click', () => {
-    mostrarTodasReseñas(todasLasReseñas);
+    mostrarTodasReseñas(reseñasViaje);
     modal.style.display = 'block';
     document.body.classList.add('modal-abierto');      // Bloquear scroll del body
   });
@@ -813,5 +827,45 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   botonCerrar.addEventListener('click', () => {
     modal.style.display = 'none';
     document.body.classList.remove('modal-abierto');   // Restaurar scroll del body
+  });
+
+  // Evento para enviar reseña
+  const enviarReseñaBoton = document.getElementById('enviar-reseña');
+  const nombreReseñaInput = document.getElementById('nombre-reseña');
+  const comentarioReseñaInput = document.getElementById('comentario-reseña');
+
+  enviarReseñaBoton.addEventListener('click', () => {
+    const nombre = nombreReseñaInput.value.trim();          // Obtener y limpiar el nombre
+    const comentario = comentarioReseñaInput.value.trim();  // Obtener y limpiar el comentario
+
+    // Limpiar validaciones previas
+    nombreReseñaInput.setCustomValidity('');
+    comentarioReseñaInput.setCustomValidity('');
+
+    // Validar campos
+    if (!nombre) {
+      nombreReseñaInput.setCustomValidity('El nombre es obligatorio.');
+      nombreReseñaInput.reportValidity();
+      return;
+    }
+    if (!comentario) {
+      comentarioReseñaInput.setCustomValidity('El comentario es obligatorio.');
+      comentarioReseñaInput.reportValidity();
+      return;
+    }
+
+    // Agregar nueva reseña
+    const nuevaReseña = { nombre, comentario };
+    reseñasViaje.push(nuevaReseña);
+
+    // Guardar en localStorage
+    guardarReseñas(viajeSeleccionado, reseñasViaje);
+
+    // Limpiar campos
+    nombreReseñaInput.value = '';
+    comentarioReseñaInput.value = '';
+
+    // Actualizar reseñas mostradas
+    generarReseñasIniciales(reseñasViaje);
   });
 }
