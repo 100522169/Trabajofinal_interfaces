@@ -421,6 +421,7 @@ footer nav a:focus-visible {
 }
 /* Estilo para el boton reservar*/
 .boton-reservar {
+  display: inline-block;       /* para que los padding y margin funcionen bien */
   background-color: black;
   color: white;
   border: none;
@@ -430,6 +431,8 @@ footer nav a:focus-visible {
   font-size: 18px;
   font-weight: bold;
   margin-top: 10px;
+  text-decoration: none;
+  text-align: center;
 }
 /* Efecto hover para el boton de reserva*/
 .boton-reservar:hover {

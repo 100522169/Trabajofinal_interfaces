@@ -869,3 +869,6 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     generarReseñasIniciales(reseñasViaje);
   });
 }
+
+
+/*Página formulario_compra.html*/
