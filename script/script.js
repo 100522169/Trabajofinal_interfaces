@@ -476,6 +476,8 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         // Guardar el viaje seleccionado y los viajes filtrados actuales en localStorage
         localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
         localStorage.setItem('viajesFiltradosActuales', JSON.stringify(currentFiltrados));
+        // Guardar el índice del viaje en el array filtrado actual
+        localStorage.setItem('indiceViajeSeleccionado', index.toString());    //index.toString() convierte el índice a cadena
         // Redirigir a la página de detalles
         window.location.href = 'detalles_viaje.html';
       });
@@ -561,8 +563,11 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      // Simplemente volver atrás en el historial para mantener los filtros
-      window.history.back();
+      // Limpiar el indicador de viaje de reserva y el índice
+      localStorage.removeItem('viajeReservaOrigen');
+      localStorage.removeItem('indiceViajeSeleccionado');
+      // Ir al listado de viajes
+      window.location.href = 'listado_viajes.html';
     });
   }
   
@@ -868,7 +873,166 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     // Actualizar reseñas mostradas
     generarReseñasIniciales(reseñasViaje);
   });
+
+  // Botón "Reservar ahora" - guardar índice del viaje y redirigir
+  const botonReservar = document.querySelector('.boton-reservar');
+  if (botonReservar) {
+    botonReservar.addEventListener('click', () => {
+      // Guardar el índice del viaje actual para poder volver
+      const indiceViaje = localStorage.getItem('indiceViajeSeleccionado');
+      if (indiceViaje) {
+        localStorage.setItem('viajeReservaOrigen', indiceViaje);
+      }
+      // Redirigir al formulario de compra
+      window.location.href = 'formulario_compra.html';
+    });
+  }
 }
 
 
+/*Página de formulario en general*/
+// Botón de vuelta atrás en formularios de compra
+if (window.location.pathname.includes("formulario_compra")) {
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      // Verificar si venimos de detalles de viaje
+      const indiceViajeOrigen = localStorage.getItem('viajeReservaOrigen');
+      
+      if (indiceViajeOrigen && window.location.pathname.includes("formulario_compra.html")) {
+        // Si estamos en paso 1, volver a detalles del viaje
+        localStorage.setItem('indiceViajeSeleccionado', indiceViajeOrigen);
+        window.location.href = 'detalles_viaje.html';
+      } else {
+        // Para otros pasos o si no hay viaje origen, volver atrás en el historial
+        window.history.back();
+      }
+    });
+  }
+}
+
 /*Página formulario_compra.html*/
+if (window.location.pathname.includes("formulario_compra.html")) {
+  // Funcionalidad del formulario de compra - Paso 1
+  const formularioPaso1 = document.querySelector('.formulario-pasos form');
+
+  if (formularioPaso1) {
+    // Obtener elementos DOM de los campos
+    const nombreInput = document.querySelector('.etiqueta input[placeholder="Nombre y apellidos"]');
+    const fechaInput = document.querySelector('.etiqueta input[type="date"]');
+    const telefonoInput = document.querySelector('.etiqueta input[placeholder="Teléfono"]');
+    const nacionalidadInput = document.querySelector('.etiqueta input[placeholder="Nacionalidad"]');
+    const correoInput = document.querySelector('.etiqueta input[placeholder="Correo electrónico"]');
+    const direccionInput = document.querySelector('.etiqueta input[placeholder="Dirección"]');
+
+    // Validar que el nombre y apellido tenga al menos dos palabras de 3 caracteres o más
+    if (nombreInput) {
+      nombreInput.addEventListener("input", () => {
+        const partesNombreApellido = nombreInput.value.trim().split(" ");
+        const Valido = partesNombreApellido.filter(partes => partes.length >= 3).length >= 2;
+
+        if (!Valido) {
+          nombreInput.setCustomValidity("El nombre y apellido debe estar compuesto por al menos dos palabras de 3 caracteres o más");
+        } else {
+          nombreInput.setCustomValidity("");
+        }
+      });
+    }
+
+    // Validar formato de correo electrónico
+    if (correoInput) {
+      correoInput.addEventListener("input", () => {
+        const regexCorreo = /^[\w-_.\+]{1,255}@([\w\d]+\.)+[A-Za-z]{2,3}$/;
+        if (!regexCorreo.test(correoInput.value)) {
+          correoInput.setCustomValidity("El correo electrónico no tiene un formato válido tipo nombre@dominio.extension");
+        } else {
+          correoInput.setCustomValidity("");
+        }
+      });
+    }
+
+    // Validar formato de teléfono (mínimo 9 dígitos)
+    if (telefonoInput) {
+      telefonoInput.addEventListener("input", () => {
+        const telefonoRegex = /^\d{9,}$/;
+        if (!telefonoRegex.test(telefonoInput.value.replace(/\s/g, ''))) {
+          telefonoInput.setCustomValidity("El número de teléfono debe contener al menos 9 dígitos");
+        } else {
+          telefonoInput.setCustomValidity("");
+        }
+      });
+    }
+
+    // Validar que la fecha de nacimiento sea válida
+    if (fechaInput) {
+      fechaInput.addEventListener("input", () => {
+        const fechaActual = new Date();
+        const fechaIngresada = new Date(fechaInput.value);
+        if (fechaIngresada >= fechaActual) {
+          fechaInput.setCustomValidity("La fecha de nacimiento debe ser una fecha válida en el pasado");
+        } else {
+          fechaInput.setCustomValidity("");
+        }
+      });
+    }
+
+    // Validar nacionalidad (solo letras, espacios y guiones, mínimo 3 caracteres)
+    if (nacionalidadInput) {
+      nacionalidadInput.addEventListener("input", () => {
+        const regexNacionalidad = /^[A-Za-zñÑ\s-]{3,}$/;
+        if (!regexNacionalidad.test(nacionalidadInput.value.trim())) {
+          nacionalidadInput.setCustomValidity("Introduce una nacionalidad válida (solo letras y espacios, mínimo 3 caracteres)");
+        } else {
+          nacionalidadInput.setCustomValidity("");
+        }
+      });
+    }
+
+    // Validar dirección (mínimo 5 caracteres y al menos una letra)
+    if (direccionInput) {
+      direccionInput.addEventListener("input", () => {
+        const regexDireccion = /^(?=.*[0-9])[A-Za-z0-9\s.,#-]{5,}$/;
+        if (!regexDireccion.test(direccionInput.value.trim())) {
+          direccionInput.setCustomValidity("Introduce una dirección válida (mínimo 5 caracteres y al menos un numero)");
+        } else {
+          direccionInput.setCustomValidity("");
+        }
+      });
+    }
+
+    // Manejar el envío del formulario
+    formularioPaso1.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Comprobar validez de todo el formulario antes de procesar
+      if (!formularioPaso1.checkValidity()) {
+        formularioPaso1.reportValidity();
+        return;
+      }
+
+      // Obtener valores de los campos
+      const nombre = nombreInput.value.trim();
+      const fecha = fechaInput.value;
+      const telefono = telefonoInput.value.trim();
+      const nacionalidad = nacionalidadInput.value.trim();
+      const correo = correoInput.value.trim();
+      const direccion = direccionInput.value.trim();
+
+      // Crear objeto con los datos del paso 1
+      const datosPaso1 = {
+        nombre: nombre,
+        fechaNacimiento: fecha,
+        telefono: telefono,
+        nacionalidad: nacionalidad,
+        correo: correo,
+        direccion: direccion,
+      };
+
+      // Guardar en localStorage
+      localStorage.setItem('formularioCompraPaso1', JSON.stringify(datosPaso1));
+
+      // Mensaje de éxito y redirección
+      alert('Datos guardados correctamente. Ahora serás redirigido al siguiente paso.');
+      window.location.href = 'formulario_compra2.html';
+    });
+  }
+}
