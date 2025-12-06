@@ -13,6 +13,7 @@ if (!usuarioActual) {
 const viajes = [
   { 
     destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla',
+    dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg'],
     itinerario: ['Madrid: Prado y Retiro', 'Barcelona: Sagrada Familia', 'Barrio Gótico y Rambla', 'Sevilla: Giralda', 'Real Alcázar', 'Plaza de España', 'Día libre'],
     itinerarioDetallado: [
@@ -33,6 +34,7 @@ const viajes = [
   },
   { 
     destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos',
+    dietasDisponibles: ['vegano', 'sin-gluten', 'sin-frutos-secos'],
     galeria: ['images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg'],
     itinerario: ['Trekking inicial', 'Ascenso a picos', 'Barranquismo y ferratas', 'Ruta final'],
     itinerarioDetallado: [
@@ -49,6 +51,7 @@ const viajes = [
   },
   { 
     destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago',
+    dietasDisponibles: ['vegetariano', 'sin-lactosa', 'sin-huevo', 'sin-frutos-secos', 'halal'],
     galeria: ['images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg'],
     itinerario: ['Sarria', 'Portomarín (20km)', 'Paisajes gallegos', 'Pueblos históricos', 'Palas de Rei', 'Arzúa', 'Etapa 7-8', 'Santiago de Compostela', 'Ceremonia'],
     itinerarioDetallado: [
@@ -70,6 +73,7 @@ const viajes = [
   },
   { 
     destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa',
+    dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg'],
     itinerario: ['City tour en Lima', 'Centro histórico y museos', 'Pachacámac', 'Playas de Miraflores'],
     itinerarioDetallado: [
@@ -86,6 +90,7 @@ const viajes = [
   },
   { 
     destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico',
+    dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg'],
     itinerario: ['Cusco: aclimatación', 'Valle Sagrado', 'Camino Inca día 1', 'Camino Inca día 2', 'Machu Picchu al amanecer', 'Retorno a Cusco'],
     itinerarioDetallado: [
@@ -101,6 +106,7 @@ const viajes = [
   },
   { 
     destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
+    dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
     galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
     itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
     itinerarioDetallado: [
@@ -116,6 +122,7 @@ const viajes = [
   },
   { 
     destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo',
+    dietasDisponibles: ['vegano', 'vegetariano', 'sin-pescado', 'sin-gluten', 'halal'],
     galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
     itinerario: ['Tokio: Shibuya', 'Asakusa y Akihabara', 'Monte Fuji', 'Kioto: templos', 'Arashiyama', 'Osaka: castillo', 'Nara', 'Hiroshima', 'Miyajima', 'Vuelta a Tokio', 'TeamLab', 'Harajuku', 'Compras', 'Tsukiji', 'Despedida'],
     itinerarioDetallado: [
@@ -140,6 +147,7 @@ const viajes = [
     reseñas: []
   }
 ];
+
 
 
 /*Página home.html*/
@@ -1036,3 +1044,345 @@ if (window.location.pathname.includes("formulario_compra.html")) {
     });
   }
 }
+
+
+
+/*Página formulario_compra2.html*/
+if (window.location.pathname.includes("formulario_compra2.html")) {
+  
+  // Obtener el viaje seleccionado desde localStorage
+  const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
+  
+  if (!viajeSeleccionado) {
+    alert('No se ha seleccionado ningún viaje');
+    window.location.href = 'listado_viajes.html';
+  }
+
+  // Catálogo completo de dietas con iconos
+  const catalogoDietas = {
+    'vegano': { nombre: 'Vegano', icono: 'images/dietas/vegano.jpg' },
+    'vegetariano': { nombre: 'Vegetariano', icono: 'images/dietas/vegetariano.jpg' },
+    'sin-gluten': { nombre: 'Sin gluten', icono: 'images/dietas/sin-gluten.jpg' },
+    'sin-lactosa': { nombre: 'Sin lactosa', icono: 'images/dietas/sin-lactosa.jpg' },
+    'sin-pescado': { nombre: 'Sin pescado', icono: 'images/dietas/sin-pescado.jpg' },
+    'sin-frutos-secos': { nombre: 'Sin frutos secos', icono: 'images/dietas/sin-frutos-secos.png' },
+    'sin-huevo': { nombre: 'Sin huevo', icono: 'images/dietas/sin-huevo.jpg' },
+    'halal': { nombre: 'Halal', icono: 'images/dietas/halal.jpg' },
+  };
+
+  // Obtener las dietas disponibles para este viaje
+  const dietasDelViaje = viajeSeleccionado.dietasDisponibles || [];
+  const contenedorDietas = document.querySelector('.dietas');
+
+  // Renderizar dietas del viaje
+  function renderizarDietasDelViaje() {
+    contenedorDietas.innerHTML = '';
+    
+    // Si no hay dietas, mostrar mensaje
+    if (dietasDelViaje.length === 0) {
+      contenedorDietas.innerHTML = '<p>No hay dietas específicas disponibles para este viaje</p>';
+      return;
+    }
+
+    // Mostrar las primeras 4 dietas
+    const dietasMostrar = dietasDelViaje.slice(0, 4);
+    
+    // Crear elementos para cada dieta
+    dietasMostrar.forEach(dietaId => {
+      const dieta = catalogoDietas[dietaId];
+      if (dieta) {
+        // Crear elemento para la dieta
+        const dietaItem = document.createElement('div');
+        dietaItem.className = 'dieta-item';
+        // Rellenar contenido
+        dietaItem.innerHTML = `
+          <div class="dieta-icon" style="background-image: url('${dieta.icono}')"></div>
+          <span class="dieta-label">${dieta.nombre}</span>
+        `;
+        contenedorDietas.appendChild(dietaItem);
+      }
+    });
+    
+    // Si hay más de 4 dietas, añadir botón de modal
+    if (dietasDelViaje.length > 4) {
+      const botonModal = document.createElement('button');
+      botonModal.className = 'dieta-modal';
+      botonModal.type = 'button';
+      botonModal.textContent = '...';                             // Texto del botón
+      botonModal.addEventListener('click', abrirModalDietas);
+      contenedorDietas.appendChild(botonModal);
+    }
+  }
+
+  renderizarDietasDelViaje();
+
+  // Modal de dietas - mostrar todas las dietas del viaje
+  function abrirModalDietas() {
+    const modal = document.createElement('div');
+    modal.className = 'modal-dietas';
+    modal.innerHTML = `
+      <div class="modal-contenido">
+        <h3>Dietas disponibles para este viaje</h3>
+        <div class="modal-dietas-container"></div>
+        <button class="cerrar-modal" type="button">Cerrar</button>
+      </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Rellenar el contenido del modal con todas las dietas
+    const container = modal.querySelector('.modal-dietas-container');
+    dietasDelViaje.forEach(dietaId => {
+      const dieta = catalogoDietas[dietaId];
+      if (dieta) {
+        const dietaItem = document.createElement('div');
+        dietaItem.className = 'dieta-item-modal';
+        dietaItem.innerHTML = `
+          <div class="dieta-icon" style="background-image: url('${dieta.icono}')"></div>
+          <span class="dieta-label">${dieta.nombre}</span>
+        `;
+        container.appendChild(dietaItem);
+      }
+    });
+    
+    // Eventos para cerrar el modal
+    modal.querySelector('.cerrar-modal').addEventListener('click', () => {
+      modal.remove();
+    });
+  }
+
+  // Gestión de acompañantes
+  const columnaAcompañantes = document.querySelector('.columna-acompañantes');
+  const botonAñadirAcompañante = columnaAcompañantes.querySelector('.boton-añadir');
+
+  // Función para aplicar validaciones a inputs de acompañante
+  function aplicarValidacionesAcompañante(nombreInput, correoInput) {
+    // Validar nombre y apellido (al menos 2 palabras de 3+ caracteres)
+    nombreInput.addEventListener("input", () => {
+      const partesNombreApellido = nombreInput.value.trim().split(" ");
+      const valido = partesNombreApellido.filter(parte => parte.length >= 3).length >= 2;
+
+      if (!valido) {
+        nombreInput.setCustomValidity("El nombre y apellido debe estar compuesto por al menos dos palabras de 3 caracteres o más");
+      } else {
+        nombreInput.setCustomValidity("");
+      }
+    });
+
+    // Validar formato de correo electrónico
+    correoInput.addEventListener("input", () => {
+      const regexCorreo = /^[\w-_.\+]{1,255}@([\w\d]+\.)+[A-Za-z]{2,3}$/;
+      if (!regexCorreo.test(correoInput.value)) {
+        correoInput.setCustomValidity("El correo electrónico no tiene un formato válido tipo nombre@dominio.extension");
+      } else {
+        correoInput.setCustomValidity("");
+      }
+    });
+  }
+
+  // Validar inputs de acompañante iniciales (se usa mas adelante para llamar a .checkValidity())
+  const nombreAcompañante = columnaAcompañantes.querySelector('input[placeholder="Nombre y apellidos"]');
+  const correoAcompañante = columnaAcompañantes.querySelector('input[placeholder="Correo electrónico"]');
+  
+  // Guardar referencias para validaciones en el botón siguiente
+  if (nombreAcompañante && correoAcompañante) {
+    aplicarValidacionesAcompañante(nombreAcompañante, correoAcompañante);
+  }
+
+  function añadirCamposAcompañante() {
+    const nuevoAcompañante = document.createElement('div');
+    nuevoAcompañante.className = 'grupo-acompañante';
+    nuevoAcompañante.innerHTML = `
+      <div class="input-icon">
+        <input type="text" placeholder="Nombre y apellidos" required>
+        <span class="icon">👤</span>
+      </div>
+      <div class="input-icon">
+        <input type="email" placeholder="Correo electrónico" required>
+        <span class="icon">📧</span>
+      </div>
+      <button class="boton-eliminar" type="button">Eliminar</button>
+    `;
+    
+    columnaAcompañantes.insertBefore(nuevoAcompañante, botonAñadirAcompañante);
+    
+    // Aplicar validaciones al nuevo acompañante
+    const nombre_input = nuevoAcompañante.querySelector('input[type="text"]');
+    const correo_input = nuevoAcompañante.querySelector('input[type="email"]');
+    aplicarValidacionesAcompañante(nombre_input, correo_input);
+    
+    // Evento para eliminar
+    nuevoAcompañante.querySelector('.boton-eliminar').addEventListener('click', () => {
+      nuevoAcompañante.remove();
+    });
+  }
+
+  // Evento para añadir acompañante (botón)
+  botonAñadirAcompañante.addEventListener('click', añadirCamposAcompañante);
+
+
+  // Gestión de mascotas - mostrar/ocultar campos
+  const radios = document.querySelectorAll('input[name="viajaMascota"]');     // Obtener los radio buttons
+  const camposMascota = document.querySelector('.etiqueta2');                 // Obtener contenedor de campos de mascota
+  const campoDocumentacion = document.querySelector('.subir-documentacion');  // Obtener campo de documentación
+
+  // Ocultar campos inicialmente
+  camposMascota.style.display = 'none';
+  campoDocumentacion.style.display = 'none';
+
+  // Evento para mostrar u ocultar campos según selección
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      // Si se selecciona "sí", mostrar campos; si "no", ocultar
+      if (radio.value === 'si' && radio.checked) {
+        camposMascota.style.display = 'flex';               // Usar flex para mantener el diseño
+        campoDocumentacion.style.display = 'block';         // Mostrar campo de documentación
+      } else if (radio.value === 'no' && radio.checked) {
+        camposMascota.style.display = 'none';
+        campoDocumentacion.style.display = 'none';
+      }
+    });
+  });
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'formulario_compra.html';
+    });
+  }
+
+  // Botón siguiente paso 
+  const botonSiguiente = document.querySelector('.boton-next');
+  if (botonSiguiente) {
+    botonSiguiente.addEventListener('click', () => {
+      // Validar el primer acompañante (opcional pero si hay contenido, debe estar completo)
+      const nombreInicial = nombreAcompañante.value.trim();
+      const emailInicial = correoAcompañante.value.trim();
+      
+      // Si hay contenido en uno pero no en el otro, es un error
+      if ((nombreInicial && !emailInicial) || (!nombreInicial && emailInicial)) {
+        alert('Si completas el primer acompañante, debes llenar tanto el nombre como el correo');
+        // Si falta nombre, reportar validez del campo correspondiente
+        if (!nombreInicial) nombreAcompañante.reportValidity();
+        // Si falta correo, reportar validez del campo correspondiente
+        else correoAcompañante.reportValidity();
+        return;
+      }
+      
+      // Si ambos campos tienen contenido, validar que sean válidos
+      if (nombreInicial && !nombreAcompañante.checkValidity()) {
+        nombreAcompañante.reportValidity();
+        return;
+      }
+      
+      if (emailInicial && !correoAcompañante.checkValidity()) {
+        correoAcompañante.reportValidity();
+        return;
+      }
+      
+      // Validar los grupos añadidos dinámicamente (si tienen contenido, debe ser completo y válido)
+      const gruposAcompañantes = document.querySelectorAll('.grupo-acompañante');
+      let hayErroresEnGrupos = false;
+      
+      gruposAcompañantes.forEach(grupo => {
+        const nombreInput = grupo.querySelector('input[type="text"]');
+        const emailInput = grupo.querySelector('input[type="email"]');
+        const nombre = nombreInput.value.trim();                        // Obtener y limpiar nombre
+        const email = emailInput.value.trim();                          // Obtener y limpiar correo   
+        
+        // Si hay contenido en uno pero no en el otro, es un error
+        if ((nombre && !email) || (!nombre && email)) {
+          alert('Cada acompañante debe tener tanto nombre como correo, o dejar ambos vacíos');
+          hayErroresEnGrupos = true;
+          return;
+        }
+        
+        // Si ambos tienen contenido, validar que sean válidos
+        if (nombre && !nombreInput.checkValidity()) {
+          nombreInput.reportValidity();
+          hayErroresEnGrupos = true;
+          return;
+        }
+        
+        if (email && !emailInput.checkValidity()) {
+          emailInput.reportValidity();
+          hayErroresEnGrupos = true;
+          return;
+        }
+      });
+      
+      // Si hubo errores en los grupos, no continuar
+      if (hayErroresEnGrupos) {
+        return;
+      }
+
+      // Recoger acompañantes válidos (solo los que estén completos)
+      const datosAcompañantes = [];
+      
+      // Acompañante inicial (solo si está completo)
+      if (nombreInicial && emailInicial) {
+        datosAcompañantes.push({ nombre: nombreInicial, email: emailInicial });
+      }
+      
+      // Grupos añadidos dinámicamente (solo si están completos)
+      gruposAcompañantes.forEach(grupo => {
+        const nombre_acompañante = grupo.querySelector('input[type="text"]').value.trim();
+        const correo_acompañante = grupo.querySelector('input[type="email"]').value.trim();
+        if (nombre_acompañante && correo_acompañante) {
+          datosAcompañantes.push({ nombre: nombre_acompañante, email: correo_acompañante });
+        }
+      });
+
+      // Validar selección de mascota (obligatorio seleccionar sí o no)
+      const viajaMascota = document.querySelector('input[name="viajaMascota"]:checked')?.value;
+      
+      // Si no se ha seleccionado ninguna opción
+      if (!viajaMascota) {
+        alert('Debes seleccionar si viajas con mascota o no');
+        return;
+      }
+      
+      // Mascota inicialmente nula
+      let datosMascota = null;
+      
+      if (viajaMascota === 'si') {
+        const nombreMascota = camposMascota.querySelector('input[placeholder="Nombre de la mascota"]').value.trim();
+        const tipoMascota = camposMascota.querySelector('input[placeholder="Tipo de mascota"]').value.trim();
+        const documentacion = campoDocumentacion.querySelector('input[type="file"]').files[0];
+        
+        // Nombre y tipo son obligatorios si viaja con mascota
+        if (!nombreMascota || !tipoMascota) {
+          alert('Si viajas con mascota, debes completar el nombre y tipo de mascota');
+          return;
+        }
+        
+        // Crear objeto de datos de mascota
+        datosMascota = {
+          nombre: nombreMascota,
+          tipo: tipoMascota,
+          documentacion: documentacion ? documentacion.name : null  // Documentación es opcional
+        };
+      }
+
+      // Recoger alergias
+      const alergias = document.querySelector('.columna-alergias input[type="text"]').value.trim();
+
+      // Crear objeto con todos los datos del paso 2
+      const datosPaso2 = {
+        acompañantes: datosAcompañantes,
+        viajaMascota: viajaMascota,
+        mascota: datosMascota,
+        alergias: alergias
+      };
+
+      // Guardar en localStorage
+      localStorage.setItem('formularioCompraPaso2', JSON.stringify(datosPaso2));
+
+      // Redirigir al paso 3
+      alert('Datos guardados correctamente. Ahora serás redirigido al siguiente paso.');
+      window.location.href = 'formulario_compra3.html';
+    });
+  }
+}
+
