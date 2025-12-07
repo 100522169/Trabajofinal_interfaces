@@ -123,11 +123,7 @@
                     <h3>Divisas de pago</h3>
                     <!-- Botones para seleccionar divisas -->
                     <div class="divisas-botones">
-                        <button class="boton-divisa" type="button">USD $</button>
-                        <button class="boton-divisa" type="button">EUR €</button>
-                        <button class="boton-divisa" type="button">GBP £</button>
-                        <button class="boton-divisa" type="button">JPY ¥</button>
-                        <button class="mas-divisas" type="button">...</button>
+                        <button class="mas-divisas" type="button">Selecciona una divisa</button>
                     </div>
                 </section>
 
@@ -135,19 +131,19 @@
                 <section class="metodo-pago">
                     <h3>Método de pago</h3>
                     <label class="metodo-item">
-                        <input type="radio" name="metodoPago">
+                        <input type="radio" name="metodoPago" value="tarjeta">
                         <span>Tarjeta bancaria</span>
                     </label>
                     <label class="metodo-item">
-                        <input type="radio" name="metodoPago">
+                        <input type="radio" name="metodoPago" value="transferencia">
                         <span>Transferencia bancaria</span>
                     </label>
                     <label class="metodo-item">
-                        <input type="radio" name="metodoPago">
+                        <input type="radio" name="metodoPago" value="digital">
                         <span>Pagos digitales (Paypal, Wise)</span>
                     </label>
                     <label class="metodo-item">
-                        <input type="radio" name="metodoPago">
+                        <input type="radio" name="metodoPago" value="financiacion">
                         <span>Financiación en cuotas</span>
                     </label>
                 </section>
@@ -156,8 +152,62 @@
                 <button class="boton-confirmar" type="button">Confirmar compra</button>
             </div>
         </section>
-
     </main>
+
+    <!-- Modal de más divisas -->
+    <section class="modal-divisas">
+        <article class="modal-contenido">
+            <div class="modal-header">
+                <h3>Selecciona una divisa</h3>
+                <button class="cerrar-modal" type="button">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="divisas-modal-contenedor">
+                    <button class="boton-divisa-modal" type="button" data-divisa="USD">USD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="EUR">EUR €</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="GBP">GBP £</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="JPY">JPY ¥</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="CNY">CNY ¥</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="CHF">CHF ₣</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="CAD">CAD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="AUD">AUD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="SGD">SGD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="MXN">MXN $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="KRW">KRW ₩</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="INR">INR ₹</button>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Modal de tarjeta bancaria -->
+    <section class="modal-tarjeta">
+        <article class="modal-contenido-tarjeta">
+            <div class="modal-header">
+                <h3>Datos de la tarjeta</h3>
+                <button class="cerrar-modal-tarjeta" type="button">X</button>
+            </div>
+            <div class="modal-body-tarjeta">
+                <form id="formTarjeta">
+                    <div class="campo-tarjeta">
+                        <label for="numeroTarjeta">Número de tarjeta</label>
+                        <input type="text" id="numeroTarjeta" placeholder="1234 2356 2389 4422" required>
+                    </div>
+                    <div class="campos-fila">
+                        <div class="campo-tarjeta">
+                            <label for="fechaExpiracion">Fecha de expiración</label>
+                            <input type="text" id="fechaExpiracion" placeholder="MM/AA" required>
+                        </div>
+                        <div class="campo-tarjeta">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" placeholder="123" required>
+                        </div>
+                    </div>
+                    <button type="button" class="boton-guardar-tarjeta">Guardar tarjeta</button>
+                </form>
+            </div>
+        </article>
+    </section>
 
     <footer>
         <nav>

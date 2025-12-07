@@ -899,7 +899,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
 
 
 /*Página de formulario en general*/
-// Botón de vuelta atrás en formularios de compra
+// Botón de vuelta atrás en formulario_compra
 if (window.location.pathname.includes("formulario_compra")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
@@ -1385,4 +1385,278 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
     });
   }
 }
+
+
+
+/*Página formulario_compra3.html*/
+// Botón de vuelta atrás
+if (window.location.pathname.includes("formulario_compra3.html")) {   
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'formulario_compra2.html';
+    });
+  }
+
+  // Obtener datos guardados
+  const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
+  const datosPaso2 = JSON.parse(localStorage.getItem('formularioCompraPaso2'));
+
+  // Verificar que existan los datos
+  if (!viajeSeleccionado) {
+    alert('No se ha seleccionado ningún viaje');
+    window.location.href = 'listado_viajes.html';
+  } else {
+
+  // Rellenar resumen del viaje
+  function rellenarResumen() {
+    // Destino
+    document.querySelector('.info-fila .contenido').textContent = 
+      viajeSeleccionado.titulo || viajeSeleccionado.destino;
+    
+    // Duración
+    document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent = 
+      `${viajeSeleccionado.duracion} días`;
+    
+    // Tipo de viaje
+    document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent = 
+      viajeSeleccionado.tipo;
+    
+    // Número de acompañantes
+    const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
+    document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
+    
+    // Mascotas
+    let textoMascota = 'No';
+    // Si viaja con mascota, si está disponible
+    if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
+        textoMascota = `Sí`;                     
+    }
+  
+    // Rellenar el campo de mascota
+    document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
+    
+    // Alergias
+    const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
+    document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
+    
+    // Precio final
+    const precioBase = viajeSeleccionado.precio;
+    const precioAcompañantes = numAcompañantes * precioBase;
+    const precioTotal = precioBase + precioAcompañantes;
+    document.querySelector('.precio-final').textContent = `${precioTotal.toFixed(2)} €`;   // Formatear a 2 decimales
+  }
+
+    rellenarResumen();
+
+    // Modal de divisas
+    const modal = document.querySelector('.modal-divisas');
+    const botonMasDivisas = document.querySelector('.mas-divisas');
+    const botonCerrar = document.querySelector('.cerrar-modal');
+    const botonesDivisaModal = document.querySelectorAll('.boton-divisa-modal');
+
+    // Abrir modal al hacer clic en "..."
+    if (botonMasDivisas) {
+      botonMasDivisas.addEventListener('click', () => {
+        modal.style.display = 'block';
+      });
+    }
+
+    // Cerrar modal al hacer clic en X
+    if (botonCerrar) {
+      botonCerrar.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+    }
+
+    // Nombres completos de las divisas
+    const nombresDivisas = {
+      'USD': 'el dólar americano',
+      'EUR': 'el euro',
+      'GBP': 'la libra esterlina',
+      'JPY': 'el yen japonés',
+      'CNY': 'el yuan chino',
+      'CHF': 'el franco suizo',
+      'CAD': 'el dólar canadiense',
+      'AUD': 'el dólar australiano',
+      'MXN': 'el peso mexicano',
+      'SGD': 'el dólar de Singapur',
+      'KRW': 'el won surcoreano',
+      'INR': 'la rupia india'
+    };
+
+    // Seleccionar divisa del modal
+    botonesDivisaModal.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const codigoDivisa = boton.getAttribute('data-divisa');
+        const nombreCompleto = nombresDivisas[codigoDivisa];
+        
+        console.log('Divisa seleccionada:', codigoDivisa);
+        
+        // Cerrar el modal
+        modal.style.display = 'none';
+        
+        // Mostrar mensaje personalizado
+        alert('Has seleccionado ' + nombreCompleto);
+      });
+    });
+
+    // Modal de tarjeta bancaria
+    const modalTarjeta = document.querySelector('.modal-tarjeta');
+    const cerrarModalTarjeta = document.querySelector('.cerrar-modal-tarjeta');
+    const formTarjeta = document.getElementById('formTarjeta');
+    const radioTarjeta = document.querySelector('input[name="metodoPago"][value="tarjeta"]');
+
+    // Abrir modal al seleccionar tarjeta bancaria
+    if (radioTarjeta) {
+      radioTarjeta.addEventListener('change', () => {
+        if (radioTarjeta.checked) {
+          modalTarjeta.style.display = 'block';
+        }
+      });
+    }
+
+    // Cerrar modal de tarjeta
+    if (cerrarModalTarjeta) {
+      cerrarModalTarjeta.addEventListener('click', () => {
+        modalTarjeta.style.display = 'none';
+        // Desmarcar el radio button si cierra sin guardar
+        radioTarjeta.checked = false;
+      });
+    }
+
+    // Validar número de tarjeta
+    const numeroTarjetaInput = document.getElementById('numeroTarjeta');
+    if (numeroTarjetaInput) {
+      numeroTarjetaInput.addEventListener('input', () => {
+        // Validar con regex 16 dígitos (debe tener espacios cada 4 dígitos)
+        const regexTarjeta = /^\d{4}( \d{4}){3}$/;    
+        if (!regexTarjeta.test(numeroTarjetaInput.value)) {
+          numeroTarjetaInput.setCustomValidity('El número de tarjeta debe tener el formato XXXX XXXX XXXX XXXX');
+        } else {
+          numeroTarjetaInput.setCustomValidity('');
+        }
+      });
+    }
+
+    // Validar fecha de expiración
+    const fechaExpiracionInput = document.getElementById('fechaExpiracion');
+    if (fechaExpiracionInput) {
+      fechaExpiracionInput.addEventListener('input', () => {
+        // Validar con regex: formato MM/AA
+        const regexFecha = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        if (fechaExpiracionInput.value.length === 5) {
+          if (!regexFecha.test(fechaExpiracionInput.value)) {
+            fechaExpiracionInput.setCustomValidity('La fecha debe estar entre 01 y 12 (formato MM/AA) y no debe estar expirada');
+          } else {
+            // Validar que no esté expirada
+            const [mes, anio] = fechaExpiracionInput.value.split('/');
+            const fechaActual = new Date();
+            const mesActual = fechaActual.getMonth() + 1;                                    // Mes actual (0-11, por eso +1)          
+            const anioActual = parseInt(fechaActual.getFullYear().toString().substring(2));  // Últimos dos dígitos del año
+            const anioTarjeta = parseInt(anio);
+            const mesTarjeta = parseInt(mes);
+            
+            // Si el año es menor o el mismo pero el mes es menor, está expirada
+            if (anioTarjeta < anioActual || (anioTarjeta === anioActual && mesTarjeta < mesActual)) {
+              fechaExpiracionInput.setCustomValidity('La tarjeta está expirada');
+            } else {
+              fechaExpiracionInput.setCustomValidity('');
+            }
+          }
+        } else if (fechaExpiracionInput.value.length > 0) {     // Si hay algo escrito pero no tiene 5 caracteres
+          fechaExpiracionInput.setCustomValidity('La fecha debe tener el formato MM/AA y no debe estar expirada');
+        } else {
+          fechaExpiracionInput.setCustomValidity('');
+        }
+      });
+    }
+
+    // Validar CVC
+    const cvcInput = document.getElementById('cvc');
+    if (cvcInput) {
+      cvcInput.addEventListener('input', () => {
+        // Validar exactamente 3 dígitos
+        const regexCVC = /^\d{3}$/;
+        if (!regexCVC.test(cvcInput.value)) {
+          cvcInput.setCustomValidity('El CVC debe tener exactamente 3 dígitos');
+        } else {
+          cvcInput.setCustomValidity('');
+        }
+      });
+    }
+
+    // Guardar datos de tarjeta
+    const botonGuardarTarjeta = document.querySelector('.boton-guardar-tarjeta');
+    if (botonGuardarTarjeta) {
+      botonGuardarTarjeta.addEventListener('click', () => {
+        // Validar todos los campos con regex antes de guardar
+        const regexTarjeta = /^\d{4}( \d{4}){3}$/;
+        const regexFecha = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        const regexCVC = /^\d{3}$/;
+        
+        // Validar número de tarjeta
+        if (!regexTarjeta.test(numeroTarjetaInput.value)) {
+          numeroTarjetaInput.setCustomValidity('El número de tarjeta debe tener el formato XXXX XXXX XXXX XXXX');
+          numeroTarjetaInput.reportValidity();
+          return;
+        } else {
+          numeroTarjetaInput.setCustomValidity('');
+        }
+        
+        // Validar fecha de expiración
+        if (!regexFecha.test(fechaExpiracionInput.value)) {
+          fechaExpiracionInput.setCustomValidity('La fecha debe tener el formato MM/AA válido');
+          fechaExpiracionInput.reportValidity();
+          return;
+        } else {
+          fechaExpiracionInput.setCustomValidity('');
+        }
+        
+        // Validar que no esté expirada
+        const [mes, anio] = fechaExpiracionInput.value.split('/');
+        const fechaActual = new Date();
+        const mesActual = fechaActual.getMonth() + 1;
+        const anioActual = parseInt(fechaActual.getFullYear().toString().substring(2));
+        const anioTarjeta = parseInt(anio);
+        const mesTarjeta = parseInt(mes);
+        
+        // Si el año es menor o el mismo pero el mes es menor, está expirada
+        if (anioTarjeta < anioActual || (anioTarjeta === anioActual && mesTarjeta < mesActual)) {
+          fechaExpiracionInput.setCustomValidity('La tarjeta está expirada');
+          fechaExpiracionInput.reportValidity();
+          return;
+        } else {
+          fechaExpiracionInput.setCustomValidity('');
+        }
+        
+        // Validar CVC
+        if (!regexCVC.test(cvcInput.value)) {
+          cvcInput.setCustomValidity('El CVC debe tener exactamente 3 dígitos');
+          cvcInput.reportValidity();
+          return;
+        } else {
+          cvcInput.setCustomValidity('');
+        }
+        
+        // Si todo está correcto, guardar
+        const datosTarjeta = {
+          numero: numeroTarjetaInput.value,
+          fechaExpiracion: fechaExpiracionInput.value,
+          cvc: cvcInput.value
+        };
+        
+        // Guardar en localStorage
+        localStorage.setItem('datosTarjeta', JSON.stringify(datosTarjeta));
+        
+        // Cerrar modal
+        modalTarjeta.style.display = 'none';
+        
+        // Confirmar guardado
+        alert('Datos de tarjeta guardados correctamente');
+      });
+    }
+  }
+}
+
 
