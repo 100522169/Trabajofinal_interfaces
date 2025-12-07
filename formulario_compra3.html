@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
     <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
     <link rel="stylesheet" href="style/style_formulario_compra3.css" />
-    <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
+    <script src="script/script.js" defer></script>                              <!-- Enlace al archivo externo de JavaScript -->
 </head>
 <body>
 
@@ -84,26 +84,32 @@
                     <h3>Resumen del viaje</h3>
                     <!-- Información del viaje -->
                     <div class="info-fila">
+                        <!-- Destino del viaje -->
                         <span class="etiqueta">Destino:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
+                        <!-- Duración del viaje -->
                         <span class="etiqueta">Duración:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
+                        <!-- Tipo de viaje -->
                         <span class="etiqueta">Tipo de viaje:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
+                        <!-- Numero de acompañantes -->
                         <span class="etiqueta">Acompañantes:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
+                        <!-- Mascotas -->
                         <span class="etiqueta">Mascotas:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
+                        <!-- Alergias -->
                         <span class="etiqueta">Alergias:</span>
                         <span class="contenido">?</span>
                     </div>
@@ -131,18 +137,22 @@
                 <section class="metodo-pago">
                     <h3>Método de pago</h3>
                     <label class="metodo-item">
+                        <!-- Opción de pago con tarjeta bancaria -->
                         <input type="radio" name="metodoPago" value="tarjeta">
                         <span>Tarjeta bancaria</span>
                     </label>
                     <label class="metodo-item">
+                        <!-- Opción de pago con transferencia bancaria -->
                         <input type="radio" name="metodoPago" value="transferencia">
                         <span>Transferencia bancaria</span>
                     </label>
                     <label class="metodo-item">
+                        <!-- Opción de pago con pagos digitales -->
                         <input type="radio" name="metodoPago" value="digital">
                         <span>Pagos digitales (Paypal, Wise)</span>
                     </label>
                     <label class="metodo-item">
+                        <!-- Opción de pago con financiación en cuotas -->
                         <input type="radio" name="metodoPago" value="financiacion">
                         <span>Financiación en cuotas</span>
                     </label>
@@ -156,13 +166,16 @@
 
     <!-- Modal de más divisas -->
     <section class="modal-divisas">
+        <!-- Contenedor del modal de más divisas -->
         <article class="modal-contenido">
             <div class="modal-header">
                 <h3>Selecciona una divisa</h3>
                 <button class="cerrar-modal" type="button">X</button>
             </div>
             <div class="modal-body">
+                <!-- Contenedor de botones de divisas -->
                 <div class="divisas-modal-contenedor">
+                    <!-- Botones de divisas -->
                     <button class="boton-divisa-modal" type="button" data-divisa="USD">USD $</button>
                     <button class="boton-divisa-modal" type="button" data-divisa="EUR">EUR €</button>
                     <button class="boton-divisa-modal" type="button" data-divisa="GBP">GBP £</button>
@@ -182,27 +195,35 @@
 
     <!-- Modal de tarjeta bancaria -->
     <section class="modal-tarjeta">
+        <!-- Contenedor del modal de tarjeta bancaria -->
         <article class="modal-contenido-tarjeta">
             <div class="modal-header">
                 <h3>Datos de la tarjeta</h3>
                 <button class="cerrar-modal-tarjeta" type="button">X</button>
             </div>
+            <!-- Cuerpo del modal de tarjeta bancaria -->
             <div class="modal-body-tarjeta">
+                <!-- Formulario de tarjeta bancaria -->
                 <form id="formTarjeta">
                     <div class="campo-tarjeta">
+                        <!-- Campo para el número de tarjeta -->
                         <label for="numeroTarjeta">Número de tarjeta</label>
                         <input type="text" id="numeroTarjeta" placeholder="1234 2356 2389 4422" required>
                     </div>
+                    <!-- Contenedor para fecha de expiración y CVC -->
                     <div class="campos-fila">
                         <div class="campo-tarjeta">
+                            <!-- Campo para la fecha de expiración -->
                             <label for="fechaExpiracion">Fecha de expiración</label>
                             <input type="text" id="fechaExpiracion" placeholder="MM/AA" required>
                         </div>
                         <div class="campo-tarjeta">
+                            <!-- Campo para el CVC -->
                             <label for="cvc">CVC</label>
                             <input type="text" id="cvc" placeholder="123" required>
                         </div>
                     </div>
+                    <!-- Botón para guardar la tarjeta -->
                     <button type="button" class="boton-guardar-tarjeta">Guardar tarjeta</button>
                 </form>
             </div>

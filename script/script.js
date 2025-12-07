@@ -919,6 +919,8 @@ if (window.location.pathname.includes("formulario_compra")) {
   }
 }
 
+
+
 /*Página formulario_compra.html*/
 if (window.location.pathname.includes("formulario_compra.html")) {
   // Funcionalidad del formulario de compra - Paso 1
