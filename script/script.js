@@ -1748,10 +1748,22 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
       alert('Redirigiendo a Wise...');
     });
   }
+
+  // Botón confirmar compra
+  const botonConfirmarCompra = document.querySelector('.boton-confirmar');
+  if (botonConfirmarCompra) {
+    botonConfirmarCompra.addEventListener('click', () => {
+      // Validar que se haya seleccionado un método de pago
+      const metodoPagoSeleccionado = document.querySelector('input[name="metodoPago"]:checked');
+      if (!metodoPagoSeleccionado) {
+        alert('Debes seleccionar un método de pago antes de finalizar la compra');
+        return;
+      }
+      // Redirigir a compra realizada
+      window.location.href = 'compra_realizada.html';
+    });
+  }
 }
-
-
-
 
 /*Página compra_realizada.html*/
 if (window.location.pathname.includes("compra_realizada.html")) {
@@ -1772,7 +1784,6 @@ if (window.location.pathname.includes("compra_realizada.html")) {
       alert('No se ha seleccionado ningún viaje');
       window.location.href = 'listado_viajes.html';
     } else {
-
       // Rellenar resumen del viaje en compra_realizada.html
       function rellenarResumenCompraRealizada() {
         // Destino

@@ -525,7 +525,7 @@ footer nav a:focus-visible {
 }
 /* Cuerpo del modal de tarjeta */
 .modal-body-tarjeta {
-  padding: 20px;
+  padding: 15px;
 }
 /* Formulario de tarjeta */
 #formTarjeta {
@@ -667,8 +667,7 @@ footer nav a:focus-visible {
 .boton-transferencia:hover {
   background: #004d00;
 }
-
-/* Contenedor del modal de PayPal */
+/* Contenedor del modal de pagos digitales */
 .modal-pagos-digitales {
   display: none;
   position: fixed;
@@ -679,7 +678,7 @@ footer nav a:focus-visible {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* Contenido del modal de PayPal */
+/* Contenido del modal de pagos digitales */
 .modal-contenedor-pagos-digitales {
   background-color: #fff;
   margin: 10% auto;
@@ -689,7 +688,7 @@ footer nav a:focus-visible {
   max-width: 500px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
-/* Botón cerrar modal de PayPal */
+/* Botón cerrar modal de pagos digitales */
 .cerrar-modal-pagos-digitales {
   background: none;
   border: none;
@@ -704,18 +703,18 @@ footer nav a:focus-visible {
   align-items: center;
   justify-content: center;
 }
-/* Efecto hover en el botón cerrar modal de PayPal */
+/* Efecto hover en el botón cerrar modal de pagos digitales */
 .cerrar-modal-pagos-digitales:hover {
   color: red;
 }
-/* Cuerpo del modal de PayPal */
+/* Cuerpo del modal de pagos digitales */
 .modal-cuerpo-pagos-digitales {
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-/* Información de PayPal */
+/* Información de pagos digitales */
 .info-pago-digital {
   display: flex;
   flex-direction: column;
@@ -726,7 +725,7 @@ footer nav a:focus-visible {
 .info-pago-digital p {
   margin: 0;
   font-size: 16px;
-  color: #222;
+  color: black;
 }
 /* Opciones de pago digital */
 .opciones-pago-digital {
