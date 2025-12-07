@@ -149,7 +149,7 @@
                     <label class="metodo-item">
                         <!-- Opción de pago con pagos digitales -->
                         <input type="radio" name="metodoPago" value="digital">
-                        <span>Pagos digitales (Paypal, Wise)</span>
+                        <span>Pagos digitales (Paypal o Wise)</span>
                     </label>
                     <label class="metodo-item">
                         <!-- Opción de pago con financiación en cuotas -->
@@ -196,7 +196,7 @@
     <!-- Modal de tarjeta bancaria -->
     <section class="modal-tarjeta">
         <!-- Contenedor del modal de tarjeta bancaria -->
-        <article class="modal-contenido-tarjeta">
+        <article class="modal-contenedor-tarjeta">
             <div class="modal-header">
                 <h3>Datos de la tarjeta</h3>
                 <button class="cerrar-modal-tarjeta" type="button">X</button>
@@ -226,6 +226,70 @@
                     <!-- Botón para guardar la tarjeta -->
                     <button type="button" class="boton-guardar-tarjeta">Guardar tarjeta</button>
                 </form>
+            </div>
+        </article>
+    </section>
+
+    <!-- Modal de transferencia bancaria -->
+    <section class="modal-transferencia">
+        <!-- Contenedor del modal de transferencia bancaria -->
+        <article class="modal-contenedor-transferencia">
+            <div class="modal-header">
+                <h3>Datos para transferencia bancaria</h3>
+                <!-- Botón para cerrar el modal -->
+                <button class="cerrar-modal-transferencia" type="button">X</button>
+            </div>
+            <!-- Cuerpo del modal de transferencia bancaria -->
+            <div class="modal-cuerpo-transferencia">
+                <!-- Información de transferencia -->
+                <div class="info-transferencia">
+                    <p><strong>Banco:</strong> Banco Nacional de España</p>
+                    <p><strong>Titular:</strong> Mochileros sin fronteras S.L.</p>
+                    <p><strong>IBAN:</strong> ES91 2100 0419 5402 0015 1732</p>
+                    <p><strong>BIC/SWIFT:</strong> BBVAESMM</p>
+                    <p><strong>Concepto:</strong> Viaje [Nombre del destino] - [Tu nombre]</p>
+                </div>
+                <!-- Nota adicional -->
+                <div class="nota-transferencia">
+                    <p>Por favor, incluye tu nombre y destino en el concepto de la transferencia.</p>
+                    <p>Una vez realizada la transferencia, te confirmaremos la reserva en un plazo máximo de 48 horas.</p>
+                </div>
+                <!-- Botón para confirmar que se ha leído la información -->
+                <button type="button" class="boton-transferencia">Entendido</button>
+            </div>
+        </article>
+    </section>
+
+    <!-- Modal de PayPal/Wise -->
+    <section class="modal-pagos-digitales">
+        <!-- Contenedor del modal de PayPal -->
+        <article class="modal-contenedor-pagos-digitales">
+            <div class="modal-header">
+                <h3>Pago con PayPal o Wise</h3>
+                 <!-- botón para cerrar el modal -->
+                <button class="cerrar-modal-pagos-digitales" type="button">X</button>
+            </div>
+            <!-- Cuerpo del modal de PayPal -->
+            <div class="modal-cuerpo-pagos-digitales">
+                <div class="info-pago-digital">
+                    <p>Serás redirigido a la plataforma de pago para completar tu compra de forma segura.</p>
+                    <!-- Opciones de pago digital -->
+                    <div class="opciones-pago-digital">
+                        <!-- Botones para PayPal y Wise -->
+                        <button type="button" class="boton-paypal">
+                            <span class="icono-paypal">💳</span>
+                            <span>Pagar con PayPal</span>
+                        </button>
+                        <button type="button" class="boton-wise">
+                            <span class="icono-wise">💰</span>
+                            <span>Pagar con Wise</span>
+                        </button>
+                    </div>
+                </div>
+                <!--Nota de aviso-->
+                <div class="nota-paypal">
+                    <p>Realizarás el pago en la plataforma oficial de PayPal o Wise.</p>
+                </div>
             </div>
         </article>
     </section>

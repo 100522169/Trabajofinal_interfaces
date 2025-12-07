@@ -495,7 +495,7 @@ footer nav a:focus-visible {
   background-color: rgba(0, 0, 0, 0.5);
 }
 /* Contenido del modal de tarjeta */
-.modal-contenido-tarjeta {
+.modal-contenedor-tarjeta {
   background-color: #fff;
   margin: 10% auto;
   padding: 0;
@@ -575,4 +575,216 @@ footer nav a:focus-visible {
 /* Efecto hover en el botón guardar tarjeta */
 .boton-guardar-tarjeta:hover {
   background: #004d00;
+}
+
+/* Contenedor del modal de transferencia */
+.modal-transferencia {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* Contenido del modal de transferencia */
+.modal-contenedor-transferencia {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 0;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+/* Botón cerrar modal de transferencia */
+.cerrar-modal-transferencia {
+  background: none;
+  border: none;
+  font-size: 32px;
+  font-weight: 300;
+  color: black;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Efecto hover en el botón cerrar modal de transferencia */
+.cerrar-modal-transferencia:hover {
+  color: red;
+}
+/* Cuerpo del modal de transferencia */
+.modal-cuerpo-transferencia {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Información de transferencia */
+.info-transferencia {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  border-left: 4px solid #006400;
+}
+/* Párrafos de información */
+.info-transferencia p {
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+}
+/* Nota de transferencia */
+.nota-transferencia {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* Párrafos de nota */
+.nota-transferencia p {
+  font-size: 14px;
+  color: black;
+}
+/* Botón entendido transferencia */
+.boton-transferencia {
+  padding: 14px;
+  border-radius: 10px;
+  background: #006400;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  align-items: center;
+}
+/* Efecto hover en el botón entendido transferencia */
+.boton-transferencia:hover {
+  background: #004d00;
+}
+
+/* Contenedor del modal de PayPal */
+.modal-pagos-digitales {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* Contenido del modal de PayPal */
+.modal-contenedor-pagos-digitales {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 0;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+/* Botón cerrar modal de PayPal */
+.cerrar-modal-pagos-digitales {
+  background: none;
+  border: none;
+  font-size: 32px;
+  font-weight: 300;
+  color: black;
+  cursor: pointer;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Efecto hover en el botón cerrar modal de PayPal */
+.cerrar-modal-pagos-digitales:hover {
+  color: red;
+}
+/* Cuerpo del modal de PayPal */
+.modal-cuerpo-pagos-digitales {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Información de PayPal */
+.info-pago-digital {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+/* Párrafo de información */
+.info-pago-digital p {
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+}
+/* Opciones de pago digital */
+.opciones-pago-digital {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* Botones de pago digital */
+.boton-paypal,
+.boton-wise {
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+/* Botón PayPal específico */
+.boton-paypal {
+  border-color: #0070ba;
+  color: #0070ba;
+}
+/* Botón Wise específico */
+.boton-wise {
+  border-color: #00b9ff;
+  color: #00b9ff;
+}
+/* Hover en botón PayPal */
+.boton-paypal:hover {
+  background: #0070ba;
+  color: #fff;
+}
+/* Hover en botón Wise */
+.boton-wise:hover {
+  background: #00b9ff;
+  color: #fff;
+}
+/* Iconos de PayPal y Wise */
+.icono-paypal,
+.icono-wise {
+  font-size: 27px;
+  margin-bottom: 7px;
+}
+/* Nota de pagos digitales */
+.nota-paypal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+/* Texto de nota */
+.nota-paypal p {
+  margin: 0;
+  font-size: 14px;
+  color: black;
 }

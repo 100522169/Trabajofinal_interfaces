@@ -161,8 +161,7 @@ footer nav a:focus-visible {
   text-decoration: underline;
 }
 
-
-/*detalle_viaje styles*/
+/*formulario_compra2 styles*/
 /* Estilos para la columna del boton-atras de detalles del viaje */
 .columna-boton-atras-detalles{
   position: relative;   /* fijo en la pantalla, no se mueve con scroll */
@@ -186,129 +185,88 @@ footer nav a:focus-visible {
 .columna-boton-atras-detalles button:hover {
    background: #004d00;
 }
-/* Estilos para el contenedor de detalles del viaje */
-.contenedor-detalles {
+/* Estilo para el contenedor de la compra realizada */
+.contenedor-compra{
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 20px;
-  max-width: 1400px;
-  margin: 0 auto;         /* centra el contenedor horizontalmente */
-  margin-top: var(--header-h);     /* Espacio adicional para que el contenido no quede pegado al header */
-  margin-bottom: var(--footer-h);  /* Espacio adicional para que el contenido no quede cortado por el footer */
-}
-/* Primera fila: Título y galería de imágenes */
-.titulo-detalles {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-/* Estilo para el título del viaje */
-.titulo-detalles h1 {
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  margin: 0;
-}
-/* Galería de imágenes */
-.galeria-imagenes {
-  display: flex;
-  gap: 7px;
-  justify-content: center;
-}
-/* Estilo para cada imagen en la galería */
-.imagen {
-  width: 250px;
-  height: 150px;
-  background-color: #d3d3d3;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid #999;
-  border-radius: 10px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
-/* Segunda fila: 3 columnas de información */
-.fila-informacion {
+/* Estilo para el círculo de cada etapa */
+.circulo-color{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: green;
+  border: 2px solid black;
   display: flex;
-  gap: 30px;
-  align-items: flex-start; /* Alinea las columnas al inicio, evita que se estiren verticalmente */
-}
-/* Columna 1: Itinerario del viaje */
-.columna-itinerario {
-  flex: 1;                /* ocupa el mismo espacio que las otras columnas */
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-  margin-right: 10px;
-}
-/* Estilo para el título de la columna de itinerario */
-.columna-itinerario h2 {
-  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
   font-weight: bold;
+  color: white;
   margin-bottom: 5px;
 }
-/* Contenedor del itinerario */
-.contenedor-itinerario {
+/* Estilo para el título de compra realizada */
+.contenedor-compra h1{
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* Contenedor principal para el resumen */
+.contenedor-principal{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
+  max-width: 800px;
+  margin: 30px auto;                /* centra horizontalmente */
+  padding: 0 40px;
 }
-/* Estilo para cada día del itinerario */
-.dia-itinerario {
+/* Estilo del resumen del viaje */
+.resumen-viaje{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* Título del resumen del viaje */
+.resumen-viaje h2{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+/* Fila de información con etiqueta y contenido separados */
+.info-fila{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 6px;
+  gap: 15px;
+  width: 100%;
 }
-/* Estilo para el boton de mas detalles */
-.boton-mas-detalles {
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 15px;
-  cursor: pointer;
-  font-size: 14px;
-  white-space: nowrap;            /* evita que el texto se divida en varias líneas */
+/* Estilo para las etiquetas (Destino:, Duración:, etc.) */
+.info-fila .etiqueta{
+  font-weight: 400;
+  font-size: 16px;
+  color: #222;
 }
-/* Efecto hover en el botón de más detalles */
-.boton-mas-detalles:hover {
-  background-color: #333;
+/* Estilo para el contenido */
+.info-fila .contenido{
+  font-size: 16px;
+  color: #222;
+  margin-left: auto;
+  text-align: right;
 }
-/* Estilo para el título de condiciones */
-.titulo-condiciones {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-/* Contenedor de condiciones */
-.contenedor-condiciones {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-/* Estilo para el contenedor de condiciones */
-.contenedor-condiciones p {
-  text-align: justify;          /* justifica el texto */
-}
-/* Columna 2: Información sobre el guía */
-.columna-guia {
-  flex: 1;
+/* Contenedor de la información del guía */
+.info-guia-contenedor {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-/* Estilo para el título de la columna de guía */
-.columna-guia h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.contenedor-info-guia {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* Título de la información del guía */
+.info-guia-contenedor h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 /* Estilo para la información del guía */
 .info-guia {
@@ -328,12 +286,13 @@ footer nav a:focus-visible {
   justify-content: center;
   overflow: hidden;
 }
+/* Imagen dentro del avatar */
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* info del guía dentro del avatar */
+/* Info del guía (texto) */
 .info-guia-texto {
   display: flex;
   flex-direction: column;
@@ -342,189 +301,6 @@ footer nav a:focus-visible {
 /* Estilo para los párrafos dentro de la info del guía */
 .info-guia-texto p {
   margin: 0;
-  font-weight: bold;
-}
-/* Estilo para los párrafos dentro de la columna de guía */
-.info-adicional-guia {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-/* Estilo para los párrafos dentro de la info adicional del guía */
-.info-adicional-guia p {
-  margin: 0;
-  font-size: 15px;
-}
-/* Estilo para las redes sociales del guía */
-.redes-sociales {
-  display: flex;
-  gap: 15px;
-  font-size: 24px;
-}
-/* Columna 3: Reseñas de otros usuarios */
-.columna-reseñas {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-/* Estilo del titulo de las reseñas*/
-.columna-reseñas h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-/* Estilo para el contenedor de las reseñas*/
-.contenedor-reseñas{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-/* Estilo para cada reseña */
-.reseña {
-  display: flex;
-  gap: 15px;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-}
-/* Estilo para la imagen de cada persona*/
-.reseña-avatar {
-  width: 60px;
-  height: 60px;
-  background-color: #ccc;
-  border-radius: 50%;
-  flex-shrink: 0;               /* Evita que el avatar se enconja*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* Estilo para el comentario*/
-.reseña-comentario {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-/* Estilo para el texto del comentario*/
-.reseña-comentario p {
-  font-size: 14px;
-}
-/* Estilo para el boton ver mas*/
-.boton-ver-mas {
-  background-color: #006400;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
-  width: 100%;
-}
-/* Efecto hover para el boton ver mas*/
-.boton-ver-mas:hover {
-  background-color: #004d00;
-}
-/* Estilo para el boton reservar*/
-.boton-reservar {
-  display: inline-block;       /* para que los padding y margin funcionen bien */
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
-  text-decoration: none;
-  text-align: center;
-}
-/* Efecto hover para el boton de reserva*/
-.boton-reservar:hover {
-  background-color: #333;
-}
-/* Estilos para el modal */
-.modal-reseñas {
-  display: none;
-  position: fixed;
-  z-index: 1001;      /*por encima del resto del contenido*/
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto;
-}
-/* Contenido del modal*/
-.modal-contenido {
-  background-color: white;
-  margin: 6.6% auto;   
-  padding: 30px;
-  border-radius: 10px;
-  width: 80%;
-  max-height: 75vh;    /* Altura del viewport*/
-  overflow-y: auto;    /* Evita que el contenido se salga del contenedor*/
-  position: relative;     
-}
-/* Estilo para la X para salir del modal*/
-.modal-cerrar {
-  color: black;
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-}
-/* Efecto hover en la X*/
-.modal-cerrar:hover {
-  color: red;
-}
-/* Estilo para las reseñas dentro del modal*/
-.modal-contenedor-reseñas {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
-/* Bloquear scroll del body cuando el modal está abierto */
-body.modal-abierto {
-  overflow: hidden;
-  position: fixed;
-}
-/* Estilos para el formulario de reseñas */
-.formulario-reseña {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-/* Estilo para el título del formulario de reseña*/
-.formulario-reseña h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: black;
-}
-/* Estilo para los inputs y textarea del formulario de reseña*/
-.formulario-reseña input {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
-}
-/* Estilo para el boton del formulario de reseña*/
-.formulario-reseña button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-/* Efecto hover en el botón del formulario de reseña*/
-.formulario-reseña button:hover {
-    background-color: #0056b3;
+  font-size: 16px;
+  color: #222;
 }

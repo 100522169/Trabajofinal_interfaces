@@ -26,7 +26,7 @@ const viajes = [
       'Día libre para actividades personales. Regreso y fin del tour.'
     ],
     condiciones: 'Incluye transporte, seguro y desayunos. Mascotas permitidas. Nivel físico: bajo-medio.',
-    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4 },
+    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años de experiencia', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4, avatar: 'images/avatar-maria.jpg' },
     reseñas: [
       { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.' },
       { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' }
@@ -44,7 +44,7 @@ const viajes = [
       'Ruta final de trekking hacia el punto de partida. Descenso controlado y ceremonia de despedida del grupo.'
     ],
     condiciones: 'Alta intensidad física. Incluye equipo de montaña y guía profesional. No mascotas.',
-    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['📱', '🏔️', '📷'], valoracion: 5 },
+    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años de experiencia', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['📱', '🏔️', '📷'], valoracion: 5, avatar: 'images/avatar-carlos.jpg' },
     reseñas: [
       { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.' }
     ]
@@ -66,7 +66,7 @@ const viajes = [
       'Misa del Peregrino en la Catedral. Certificado de Compostela. Tarde libre para explorar la ciudad y celebrar.'
     ],
     condiciones: 'Incluye albergues, transporte de mochila y credencial. Buena condición física.',
-    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['📱', '⛪', '📷'], valoracion: 4 },
+    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años de experiencia', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['📱', '⛪', '📷'], valoracion: 4, avatar: 'images/avatar-santiago.jpg' },
     reseñas: [
       { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.' }
     ]
@@ -83,7 +83,7 @@ const viajes = [
       'Día en las playas de Miraflores. Posibilidad de parapente sobre el Pacífico. Cena de despedida con show de marinera.'
     ],
     condiciones: 'Todo incluido. Mascotas pequeñas permitidas. Nivel físico: bajo.',
-    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['📱', '🌄', '📷'], valoracion: 3 },
+    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años de experiencia', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['📱', '🌄', '📷'], valoracion: 3, avatar: 'images/avatar-miguel.jpg' },
     reseñas: [
       { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.' }
     ]
@@ -102,7 +102,7 @@ const viajes = [
       'Tren panorámico de regreso a Cusco. Tarde libre en Cusco para compras y descanso. Cena de celebración en restaurante típico.'
     ],
     condiciones: 'Entrada incluida, equipo de camping. Muy buena condición física requerida.',
-    guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['📱', '⛰️', '📷'], valoracion: 4 }
+    guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años de experiencia', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['📱', '⛰️', '📷'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' }
   },
   { 
     destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
@@ -117,7 +117,7 @@ const viajes = [
       'Día libre para explorar a tu ritmo. Sugerencias: Arashiyama, Bamboo Grove, templo Ryoan-ji. Shopping en Gion o Nishiki Market.'
     ],
     condiciones: 'Incluye entradas, ceremonia del té y kimono. Mascotas pequeñas permitidas.',
-    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['📱', '🎎', '📷'], valoracion: 5 },
+    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años de experiencia', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['📱', '🎎', '📷'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
     reseñas: []
   },
   { 
@@ -143,7 +143,7 @@ const viajes = [
       'Check out y traslado al aeropuerto. Sayonara Japón. Entrega de regalos de despedida del tour.'
     ],
     condiciones: 'JR Pass incluido. Nivel físico medio. Largas caminatas diarias.',
-    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['📱', '🗾', '📷'], valoracion: 4 },
+    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años de experiencia', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['📱', '🗾', '📷'], valoracion: 4, avatar: 'images/pirineos.jpg' },
     reseñas: []
   }
 ];
@@ -676,7 +676,8 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       idiomas = 'B2(Inglés) y C2(Español)',
       contacto = '+34 XXX XXX XXX',
       redesSociales = ['📱', '💼', '📷'],
-      valoracion = 3
+      valoracion = 3,
+      avatar = ''
     } = guia;
     
     // Crear sección de info básica
@@ -684,8 +685,16 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     infoGuiaDiv.className = 'info-guia';
     
     // Crear avatar
-    const avatar = document.createElement('div');
-    avatar.className = 'avatar';
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'avatar';
+    
+    // Si hay imagen de avatar, añadirla
+    if (avatar) {
+      const avatarImg = document.createElement('img');
+      avatarImg.src = avatar;
+      avatarImg.alt = `Avatar de ${nombre}`;
+      avatarDiv.appendChild(avatarImg);
+    }
     
     // Crear sección de texto info básica
     const infoTexto = document.createElement('div');
@@ -697,7 +706,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     `;
     
     // Agregar avatar e info texto al div de info básica
-    infoGuiaDiv.appendChild(avatar);
+    infoGuiaDiv.appendChild(avatarDiv);
     infoGuiaDiv.appendChild(infoTexto);
     
     
@@ -1191,6 +1200,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
     aplicarValidacionesAcompañante(nombreAcompañante, correoAcompañante);
   }
 
+  // Función para añadir nuevos campos de acompañante
   function añadirCamposAcompañante() {
     const nuevoAcompañante = document.createElement('div');
     nuevoAcompañante.className = 'grupo-acompañante';
@@ -1206,6 +1216,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
       <button class="boton-eliminar" type="button">Eliminar</button>
     `;
     
+    // Insertar antes del botón de añadir
     columnaAcompañantes.insertBefore(nuevoAcompañante, botonAñadirAcompañante);
     
     // Aplicar validaciones al nuevo acompañante
@@ -1410,44 +1421,44 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
     window.location.href = 'listado_viajes.html';
   } else {
 
-  // Rellenar resumen del viaje
-  function rellenarResumen() {
-    // Destino
-    document.querySelector('.info-fila .contenido').textContent = 
-      viajeSeleccionado.titulo || viajeSeleccionado.destino;
+    // Rellenar resumen del viaje
+    function rellenarResumen() {
+      // Destino
+      document.querySelector('.info-fila .contenido').textContent = 
+        viajeSeleccionado.titulo || viajeSeleccionado.destino;
+      
+      // Duración
+      document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent = 
+        `${viajeSeleccionado.duracion} días`;
+      
+      // Tipo de viaje
+      document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent = 
+        viajeSeleccionado.tipo;
+      
+      // Número de acompañantes
+      const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
+      document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
+      
+      // Mascotas
+      let textoMascota = 'No';
+      // Si viaja con mascota, si está disponible
+      if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
+          textoMascota = `Sí`;                     
+      }
     
-    // Duración
-    document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent = 
-      `${viajeSeleccionado.duracion} días`;
-    
-    // Tipo de viaje
-    document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent = 
-      viajeSeleccionado.tipo;
-    
-    // Número de acompañantes
-    const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
-    document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
-    
-    // Mascotas
-    let textoMascota = 'No';
-    // Si viaja con mascota, si está disponible
-    if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
-        textoMascota = `Sí`;                     
+      // Rellenar el campo de mascota
+      document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
+      
+      // Alergias
+      const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
+      document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
+      
+      // Precio final
+      const precioBase = viajeSeleccionado.precio;
+      const precioAcompañantes = numAcompañantes * precioBase;
+      const precioTotal = precioBase + precioAcompañantes;
+      document.querySelector('.precio-final').textContent = `${precioTotal.toFixed(2)} €`;   // Formatear a 2 decimales
     }
-  
-    // Rellenar el campo de mascota
-    document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
-    
-    // Alergias
-    const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
-    document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
-    
-    // Precio final
-    const precioBase = viajeSeleccionado.precio;
-    const precioAcompañantes = numAcompañantes * precioBase;
-    const precioTotal = precioBase + precioAcompañantes;
-    document.querySelector('.precio-final').textContent = `${precioTotal.toFixed(2)} €`;   // Formatear a 2 decimales
-  }
 
     rellenarResumen();
 
@@ -1659,6 +1670,189 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
       });
     }
   }
+
+  // Modal de transferencia bancaria
+  const modalTransferencia = document.querySelector('.modal-transferencia');
+  const cerrarModalTransferencia = document.querySelector('.cerrar-modal-transferencia');
+  const radioTransferencia = document.querySelector('input[name="metodoPago"][value="transferencia"]');
+  const botonTransferencia = document.querySelector('.boton-transferencia');
+
+  // Abrir modal al seleccionar transferencia bancaria
+  if (radioTransferencia) {
+    // Si se selecciona transferencia, abrir modal
+    radioTransferencia.addEventListener('change', () => {
+      if (radioTransferencia.checked) {
+        modalTransferencia.style.display = 'block';    // Mostrar modal de transferencia
+      }
+    });
+  }
+
+  // Cerrar modal de transferencia con la X
+  if (cerrarModalTransferencia) {
+    cerrarModalTransferencia.addEventListener('click', () => {
+      modalTransferencia.style.display = 'none';
+      // Desmarcar el radio button si cierra sin confirmar
+      radioTransferencia.checked = false;
+    });
+  }
+
+  // Cerrar modal de transferencia con el botón "Entendido"
+  if (botonTransferencia) {
+    botonTransferencia.addEventListener('click', () => {
+      modalTransferencia.style.display = 'none';
+      // Mantener el radio button seleccionado
+      alert('Información guardada. Recuerda realizar la transferencia con los datos proporcionados.');    // Mensaje de confirmación
+    });
+  }
+
+
+  // Modal de PayPal/Wise
+  const modalPagosDigitales = document.querySelector('.modal-pagos-digitales');
+  const cerrarModalPagosDigitales = document.querySelector('.cerrar-modal-pagos-digitales');
+  const radioPagoDigital = document.querySelector('input[name="metodoPago"][value="digital"]');
+  const botonPaypal = document.querySelector('.boton-paypal');
+  const botonWise = document.querySelector('.boton-wise');
+
+  // Abrir modal al seleccionar pagos digitales
+  if (radioPagoDigital) {
+    radioPagoDigital.addEventListener('change', () => {
+      if (radioPagoDigital.checked) {
+        modalPagosDigitales.style.display = 'block';
+      }
+    });
+  }
+
+  // Cerrar modal de PayPal con la X
+  if (cerrarModalPagosDigitales) {
+    cerrarModalPagosDigitales.addEventListener('click', () => {
+      modalPagosDigitales.style.display = 'none';
+      // Desmarcar el radio button si cierra sin confirmar
+      radioPagoDigital.checked = false;
+    });
+  }
+
+  // Pagar con PayPal 
+  if (botonPaypal) {
+    botonPaypal.addEventListener('click', () => {
+      modalPagosDigitales.style.display = 'none';
+      // En un proyecto real, aquí redirigirías a PayPal
+      alert('Redirigiendo a PayPal...');
+    });
+  }
+
+  // Pagar con Wise 
+  if (botonWise) {
+    botonWise.addEventListener('click', () => {
+      modalPagosDigitales.style.display = 'none';
+      // En un proyecto real, aquí redirigirías a Wise
+      alert('Redirigiendo a Wise...');
+    });
+  }
 }
 
 
+
+
+/*Página compra_realizada.html*/
+if (window.location.pathname.includes("compra_realizada.html")) {
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'formulario_compra3.html';
+    });
+  }
+  
+  if (document.querySelector('.contenedor-compra')) {
+    // Obtener datos guardados
+    const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
+    const datosPaso2 = JSON.parse(localStorage.getItem('formularioCompraPaso2'));
+
+    // Verificar que existan los datos
+    if (!viajeSeleccionado) {
+      alert('No se ha seleccionado ningún viaje');
+      window.location.href = 'listado_viajes.html';
+    } else {
+
+      // Rellenar resumen del viaje en compra_realizada.html
+      function rellenarResumenCompraRealizada() {
+        // Destino
+        document.querySelector('.info-fila .contenido').textContent = 
+          viajeSeleccionado.titulo || viajeSeleccionado.destino;
+        
+        // Duración
+        document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent = 
+          `${viajeSeleccionado.duracion} días`;
+        
+        // Tipo de viaje
+        document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent = 
+          viajeSeleccionado.tipo;
+        
+        // Número de acompañantes
+        const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
+        document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
+        
+        // Mascotas
+        let textoMascota = 'No';
+        // Si viaja con mascota, si está disponible
+        if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
+          textoMascota = `Sí`;                     
+        }
+      
+        // Rellenar el campo de mascota
+        document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
+        
+        // Alergias
+        const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
+        document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
+        
+        // Coste total 
+        const precioBase = viajeSeleccionado.precio;
+        const precioAcompañantes = numAcompañantes * precioBase;
+        const precioTotal = precioBase + precioAcompañantes;
+        document.querySelectorAll('.info-fila')[6].querySelector('.contenido').textContent = `${precioTotal.toFixed(2)} €`;
+      }
+
+      // Rellenar información del guía
+      function rellenarInfoGuia() {
+        const infoGuiaTexto = document.querySelector('.info-guia-texto');
+        const avatarDiv = document.querySelector('.avatar');
+        
+        if (viajeSeleccionado.guia) {
+          // Actualizar avatar si existe
+          if (avatarDiv && viajeSeleccionado.guia.avatar) {
+            avatarDiv.innerHTML = '';
+            // Crear y añadir la imagen del avatar
+            const avatarImg = document.createElement('img');
+            avatarImg.src = viajeSeleccionado.guia.avatar;
+            avatarImg.alt = `Avatar de ${viajeSeleccionado.guia.nombre}`;
+            avatarDiv.appendChild(avatarImg);
+          }
+          
+          // Actualizar texto del guía
+          if (infoGuiaTexto) {
+            const parrafos = infoGuiaTexto.querySelectorAll('p');
+            
+            // Nombre y apellidos
+            if (parrafos[0]) {
+              parrafos[0].textContent = viajeSeleccionado.guia.nombre || 'Nombre y apellidos';
+            }
+            
+            // Edad
+            if (parrafos[1]) {
+              parrafos[1].textContent = viajeSeleccionado.guia.edad || 'Edad';
+            }
+            
+            // Teléfono de contacto
+            if (parrafos[2]) {
+              parrafos[2].textContent = viajeSeleccionado.guia.contacto || 'Telefono';
+            }
+          }
+        }
+      }
+
+      // Ejecutar las funciones
+      rellenarResumenCompraRealizada();
+      rellenarInfoGuia();
+    }
+  }
+}
