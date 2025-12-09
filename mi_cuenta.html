@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
+    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="style/style_mi_cuenta.css" />
+    <script src="script/script.js" defer></script>                              <!-- Enlace al archivo externo de JavaScript -->
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Logotipo del sitio">
+        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Otros rincones</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Mi cuenta</a></li>
+                
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <!--botón marcha atrás-->
+     <section class="columna-boton-atras-detalles">
+        <button type="button">⬅</button>
+    </section>
+
+    <main class="mi-cuenta-contenedor">
+        <!-- Sidebar de navegación -->
+        <aside class="sidebar">
+            <nav>
+                <a href="#" class="nav-item active" data-section="datos-personales">Datos personales</a>
+                <a href="#" class="nav-item" data-section="mis-reservas">Mis reservas</a>
+                <a href="#" class="nav-item" data-section="configuracion">Configuración</a>
+                <button class="nav-item boton-cerrar-sesion">Cerrar sesión</button>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="contenido-principal">
+            <!-- Sección Datos Personales -->
+            <section id="datos-personales" class="seccion-contenido active">
+                <h2>Datos personales</h2>
+                <div class="datos-personales-content">
+                    <div class="avatar-usuario">
+                        <!--Imagen del avatar del usuario-->
+                        <img id="avatar-img" src="" alt="Avatar del usuario">
+                    </div>
+                    <div class="info-usuario">
+                        <div class="info-fila">
+                            <span class="etiqueta">Nombre:</span>
+                            <span class="valor" id="nombre-usuario"></span>
+                        </div>
+                        <div class="info-fila">
+                            <span class="etiqueta">Apellidos:</span>
+                            <span class="valor" id="apellido-usuario"></span>
+                        </div>
+                        <div class="info-fila">
+                            <span class="etiqueta">Correo:</span>
+                            <span class="valor" id="correo-usuario"></span>
+                        </div>
+                        <div class="info-fila">
+                            <span class="etiqueta">Fecha de nacimiento:</span>
+                            <span class="valor" id="fecha-nacimiento-usuario"></span>
+                        </div>
+                        <div class="info-fila">
+                            <span class="etiqueta">Usuario:</span>
+                            <span class="valor" id="usuario-acceso"></span>
+                        </div>
+                        <div class="info-fila">
+                            <span class="etiqueta">Contraseña:</span>
+                            <span class="valor" id="contraseña-usuario"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Mis Reservas -->
+            <section id="mis-reservas" class="seccion-contenido">
+                <h2>Mis reservas</h2>
+                <div class="reservas-contenedor">
+                    <!-- Las reservas se generarán dinámicamente con JavaScript -->
+                </div>
+            </section>
+
+            <!-- Sección Configuración -->
+            <section id="configuracion" class="seccion-contenido">
+                <h2>Configuración</h2>
+                <div class="configuracion-content">
+                    <div class="config-item">
+                        <label for="idioma-config">Idioma</label>
+                        <select id="idioma-config">
+                            <option value="es">Español</option>
+                            <option value="en">English</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                    <div class="config-item">
+                        <label for="divisa-config">Divisa predeterminada</label>
+                        <select id="divisa-config">
+                            <option value="eur">EUR (€)</option>
+                            <option value="usd">USD ($)</option>
+                            <option value="gbp">GBP (£)</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modal para ver detalles de reserva -->
+        <div id="modal-detalle-reserva" class="modal-reserva">
+            <div class="modal-reserva-contenido">
+                <span class="cerrar-modal">X</span>
+                <h2>Detalles de la reserva</h2>
+                <div id="detalle-reserva-body">
+                    <!-- El contenido se llenará dinámicamente -->
+                </div>
+                <button class="btn-imprimir-reserva">Imprimir reserva</button>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <nav>
+            <a href="#">Ayuda</a>
+            <a href="#">Contacto</a>
+            <a href="#">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+</html>

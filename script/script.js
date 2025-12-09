@@ -1,13 +1,21 @@
-// Verificar si el usuario está logueado y ocultar "Mi cuenta" si no lo está
+// Verificar si el usuario está logueado y configurar "Mi cuenta"
 const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
-if (!usuarioActual) {
-  const micuenta = document.querySelectorAll('nav a');
-  micuenta.forEach(link => {
-    if (link.textContent.trim() === 'Mi cuenta') {  /*link.textContent lo que hace es obtener el texto dentro del enlace*/
-      link.parentElement.style.display = 'none';    /*link.parentElement accede al elemento padre del enlace, que en este caso es el elemento <li>*/
+const micuentaLinks = document.querySelectorAll('nav a');
+micuentaLinks.forEach(link => {
+  if (link.textContent.trim() === 'Mi cuenta') {
+    if (!usuarioActual) {
+      // Ocultar si no está logueado
+      link.parentElement.style.display = 'none';
+    } else {
+      // Configurar enlace si está logueado
+      link.href = 'mi_cuenta.html';
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'mi_cuenta.html';
+      });
     }
-  });
-}
+  }
+});
 
 // Definir los viajes disponibles
 const viajes = [
@@ -1759,6 +1767,33 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         alert('Debes seleccionar un método de pago antes de finalizar la compra');
         return;
       }
+      
+      // Guardar la reserva en localStorage antes de redirigir
+      try {
+        const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado')) || null;
+        const datosPaso1 = JSON.parse(localStorage.getItem('formularioCompraPaso1')) || null;
+        const datosPaso2 = JSON.parse(localStorage.getItem('formularioCompraPaso2')) || null;
+        const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual')) || null;
+
+        // Si existen los datos necesarios, guardar la reserva
+        if (viajeSeleccionado && usuarioActual) {
+          const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+          const nuevaReserva = {
+            id: 'resv-' + Date.now(),                 // ID único basado en timestamp
+            usuario: usuarioActual.acceso || usuarioActual.correo || usuarioActual.nombre,
+            usuarioEmail: usuarioActual.correo || '',
+            viaje: viajeSeleccionado,
+            datosPaso1: datosPaso1 || {},
+            datosPaso2: datosPaso2 || {},
+            fechaCompra: new Date().toISOString()     // Fecha y hora de la compra
+          };
+          reservas.push(nuevaReserva);
+          localStorage.setItem('reservas', JSON.stringify(reservas));
+        }
+      } catch (e) {
+        console.error('Error guardando la reserva:', e);
+      }
+      
       // Redirigir a compra realizada
       window.location.href = 'compra_realizada.html';
     });
@@ -1878,14 +1913,258 @@ if (window.location.pathname.includes("compra_realizada.html")) {
     });
   }
 
-  // Funcionalidad del botón Mi Cuenta (por ahora sin funcionalidad)
+  // Funcionalidad del botón Mi Cuenta
   const botonMiCuenta = document.querySelector('.boton-mi-cuenta');
   if (botonMiCuenta) {
     botonMiCuenta.addEventListener('click', () => {
-      // Por implementar más adelante
-      alert('Funcionalidad de Mi Cuenta próximamente');
+      window.location.href = 'mi_cuenta.html';
     });
   }
 }
 
+
+/*Página mi_cuenta.html*/
+if (window.location.pathname.includes("mi_cuenta.html")) {
+  // Verificar si hay usuario logueado
+  const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+  if (!usuarioActual) {
+    alert('Debes iniciar sesión para acceder a tu cuenta');
+    window.location.href = 'inicio_sesion.html';
+  }
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+  }
+
+  // Navegación entre secciones
+  const navItems = document.querySelectorAll('.nav-item:not(.boton-cerrar-sesion)');
+  const secciones = document.querySelectorAll('.seccion-contenido');
+
+  // Evento para cada ítem de navegación
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const seccionId = item.dataset.section;
+      
+      // Actualizar nav items activos
+      navItems.forEach(nav => nav.classList.remove('active'));
+      item.classList.add('active');
+      
+      // Mostrar sección correspondiente
+      secciones.forEach(seccion => seccion.classList.remove('active'));
+      document.getElementById(seccionId).classList.add('active');
+    });
+  });
+
+  // Rellenar datos personales
+  function cargarDatosPersonales() {
+    if (usuarioActual) {
+      // Avatar
+      const avatarImg = document.getElementById('avatar-img');
+      if (avatarImg && usuarioActual.imagen) {
+        avatarImg.src = usuarioActual.imagen;       // Asignar imagen del usuario
+      }
+
+      // Información del usuario
+      document.getElementById('nombre-usuario').textContent = usuarioActual.nombre || '-';
+      document.getElementById('apellido-usuario').textContent = usuarioActual.apellido || '-';
+      document.getElementById('correo-usuario').textContent = usuarioActual.correo || '-';
+      document.getElementById('fecha-nacimiento-usuario').textContent = usuarioActual.fechaNacimiento || '-';
+      document.getElementById('usuario-acceso').textContent = usuarioActual.acceso || '-';
+      document.getElementById('contraseña-usuario').textContent = usuarioActual.contraseña || '-';
+    }
+  }
+
+  // Cargar reservas del usuario
+  function cargarReservas() {
+    const reservasContenedor = document.querySelector('.reservas-contenedor');
+    const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+    
+    // Filtrar reservas del usuario actual
+    const reservasUsuario = reservas.filter(r => 
+      r.usuario === usuarioActual.acceso || 
+      r.usuario === usuarioActual.correo || 
+      r.usuarioEmail === usuarioActual.correo
+    );
+
+    // Si no hay reservas, mostrar mensaje
+    if (reservasUsuario.length === 0) {
+      reservasContenedor.innerHTML = '<p class="mensaje-sin-reservas">No tienes reservas confirmadas</p>';
+      return;
+    }
+
+    // Mostrar cada reserva
+    reservasContenedor.innerHTML = '';
+    reservasUsuario.forEach((reserva, index) => {
+      const reservaDiv = document.createElement('div');
+      reservaDiv.className = 'reserva-item';
+      
+      // Obtirner y formatear la fecha de compra
+      const fechaCompra = new Date(reserva.fechaCompra);
+      const fechaFormateada = fechaCompra.toLocaleDateString('es-ES', {   // toLocaleDateString para formato local
+        year: 'numeric',        // Formato de fecha en español
+        month: 'long',         // Mes en formato largo
+        day: 'numeric'         // Día numérico
+      });
+
+      // Rellenar contenido de la reserva dinamicamente
+      reservaDiv.innerHTML = `
+        <div class="reserva-imagen">
+          <img src="${reserva.viaje.imagen}" alt="${reserva.viaje.titulo}">
+        </div>
+        <div class="reserva-info">
+          <h3>${reserva.viaje.titulo || reserva.viaje.destino}</h3>
+          <p><strong>Fecha de compra:</strong> ${fechaFormateada}</p>
+          <p><strong>Duración:</strong> ${reserva.viaje.duracion} días</p>
+          <p><strong>Destino:</strong> ${reserva.viaje.destino}</p>
+        </div>
+        <button class="boton-ver-detalles" data-reserva-index="${index}">Ver detalles</button>
+      `;
+
+      reservasContenedor.appendChild(reservaDiv);
+    });
+
+    // Agregar eventos a los botones de ver detalles
+    document.querySelectorAll('.boton-ver-detalles').forEach(button => {
+      button.addEventListener('click', () => {
+        const index = parseInt(button.dataset.reservaIndex);      // Obtener índice de la reserva
+        mostrarDetalleReserva(reservasUsuario[index]);            // Mostrar detalles de la reserva
+      });
+    });
+  }
+
+  // Mostrar modal con detalles de la reserva
+  function mostrarDetalleReserva(reserva) {
+    const modal = document.getElementById('modal-detalle-reserva');
+    const detalleBody = document.getElementById('detalle-reserva-body');
+
+    // Calcular datos
+    const viaje = reserva.viaje;                            // Datos del viaje
+    const datosPaso2 = reserva.datosPaso2 || {};            // Datos del paso 2 de la reserva
+    const numAcompañantes = datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;   // Número de acompañantes
+    const precioBase = viaje.precio;                        // Precio base del viaje
+    const precioTotal = precioBase + (numAcompañantes * precioBase);                        // Precio total con acompañantes
+
+    // Formatear fecha de compra
+    const fechaCompra = new Date(reserva.fechaCompra);
+    const fechaFormateada = fechaCompra.toLocaleDateString('es-ES', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',              // Incluir hora
+      minute: '2-digit'             // Incluir minuto
+    });
+
+    let textoMascota = 'No';
+    if (datosPaso2.viajaMascota === 'si') {
+      textoMascota = 'Sí';
+    }
+
+    const alergias = datosPaso2.alergias || 'Ninguna';
+
+    // Rellenar contenido del modal
+    detalleBody.innerHTML = `
+      <div class="info-fila">
+        <span class="etiqueta">Destino:</span>
+        <span class="contenido">${viaje.titulo || viaje.destino}</span>
+      </div>
+      <div class="info-fila">
+        <span class="etiqueta">Duración:</span>
+        <span class="contenido">${viaje.duracion} días</span>
+      </div>
+      <div class="info-fila">
+        <span class="etiqueta">Tipo de viaje:</span>
+        <span class="contenido">${viaje.tipo}</span>
+      </div>
+      <div class="info-fila">
+        <span class="etiqueta">Número de acompañantes:</span>
+        <span class="contenido">${numAcompañantes}</span>
+      </div>
+      <div class="info-fila">
+        <span class="etiqueta">Mascotas:</span>
+        <span class="contenido">${textoMascota}</span>
+      </div>
+      <div class="info-fila">
+        <span class="etiqueta">Alergias:</span>
+        <span class="contenido">${alergias}</span>
+      </div>
+      <div class="info-fila">
+        <span class="etiqueta">Coste total:</span>
+        <span class="contenido">${precioTotal.toFixed(2)} €</span>
+      </div>
+      <div class="info-fila">
+        <span class="etiqueta">Fecha de compra:</span>
+        <span class="contenido">${fechaFormateada}</span>
+      </div>
+    `;
+
+    // Añadir información del guía 
+    if (viaje.guia) {
+      detalleBody.innerHTML += `
+        <div class="info-guia-modal">
+          <h3>Información del guía</h3>
+          <div class="guia-contacto-modal">
+            <div class="guia-avatar-modal">
+              ${viaje.guia.avatar ? `<img src="${viaje.guia.avatar}" alt="${viaje.guia.nombre}">` : ''}
+            </div>
+            <div class="guia-datos-modal">
+              <p><strong>Nombre:</strong> ${viaje.guia.nombre}</p>
+              <p><strong>Edad:</strong> ${viaje.guia.edad}</p>
+              <p><strong>Teléfono:</strong> ${viaje.guia.contacto}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    modal.style.display = 'block';
+
+    // Guardar reserva actual para imprimir
+    modal.dataset.reservaActual = JSON.stringify(reserva);
+  }
+
+  // Cerrar modal
+  const cerrarModal = document.querySelector('.cerrar-modal');
+  if (cerrarModal) {
+    cerrarModal.addEventListener('click', () => {
+      document.getElementById('modal-detalle-reserva').style.display = 'none';
+    });
+  }
+
+  // Botón imprimir reserva
+  const btnImprimirReserva = document.querySelector('.btn-imprimir-reserva');
+  if (btnImprimirReserva) {
+    btnImprimirReserva.addEventListener('click', () => {
+      const modal = document.getElementById('modal-detalle-reserva');
+      const reserva = JSON.parse(modal.dataset.reservaActual);
+      
+      // Guardar los datos de la reserva en localStorage
+      localStorage.setItem('viajeSeleccionado', JSON.stringify(reserva.viaje));
+      localStorage.setItem('formularioCompraPaso1', JSON.stringify(reserva.datosPaso1));
+      localStorage.setItem('formularioCompraPaso2', JSON.stringify(reserva.datosPaso2));
+      
+      // Redirigir a compra_realizada.html
+      window.location.href = 'compra_realizada.html';
+    });
+  }
+
+  // Botón cerrar sesión
+  const btnCerrarSesion = document.querySelector('.boton-cerrar-sesion');
+  if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener('click', () => {
+      if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
+        localStorage.removeItem('usuarioActual');
+        window.location.href = 'home.html';
+      }
+    });
+  }
+
+  // Cargar datos al iniciar
+  cargarDatosPersonales();
+  cargarReservas();
+}
 

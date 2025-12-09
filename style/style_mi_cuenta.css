@@ -1,0 +1,523 @@
+/* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
+  * {
+  margin: 0;              /* Quita margen por defecto */
+  padding: 0;             /* Quita padding por defecto */
+  box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
+}
+/* Evitar scroll horizontal accidental */
+html, body {
+  overflow-x: hidden;  /* previene scroll horizontal */
+}
+/* Tipografía base para todo el cuerpo */
+body {
+  font-family: Arial, sans-serif; 
+  background-color: #fff;          
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Variables CSS para alturas de header y footer */
+:root {
+  --header-h: 110px; /* altura del header usada para margin-top */
+  --footer-h: 20px; /* altura del footer usada para margin-bottom */
+}
+/* Contenedor principal que envuelve header, main y footer */
+main {
+    flex: 1;
+    width: 100%;
+    margin-top: var(--header-h);                
+    margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
+}
+/* Evita que header y footer se encojan */
+header, footer {
+    flex-shrink: 0;           /* evita que se encojan */
+}
+/* Estilo general para enlaces */
+header {
+  width: 100%;              /* ocupa todo el ancho */
+  height: 100px;            /* altura fija: prueba con 100px */
+  background: #006400;
+  position: fixed;          /* fija el header en la parte superior */
+  top: 0; left:0; right: 0; /* asegura que esté en la parte superior */
+  margin-bottom: 15px;      /* separa el header del contenido */
+  text-align: left;
+  align-items: center;      /* centra verticalmente el contenido */
+  color: white;
+  padding: 0 20px;          /* espacio interno arriba y abajo */
+  display: flex;            
+  justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
+  z-index: 1000;                         /* asegura que esté por encima de todo el contenido */
+}
+/* Estilo general para footer, similar al header */
+footer {
+  width: 100%;              /* ocupa todo el ancho */
+  height: 80px;             /* altura fija: prueba con 100px */
+  background: #006400;
+  position: relative;       /* cambia de fixed a relative para que no sea estático */
+  text-align: center;
+  align-items: center;      /* centra verticalmente el contenido */
+  color: white;
+  padding: 20px;            /* espacio interno */
+  display: flex;
+  justify-content: center;  /* centra todo el contenido horizontalmente */
+}
+/* Logo de la página */
+header img{
+  width: 80px;
+  height: 80px;
+}
+/* título de la página */
+header .titulo{
+  font-size: 18px;          /* tamaño legible sin ser gigante */
+  font-family: "montserrat", sans-serif;  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
+  font-weight: 700;          /* peso negrita */
+  text-transform: uppercase; 
+  margin-right: 50px;
+}
+/* Menú centrado (fila horizontal de enlaces) */
+header nav{ 
+  padding: 0;
+}
+/* Lista de elementos del menú */
+header nav ul{
+  list-style: none;          /* sin viñetas */
+  display: flex;             /* pone los <li> en fila */
+  font-weight: 500;          /* peso semi-negrita */
+  text-transform: uppercase; 
+  gap: 2rem;                 /* separación entre elementos del menú */
+  margin-right: 50px;
+}
+/* Cada enlace del menú */
+header nav a{
+  text-decoration: none;     /* sin subrayado */
+  color: #fff;             /* color de texto del menú */
+  border-radius: .375rem;    /* esquinas suaves para el hover */
+}
+/* Utilidades (derecha): logo + selector de idioma en fila */
+header .logo_idioma{
+  display: flex;             /* elementos en línea: imagen + select */
+  align-items: center;       /* verticalmente centrados */
+  gap: .5rem;                /* separación entre logo y select */
+  padding:0;
+}
+/* Logo y selector de idioma */
+header .logo_idioma img{
+  width: 120px; height: auto; /* tamaño consistente del logo */
+}
+/* Selector de idioma */
+header .logo_idioma select{
+  font: inherit;              /* que el select use la misma fuente que la página */
+  border: 1px solid #cbd5e1;
+  border-radius: .375rem;
+  background-color: white;
+}
+/* Efecto hover y focus en enlaces del menú */
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;   /* subrayado al pasar el ratón o enfocar con teclado */
+}
+/* Ocultar checkbox y botón de hamburguesa en escritorio */
+.menu-toggle,
+.hamburger-btn {
+    display: none;
+}
+/* Oculta las utilidades en la versión de escritorio */
+.nav-menu .nav-utils {
+    display: none;
+}
+/* Estilo para el enlace de iniciar sesión */
+header .botones_header button {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+/* Efecto hover en el botón de iniciar sesión */
+header .botones_header button:hover {
+    background-color: #e0e0e0;
+}
+/* Estilo de la info del footer*/
+footer nav a {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0 10rem;
+}
+/* Efecto hover y focus en enlaces del footer */
+footer nav a:hover,
+footer nav a:focus-visible {
+  text-decoration: underline;
+}
+
+/*formulario_compra2 styles*/
+/* Estilos para la columna del boton-atras de detalles del viaje */
+.columna-boton-atras-detalles{
+  position: relative;   /* fijo en la pantalla, no se mueve con scroll */
+  top: 140px;           /* margen desde la parte superior */
+  left: 20px;           /* margen desde la izquierda */
+  display: flex;                 
+  flex-direction: column; 
+}
+/* Estilos para el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button {
+   width: 60px;
+   height: 50px;
+   border: 1px solid black;
+   border-radius: 10px;
+   background: #006400;
+   color: white;
+   font-size: 30px;
+   cursor: pointer;
+}
+/* Efecto hover en el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button:hover {
+   background: #004d00;
+}
+
+/*Css de mi_cuenta.html */
+/* Contenedor principal */
+.mi-cuenta-contenedor {
+  display: flex;
+  margin-top: var(--header-h);
+  min-height: calc(100vh - var(--header-h) - 80px);
+  padding: 20px;
+  gap: 30px;
+}
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #000;
+  padding: 20px 0;
+  border-radius: 8px;
+  height: fit-content;
+  position: relative;
+  top: 30px;
+}
+/* Navegación del sidebar */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+/* Cada elemento del menú de navegación */
+.nav-item {
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+/* Efecto hover en los elementos del menú */
+.nav-item:hover {
+  background: #333;
+}
+/* Estilo para el elemento activo del menú */
+.nav-item.active {
+  background: #006400;
+  font-weight: bold;
+}
+/* Estilo para el botón de cerrar sesión */
+.boton-cerrar-sesion {
+  color: white;
+}
+/* Estilo para el botón de cerrar sesión */
+.boton-cerrar-sesion:hover {
+  background: #333;
+  color: white;
+}
+/* Contenido principal */
+.contenido-principal {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* Secciones de contenido (Datos Personales, Mis Reservas, Configuración) */
+.seccion-contenido {
+  display: none;
+}
+/* Mostrar la sección activa */
+.seccion-contenido.active {
+  display: block;
+}
+/* Títulos de las secciones */
+.seccion-contenido h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #006400;
+}
+/* Datos Personales */
+.datos-personales-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+/* Avatar del usuario */
+.avatar-usuario {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #006400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;                   /* no se encoge */
+}
+/* Avatar imagen */
+.avatar-usuario img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Información del usuario */
+.info-usuario {
+  flex: 1;
+}
+/* Información de cada fila */
+.info-fila {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+}
+/* Etiqueta y valor en cada fila */
+.info-fila .etiqueta {
+  font-weight: bold;
+  width: 200px;
+  color: #000;
+}
+/* Valor en cada fila */
+.info-fila .valor {
+  color: black;
+}
+/* Mis Reservas */
+.reservas-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Cada reserva individual */
+.reserva-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+/* Imagen de la reserva */
+.reserva-imagen {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ccc;
+}
+/* Imagen dentro de la reserva */
+.reserva-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Información de la reserva */
+.reserva-info {
+  flex: 1;
+}
+/* Título de la reserva */
+.reserva-info h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #006400;
+}
+/* Detalles de la reserva */
+.reserva-info p {
+  color: black;
+  margin: 4px 0;
+  font-size: 14px;
+}
+/* Botón para ver detalles de la reserva */
+.boton-ver-detalles {
+  background: #006400;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* Efecto hover en el botón de ver detalles */
+.boton-ver-detalles:hover {
+  background: #005000;
+}
+
+.mensaje-sin-reservas {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 18px;
+}
+
+/* Configuración */
+.configuracion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 500px;
+}
+
+.config-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.config-item label {
+  font-weight: bold;
+  color: #000;
+}
+
+.config-item select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* Modal de detalles de reserva */
+.modal-reserva {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  overflow: auto;
+}
+/* Contenido del modal */
+.modal-reserva-contenido {
+  background: white;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+/* Botón de cerrar modal */
+.cerrar-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+/* Efecto hover en el botón de cerrar modal */
+.cerrar-modal:hover {
+  color: red;
+}
+/* Título del modal */
+.modal-reserva-contenido h2 {
+  font-size: 25px;
+  color: #006400;
+  margin-bottom: 25px;
+}
+/* Cuerpo del detalle de la reserva */
+#detalle-reserva-body {
+  margin-bottom: 25px;
+}
+/* Cada fila de información en el detalle */
+#detalle-reserva-body .info-fila {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+}
+/* Etiqueta en cada fila */
+#detalle-reserva-body .etiqueta {
+  font-weight: bold;
+  width: 250px;
+  color: #000;
+}
+/* Contenido en cada fila */
+#detalle-reserva-body .contenido {
+  color: black;
+}
+/* Información del guía en el modal */
+.info-guia-modal {
+  margin-top: 10px;
+  padding-top: 20px;
+}
+/* Título de la sección del guía */
+.info-guia-modal h3 {
+  font-size: 20px;
+  color: #006400;
+  margin-bottom: 20px;
+}
+/* Contenedor de datos del guía */
+.guia-contacto-modal {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/* Avatar del guía en el modal */ 
+.guia-avatar-modal {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid black;
+  flex-shrink: 0;
+  background: #f5f5f5;
+}
+/* Imagen del avatar del guía */
+.guia-avatar-modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Datos del guía en el modal */
+.guia-datos-modal {
+  flex: 1;
+}
+/* Cada párrafo de datos del guía */
+.guia-datos-modal p {
+  margin: 5px 0;
+  color: black;
+  font-size: 14px;
+}
+/* Botón para imprimir la reserva */
+.btn-imprimir-reserva {
+  background: #006400;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* Efecto hover en el botón de imprimir reserva */
+.btn-imprimir-reserva:hover {
+  background: #005000;
+}
