@@ -342,3 +342,115 @@ footer nav a:focus-visible {
   color: #222;
   font-size: 14px;
 }
+
+/* Footer / Help modal styles */
+.help-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 24px;
+}
+.help-modal.open{ display: flex; }
+.help-modal-content{
+  width: min(1100px, 96%);
+  max-height: 86vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.help-close{
+  position: absolute;
+  right: 32px;
+  top: 28px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.help-modal h2{ text-align: center; margin-bottom: 18px; font-size: 34px; }
+.help-search{ display:flex; justify-content:center; margin-bottom: 18px; }
+.help-search input{ width: 70%; padding: 12px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+.help-tabs{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-start; background:#eee; padding:8px; border-radius:6px; margin-bottom:16px; }
+.help-tab{ background:transparent; border:none; padding:10px 14px; cursor:pointer; font-weight:600; }
+.help-tab.active{ border-bottom:3px solid #111; }
+.help-contents{ background:#f0f0f0; padding:18px; border-radius:6px; }
+.help-panel{ display:block; }
+.help-panel[hidden]{ display:none; }
+.faq{ background:#fff; border-radius:6px; margin-bottom:12px; overflow:hidden; }
+.faq-question{ width:100%; text-align:left; padding:14px 18px; background:transparent; border:none; cursor:pointer; font-size:18px; display:flex; justify-content:space-between; align-items:center; }
+.chev{ margin-left:12px; }
+.faq-answer{ padding:0 18px 18px 18px; display:none; color:#222; }
+.faq.open .faq-answer{ display:block; }
+
+/* Footer spacing: make footer links more compact on small screens */
+footer nav a { margin: 0 2rem; }
+
+@media (max-width:700px){
+  .help-modal-content{ padding:18px; }
+  .help-search input{ width: 100%; }
+  footer nav a { margin: 0 1rem; }
+}
+
+/* Global responsive rules: tablet and mobile */
+@media (max-width:1024px){ /* tablet */
+  :root{ --header-h: 90px; --footer-h: 90px; }
+  header{ height: 90px; padding: 10px 16px; }
+  header .titulo{ font-size: 16px; margin-right: 20px; }
+  header nav ul{ gap: 1rem; font-size: 14px; }
+  .contenedor-principal{ padding: 0 16px; gap: 18px; }
+  .columna-izquierda{ flex: 0 0 60%; }
+  .columna-derecha{ flex: 1 1 40%; }
+  .carrusel{ height: 260px; }
+  .carrusel h1{ font-size: 40px; margin-top: 120px; }
+  .search{ padding: 14px; }
+  footer{ height: 80px; padding: 14px; }
+}
+
+@media (max-width:700px){ /* mobile */
+  :root{ --header-h: 64px; --footer-h: 64px; }
+  /* Compact header: logo, title (small) and hamburger */
+  header{ position: fixed; height: var(--header-h); align-items: center; padding: 8px 12px; display:flex; gap:12px; }
+  header img{ width: 48px; height:48px; }
+  header .titulo{ font-size: 16px; margin:0; flex:1; }
+
+  /* Hamburger button & hidden checkbox */
+  .menu-toggle{ position: absolute; left: -9999px; width:1px; height:1px; opacity:0; }
+  .hamburger-btn{ display:block; width:36px; height:28px; position:relative; cursor:pointer; z-index:1601; }
+  .hamburger-btn .bar{ display:block; height:3px; background:#fff; margin:5px 0; border-radius:2px; }
+
+  /* Off-canvas nav */
+  .nav-menu{ position: fixed; top: 0; right: 0; height: 100vh; width: 260px; background: #006400; transform: translateX(100%); transition: transform .28s ease; padding-top: 72px; z-index:1500; box-shadow: -6px 0 18px rgba(0,0,0,0.25); }
+  .nav-menu ul{ flex-direction: column; gap: 0; padding: 12px; }
+  .nav-menu li{ margin: 8px 0; }
+  .nav-menu a{ display:block; padding: 12px 14px; color:#fff; font-weight:700; }
+  /* When checkbox checked, show nav */
+  #menu-toggle:checked + .hamburger-btn + .nav-menu{ transform: translateX(0); }
+
+  /* Hide desktop buttons; move into nav instead */
+  .botones_header{ display:none; }
+  /* hide desktop language control on mobile (use the nav's movil version) */
+  .logo_idioma{ display:none; }
+
+  main.contenedor-principal{ margin-top: var(--header-h); margin-bottom: var(--footer-h); padding: 12px; }
+  .contenedor-principal{ flex-direction: column; }
+  .columna-izquierda, .columna-derecha{ flex: 1 1 auto; width: 100%; }
+
+  .carrusel{ height: 160px; border-radius:8px; }
+  .carrusel h1{ font-size: 24px; margin-top: 72px; padding-left:12px; }
+  .filtros{ flex-wrap:wrap; gap:8px; }
+  #destino-home, #duracion-home, #rango-precio-home, #mascotas-home, #tipo-viaje-home{ width: calc(50% - 8px); }
+
+  .search{ padding:12px; border-radius:12px; }
+  .columna-tarjeta{ margin-left:0; width:100%; }
+
+  footer{ position: fixed; bottom:0; left:0; right:0; height: var(--footer-h); display:flex; align-items:center; justify-content:space-around; padding:8px 12px; background:#006400; box-shadow: 0 -2px 8px rgba(0,0,0,0.12); }
+  footer nav a{ margin:0; font-size:14px; color:#fff; font-weight:700; white-space:nowrap; }
+  /* make footer links wrap nicely on very small screens */
+  footer nav{ display:flex; gap:14px; align-items:center; justify-content:center; width:100%; }
+}

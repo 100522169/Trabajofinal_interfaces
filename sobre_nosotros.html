@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre nosotros</title>
+    <link rel="stylesheet" href="style/style_home.css" />
+    <link rel="stylesheet" href="style/style_sobre_nosotros.css" />
+    <script src="script/script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="Logotipo del sitio">
+        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Otros rincones</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Mi cuenta</a></li>
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="botones_header">
+                <button type="button">Iniciar sesión</button>
+                <button type="button">Registrarse</button>
+            </div>
+        </section>
+        
+        <div class="logo_idioma">
+            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="contenedor-principal">
+        <section style="width:100%">
+            <div class="columna-boton-atras" style="margin-bottom:18px;">
+                <button onclick="window.history.back()" aria-label="Volver">←</button>
+            </div>
+
+            <h1 style="text-align:center; font-size:42px; margin-bottom:22px;">Sobre nosotros</h1>
+
+            <div class="sobre-grid">
+                <div class="sobre-left">
+                    <label class="sobre-label">Quienes somos</label>
+                    <div class="sobre-box">Somos una comunidad de viajeros apasionados que busca ofrecer experiencias auténticas y responsables alrededor del mundo.</div>
+
+                    <label class="sobre-label" style="margin-top:20px;">Nuestra filosofía y valores</label>
+                    <div class="sobre-box">Promovemos el turismo sostenible, el respeto por las culturas locales y la conexión entre las personas mediante viajes responsables y bien organizados.</div>
+                </div>
+
+                <div class="sobre-right">
+                    <div class="imagen-placeholder">
+                        <img src="images/about_placeholder.jpg" alt="Sobre nosotros imagen" />
+                    </div>
+
+                    <div class="redes">
+                        <label class="sobre-label">Síguenos en redes</label>
+                        <div class="redes-row">
+                            <input type="text" placeholder="texto" aria-label="síguenos" />
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook" class="social">f</a>
+                            <a href="#" aria-label="Instagram" class="social">ⓘ</a>
+                            <a href="#" aria-label="X" class="social">X</a>
+                            <a href="#" aria-label="LinkedIn" class="social">in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="ayuda.html">Ayuda</a>
+            <a href="#">Contacto</a>
+            <a href="sobre_nosotros.html">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+</html>

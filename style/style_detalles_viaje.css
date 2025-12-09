@@ -528,3 +528,34 @@ body.modal-abierto {
 .formulario-reseña button:hover {
     background-color: #0056b3;
 }
+
+/* Responsive tweaks for detalles_viaje */
+@media (max-width:1024px){
+  .contenedor-detalles{ padding: 14px; max-width: 1000px; }
+  .fila-informacion{ flex-direction: column; gap: 18px; }
+  .galeria-imagenes{ flex-wrap:wrap; justify-content:center; }
+  .imagen{ width: 180px; height: 120px; }
+}
+
+@media (max-width:700px){
+  .contenedor-detalles{ margin-top: var(--header-h); padding: 10px; }
+  .titulo-detalles h1{ font-size: 26px; }
+  .fila-informacion{ flex-direction: column; }
+  .avatar{ width: 64px; height: 64px; }
+  .imagen{ width: 140px; height: 90px; }
+  .modal-contenido{ width: 96%; margin: 6% auto; padding: 16px; }
+}
+
+/* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
+@media (max-width:700px){
+  .menu-toggle{ position: absolute; left: -9999px; width:1px; height:1px; opacity:0; }
+  .hamburger-btn{ display:block; width:36px; height:28px; position:relative; cursor:pointer; z-index:1601; }
+  .hamburger-btn .bar{ display:block; height:3px; background:#fff; margin:5px 0; border-radius:2px; }
+
+  .nav-menu{ position: fixed; top: 0; right: 0; height: 100vh; width: 260px; background: #006400; transform: translateX(100%); transition: transform .28s ease; padding-top: 72px; z-index:1500; box-shadow: -6px 0 18px rgba(0,0,0,0.25); }
+  .nav-menu ul{ display:flex; flex-direction: column; gap: 0; padding: 12px; }
+  .nav-menu li{ margin: 8px 0; }
+  .nav-menu a{ display:block; padding: 12px 14px; color:#fff; font-weight:700; }
+  /* When checkbox checked, show nav */
+  #menu-toggle:checked + .hamburger-btn + .nav-menu{ transform: translateX(0); }
+}

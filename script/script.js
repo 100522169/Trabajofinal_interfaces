@@ -1867,3 +1867,88 @@ if (window.location.pathname.includes("compra_realizada.html")) {
     }
   }
 }
+
+/* ------------------ Centro de ayuda (footer) - scripts ------------------ */
+(function(){
+  const openHelp = document.getElementById('open-help');
+  const helpModal = document.getElementById('help-modal');
+  const closeHelp = document.getElementById('close-help');
+  const tabs = document.querySelectorAll('.help-tab');
+  const panels = document.querySelectorAll('.help-panel');
+
+  function openModal(){ if(helpModal){ helpModal.classList.add('open'); helpModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; } }
+  function closeModal(){ if(helpModal){ helpModal.classList.remove('open'); helpModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; } }
+
+  openHelp && openHelp.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); });
+  closeHelp && closeHelp.addEventListener('click', closeModal);
+  helpModal && helpModal.addEventListener('click', (e)=>{ if(e.target === helpModal) closeModal(); });
+
+  // Cambio de pestañas
+  tabs.forEach(tab => {
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.tab;
+      panels.forEach(p => {
+        if (p.id === target) p.removeAttribute('hidden'); else p.setAttribute('hidden','');
+      });
+    });
+  });
+
+  // Acordeón de preguntas
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.faq-question');
+    if (!btn) return;
+    const faq = btn.closest('.faq');
+    faq.classList.toggle('open');
+  });
+
+  // Buscar dentro de las FAQs
+  const searchInput = document.getElementById('help-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      document.querySelectorAll('.faq').forEach(f => {
+        const text = f.textContent.toLowerCase();
+        f.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  // Cerrar con escape
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // Mobile menu: close menu when clicking a link or pressing Escape
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (menuToggle && navMenu) {
+    // Close when a link is clicked
+    navMenu.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (a) {
+        // small delay so navigation can occur in browsers when used locally
+        setTimeout(()=>{ menuToggle.checked = false; }, 100);
+      }
+    });
+
+    // Close with Escape as well (in addition to help modal handling)
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { menuToggle.checked = false; } });
+  }
+
+  // Close mobile menu when clicking outside of it (but ignore clicks on the hamburger)
+  document.addEventListener('click', (e) => {
+    try {
+      const target = e.target;
+      if (menuToggle && menuToggle.checked) {
+        const insideNav = target.closest && target.closest('.nav-menu');
+        const isHamburger = target.closest && target.closest('.hamburger-btn');
+        if (!insideNav && !isHamburger) {
+          menuToggle.checked = false;
+        }
+      }
+    } catch (err) {
+      // ignore
+    }
+  });
+
+})();
