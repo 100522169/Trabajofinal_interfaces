@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head></head>
-    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
-    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
-    <link rel="stylesheet" href="style/style_detalles_viaje.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
-    <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
-</head> 
+<meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
+<title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+<link rel="stylesheet" href="style/style_detalles_viaje.css" /> <!-- Enlace al archivo externo de estilos CSS -->
+<script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
+</head>
+
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -25,7 +27,7 @@
                 <li><a href="#">Otros rincones</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Mi cuenta</a></li>
-                
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
@@ -55,7 +57,7 @@
     <section class="columna-boton-atras-detalles">
         <button type="button">⬅</button>
     </section>
-        
+
     <main class="contenedor-detalles">
         <!-- Primera fila: Título y galería de imágenes -->
         <section class="titulo-detalles">
@@ -82,7 +84,7 @@
                 <div class="contenedor-condiciones">
                     <!-- Las condiciones se generarán dinámicamente -->
                 </div>
-                
+
             </div>
 
             <!-- Columna 2: Información sobre el guía -->
@@ -101,12 +103,13 @@
                 </div>
                 <button class="boton-ver-mas">Ver más reseñas</button>
                 <button class="boton-reservar">Reservar ahora →</button>
-                
+
                 <!-- Formulario para agregar reseñas -->
                 <div class="formulario-reseña">
                     <h3>Deja tu reseña</h3>
                     <input type="text" id="nombre-reseña" placeholder="Tu nombre" required>
-                    <input type="text" id="comentario-reseña" placeholder="Escribe tu reseña aquí..." required></textarea>
+                    <input type="text" id="comentario-reseña" placeholder="Escribe tu reseña aquí..."
+                        required></textarea>
                     <button type="submit" id="enviar-reseña">Enviar reseña</button>
                 </div>
             </div>
@@ -133,4 +136,5 @@
         </nav>
     </footer>
 </body>
+
 </html>

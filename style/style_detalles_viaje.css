@@ -1,17 +1,24 @@
 /* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
-  * {
-  margin: 0;              /* Quita margen por defecto */
-  padding: 0;             /* Quita padding por defecto */
-  box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
+* {
+  margin: 0;
+  /* Quita margen por defecto */
+  padding: 0;
+  /* Quita padding por defecto */
+  box-sizing: border-box;
+  /* Hace que el ancho y alto incluyan borde y padding */
 }
+
 /* Evitar scroll horizontal accidental */
-html, body {
-  overflow-x: hidden;  /* previene scroll horizontal */
+html,
+body {
+  overflow-x: hidden;
+  /* previene scroll horizontal */
 }
+
 /* Tipografía base para todo el cuerpo */
 body {
-  font-family: Arial, sans-serif; 
-  background-color: #fff;          
+  font-family: Arial, sans-serif;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -20,133 +27,188 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* Variables CSS para alturas de header y footer */
 :root {
-  --header-h: 110px; /* altura del header usada para margin-top */
-  --footer-h: 100px; /* altura del footer usada para margin-bottom */
+  --header-h: 110px;
+  /* altura del header usada para margin-top */
+  --footer-h: 100px;
+  /* altura del footer usada para margin-bottom */
 }
+
 /* Contenedor principal que envuelve header, main y footer */
 main {
-    flex: 1;
-    width: 100%;
-    margin-top: var(--header-h);                
-    margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
+  flex: 1;
+  width: 100%;
+  margin-top: var(--header-h);
 }
+
 /* Evita que header y footer se encojan */
-header, footer {
-    flex-shrink: 0;           /* evita que se encojan */
+header,
+footer {
+  flex-shrink: 0;
+  /* evita que se encojan */
 }
+
 /* Estilo general para enlaces */
 header {
-  width: 100%;              /* ocupa todo el ancho */
-  height: 100px;            /* altura fija: prueba con 100px */
+  width: 100%;
+  /* ocupa todo el ancho */
+  height: 100px;
+  /* altura fija: prueba con 100px */
   background: #006400;
-  position: fixed;          /* fija el header en la parte superior */
-  top: 0; left:0; right: 0; /* asegura que esté en la parte superior */
-  margin-bottom: 15px;      /* separa el header del contenido */
+  position: fixed;
+  /* fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* asegura que esté en la parte superior */
+  margin-bottom: 15px;
+  /* separa el header del contenido */
   text-align: left;
-  align-items: center;      /* centra verticalmente el contenido */
+  align-items: center;
+  /* centra verticalmente el contenido */
   color: white;
-  padding: 0 20px;          /* espacio interno arriba y abajo */
-  display: flex;            
-  justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
-  z-index: 1000;                         /* asegura que esté por encima de todo el contenido */
+  padding: 0 20px;
+  /* espacio interno arriba y abajo */
+  display: flex;
+  justify-content: space-between;
+  /*Definimos 3 columnas donde poner los elementos*/
+  z-index: 1000;
+  /* asegura que esté por encima de todo el contenido */
 }
+
 /* Estilo general para footer, similar al header */
 footer {
-  width: 100%;              /* ocupa todo el ancho */
-  height: 80px;             /* altura fija: prueba con 100px */
+  width: 100%;
+  /* ocupa todo el ancho */
+  height: 80px;
+  /* altura fija: prueba con 100px */
   background: #006400;
-  position: fixed;          /* fija el footer en la parte inferior */
-  bottom: 0;                /* asegura que esté en la parte inferior */
+  /* position: fixed; removed */
+  /* bottom: 0; removed */
   text-align: center;
-  align-items: center;      /* centra verticalmente el contenido */
+  align-items: center;
+  /* centra verticalmente el contenido */
   color: white;
-  padding: 20px;            /* espacio interno */
+  padding: 20px;
+  /* espacio interno */
   display: flex;
-  justify-content: center;  /* centra todo el contenido horizontalmente */
+  justify-content: center;
+  /* centra todo el contenido horizontalmente */
 }
+
 /* Logo de la página */
-header img{
+header img {
   width: 80px;
   height: 80px;
 }
+
 /* título de la página */
-header .titulo{
-  font-size: 18px;          /* tamaño legible sin ser gigante */
-  font-family: "montserrat", sans-serif;  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
-  font-weight: 700;          /* peso negrita */
-  text-transform: uppercase; 
+header .titulo {
+  font-size: 18px;
+  /* tamaño legible sin ser gigante */
+  font-family: "montserrat", sans-serif;
+  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
+  font-weight: 700;
+  /* peso negrita */
+  text-transform: uppercase;
   margin-right: 50px;
 }
+
 /* Menú centrado (fila horizontal de enlaces) */
-header nav{ 
+header nav {
   padding: 0;
 }
+
 /* Lista de elementos del menú */
-header nav ul{
-  list-style: none;          /* sin viñetas */
-  display: flex;             /* pone los <li> en fila */
-  font-weight: 500;          /* peso semi-negrita */
-  text-transform: uppercase; 
-  gap: 2rem;                 /* separación entre elementos del menú */
+header nav ul {
+  list-style: none;
+  /* sin viñetas */
+  display: flex;
+  /* pone los <li> en fila */
+  font-weight: 500;
+  /* peso semi-negrita */
+  text-transform: uppercase;
+  gap: 2rem;
+  /* separación entre elementos del menú */
   margin-right: 50px;
 }
+
 /* Cada enlace del menú */
-header nav a{
-  text-decoration: none;     /* sin subrayado */
-  color: #fff;             /* color de texto del menú */
-  border-radius: .375rem;    /* esquinas suaves para el hover */
+header nav a {
+  text-decoration: none;
+  /* sin subrayado */
+  color: #fff;
+  /* color de texto del menú */
+  border-radius: .375rem;
+  /* esquinas suaves para el hover */
 }
+
 /* Utilidades (derecha): logo + selector de idioma en fila */
-header .logo_idioma{
-  display: flex;             /* elementos en línea: imagen + select */
-  align-items: center;       /* verticalmente centrados */
-  gap: .5rem;                /* separación entre logo y select */
-  padding:0;
+header .logo_idioma {
+  display: flex;
+  /* elementos en línea: imagen + select */
+  align-items: center;
+  /* verticalmente centrados */
+  gap: .5rem;
+  /* separación entre logo y select */
+  padding: 0;
 }
+
 /* Logo y selector de idioma */
-header .logo_idioma img{
-  width: 120px; height: auto; /* tamaño consistente del logo */
+header .logo_idioma img {
+  width: 120px;
+  height: auto;
+  /* tamaño consistente del logo */
 }
+
 /* Selector de idioma */
-header .logo_idioma select{
-  font: inherit;              /* que el select use la misma fuente que la página */
+header .logo_idioma select {
+  font: inherit;
+  /* que el select use la misma fuente que la página */
   border: 1px solid #cbd5e1;
   border-radius: .375rem;
   background-color: white;
 }
+
 /* Efecto hover y focus en enlaces del menú */
 header nav a:hover,
 header nav a:focus-visible {
-  text-decoration: underline;   /* subrayado al pasar el ratón o enfocar con teclado */
+  text-decoration: underline;
+  /* subrayado al pasar el ratón o enfocar con teclado */
 }
+
 /* Ocultar checkbox y botón de hamburguesa en escritorio */
 .menu-toggle,
 .hamburger-btn {
-    display: none;
+  display: none;
 }
+
 /* Oculta las utilidades en la versión de escritorio */
 .nav-menu .nav-utils {
-    display: none;
+  display: none;
 }
+
 /* Estilo para el enlace de iniciar sesión */
 header .botones_header button {
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-right: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
+
 /* Efecto hover en el botón de iniciar sesión */
 header .botones_header button:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
+
 /* Estilo de la info del footer*/
 footer nav a {
   font-weight: 500;
@@ -155,6 +217,7 @@ footer nav a {
   text-decoration: none;
   margin: 0 10rem;
 }
+
 /* Efecto hover y focus en enlaces del footer */
 footer nav a:hover,
 footer nav a:focus-visible {
@@ -164,28 +227,34 @@ footer nav a:focus-visible {
 
 /*detalle_viaje styles*/
 /* Estilos para la columna del boton-atras de detalles del viaje */
-.columna-boton-atras-detalles{
-  position: relative;   /* fijo en la pantalla, no se mueve con scroll */
-  top: 140px;           /* margen desde la parte superior */
-  left: 20px;           /* margen desde la izquierda */
-  display: flex;                 
-  flex-direction: column; 
+.columna-boton-atras-detalles {
+  position: relative;
+  /* fijo en la pantalla, no se mueve con scroll */
+  top: 140px;
+  /* margen desde la parte superior */
+  left: 20px;
+  /* margen desde la izquierda */
+  display: flex;
+  flex-direction: column;
 }
+
 /* Estilos para el botón de vuelta atrás en detalles del viaje */
 .columna-boton-atras-detalles button {
-   width: 60px;
-   height: 50px;
-   border: 1px solid black;
-   border-radius: 10px;
-   background: #006400;
-   color: white;
-   font-size: 30px;
-   cursor: pointer;
+  width: 60px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #006400;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
 }
+
 /* Efecto hover en el botón de vuelta atrás en detalles del viaje */
 .columna-boton-atras-detalles button:hover {
-   background: #004d00;
+  background: #004d00;
 }
+
 /* Estilos para el contenedor de detalles del viaje */
 .contenedor-detalles {
   display: flex;
@@ -193,16 +262,21 @@ footer nav a:focus-visible {
   gap: 30px;
   padding: 20px;
   max-width: 1400px;
-  margin: 0 auto;         /* centra el contenedor horizontalmente */
-  margin-top: var(--header-h);     /* Espacio adicional para que el contenido no quede pegado al header */
-  margin-bottom: var(--footer-h);  /* Espacio adicional para que el contenido no quede cortado por el footer */
+  margin: 0 auto;
+  /* centra el contenedor horizontalmente */
+  margin-top: var(--header-h);
+  /* Espacio adicional para que el contenido no quede pegado al header */
+  margin-bottom: var(--footer-h);
+  /* Espacio adicional para que el contenido no quede cortado por el footer */
 }
+
 /* Primera fila: Título y galería de imágenes */
 .titulo-detalles {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 /* Estilo para el título del viaje */
 .titulo-detalles h1 {
   font-size: 36px;
@@ -210,16 +284,19 @@ footer nav a:focus-visible {
   text-align: center;
   margin: 0;
 }
+
 /* Galería de imágenes */
 .galeria-imagenes {
   display: flex;
   gap: 7px;
   justify-content: center;
+  flex-wrap: wrap;
 }
+
 /* Estilo para cada imagen en la galería */
 .imagen {
-  width: 250px;
-  height: 150px;
+  width: 320px;
+  height: 200px;
   background-color: #d3d3d3;
   background-size: cover;
   background-position: center;
@@ -228,39 +305,51 @@ footer nav a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: cover;
+  flex: 0 0 auto;
 }
+
 /* Segunda fila: 3 columnas de información */
 .fila-informacion {
   display: flex;
+  justify-content: center;
+  /* Center the columns */
   gap: 30px;
-  align-items: flex-start; /* Alinea las columnas al inicio, evita que se estiren verticalmente */
+  align-items: flex-start;
+  /* Alinea las columnas al inicio, evita que se estiren verticalmente */
 }
+
 /* Columna 1: Itinerario del viaje */
 .columna-itinerario {
-  flex: 1;                /* ocupa el mismo espacio que las otras columnas */
+  flex: 1;
+  /* ocupa el mismo espacio que las otras columnas */
   display: flex;
   flex-direction: column;
   gap: 13px;
   margin-right: 10px;
 }
+
 /* Estilo para el título de la columna de itinerario */
 .columna-itinerario h2 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
 }
+
 /* Contenedor del itinerario */
 .contenedor-itinerario {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 /* Estilo para cada día del itinerario */
 .dia-itinerario {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 /* Estilo para el boton de mas detalles */
 .boton-mas-detalles {
   background-color: black;
@@ -270,28 +359,35 @@ footer nav a:focus-visible {
   padding: 8px 15px;
   cursor: pointer;
   font-size: 14px;
-  white-space: nowrap;            /* evita que el texto se divida en varias líneas */
+  white-space: nowrap;
+  /* evita que el texto se divida en varias líneas */
 }
+
 /* Efecto hover en el botón de más detalles */
 .boton-mas-detalles:hover {
   background-color: #333;
 }
+
 /* Estilo para el título de condiciones */
 .titulo-condiciones {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
 }
+
 /* Contenedor de condiciones */
 .contenedor-condiciones {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 /* Estilo para el contenedor de condiciones */
 .contenedor-condiciones p {
-  text-align: justify;          /* justifica el texto */
+  text-align: justify;
+  /* justifica el texto */
 }
+
 /* Columna 2: Información sobre el guía */
 .columna-guia {
   flex: 1;
@@ -299,23 +395,27 @@ footer nav a:focus-visible {
   flex-direction: column;
   gap: 15px;
 }
+
 /* Estilo para el título de la columna de guía */
 .columna-guia h2 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
 }
+
 .contenedor-info-guia {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 /* Estilo para la información del guía */
 .info-guia {
   display: flex;
   gap: 15px;
   align-items: center;
 }
+
 /* Estilo para el avatar del guía */
 .avatar {
   width: 80px;
@@ -328,39 +428,46 @@ footer nav a:focus-visible {
   justify-content: center;
   overflow: hidden;
 }
+
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 /* info del guía dentro del avatar */
 .info-guia-texto {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 /* Estilo para los párrafos dentro de la info del guía */
 .info-guia-texto p {
   margin: 0;
   font-weight: bold;
 }
+
 /* Estilo para los párrafos dentro de la columna de guía */
 .info-adicional-guia {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 /* Estilo para los párrafos dentro de la info adicional del guía */
 .info-adicional-guia p {
   margin: 0;
   font-size: 15px;
 }
+
 /* Estilo para las redes sociales del guía */
 .redes-sociales {
   display: flex;
   gap: 15px;
   font-size: 24px;
 }
+
 /* Columna 3: Reseñas de otros usuarios */
 .columna-reseñas {
   flex: 1;
@@ -368,18 +475,21 @@ footer nav a:focus-visible {
   flex-direction: column;
   gap: 10px;
 }
+
 /* Estilo del titulo de las reseñas*/
 .columna-reseñas h2 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 /* Estilo para el contenedor de las reseñas*/
-.contenedor-reseñas{
+.contenedor-reseñas {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 /* Estilo para cada reseña */
 .reseña {
   display: flex;
@@ -388,27 +498,32 @@ footer nav a:focus-visible {
   background-color: #f5f5f5;
   border-radius: 10px;
 }
+
 /* Estilo para la imagen de cada persona*/
 .reseña-avatar {
   width: 60px;
   height: 60px;
   background-color: #ccc;
   border-radius: 50%;
-  flex-shrink: 0;               /* Evita que el avatar se enconja*/
+  flex-shrink: 0;
+  /* Evita que el avatar se enconja*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 /* Estilo para el comentario*/
 .reseña-comentario {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 /* Estilo para el texto del comentario*/
 .reseña-comentario p {
   font-size: 14px;
 }
+
 /* Estilo para el boton ver mas*/
 .boton-ver-mas {
   background-color: #006400;
@@ -421,13 +536,16 @@ footer nav a:focus-visible {
   margin-top: 10px;
   width: 100%;
 }
+
 /* Efecto hover para el boton ver mas*/
 .boton-ver-mas:hover {
   background-color: #004d00;
 }
+
 /* Estilo para el boton reservar*/
 .boton-reservar {
-  display: inline-block;       /* para que los padding y margin funcionen bien */
+  display: inline-block;
+  /* para que los padding y margin funcionen bien */
   background-color: black;
   color: white;
   border: none;
@@ -440,31 +558,38 @@ footer nav a:focus-visible {
   text-decoration: none;
   text-align: center;
 }
+
 /* Efecto hover para el boton de reserva*/
 .boton-reservar:hover {
   background-color: #333;
 }
+
 /* Estilos para el modal */
 .modal-reseñas {
   display: none;
   position: fixed;
-  z-index: 1001;      /*por encima del resto del contenido*/
+  z-index: 1001;
+  /*por encima del resto del contenido*/
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
 }
+
 /* Contenido del modal*/
 .modal-contenido {
   background-color: white;
-  margin: 6.6% auto;   
+  margin: 6.6% auto;
   padding: 30px;
   border-radius: 10px;
   width: 80%;
-  max-height: 75vh;    /* Altura del viewport*/
-  overflow-y: auto;    /* Evita que el contenido se salga del contenedor*/
-  position: relative;     
+  max-height: 75vh;
+  /* Altura del viewport*/
+  overflow-y: auto;
+  /* Evita que el contenido se salga del contenedor*/
+  position: relative;
 }
+
 /* Estilo para la X para salir del modal*/
 .modal-cerrar {
   color: black;
@@ -475,10 +600,12 @@ footer nav a:focus-visible {
   font-weight: bold;
   cursor: pointer;
 }
+
 /* Efecto hover en la X*/
 .modal-cerrar:hover {
   color: red;
 }
+
 /* Estilo para las reseñas dentro del modal*/
 .modal-contenedor-reseñas {
   display: flex;
@@ -486,76 +613,170 @@ footer nav a:focus-visible {
   gap: 10px;
   margin-top: 20px;
 }
+
 /* Bloquear scroll del body cuando el modal está abierto */
 body.modal-abierto {
   overflow: hidden;
   position: fixed;
 }
+
 /* Estilos para el formulario de reseñas */
 .formulario-reseña {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 /* Estilo para el título del formulario de reseña*/
 .formulario-reseña h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: black;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: black;
 }
+
 /* Estilo para los inputs y textarea del formulario de reseña*/
 .formulario-reseña input {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
+
 /* Estilo para el boton del formulario de reseña*/
 .formulario-reseña button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
+
 /* Efecto hover en el botón del formulario de reseña*/
 .formulario-reseña button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 /* Responsive tweaks for detalles_viaje */
-@media (max-width:1024px){
-  .contenedor-detalles{ padding: 14px; max-width: 1000px; }
-  .fila-informacion{ flex-direction: column; gap: 18px; }
-  .galeria-imagenes{ flex-wrap:wrap; justify-content:center; }
-  .imagen{ width: 180px; height: 120px; }
+@media (max-width:1024px) {
+  .contenedor-detalles {
+    padding: 14px;
+    max-width: 1000px;
+  }
+
+  .fila-informacion {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .galeria-imagenes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .imagen {
+    width: 180px;
+    height: 120px;
+  }
 }
 
-@media (max-width:700px){
-  .contenedor-detalles{ margin-top: var(--header-h); padding: 10px; }
-  .titulo-detalles h1{ font-size: 26px; }
-  .fila-informacion{ flex-direction: column; }
-  .avatar{ width: 64px; height: 64px; }
-  .imagen{ width: 140px; height: 90px; }
-  .modal-contenido{ width: 96%; margin: 6% auto; padding: 16px; }
+@media (max-width:700px) {
+  .contenedor-detalles {
+    margin-top: var(--header-h);
+    padding: 10px;
+  }
+
+  .titulo-detalles h1 {
+    font-size: 26px;
+  }
+
+  .fila-informacion {
+    flex-direction: column;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .imagen {
+    width: 140px;
+    height: 90px;
+  }
+
+  .modal-contenido {
+    width: 96%;
+    margin: 6% auto;
+    padding: 16px;
+  }
 }
 
 /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
-@media (max-width:700px){
-  .menu-toggle{ position: absolute; left: -9999px; width:1px; height:1px; opacity:0; }
-  .hamburger-btn{ display:block; width:36px; height:28px; position:relative; cursor:pointer; z-index:1601; }
-  .hamburger-btn .bar{ display:block; height:3px; background:#fff; margin:5px 0; border-radius:2px; }
+@media (max-width:700px) {
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
 
-  .nav-menu{ position: fixed; top: 0; right: 0; height: 100vh; width: 260px; background: #006400; transform: translateX(100%); transition: transform .28s ease; padding-top: 72px; z-index:1500; box-shadow: -6px 0 18px rgba(0,0,0,0.25); }
-  .nav-menu ul{ display:flex; flex-direction: column; gap: 0; padding: 12px; }
-  .nav-menu li{ margin: 8px 0; }
-  .nav-menu a{ display:block; padding: 12px 14px; color:#fff; font-weight:700; }
+  .hamburger-btn {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #006400;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    padding-top: 72px;
+    z-index: 1500;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+
   /* When checkbox checked, show nav */
-  #menu-toggle:checked + .hamburger-btn + .nav-menu{ transform: translateX(0); }
+  #menu-toggle:checked~.nav-menu {
+    transform: translateX(0);
+  }
 }
