@@ -23,7 +23,7 @@ body {
 /* Variables CSS para alturas de header y footer */
 :root {
   --header-h: 110px; /* altura del header usada para margin-top */
-  --footer-h: 100px; /* altura del footer usada para margin-bottom */
+  --footer-h: 20px; /* altura del footer usada para margin-bottom */
 }
 /* Contenedor principal que envuelve header, main y footer */
 main {
@@ -57,7 +57,7 @@ footer {
   width: 100%;              /* ocupa todo el ancho */
   height: 80px;             /* altura fija: prueba con 100px */
   background: #006400;
-  position: fixed;          /* fija el footer en la parte inferior */
+  position: relative;       /* el footer ya no está fijo */
   bottom: 0;                /* asegura que esté en la parte inferior */
   text-align: center;
   align-items: center;      /* centra verticalmente el contenido */

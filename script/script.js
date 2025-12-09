@@ -26,7 +26,7 @@ const viajes = [
       'Día libre para actividades personales. Regreso y fin del tour.'
     ],
     condiciones: 'Incluye transporte, seguro y desayunos. Mascotas permitidas. Nivel físico: bajo-medio.',
-    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años de experiencia', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4, avatar: 'images/avatar-maria.jpg' },
+    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años de experiencia', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4, avatar: 'images/pirineos.jpg' },
     reseñas: [
       { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.' },
       { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' }
@@ -1765,6 +1765,9 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
   }
 }
 
+
+
+
 /*Página compra_realizada.html*/
 if (window.location.pathname.includes("compra_realizada.html")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
@@ -1866,4 +1869,23 @@ if (window.location.pathname.includes("compra_realizada.html")) {
       rellenarInfoGuia();
     }
   }
+
+  // Funcionalidad del botón Imprimir PDF
+  const botonImprimirPDF = document.querySelector('.boton-imprimir-pdf');
+  if (botonImprimirPDF) {
+    botonImprimirPDF.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  // Funcionalidad del botón Mi Cuenta (por ahora sin funcionalidad)
+  const botonMiCuenta = document.querySelector('.boton-mi-cuenta');
+  if (botonMiCuenta) {
+    botonMiCuenta.addEventListener('click', () => {
+      // Por implementar más adelante
+      alert('Funcionalidad de Mi Cuenta próximamente');
+    });
+  }
 }
+
+

@@ -23,7 +23,7 @@ body {
 /* Variables CSS para alturas de header y footer */
 :root {
   --header-h: 110px; /* altura del header usada para margin-top */
-  --footer-h: 100px; /* altura del footer usada para margin-bottom */
+  --footer-h: 20px; /* altura del footer usada para margin-bottom */
 }
 /* Contenedor principal que envuelve header, main y footer */
 main {
@@ -57,8 +57,7 @@ footer {
   width: 100%;              /* ocupa todo el ancho */
   height: 80px;             /* altura fija: prueba con 100px */
   background: #006400;
-  position: fixed;          /* fija el footer en la parte inferior */
-  bottom: 0;                /* asegura que esté en la parte inferior */
+  position: relative;       /* cambia de fixed a relative para que no sea estático */
   text-align: center;
   align-items: center;      /* centra verticalmente el contenido */
   color: white;
@@ -197,7 +196,7 @@ footer nav a:focus-visible {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #006400;
   border: 2px solid black;
   display: flex;
   justify-content: center;
@@ -206,12 +205,15 @@ footer nav a:focus-visible {
   font-weight: bold;
   color: white;
   margin-bottom: 5px;
+  -webkit-print-color-adjust: exact;        /* asegura que el color de fondo se imprima correctamente */
+  print-color-adjust: exact;              
 }
 /* Estilo para el título de compra realizada */
 .contenedor-compra h1{
   font-size: 35px;
   font-weight: bold;
   margin-top: 10px;
+  margin-bottom: 40px;
 }
 /* Contenedor principal para el resumen */
 .contenedor-principal{
@@ -303,4 +305,62 @@ footer nav a:focus-visible {
   margin: 0;
   font-size: 16px;
   color: #222;
+}
+/* Botones de acción */
+.botones-accion {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+/* Estilo de los botones */
+.boton-mi-cuenta,
+.boton-imprimir-pdf {
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Botón Mi Cuenta */
+.boton-mi-cuenta {
+  background-color: white;
+  color: #006400;
+  border: 2px solid #006400;
+}
+/* Efecto hover para el botón Mi Cuenta */
+.boton-mi-cuenta:hover {
+  background-color: #006400;
+  color: #fff;
+}
+
+/* Botón Imprimir PDF */
+.boton-imprimir-pdf {
+  background-color: white;
+  color: #006400;
+  border: 2px solid #006400;
+}
+/* Efecto hover para el botón Imprimir PDF */
+.boton-imprimir-pdf:hover {
+  background-color: #006400;
+  color: #fff;
+}
+/* Ocultar botones al imprimir */
+@media print {
+  .botones-accion,
+  header,
+  footer,
+  .columna-boton-atras-detalles {
+    display: none !important;         /* oculta estos elementos al imprimir */
+  }
+  body {
+    margin: 0;
+    padding: 20px;
+  }
+  .contenedor-principal {
+    margin: 0;
+    padding: 0;
+  }
 }

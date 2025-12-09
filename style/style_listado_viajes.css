@@ -30,7 +30,6 @@ main {
     flex: 1;
     width: 100%;
     margin-top: var(--header-h);                
-    margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
 }
 /* Evita que header y footer se encojan */
 header, footer {
@@ -57,8 +56,7 @@ footer {
   width: 100%;              /* ocupa todo el ancho */
   height: 80px;             /* altura fija: prueba con 100px */
   background: #006400;
-  position: fixed;          /* fija el footer en la parte inferior */
-  bottom: 0;                /* asegura que esté en la parte inferior */
+  position: relative;       /* el footer ya no está fijo */
   text-align: center;
   align-items: center;      /* centra verticalmente el contenido */
   color: white;
@@ -174,7 +172,7 @@ footer nav a:focus-visible {
 .columna-filtros{
   position: fixed;                /* fijado respecto a la ventana, como header/footer */
   top: 100px;                     /* evita quedar debajo del header (coincide con header height) */
-  bottom: 80px;                   /* evita quedar debajo del footer (coincide con footer height) */                   /* separación desde el borde izquierdo */
+  height: calc(100vh - 100px);    /* ocupa desde el header hasta el final de la pantalla */
   width: 15%;                    
   display: flex;                 
   flex-direction: column;
