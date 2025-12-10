@@ -260,9 +260,17 @@ header nav a:focus-visible {
     font-weight: 700;
   }
 
-  /* When checkbox checked, show nav */
-  #menu-toggle:checked~.nav-menu {
+  /* When checkbox checked OR open class is added, show nav */
+  #menu-toggle:checked~.nav-menu,
+  .nav-menu.open {
     transform: translateX(0);
+  }
+
+  /* hide language selectors */
+  .logo_idioma,
+  .logo_idioma_movil,
+  .nav-utils {
+    display: none;
   }
 }
 
@@ -511,13 +519,9 @@ footer nav a:focus-visible {
 
   .etapa:not(:last-child)::after {
     display: block;
-    /* Restore line */
-    width: 50%;
-    /* Shorten line */
-    left: 50%;
-    /* Center it relative to circle center */
+    width: calc(100% - 20px);
+    left: calc(50% + 20px);
     top: 20px;
-    /* Adjust vertical pos */
   }
 
   .descripcion-etapa {
