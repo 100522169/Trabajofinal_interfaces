@@ -361,6 +361,12 @@ footer nav a:focus-visible {
   gap: 15px;
   font-size: 24px;
 }
+/* Estilo para cada icono de red social */
+.redes-sociales img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
 /* Columna 3: Reseñas de otros usuarios */
 .columna-reseñas {
   flex: 1;

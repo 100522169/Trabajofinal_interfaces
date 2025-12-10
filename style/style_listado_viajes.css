@@ -305,5 +305,5 @@ footer nav a:focus-visible {
 }
 /* Estilo para las estrellas de valoración */
 .valoracion-estrellas {
-  color: gold; /* Cambia el color de las estrellas a dorado */
+  color: black; /* Cambia el color de las estrellas a negro */
 }

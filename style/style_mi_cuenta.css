@@ -367,33 +367,32 @@ footer nav a:focus-visible {
 .boton-ver-detalles:hover {
   background: #005000;
 }
-
+/* Mensaje si no hay reservas */
 .mensaje-sin-reservas {
   text-align: center;
   padding: 40px;
   color: #999;
   font-size: 18px;
 }
-
 /* Configuración */
-.configuracion-content {
+.configuracion-contenedor {
   display: flex;
   flex-direction: column;
   gap: 25px;
   max-width: 500px;
 }
-
+/* Cada elemento de configuración */
 .config-item {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
+/* Etiqueta del elemento de configuración */
 .config-item label {
   font-weight: bold;
   color: #000;
 }
-
+/* Selector de configuración */
 .config-item select {
   padding: 10px;
   border: 1px solid #ccc;

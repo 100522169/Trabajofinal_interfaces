@@ -34,7 +34,7 @@ const viajes = [
       'Día libre para actividades personales. Regreso y fin del tour.'
     ],
     condiciones: 'Incluye transporte, seguro y desayunos. Mascotas permitidas. Nivel físico: bajo-medio.',
-    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años de experiencia', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['📱', '💼', '📷'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años de experiencia', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
     reseñas: [
       { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.' },
       { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' }
@@ -52,7 +52,7 @@ const viajes = [
       'Ruta final de trekking hacia el punto de partida. Descenso controlado y ceremonia de despedida del grupo.'
     ],
     condiciones: 'Alta intensidad física. Incluye equipo de montaña y guía profesional. No mascotas.',
-    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años de experiencia', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['📱', '🏔️', '📷'], valoracion: 5, avatar: 'images/avatar-carlos.jpg' },
+    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años de experiencia', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-carlos.jpg' },
     reseñas: [
       { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.' }
     ]
@@ -74,7 +74,7 @@ const viajes = [
       'Misa del Peregrino en la Catedral. Certificado de Compostela. Tarde libre para explorar la ciudad y celebrar.'
     ],
     condiciones: 'Incluye albergues, transporte de mochila y credencial. Buena condición física.',
-    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años de experiencia', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['📱', '⛪', '📷'], valoracion: 4, avatar: 'images/avatar-santiago.jpg' },
+    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años de experiencia', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-santiago.jpg' },
     reseñas: [
       { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.' }
     ]
@@ -91,7 +91,7 @@ const viajes = [
       'Día en las playas de Miraflores. Posibilidad de parapente sobre el Pacífico. Cena de despedida con show de marinera.'
     ],
     condiciones: 'Todo incluido. Mascotas pequeñas permitidas. Nivel físico: bajo.',
-    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años de experiencia', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['📱', '🌄', '📷'], valoracion: 3, avatar: 'images/avatar-miguel.jpg' },
+    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años de experiencia', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatar-miguel.jpg' },
     reseñas: [
       { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.' }
     ]
@@ -110,7 +110,7 @@ const viajes = [
       'Tren panorámico de regreso a Cusco. Tarde libre en Cusco para compras y descanso. Cena de celebración en restaurante típico.'
     ],
     condiciones: 'Entrada incluida, equipo de camping. Muy buena condición física requerida.',
-    guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años de experiencia', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['📱', '⛰️', '📷'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' }
+    guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años de experiencia', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' }
   },
   { 
     destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
@@ -125,7 +125,7 @@ const viajes = [
       'Día libre para explorar a tu ritmo. Sugerencias: Arashiyama, Bamboo Grove, templo Ryoan-ji. Shopping en Gion o Nishiki Market.'
     ],
     condiciones: 'Incluye entradas, ceremonia del té y kimono. Mascotas pequeñas permitidas.',
-    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años de experiencia', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['📱', '🎎', '📷'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
+    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años de experiencia', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
     reseñas: []
   },
   { 
@@ -151,8 +151,39 @@ const viajes = [
       'Check out y traslado al aeropuerto. Sayonara Japón. Entrega de regalos de despedida del tour.'
     ],
     condiciones: 'JR Pass incluido. Nivel físico medio. Largas caminatas diarias.',
-    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años de experiencia', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['📱', '🗾', '📷'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años de experiencia', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
     reseñas: []
+  },
+
+  {
+  destino: 'Argentina', duracion: 10, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas',
+  dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
+  galeria: ['images/patagonia.jpg','images/patagonia.jpg','images/patagonia.jpg'],
+    itinerario: ['El Calafate', 'Glaciar Perito Moreno', 'Ushuaia', 'Trekking en Torres del Paine'],
+    itinerarioDetallado: ['Llegada a El Calafate y visita al glaciar.', 'Excursión al Perito Moreno con navegación.', 'Traslado a Ushuaia y actividades en el fin del mundo.', 'Trekking y observación de fauna.'],
+    condiciones: 'Incluye traslados y alojamiento. Nivel físico medio-alto.',
+    guia: { nombre: 'Laura Pérez', edad: '36 años', experiencia: '10 años', experiencias: 'Guía en Patagonia', idiomas: 'Español, Inglés', contacto: '+54 9 11 2345 6789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-laura.jpg' },
+    reseñas: [ { nombre: 'María R.', comentario: 'Paisajes impresionantes y guía excepcional.' } ]
+  },
+  {
+    destino: 'Maldivas', duracion: 7, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax',
+    dietasDisponibles: ['vegano','vegetariano'],
+    galeria: ['images/maldivas.jpg','images/maldivas.jpg','images/maldivas.jpg'],
+    itinerario: ['Resort y actividades acuáticas', 'Snorkel y buceo', 'Excursión a islas cercanas'],
+    itinerarioDetallado: ['Llegada al resort y acomodación.', 'Día de actividades acuáticas y snorkel.', 'Excursión a islas locales y cultura.', 'Relax y salida.'],
+    condiciones: 'Incluye alojamiento en resort y desayunos.',
+    guia: { nombre: 'Ahmed Ali', edad: '30 años', experiencia: '8 años', experiencias: 'Guía local en islas', idiomas: 'Inglés', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-ahmed.jpg' },
+    reseñas: [ { nombre: 'Laura G.', comentario: 'Un paraíso, servicio excelente.' } ]
+  },
+  {
+    destino: 'Argentina', duracion: 6, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva',
+    dietasDisponibles: ['vegetariano','sin-gluten'],
+    galeria: ['images/cataratas_iguazu.jpg','images/cataratas_iguazu.jpg'],
+    itinerario: ['Visita a las cataratas', 'Recorrido por la selva', 'Excursiones en lancha'],
+    itinerarioDetallado: ['Excursión a las pasarelas de las cataratas.', 'Paseo en lancha por la garganta del diablo.', 'Ruta por la selva con guía especializado.'],
+    condiciones: 'Incluye entradas y transporte.',
+    guia: { nombre: 'Diego Morales', edad: '40 años', experiencia: '12 años', experiencias: 'Guía de naturaleza', idiomas: 'Español, Portugués', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-diego.jpg' },
+    reseñas: [ { nombre: 'Carlos V.', comentario: 'Impresionante y bien organizado.' } ]
   }
 ];
 
@@ -221,6 +252,29 @@ if (window.location.pathname.includes("home.html")) {
   botonregistrarse.addEventListener('click', () => {
     window.location.href = 'registrarse.html';
   });
+
+  // Hacer que las tarjetas de "Viajes en grupo" en Home abran la ficha de detalles
+  // Asociamos dinámicamente cada tarjeta con un viaje del array `viajes` (añadidos al final)
+  const tarjetasHome = document.querySelectorAll('.columna-tarjeta .tarjeta');
+  if (tarjetasHome && tarjetasHome.length > 0) {
+    // Los tres últimos viajes del array se utilizarán para las tarjetas del home
+    tarjetasHome.forEach((tarjeta, i) => {
+      tarjeta.style.cursor = 'pointer';
+      tarjeta.addEventListener('click', () => {
+        // Calcular índice del viaje correspondiente (últimos N del array)
+        const offset = viajes.length - tarjetasHome.length;
+        const viajeIndex = Math.max(0, offset + i);
+        const viaje = viajes[viajeIndex];
+        if (viaje) {
+          localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+          // Marcar que venimos del home (no del listado)
+          localStorage.setItem('origenViaje', 'home');
+          // Redirigir a la página de detalles
+          window.location.href = 'detalles_viaje.html';
+        }
+      });
+    });
+  }
 }
 
 
@@ -494,6 +548,8 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         localStorage.setItem('viajesFiltradosActuales', JSON.stringify(currentFiltrados));
         // Guardar el índice del viaje en el array filtrado actual
         localStorage.setItem('indiceViajeSeleccionado', index.toString());    //index.toString() convierte el índice a cadena
+        // Marcar que venimos del listado
+        localStorage.setItem('origenViaje', 'listado');
         // Redirigir a la página de detalles
         window.location.href = 'detalles_viaje.html';
       });
@@ -575,15 +631,24 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     window.location.href = 'listado_viajes.html';
   }
   
-  // Botón de vuelta atrás a listado_viajes.html
+  // Botón de vuelta atrás - detectar si viene del home o del listado
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      // Limpiar el indicador de viaje de reserva y el índice
+      const origen = localStorage.getItem('origenViaje');
+      
+      // Limpiar indicadores
       localStorage.removeItem('viajeReservaOrigen');
       localStorage.removeItem('indiceViajeSeleccionado');
-      // Ir al listado de viajes
-      window.location.href = 'listado_viajes.html';
+      localStorage.removeItem('origenViaje');
+      
+      // Redirigir según el origen
+      // Si venimos del home, redirigir a home.html; si venimos del listado, redirigir a listado_viajes.html
+      if (origen === 'home') {
+        window.location.href = 'home.html';
+      } else {
+        window.location.href = 'listado_viajes.html';
+      }
     });
   }
   
@@ -680,11 +745,11 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       nombre = 'Nombre y apellidos',
       edad = 'Edad',
       experiencia = 'Años de experiencia',
-      experiencias = 'Tour por montañas y experto en gastronomía local',
-      idiomas = 'B2(Inglés) y C2(Español)',
-      contacto = '+34 XXX XXX XXX',
-      redesSociales = ['📱', '💼', '📷'],
-      valoracion = 3,
+      experiencias = 'Experiencias',
+      idiomas = 'Idiomas',
+      contacto = '+XX XXX XXX XXX',
+      redesSociales = ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'],
+      valoracion = 5,
       avatar = ''
     } = guia;
     
@@ -737,7 +802,8 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     redesDiv.className = 'redes-sociales';
     redesSociales.forEach(icono => {
       const span_redes_sociales = document.createElement('span');
-      span_redes_sociales.textContent = icono;
+      // Añadir el icono de red social al span
+      span_redes_sociales.innerHTML = icono;
       redesDiv.appendChild(span_redes_sociales);
     });
     
@@ -2136,9 +2202,9 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
   }
 
   // Botón imprimir reserva
-  const btnImprimirReserva = document.querySelector('.btn-imprimir-reserva');
-  if (btnImprimirReserva) {
-    btnImprimirReserva.addEventListener('click', () => {
+  const botonImprimirReserva = document.querySelector('.btn-imprimir-reserva');
+  if (botonImprimirReserva) {
+    botonImprimirReserva.addEventListener('click', () => {
       const modal = document.getElementById('modal-detalle-reserva');
       const reserva = JSON.parse(modal.dataset.reservaActual);
       
@@ -2153,9 +2219,9 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
   }
 
   // Botón cerrar sesión
-  const btnCerrarSesion = document.querySelector('.boton-cerrar-sesion');
-  if (btnCerrarSesion) {
-    btnCerrarSesion.addEventListener('click', () => {
+  const botonCerrarSesion = document.querySelector('.boton-cerrar-sesion');
+  if (botonCerrarSesion) {
+    botonCerrarSesion.addEventListener('click', () => {
       if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
         localStorage.removeItem('usuarioActual');
         window.location.href = 'home.html';
