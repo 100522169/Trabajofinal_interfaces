@@ -1,17 +1,24 @@
 /* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
-  * {
-  margin: 0;              /* Quita margen por defecto */
-  padding: 0;             /* Quita padding por defecto */
-  box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
+* {
+  margin: 0;
+  /* Quita margen por defecto */
+  padding: 0;
+  /* Quita padding por defecto */
+  box-sizing: border-box;
+  /* Hace que el ancho y alto incluyan borde y padding */
 }
+
 /* Evitar scroll horizontal accidental */
-html, body {
-  overflow-x: hidden;  /* previene scroll horizontal */
+html,
+body {
+  overflow-x: hidden;
+  /* previene scroll horizontal */
 }
+
 /* Tipografía base para todo el cuerpo */
 body {
-  font-family: Arial, sans-serif; 
-  background-color: #fff;          
+  font-family: Arial, sans-serif;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -20,133 +27,253 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* Variables CSS para alturas de header y footer */
 :root {
   --header-h: 110px; /* altura del header usada para margin-top */
   --footer-h: 30px; /* altura del footer usada para margin-bottom */
 }
+
 /* Contenedor principal que envuelve header, main y footer */
 main {
-    flex: 1;
-    width: 100%;
-    margin-top: var(--header-h);                
-    margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
+  flex: 1;
+  width: 100%;
+  margin-top: var(--header-h);
+  /* margin-bottom: var(--footer-h); removed */
+  /* deja espacio para el footer fijo */
 }
+
 /* Evita que header y footer se encojan */
-header, footer {
-    flex-shrink: 0;           /* evita que se encojan */
+header,
+footer {
+  flex-shrink: 0;
+  /* evita que se encojan */
 }
+
 /* Estilo general para enlaces */
 header {
-  width: 100%;              /* ocupa todo el ancho */
-  height: 100px;            /* altura fija: prueba con 100px */
+  width: 100%;
+  /* ocupa todo el ancho */
+  height: 100px;
+  /* altura fija: prueba con 100px */
   background: #006400;
-  position: fixed;          /* fija el header en la parte superior */
-  top: 0; left:0; right: 0; /* asegura que esté en la parte superior */
-  margin-bottom: 15px;      /* separa el header del contenido */
+  position: fixed;
+  /* fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* asegura que esté en la parte superior */
+  margin-bottom: 15px;
+  /* separa el header del contenido */
   text-align: left;
-  align-items: center;      /* centra verticalmente el contenido */
+  align-items: center;
+  /* centra verticalmente el contenido */
   color: white;
-  padding: 0 20px;          /* espacio interno arriba y abajo */
-  display: flex;            
-  justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
-  z-index: 1000;                         /* asegura que esté por encima de todo el contenido */
+  padding: 0 20px;
+  /* espacio interno arriba y abajo */
+  display: flex;
+  justify-content: space-between;
+  /*Definimos 3 columnas donde poner los elementos*/
+  z-index: 1000;
+  /* asegura que esté por encima de todo el contenido */
 }
+
 /* Estilo general para footer, similar al header */
 footer {
-  width: 100%;              /* ocupa todo el ancho */
-  height: 80px;             /* altura fija: prueba con 100px */
+  width: 100%;
+  /* ocupa todo el ancho */
+  height: 80px;
+  /* altura fija: prueba con 100px */
   background: #006400;
   position: relative;       /* el footer ya no está fijo */
   bottom: 0;                /* asegura que esté en la parte inferior */
   text-align: center;
-  align-items: center;      /* centra verticalmente el contenido */
+  align-items: center;
+  /* centra verticalmente el contenido */
   color: white;
-  padding: 20px;            /* espacio interno */
+  padding: 20px;
+  /* espacio interno */
   display: flex;
-  justify-content: center;  /* centra todo el contenido horizontalmente */
+  justify-content: center;
+  /* centra todo el contenido horizontalmente */
 }
+
 /* Logo de la página */
-header img{
+header img {
   width: 80px;
   height: 80px;
 }
+
 /* título de la página */
-header .titulo{
-  font-size: 18px;          /* tamaño legible sin ser gigante */
-  font-family: "montserrat", sans-serif;  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
-  font-weight: 700;          /* peso negrita */
-  text-transform: uppercase; 
+header .titulo {
+  font-size: 18px;
+  /* tamaño legible sin ser gigante */
+  font-family: "montserrat", sans-serif;
+  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
+  font-weight: 700;
+  /* peso negrita */
+  text-transform: uppercase;
   margin-right: 50px;
 }
+
 /* Menú centrado (fila horizontal de enlaces) */
-header nav{ 
+header nav {
   padding: 0;
 }
+
 /* Lista de elementos del menú */
-header nav ul{
-  list-style: none;          /* sin viñetas */
-  display: flex;             /* pone los <li> en fila */
-  font-weight: 500;          /* peso semi-negrita */
-  text-transform: uppercase; 
-  gap: 2rem;                 /* separación entre elementos del menú */
+header nav ul {
+  list-style: none;
+  /* sin viñetas */
+  display: flex;
+  /* pone los <li> en fila */
+  font-weight: 500;
+  /* peso semi-negrita */
+  text-transform: uppercase;
+  gap: 2rem;
+  /* separación entre elementos del menú */
   margin-right: 50px;
 }
+
 /* Cada enlace del menú */
-header nav a{
-  text-decoration: none;     /* sin subrayado */
-  color: #fff;             /* color de texto del menú */
-  border-radius: .375rem;    /* esquinas suaves para el hover */
+header nav a {
+  text-decoration: none;
+  /* sin subrayado */
+  color: #fff;
+  /* color de texto del menú */
+  border-radius: .375rem;
+  /* esquinas suaves para el hover */
 }
+
 /* Utilidades (derecha): logo + selector de idioma en fila */
-header .logo_idioma{
-  display: flex;             /* elementos en línea: imagen + select */
-  align-items: center;       /* verticalmente centrados */
-  gap: .5rem;                /* separación entre logo y select */
-  padding:0;
+header .logo_idioma {
+  display: flex;
+  /* elementos en línea: imagen + select */
+  align-items: center;
+  /* verticalmente centrados */
+  gap: .5rem;
+  /* separación entre logo y select */
+  padding: 0;
 }
+
 /* Logo y selector de idioma */
-header .logo_idioma img{
-  width: 120px; height: auto; /* tamaño consistente del logo */
+header .logo_idioma img {
+  width: 120px;
+  height: auto;
+  /* tamaño consistente del logo */
 }
+
 /* Selector de idioma */
-header .logo_idioma select{
-  font: inherit;              /* que el select use la misma fuente que la página */
+header .logo_idioma select {
+  font: inherit;
+  /* que el select use la misma fuente que la página */
   border: 1px solid #cbd5e1;
   border-radius: .375rem;
   background-color: white;
 }
+
 /* Efecto hover y focus en enlaces del menú */
 header nav a:hover,
 header nav a:focus-visible {
-  text-decoration: underline;   /* subrayado al pasar el ratón o enfocar con teclado */
+  text-decoration: underline;
+  /* subrayado al pasar el ratón o enfocar con teclado */
 }
+
 /* Ocultar checkbox y botón de hamburguesa en escritorio */
 .menu-toggle,
 .hamburger-btn {
-    display: none;
+  display: none;
 }
+
 /* Oculta las utilidades en la versión de escritorio */
 .nav-menu .nav-utils {
-    display: none;
+  display: none;
 }
+
+/* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
+@media (max-width:700px) {
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .hamburger-btn {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #006400;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    padding-top: 72px;
+    z-index: 1500;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* When checkbox checked, show nav */
+  #menu-toggle:checked~.nav-menu {
+    transform: translateX(0);
+  }
+}
+
 /* Estilo para el enlace de iniciar sesión */
 header .botones_header button {
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-right: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
+
 /* Efecto hover en el botón de iniciar sesión */
 header .botones_header button:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
+
 /* Estilo de la info del footer*/
 footer nav a {
   font-weight: 500;
@@ -155,6 +282,7 @@ footer nav a {
   text-decoration: none;
   margin: 0 10rem;
 }
+
 /* Efecto hover y focus en enlaces del footer */
 footer nav a:hover,
 footer nav a:focus-visible {
@@ -163,62 +291,72 @@ footer nav a:focus-visible {
 
 /*formulario_compra2 styles*/
 /* Estilos para la columna del boton-atras de detalles del viaje */
-.columna-boton-atras-detalles{
-  position: relative;   /* fijo en la pantalla, no se mueve con scroll */
-  top: 140px;           /* margen desde la parte superior */
-  left: 20px;           /* margen desde la izquierda */
-  display: flex;                 
-  flex-direction: column; 
+.columna-boton-atras-detalles {
+  position: relative;
+  /* fijo en la pantalla, no se mueve con scroll */
+  top: 140px;
+  /* margen desde la parte superior */
+  left: 20px;
+  /* margen desde la izquierda */
+  display: flex;
+  flex-direction: column;
 }
+
 /* Estilos para el botón de vuelta atrás en detalles del viaje */
 .columna-boton-atras-detalles button {
-   width: 60px;
-   height: 50px;
-   border: 1px solid black;
-   border-radius: 10px;
-   background: #006400;
-   color: white;
-   font-size: 30px;
-   cursor: pointer;
+  width: 60px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #006400;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
 }
+
 /* Efecto hover en el botón de vuelta atrás en detalles del viaje */
 .columna-boton-atras-detalles button:hover {
-   background: #004d00;
+  background: #004d00;
 }
-.titulo-formulario{
+
+.titulo-formulario {
   text-align: center;
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 /* Estilo para el contenedor de las etapas */
-.contenedor-etapas{
+.contenedor-etapas {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
+
 /* Estilo para cada etapa */
-.etapa{
+.etapa {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
   position: relative;
 }
+
 /* Línea entre etapas */
-.etapa:not(:last-child)::after{
-  content: '';                    /* contenido vacío para el pseudo-elemento */
+.etapa:not(:last-child)::after {
+  content: '';
   position: absolute;
   top: 30px;
-  right: -50%;  
+  left: 50%;
   width: 100%;
   height: 2px;
   background-color: black;
-  z-index: -1;                   /* coloca la línea detrás del círculo */
+  z-index: -1;
 }
+
 /* Estilo para el círculo de cada etapa */
-.circulo{
+.circulo {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -231,8 +369,9 @@ footer nav a:focus-visible {
   font-weight: bold;
   margin-bottom: 5px;
 }
+
 /* Estilo para el círculo de cada etapa */
-.circulo-color{
+.circulo-color {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -246,8 +385,9 @@ footer nav a:focus-visible {
   color: white;
   margin-bottom: 5px;
 }
+
 /* Estilo para la descripción de cada etapa */
-.descripcion-etapa{
+.descripcion-etapa {
   margin-top: 10px;
   font-size: 20px;
   text-align: center;
@@ -256,8 +396,9 @@ footer nav a:focus-visible {
   padding: 14px;
   margin-bottom: 20px;
 }
+
 /* Estilos para el título del formulario */
-.titulo-paso{
+.titulo-paso {
   display: flex;
   text-align: left;
   font-size: 30px;
@@ -266,61 +407,75 @@ footer nav a:focus-visible {
   margin-top: 20px;
   margin-left: 140px;
 }
+
 /* Estilos para el contenedor del paso 2 */
-.paso-2{
+.paso-2 {
   max-width: 1280px;
   margin: 0 auto;
   padding: 20px;
 }
+
 /* Contenedor de las columnas del paso 2 */
-.paso2-columnas{
+.paso2-columnas {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
+  /* Allow columns to wrap on smaller screens */
 }
+
 /* Aplicar sobre las columnas especificadas dentro de .paso2-columnas para igualar ancho/alto */
 .columna-acompañantes,
 .columna-mascotas,
 .columna-alergias {
-  flex: 1;               /* todas las columnas comparten el mismo ancho */
-  min-width: 0;          /* evita overflow por elementos anchos */
-  display: flex;         
+  flex: 1;
+  /* todas las columnas comparten el mismo ancho */
+  min-width: 300px;
+  /* Ensure columns don't get too narrow */
+  display: flex;
   flex-direction: column;
 }
+
 /* Estilos para los títulos de la columna acompañantes */
-.columna-acompañantes h3{
+.columna-acompañantes h3 {
   margin-bottom: 14px;
   font-size: 22px;
   font-weight: 700;
 }
+
 /* Estilos para el contenedor de input con icono */
-.input-icon{
+.input-icon {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 /* Estilos para los campos de entrada de texto y email */
 .input-icon input[type="text"],
-.input-icon input[type="email"]{
+.input-icon input[type="email"] {
   padding: 15px;
   border: 1px solid #222;
   border-radius: 6px;
   margin-top: 6px;
   margin-bottom: 13px;
-  flex: 1;              /* ocupa todo el espacio disponible */
+  flex: 1;
+  /* ocupa todo el espacio disponible */
 }
+
 /* Estilos para el placeholder de los campos de entrada */
 input[type="text"]::placeholder,
-input[type="email"]::placeholder{
+input[type="email"]::placeholder {
   font-size: 14px;
   font-weight: normal;
   color: black;
 }
+
 /* Estilos para el icono dentro de input-icon */
-.input-icon .icon{
+.input-icon .icon {
   font-size: 20px;
 }
+
 /* Estilos para el botón de añadir acompañante */
-.boton-añadir{
+.boton-añadir {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -332,8 +487,9 @@ input[type="email"]::placeholder{
   cursor: pointer;
   font-weight: 700;
 }
+
 /* Estilos para el símbolo + dentro del botón añadir */
-.boton-añadir .mas{
+.boton-añadir .mas {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -344,92 +500,109 @@ input[type="email"]::placeholder{
   line-height: 28px;
   border: 2px solid #fff;
 }
+
 /* Estilos para los títulos de la columna mascotas */
-.columna-mascotas h3{
+.columna-mascotas h3 {
   margin-bottom: 14px;
   font-size: 22px;
   font-weight: 700;
 }
+
 /* Estilos para la sección de si viaja mascota */
-.viaja-mascota{
+.viaja-mascota {
   display: flex;
   gap: 12px;
   align-items: center;
   margin-bottom: 14px;
 }
+
 /* Estilos para el titulo dentro de viaja-mascota */
-.viaja-mascota h3{
+.viaja-mascota h3 {
   font-size: 16px;
   font-weight: 500;
-  margin: 0;                           /* Eliminar márgenes por defecto del h3 */
+  margin: 0;
+  /* Eliminar márgenes por defecto del h3 */
 }
+
 /* Estilos para las etiquetas dentro de viaja-mascota */
-.viaja-mascota label{ 
+.viaja-mascota label {
   display: inline-flex;
   align-items: center;
   font-size: 16px;
   gap: 7px;
 }
+
 /* Estilos para los inputs radio dentro de viaja-mascota */
-.viaja-mascota input[type="radio"]{
-  margin: 0;                            /* Eliminar márgenes por defecto */
+.viaja-mascota input[type="radio"] {
+  margin: 0;
+  /* Eliminar márgenes por defecto */
 }
+
 /* Estilos para las etiquetas de los campos de entrada */
-.etiqueta2{
+.etiqueta2 {
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
   font-size: 18px;
   gap: 10px;
 }
+
 /* Estilos para los campos de entrada de texto dentro de etiqueta2 */
-.etiqueta2 input[type="text"]{
+.etiqueta2 input[type="text"] {
   padding: 15px;
   border: 1px solid #222;
   border-radius: 6px;
   margin-top: 6px;
   margin-bottom: 7px;
 }
+
 /* Estilo para el titulo de subir documentación */
-.subir-documentacion{
+.subir-documentacion {
   display: block;
   margin-bottom: 30px;
   font-size: 18px;
 }
+
 /* Estilos para el input file dentro de subir-documentacion */
-.subir-documentacion input[type="file"]{
+.subir-documentacion input[type="file"] {
   margin-top: 6px;
   font-size: 15px;
 }
+
 /* Estilos para los títulos de la columna alergias */
-.columna-alergias h3{
+.columna-alergias h3 {
   margin-bottom: 14px;
   font-size: 22px;
   font-weight: 700;
 }
+
 /* Subtítulo de comidas adaptadas */
-.subtitulo-dietas{
+.subtitulo-dietas {
   font-size: 17px;
   margin-bottom: 8px;
   color: black;
 }
+
 /* Contenedor de dietas */
-.dietas{
+.dietas {
   display: flex;
   gap: 15px;
   align-items: flex-start;
   margin-bottom: 16px;
 }
+
 /* Cada item de dieta (icono + texto) */
-.dieta-item{
+.dieta-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  width: 60px;              /* Fija el ancho para mantener espaciado uniforme */
+  width: 60px;
+  /* Fija el ancho para mantener espaciado uniforme */
 }
+
 /* Icono de dieta (círculo con imagen de fondo) */
-.dieta-icon{
+.dieta-icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -437,15 +610,17 @@ input[type="email"]::placeholder{
   background-size: cover;
   background-position: center;
 }
+
 /* Texto debajo del icono */
-.dieta-label{
+.dieta-label {
   font-size: 15px;
   text-align: center;
   color: #222;
   margin-bottom: 10px;
 }
+
 /* Botón de más opciones (modal) */
-.dieta-modal{
+.dieta-modal {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -457,19 +632,23 @@ input[type="email"]::placeholder{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* Evita que el botón se encoja */
+  flex-shrink: 0;
+  /* Evita que el botón se encoja */
 }
+
 /* Efecto hover en el botón de más opciones */
-.dieta-modal:hover{
+.dieta-modal:hover {
   background: #f0f0f0;
 }
+
 /* Contenedor del botón siguiente paso */
-.contenedor-boton-next{
+.contenedor-boton-next {
   display: flex;
   justify-content: center;
 }
+
 /* Estilos para el botón siguiente paso */
-.boton-next{
+.boton-next {
   background-color: black;
   color: white;
   border: none;
@@ -480,16 +659,18 @@ input[type="email"]::placeholder{
   font-weight: bold;
   margin-top: 17px;
 }
+
 /* Estilos para grupo de acompañante añadido dinámicamente */
-.grupo-acompañante{
+.grupo-acompañante {
   margin-bottom: 15px;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
 }
+
 /* Estilos para el botón de eliminar acompañante */
-.boton-eliminar{
+.boton-eliminar {
   background: #d32f2f;
   color: white;
   border: none;
@@ -499,13 +680,16 @@ input[type="email"]::placeholder{
   font-weight: 600;
   margin-top: 8px;
 }
+
 /* Efecto hover en el botón de eliminar acompañante */
-.boton-eliminar:hover{
+.boton-eliminar:hover {
   background: #b71c1c;
 }
+
 /* Modal de dietas */
-.modal-dietas{
-  position: fixed;         /* fija el modal en la pantalla */
+.modal-dietas {
+  position: fixed;
+  /* fija el modal en la pantalla */
   top: 0;
   left: 0;
   width: 100%;
@@ -514,10 +698,12 @@ input[type="email"]::placeholder{
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;            /* asegura que esté por encima de todo el contenido */
+  z-index: 1000;
+  /* asegura que esté por encima de todo el contenido */
 }
+
 /* Contenido del modal de dietas */
-.modal-contenido{
+.modal-contenido {
   background: white;
   padding: 30px;
   border-radius: 12px;
@@ -526,22 +712,25 @@ input[type="email"]::placeholder{
   max-height: 80vh;
   overflow-y: auto;
 }
+
 /* Título del modal */
-.modal-contenido h3{
+.modal-contenido h3 {
   margin-bottom: 20px;
   font-size: 24px;
   text-align: center;
 }
+
 /* Contenedor de las dietas dentro del modal */
-.modal-dietas-container{
+.modal-dietas-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 20px;
   justify-content: center;
 }
+
 /* Cada item de dieta dentro del modal */
-.dieta-item-modal{
+.dieta-item-modal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -550,8 +739,9 @@ input[type="email"]::placeholder{
   border-radius: 8px;
   width: 80px;
 }
+
 /* Icono de dieta dentro del modal */
-.cerrar-modal{
+.cerrar-modal {
   background: #006400;
   color: white;
   border: none;
@@ -562,9 +752,66 @@ input[type="email"]::placeholder{
   width: 100%;
   font-size: 16px;
 }
+
 /* Estilo hover para el botón cerrar modal */
-.cerrar-modal:hover{
+.cerrar-modal:hover {
   background: #004d00;
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 700px) {
 
+  /* Footer adjustments */
+  footer {
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 10px;
+  }
+
+  footer nav a {
+    margin: 5px 0;
+    display: block;
+    /* Stack links */
+  }
+
+  /* Progress Steps adjustments */
+  .contenedor-etapas {
+    gap: 0;
+  }
+
+  .etapa:not(:last-child)::after {
+    display: block;
+    /* Restore line */
+    width: 50%;
+    left: 50%;
+    top: 20px;
+  }
+
+  .descripcion-etapa {
+    display: none;
+  }
+
+  .circulo,
+  .circulo-color {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  /* Step 2 specific mobile adjustments */
+  .titulo-paso {
+    margin-left: 20px;
+    font-size: 24px;
+  }
+
+  .paso2-columnas {
+    flex-direction: column;
+  }
+
+  .columna-acompañantes,
+  .columna-mascotas,
+  .columna-alergias {
+    min-width: 100%;
+  }
+}

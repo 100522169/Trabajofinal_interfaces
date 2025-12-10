@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head></head>
-    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
-    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
-    <link rel="stylesheet" href="style/style_formulario_compra.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
-    <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
-</head> 
+<meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
+<title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+<link rel="stylesheet" href="style/style_formulario_compra.css" /> <!-- Enlace al archivo externo de estilos CSS -->
+<script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
+</head>
+
 <body>
 
     <header>
         <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <h1 class="titulo">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -51,15 +53,15 @@
         </div>
     </header>
 
-     <section class="columna-boton-atras-detalles">
+    <section class="columna-boton-atras-detalles">
         <button type="button">⬅</button>
     </section>
 
     <main>
         <!-- Título principal del formulario de compra -->
-       <h1 class="titulo-formulario">Formulario de compra</h1>
+        <h1 class="titulo-formulario">Formulario de compra</h1>
 
-       <!-- Contenedor de las etapas del formulario -->
+        <!-- Contenedor de las etapas del formulario -->
         <section class="contenedor-etapas">
             <div class="etapa">
                 <!-- Etapa 1: Datos personales -->
@@ -93,8 +95,8 @@
                         <!-- Fecha de nacimiento -->
                         <input type="date" placeholder="Fecha de nacimiento" required>
                         <span class="icon">📅</span>
-                    </label >
-                     <label class="etiqueta">
+                    </label>
+                    <label class="etiqueta">
                         <!-- Teléfono -->
                         <input type="tel" placeholder="Teléfono" required>
                         <span class="icon">📞</span>
@@ -112,7 +114,7 @@
                         <input type="email" placeholder="Correo electrónico" required>
                         <span class="icon">📧</span>
                     </label>
-                     <label class="etiqueta">
+                    <label class="etiqueta">
                         <!-- Dirección -->
                         <input type="text" placeholder="Dirección" required>
                         <span class="icon">🏠</span>
@@ -126,13 +128,14 @@
             </form>
         </section>
     </main>
-    
+
     <footer>
         <nav>
-            <a href="#">Ayuda</a>
-            <a href="#">Contacto</a>
+            <a href="ayuda.html">Ayuda</a>
+            <a href="contacto.html">Contacto</a>
             <a href="#">Sobre nosotros</a>
         </nav>
     </footer>
 </body>
+
 </html>

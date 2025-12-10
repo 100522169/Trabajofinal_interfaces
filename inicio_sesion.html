@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head></head>
-    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
-    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
-    <link rel="stylesheet" href="style/style_inicio_sesion.css" />                                  <!-- Enlace al archivo externo de estilos CSS -->      
-    <script src="script/script.js" defer></script>                                    <!-- Enlace al archivo externo de JavaScript -->
-</head> 
+<meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
+<title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+<link rel="stylesheet" href="style/style_inicio_sesion.css" /> <!-- Enlace al archivo externo de estilos CSS -->
+<script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
+</head>
+
 <body>
 
     <header>
         <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <h1 class="titulo">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -51,34 +53,35 @@
         </div>
     </header>
 
-    <main class ="contenedor-principal">
-         <section class="columna-izquierda2">
+    <main class="contenedor-principal">
+        <section class="columna-izquierda2">
             <!--Dentro de esta clase tenemos un banner con un fondo-->
-            <div class = "banner-bienvenida">
+            <div class="banner-bienvenida">
                 <h1>Bienvenido de vuelta</h1>
                 <p>Te echábamos de menos. Entra para ver que hay de nuevo.</p>
             </div>
-         </section>
-         <section class="columna-derecha2">
-            <form class = "inicio-sesion-form">
+        </section>
+        <section class="columna-derecha2">
+            <form class="inicio-sesion-form">
                 <h1>Inicio de sesión</h1>
-                    <!--Campos para usuario y contraseña-->
-                    <input type="text" placeholder="Usuario" required>
-                    <input type="password" placeholder="Contraseña" required>
+                <!--Campos para usuario y contraseña-->
+                <input type="text" placeholder="Usuario" required>
+                <input type="password" placeholder="Contraseña" required>
                 <!--Botón para enviar el formulario-->
                 <button type="submit">Confirmar</button>
                 <!--Enlace para registrarse si no se tiene cuenta-->
                 <h3>Nuevo usuario<span class="flecha">➔</span><a href="registrarse.html">Regístrate aquí</a></span></h3>
             </form>
-         </section>
+        </section>
     </main>
 
     <footer>
         <nav>
-            <a href="#">Ayuda</a>
-            <a href="#">Contacto</a>
+            <a href="ayuda.html">Ayuda</a>
+            <a href="contacto.html">Contacto</a>
             <a href="#">Sobre nosotros</a>
         </nav>
     </footer>
 </body>
+
 </html>

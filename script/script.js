@@ -1,3 +1,21 @@
+// Menú hamburguesa - toggle para móvil
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburgerBtn && navMenu) {
+  hamburgerBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+
+  // Cerrar menú al hacer clic en un enlace
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+    });
+  });
+}
+
+// Verificar si el usuario está logueado y ocultar "Mi cuenta" si no lo está
 // Verificar si el usuario está logueado y configurar "Mi cuenta"
 const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
 const micuentaLinks = document.querySelectorAll('nav a');
@@ -19,7 +37,7 @@ micuentaLinks.forEach(link => {
 
 // Definir los viajes disponibles
 const viajes = [
-  { 
+  {
     destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg'],
@@ -40,7 +58,7 @@ const viajes = [
       { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' }
     ]
   },
-  { 
+  {
     destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos',
     dietasDisponibles: ['vegano', 'sin-gluten', 'sin-frutos-secos'],
     galeria: ['images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg'],
@@ -57,7 +75,7 @@ const viajes = [
       { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.' }
     ]
   },
-  { 
+  {
     destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago',
     dietasDisponibles: ['vegetariano', 'sin-lactosa', 'sin-huevo', 'sin-frutos-secos', 'halal'],
     galeria: ['images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg'],
@@ -79,7 +97,7 @@ const viajes = [
       { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.' }
     ]
   },
-  { 
+  {
     destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa',
     dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg'],
@@ -96,7 +114,7 @@ const viajes = [
       { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.' }
     ]
   },
-  { 
+  {
     destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg'],
@@ -112,7 +130,7 @@ const viajes = [
     condiciones: 'Entrada incluida, equipo de camping. Muy buena condición física requerida.',
     guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años de experiencia', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' }
   },
-  { 
+  {
     destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
     galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
@@ -128,7 +146,7 @@ const viajes = [
     guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años de experiencia', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
     reseñas: []
   },
-  { 
+  {
     destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-pescado', 'sin-gluten', 'halal'],
     galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
@@ -354,7 +372,7 @@ if (window.location.pathname.includes("registrarse.html")) {
   const registroConfirmarCorreo = document.querySelector(".registro-form input[placeholder = 'Confirmar correo']");
 
   registroConfirmarCorreo.addEventListener("input", () => {
-    if (registroCorreo.value != registroConfirmarCorreo.value){
+    if (registroCorreo.value != registroConfirmarCorreo.value) {
       registroConfirmarCorreo.setCustomValidity("El correo de confirmación no coincide con el correo electrónico anterior");
     } else {
       registroConfirmarCorreo.setCustomValidity("");
@@ -364,22 +382,22 @@ if (window.location.pathname.includes("registrarse.html")) {
   // Validar que la fecha de nacimiento sea una fecha válida
   const registroFecha = document.querySelector(".registro-form input[type = 'date']");
   const fechaActual = new Date();                             // Obtener la fecha actual
-  
+
   registroFecha.addEventListener("input", () => {
     const fechaIngresada = new Date(registroFecha.value);     // Convertir el valor ingresado a un objeto Date
 
     if (fechaIngresada >= fechaActual) {
-      registroFecha.setCustomValidity("La fecha de nacimiento debe ser una fecha válida en el pasado"); 
+      registroFecha.setCustomValidity("La fecha de nacimiento debe ser una fecha válida en el pasado");
     } else {
       registroFecha.setCustomValidity("");
-    }   
+    }
   });
 
   // Validar campo Login que representa el nombre de inicio de sesión y estará formado por mínimo 5 caracteres de longitud
   const registroUsuario = document.querySelector(".registro-form input[placeholder = 'Usuario']");
 
   registroUsuario.addEventListener("input", () => {
-    if(registroUsuario.value.length < 5){
+    if (registroUsuario.value.length < 5) {
       registroUsuario.setCustomValidity("El usuario debe tener al menos 5 caracteres");
     } else {
       registroUsuario.setCustomValidity("");
@@ -397,7 +415,7 @@ if (window.location.pathname.includes("registrarse.html")) {
     // (?=(.*\d){2,}): al menos dos dígitos
     // .{8,}: al menos 8 caracteres en total
     // $: fin de la cadena
-    if (!regexContraseña.test(registroContraseña.value)){
+    if (!regexContraseña.test(registroContraseña.value)) {
       registroContraseña.setCustomValidity("La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y dos números");
     } else {
       registroContraseña.setCustomValidity("");
@@ -423,7 +441,7 @@ if (window.location.pathname.includes("registrarse.html")) {
   const botonGuardar = document.querySelector(".registro-form button");
 
   registroPrivacidad.addEventListener("change", () => {      // Evento que se dispara cuando cambia el estado del checkbox
-    if(!registroPrivacidad.checked) {                        // Verificar si el checkbox no está marcado         
+    if (!registroPrivacidad.checked) {                        // Verificar si el checkbox no está marcado         
       registroPrivacidad.setCustomValidity("Debes aceptar la política de privacidad");
     } else {
       registroPrivacidad.setCustomValidity("");              // Si el checkbox está marcado, se elimina el mensaje de error
@@ -441,10 +459,10 @@ if (window.location.pathname.includes("registrarse.html")) {
 
     if (esValido) {
       // Recuperar el array de usuarios registrados o crear uno nuevo si no existe
-      const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; 
+      const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
       // Verificar si el usuario ya existe
-      const usuarioExiste = usuarios.some(usuario => usuario.acceso === registroUsuario.value); 
+      const usuarioExiste = usuarios.some(usuario => usuario.acceso === registroUsuario.value);
 
       if (usuarioExiste) {
         alert("Error: El nombre de acceso ya está registrado. Por favor, elige otro.");
@@ -454,7 +472,7 @@ if (window.location.pathname.includes("registrarse.html")) {
       const archivo = registroImagen.files[0];      // Obtener el archivo seleccionado
       const lector = new FileReader();              // Crear un objeto FileReader para leer el archivo
 
-      lector.onload = function(e) {                 // Evento que se dispara cuando la lectura del archivo se completa
+      lector.onload = function (e) {                 // Evento que se dispara cuando la lectura del archivo se completa
         const nuevoUsuario = {                      // Crear un objeto con los datos del nuevo usuario
           nombre: registroNombre.value,
           apellido: registroApellido.value,
@@ -506,7 +524,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
     localStorage.removeItem('viajesFiltradosActuales');
   }
   const columnaListado = document.querySelector('.columna-listado-viajes');
-  const ratings = {5: '★★★★★', 4: '★★★★☆', 3: '★★★☆☆'};
+  const ratings = { 5: '★★★★★', 4: '★★★★☆', 3: '★★★☆☆' };
   let currentFiltrados = [...viajesFiltrados];     // Copia de los viajes filtrados inicialmente
 
   // Función para renderizar los viajes
@@ -539,7 +557,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         </div>
         <button class="ver-detalles">Ver detalles</button>
       `;
-      
+
       // Agregar evento al botón "Ver detalles"
       const botonVerDetalles = div.querySelector('.ver-detalles');
       botonVerDetalles.addEventListener('click', () => {
@@ -553,7 +571,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         // Redirigir a la página de detalles
         window.location.href = 'detalles_viaje.html';
       });
-      
+
       columnaListado.appendChild(div);   // Agregar el div al contenedor de listado
     });
   }
@@ -571,7 +589,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
     const valoracion = document.getElementById('valoracion').value;
 
     // Partir siempre de TODOS los viajes disponibles, no solo de los pre-filtrados
-    let filtrados = [...viajes];   
+    let filtrados = [...viajes];
 
     if (destino && destino !== '') filtrados = filtrados.filter(v => v.destino === destino);   //Si se ha seleccionado un destino y es diferente de cadena vacía, entonces filtrar por destino
     if (duracion && duracion !== '') {
@@ -599,15 +617,15 @@ if (window.location.pathname.includes("listado_viajes.html")) {
   aplicarFiltrosBoton.addEventListener('click', () => {
     const filtroSelector = ['destino', 'duracion', 'rango-precio', 'tipo-viajes', 'mascotas', 'valoracion'];
     // Verificar si hay al menos un filtro seleccionado (incluyendo "Todos")
-    const TieneFiltro = filtroSelector.some(id => {  
-    const select = document.getElementById(id);       // Obtener el elemento select por su ID
-    return select.selectedIndex > 0;                  // Verificar si el índice seleccionado es mayor que 0 (es decir, no es la opción por defecto)
+    const TieneFiltro = filtroSelector.some(id => {
+      const select = document.getElementById(id);       // Obtener el elemento select por su ID
+      return select.selectedIndex > 0;                  // Verificar si el índice seleccionado es mayor que 0 (es decir, no es la opción por defecto)
     });
-    
+
     if (TieneFiltro) {
       applyFilters();
       document.getElementById('mensaje-filtros-listado').style.display = 'none';
-      
+
       // Restablecer todos los selectores a su opción por defecto
       filtroSelector.forEach(id => {
         document.getElementById(id).selectedIndex = 0;
@@ -622,10 +640,10 @@ if (window.location.pathname.includes("listado_viajes.html")) {
 
 /*Página detalles_viaje.html*/
 if (window.location.pathname.includes("detalles_viaje.html")) {
-  
+
   // Obtener el viaje seleccionado desde localStorage
   const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
-  
+
   // Si no hay viaje seleccionado, redirigir a la página de listado
   if (!viajeSeleccionado) {
     window.location.href = 'listado_viajes.html';
@@ -651,23 +669,23 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       }
     });
   }
-  
+
   // Actualizar el título con el nombre del viaje
   const tituloDetalles = document.querySelector('.titulo-detalles h1');
   if (tituloDetalles && viajeSeleccionado) {
     tituloDetalles.textContent = viajeSeleccionado.titulo;
   }
-  
+
   // Función para cargar la galería de imágenes
   function cargarGaleria(imagenes = []) {
     const galeria = document.querySelector('.galeria-imagenes');
     if (!galeria) return;
-    
+
     galeria.innerHTML = ''; // Limpiar galería
-    
+
     // Si no hay imágenes, usar la imagen principal 6 veces
     const imagenesGaleria = imagenes.length > 0 ? imagenes : Array(6).fill(viajeSeleccionado.imagen);
-    
+
     // Crear los divs de imagen y asignar background
     imagenesGaleria.forEach((urlImagen, index) => {
       const divImagen = document.createElement('div');
@@ -676,44 +694,44 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       galeria.appendChild(divImagen);
     });
   }
-  
+
   // Cargar la galería del viaje seleccionado
   if (viajeSeleccionado) {
     cargarGaleria(viajeSeleccionado.galeria || []);
   }
-  
+
   // Función para generar el itinerario dinámicamente
   function generarItinerario(numeroDias, actividades = [], detalles = []) {
     const contenedor = document.querySelector('.contenedor-itinerario');
     contenedor.innerHTML = ''; // Limpiar contenido previo
-    
+
     // Bucle para crear cada día del itinerario
     for (let i = 1; i <= numeroDias; i++) {
       // Crear el div para cada día
       const diaDiv = document.createElement('div');
       diaDiv.className = 'dia-itinerario';            // Asignar clase CSS
-      
+
       // Crear el span con la descripción del día
       const spanDia = document.createElement('span');
       // Si hay actividades definidas, usarlas; si no, usar texto por defecto
-      spanDia.textContent = actividades[i-1]    // Índice i-1 porque el array empieza en 0
-        ? `Día ${i}: ${actividades[i-1]}`       // Usar la actividad definida para el día
+      spanDia.textContent = actividades[i - 1]    // Índice i-1 porque el array empieza en 0
+        ? `Día ${i}: ${actividades[i - 1]}`       // Usar la actividad definida para el día
         : `Día ${i}: [Actividad]`;              // Texto por defecto si no hay actividad definida
-      
+
       // Crear el botón "Más detalles"
       const botonmasdetalles = document.createElement('button');
       botonmasdetalles.className = 'boton-mas-detalles';
       botonmasdetalles.textContent = 'Más detalles';        // Texto del botón
 
       botonmasdetalles.addEventListener('click', () => {    // Evento al hacer clic en el botón "Más detalles"
-        const detalleTexto = detalles[i-1] || 'No hay información detallada disponible para este día.';     // Usar el detalle definido o un mensaje por defecto
+        const detalleTexto = detalles[i - 1] || 'No hay información detallada disponible para este día.';     // Usar el detalle definido o un mensaje por defecto
         alert(`Día ${i}\n\n${detalleTexto}`);
       });
-      
+
       // Agregar elementos al div del día
       diaDiv.appendChild(spanDia);
       diaDiv.appendChild(botonmasdetalles);
-      
+
       // Agregar el día al contenedor
       contenedor.appendChild(diaDiv);
     }
@@ -723,12 +741,12 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   function generarCondiciones(texto = '') {
     const contenedor = document.querySelector('.contenedor-condiciones');
     contenedor.innerHTML = ''; // Limpiar contenido previo
-    
+
     // Si no hay texto definido, usar uno por defecto
     if (!texto) {
       texto = 'Descripción de eventos que podrían suceder durante la travesía';
     }
-    
+
     // Crear un único párrafo con todo el texto
     const parrafo = document.createElement('p');
     parrafo.textContent = texto;
@@ -739,7 +757,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   function generarInfoGuia(guia = {}) {
     const contenedor = document.querySelector('.contenedor-info-guia');
     contenedor.innerHTML = ''; // Limpiar contenido previo
-    
+
     // Valores por defecto si no se proporcionan
     const {
       nombre = 'Nombre y apellidos',
@@ -752,15 +770,15 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       valoracion = 5,
       avatar = ''
     } = guia;
-    
+
     // Crear sección de info básica
     const infoGuiaDiv = document.createElement('div');
     infoGuiaDiv.className = 'info-guia';
-    
+
     // Crear avatar
     const avatarDiv = document.createElement('div');
     avatarDiv.className = 'avatar';
-    
+
     // Si hay imagen de avatar, añadirla
     if (avatar) {
       const avatarImg = document.createElement('img');
@@ -768,7 +786,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       avatarImg.alt = `Avatar de ${nombre}`;
       avatarDiv.appendChild(avatarImg);
     }
-    
+
     // Crear sección de texto info básica
     const infoTexto = document.createElement('div');
     infoTexto.className = 'info-guia-texto';
@@ -777,26 +795,26 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       <p>${edad}</p>
       <p>${experiencia}</p>
     `;
-    
+
     // Agregar avatar e info texto al div de info básica
     infoGuiaDiv.appendChild(avatarDiv);
     infoGuiaDiv.appendChild(infoTexto);
-    
-    
+
+
     // Crear sección de info adicional
     const infoAdicionalDiv = document.createElement('div');
     infoAdicionalDiv.className = 'info-adicional-guia';
-    
+
     // Crear párrafos de info adicional
     const parrafoExperiencias = document.createElement('p');
     parrafoExperiencias.textContent = `Experiencias: ${experiencias}`;
-    
+
     const parrafoIdiomas = document.createElement('p');
     parrafoIdiomas.textContent = `Idiomas: ${idiomas}`;
-    
+
     const parrafoContacto = document.createElement('p');
     parrafoContacto.textContent = `Contactos: ${contacto}`;
-    
+
     // Crear redes sociales
     const redesDiv = document.createElement('div');
     redesDiv.className = 'redes-sociales';
@@ -806,19 +824,19 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       span_redes_sociales.innerHTML = icono;
       redesDiv.appendChild(span_redes_sociales);
     });
-    
+
     // Crear valoración con estrellas
     const valoracionDiv = document.createElement('p');
     const estrellas = '★'.repeat(valoracion) + '☆'.repeat(5 - valoracion);    // Generar estrellas llenas y vacías
     valoracionDiv.innerHTML = `Valoración: <span class="valoracion-estrellas">${estrellas}</span>`;  //Empleamos el span class para aplicar el estilo de las estrellas
-    
+
     // Agregar todos los párrafos e info adicional al div
     infoAdicionalDiv.appendChild(parrafoExperiencias);
     infoAdicionalDiv.appendChild(parrafoIdiomas);
     infoAdicionalDiv.appendChild(parrafoContacto);
     infoAdicionalDiv.appendChild(redesDiv);
     infoAdicionalDiv.appendChild(valoracionDiv);
-    
+
     // Agregar todo al contenedor
     contenedor.appendChild(infoGuiaDiv);
     contenedor.appendChild(infoAdicionalDiv);
@@ -828,14 +846,14 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   if (viajeSeleccionado) {
     // Generar itinerario con los datos del viaje
     generarItinerario(
-      viajeSeleccionado.duracion, 
-      viajeSeleccionado.itinerario || [], 
+      viajeSeleccionado.duracion,
+      viajeSeleccionado.itinerario || [],
       viajeSeleccionado.itinerarioDetallado || []
     );
-    
+
     // Generar condiciones del viaje
     generarCondiciones(viajeSeleccionado.condiciones || '');
-    
+
     // Generar información del guía
     generarInfoGuia(viajeSeleccionado.guia || {});
   }
@@ -862,11 +880,11 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     // Crear el contenedor de la reseña
     const reseñaDiv = document.createElement('div');
     reseñaDiv.className = 'reseña';
-    
+
     // Crear el avatar
     const avatar = document.createElement('div');
     avatar.className = 'reseña-avatar';
-    
+
     // Crear el comentario
     const comentarioDiv = document.createElement('div');
     comentarioDiv.className = 'reseña-comentario';
@@ -874,11 +892,11 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       <p><strong>${nombre}</strong></p>
       <p>${comentario}</p>
     `;
-    
+
     // Añadir imagen, nombre y comentario 
     reseñaDiv.appendChild(avatar);
     reseñaDiv.appendChild(comentarioDiv);
-    
+
     return reseñaDiv;
   }
 
@@ -886,7 +904,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   function generarReseñasIniciales(reseñas) {
     const contenedor = document.querySelector('.contenedor-reseñas');
     contenedor.innerHTML = '';
-    
+
     // Mostrar solo las primeras 3 reseñas
     const reseñasIniciales = reseñas.slice(0, 3);  // Obtener las primeras 3 reseñas
     reseñasIniciales.forEach(reseña => {
@@ -898,7 +916,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   function mostrarTodasReseñas(reseñas) {
     const modalContenedor = document.querySelector('.modal-contenedor-reseñas');
     modalContenedor.innerHTML = '';
-    
+
     reseñas.forEach(reseña => {
       modalContenedor.appendChild(crearReseña(reseña.nombre, reseña.comentario));
     });
@@ -989,7 +1007,7 @@ if (window.location.pathname.includes("formulario_compra")) {
     botonVueltaAtras.addEventListener('click', () => {
       // Verificar si venimos de detalles de viaje
       const indiceViajeOrigen = localStorage.getItem('viajeReservaOrigen');
-      
+
       if (indiceViajeOrigen && window.location.pathname.includes("formulario_compra.html")) {
         // Si estamos en paso 1, volver a detalles del viaje
         localStorage.setItem('indiceViajeSeleccionado', indiceViajeOrigen);
@@ -1094,7 +1112,7 @@ if (window.location.pathname.includes("formulario_compra.html")) {
     }
 
     // Manejar el envío del formulario
-    formularioPaso1.addEventListener('submit', function(e) {
+    formularioPaso1.addEventListener('submit', function (e) {
       e.preventDefault();
       // Comprobar validez de todo el formulario antes de procesar
       if (!formularioPaso1.checkValidity()) {
@@ -1134,10 +1152,10 @@ if (window.location.pathname.includes("formulario_compra.html")) {
 
 /*Página formulario_compra2.html*/
 if (window.location.pathname.includes("formulario_compra2.html")) {
-  
+
   // Obtener el viaje seleccionado desde localStorage
   const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
-  
+
   if (!viajeSeleccionado) {
     alert('No se ha seleccionado ningún viaje');
     window.location.href = 'listado_viajes.html';
@@ -1162,7 +1180,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
   // Renderizar dietas del viaje
   function renderizarDietasDelViaje() {
     contenedorDietas.innerHTML = '';
-    
+
     // Si no hay dietas, mostrar mensaje
     if (dietasDelViaje.length === 0) {
       contenedorDietas.innerHTML = '<p>No hay dietas específicas disponibles para este viaje</p>';
@@ -1171,7 +1189,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
 
     // Mostrar las primeras 4 dietas
     const dietasMostrar = dietasDelViaje.slice(0, 4);
-    
+
     // Crear elementos para cada dieta
     dietasMostrar.forEach(dietaId => {
       const dieta = catalogoDietas[dietaId];
@@ -1187,7 +1205,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
         contenedorDietas.appendChild(dietaItem);
       }
     });
-    
+
     // Si hay más de 4 dietas, añadir botón de modal
     if (dietasDelViaje.length > 4) {
       const botonModal = document.createElement('button');
@@ -1212,9 +1230,9 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
         <button class="cerrar-modal" type="button">Cerrar</button>
       </div>
     `;
-    
+
     document.body.appendChild(modal);
-    
+
     // Rellenar el contenido del modal con todas las dietas
     const container = modal.querySelector('.modal-dietas-container');
     dietasDelViaje.forEach(dietaId => {
@@ -1229,7 +1247,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
         container.appendChild(dietaItem);
       }
     });
-    
+
     // Eventos para cerrar el modal
     modal.querySelector('.cerrar-modal').addEventListener('click', () => {
       modal.remove();
@@ -1268,7 +1286,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
   // Validar inputs de acompañante iniciales (se usa mas adelante para llamar a .checkValidity())
   const nombreAcompañante = columnaAcompañantes.querySelector('input[placeholder="Nombre y apellidos"]');
   const correoAcompañante = columnaAcompañantes.querySelector('input[placeholder="Correo electrónico"]');
-  
+
   // Guardar referencias para validaciones en el botón siguiente
   if (nombreAcompañante && correoAcompañante) {
     aplicarValidacionesAcompañante(nombreAcompañante, correoAcompañante);
@@ -1289,15 +1307,15 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
       </div>
       <button class="boton-eliminar" type="button">Eliminar</button>
     `;
-    
+
     // Insertar antes del botón de añadir
     columnaAcompañantes.insertBefore(nuevoAcompañante, botonAñadirAcompañante);
-    
+
     // Aplicar validaciones al nuevo acompañante
     const nombre_input = nuevoAcompañante.querySelector('input[type="text"]');
     const correo_input = nuevoAcompañante.querySelector('input[type="email"]');
     aplicarValidacionesAcompañante(nombre_input, correo_input);
-    
+
     // Evento para eliminar
     nuevoAcompañante.querySelector('.boton-eliminar').addEventListener('click', () => {
       nuevoAcompañante.remove();
@@ -1346,7 +1364,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
       // Validar el primer acompañante (opcional pero si hay contenido, debe estar completo)
       const nombreInicial = nombreAcompañante.value.trim();
       const emailInicial = correoAcompañante.value.trim();
-      
+
       // Si hay contenido en uno pero no en el otro, es un error
       if ((nombreInicial && !emailInicial) || (!nombreInicial && emailInicial)) {
         alert('Si completas el primer acompañante, debes llenar tanto el nombre como el correo');
@@ -1356,49 +1374,49 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
         else correoAcompañante.reportValidity();
         return;
       }
-      
+
       // Si ambos campos tienen contenido, validar que sean válidos
       if (nombreInicial && !nombreAcompañante.checkValidity()) {
         nombreAcompañante.reportValidity();
         return;
       }
-      
+
       if (emailInicial && !correoAcompañante.checkValidity()) {
         correoAcompañante.reportValidity();
         return;
       }
-      
+
       // Validar los grupos añadidos dinámicamente (si tienen contenido, debe ser completo y válido)
       const gruposAcompañantes = document.querySelectorAll('.grupo-acompañante');
       let hayErroresEnGrupos = false;
-      
+
       gruposAcompañantes.forEach(grupo => {
         const nombreInput = grupo.querySelector('input[type="text"]');
         const emailInput = grupo.querySelector('input[type="email"]');
         const nombre = nombreInput.value.trim();                        // Obtener y limpiar nombre
         const email = emailInput.value.trim();                          // Obtener y limpiar correo   
-        
+
         // Si hay contenido en uno pero no en el otro, es un error
         if ((nombre && !email) || (!nombre && email)) {
           alert('Cada acompañante debe tener tanto nombre como correo, o dejar ambos vacíos');
           hayErroresEnGrupos = true;
           return;
         }
-        
+
         // Si ambos tienen contenido, validar que sean válidos
         if (nombre && !nombreInput.checkValidity()) {
           nombreInput.reportValidity();
           hayErroresEnGrupos = true;
           return;
         }
-        
+
         if (email && !emailInput.checkValidity()) {
           emailInput.reportValidity();
           hayErroresEnGrupos = true;
           return;
         }
       });
-      
+
       // Si hubo errores en los grupos, no continuar
       if (hayErroresEnGrupos) {
         return;
@@ -1406,12 +1424,12 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
 
       // Recoger acompañantes válidos (solo los que estén completos)
       const datosAcompañantes = [];
-      
+
       // Acompañante inicial (solo si está completo)
       if (nombreInicial && emailInicial) {
         datosAcompañantes.push({ nombre: nombreInicial, email: emailInicial });
       }
-      
+
       // Grupos añadidos dinámicamente (solo si están completos)
       gruposAcompañantes.forEach(grupo => {
         const nombre_acompañante = grupo.querySelector('input[type="text"]').value.trim();
@@ -1423,27 +1441,27 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
 
       // Validar selección de mascota (obligatorio seleccionar sí o no)
       const viajaMascota = document.querySelector('input[name="viajaMascota"]:checked')?.value;
-      
+
       // Si no se ha seleccionado ninguna opción
       if (!viajaMascota) {
         alert('Debes seleccionar si viajas con mascota o no');
         return;
       }
-      
+
       // Mascota inicialmente nula
       let datosMascota = null;
-      
+
       if (viajaMascota === 'si') {
         const nombreMascota = camposMascota.querySelector('input[placeholder="Nombre de la mascota"]').value.trim();
         const tipoMascota = camposMascota.querySelector('input[placeholder="Tipo de mascota"]').value.trim();
         const documentacion = campoDocumentacion.querySelector('input[type="file"]').files[0];
-        
+
         // Nombre y tipo son obligatorios si viaja con mascota
         if (!nombreMascota || !tipoMascota) {
           alert('Si viajas con mascota, debes completar el nombre y tipo de mascota');
           return;
         }
-        
+
         // Crear objeto de datos de mascota
         datosMascota = {
           nombre: nombreMascota,
@@ -1477,7 +1495,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
 
 /*Página formulario_compra3.html*/
 // Botón de vuelta atrás
-if (window.location.pathname.includes("formulario_compra3.html")) {   
+if (window.location.pathname.includes("formulario_compra3.html")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
@@ -1498,35 +1516,35 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
     // Rellenar resumen del viaje
     function rellenarResumen() {
       // Destino
-      document.querySelector('.info-fila .contenido').textContent = 
+      document.querySelector('.info-fila .contenido').textContent =
         viajeSeleccionado.titulo || viajeSeleccionado.destino;
-      
+
       // Duración
-      document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent = 
+      document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent =
         `${viajeSeleccionado.duracion} días`;
-      
+
       // Tipo de viaje
-      document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent = 
+      document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent =
         viajeSeleccionado.tipo;
-      
+
       // Número de acompañantes
       const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
       document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
-      
+
       // Mascotas
       let textoMascota = 'No';
       // Si viaja con mascota, si está disponible
       if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
-          textoMascota = `Sí`;                     
+        textoMascota = `Sí`;
       }
-    
+
       // Rellenar el campo de mascota
       document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
-      
+
       // Alergias
       const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
       document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
-      
+
       // Precio final
       const precioBase = viajeSeleccionado.precio;
       const precioAcompañantes = numAcompañantes * precioBase;
@@ -1577,12 +1595,12 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
       boton.addEventListener('click', () => {
         const codigoDivisa = boton.getAttribute('data-divisa');
         const nombreCompleto = nombresDivisas[codigoDivisa];
-        
+
         console.log('Divisa seleccionada:', codigoDivisa);
-        
+
         // Cerrar el modal
         modal.style.display = 'none';
-        
+
         // Mostrar mensaje personalizado
         alert('Has seleccionado ' + nombreCompleto);
       });
@@ -1617,7 +1635,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
     if (numeroTarjetaInput) {
       numeroTarjetaInput.addEventListener('input', () => {
         // Validar con regex 16 dígitos (debe tener espacios cada 4 dígitos)
-        const regexTarjeta = /^\d{4}( \d{4}){3}$/;    
+        const regexTarjeta = /^\d{4}( \d{4}){3}$/;
         if (!regexTarjeta.test(numeroTarjetaInput.value)) {
           numeroTarjetaInput.setCustomValidity('El número de tarjeta debe tener el formato XXXX XXXX XXXX XXXX');
         } else {
@@ -1643,7 +1661,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
             const anioActual = parseInt(fechaActual.getFullYear().toString().substring(2));  // Últimos dos dígitos del año
             const anioTarjeta = parseInt(anio);
             const mesTarjeta = parseInt(mes);
-            
+
             // Si el año es menor o el mismo pero el mes es menor, está expirada
             if (anioTarjeta < anioActual || (anioTarjeta === anioActual && mesTarjeta < mesActual)) {
               fechaExpiracionInput.setCustomValidity('La tarjeta está expirada');
@@ -1681,7 +1699,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         const regexTarjeta = /^\d{4}( \d{4}){3}$/;
         const regexFecha = /^(0[1-9]|1[0-2])\/\d{2}$/;
         const regexCVC = /^\d{3}$/;
-        
+
         // Validar número de tarjeta
         if (!regexTarjeta.test(numeroTarjetaInput.value)) {
           numeroTarjetaInput.setCustomValidity('El número de tarjeta debe tener el formato XXXX XXXX XXXX XXXX');
@@ -1690,7 +1708,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         } else {
           numeroTarjetaInput.setCustomValidity('');
         }
-        
+
         // Validar fecha de expiración
         if (!regexFecha.test(fechaExpiracionInput.value)) {
           fechaExpiracionInput.setCustomValidity('La fecha debe tener el formato MM/AA válido');
@@ -1699,7 +1717,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         } else {
           fechaExpiracionInput.setCustomValidity('');
         }
-        
+
         // Validar que no esté expirada
         const [mes, anio] = fechaExpiracionInput.value.split('/');
         const fechaActual = new Date();
@@ -1707,7 +1725,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         const anioActual = parseInt(fechaActual.getFullYear().toString().substring(2));
         const anioTarjeta = parseInt(anio);
         const mesTarjeta = parseInt(mes);
-        
+
         // Si el año es menor o el mismo pero el mes es menor, está expirada
         if (anioTarjeta < anioActual || (anioTarjeta === anioActual && mesTarjeta < mesActual)) {
           fechaExpiracionInput.setCustomValidity('La tarjeta está expirada');
@@ -1716,7 +1734,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         } else {
           fechaExpiracionInput.setCustomValidity('');
         }
-        
+
         // Validar CVC
         if (!regexCVC.test(cvcInput.value)) {
           cvcInput.setCustomValidity('El CVC debe tener exactamente 3 dígitos');
@@ -1725,20 +1743,20 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         } else {
           cvcInput.setCustomValidity('');
         }
-        
+
         // Si todo está correcto, guardar
         const datosTarjeta = {
           numero: numeroTarjetaInput.value,
           fechaExpiracion: fechaExpiracionInput.value,
           cvc: cvcInput.value
         };
-        
+
         // Guardar en localStorage
         localStorage.setItem('datosTarjeta', JSON.stringify(datosTarjeta));
-        
+
         // Cerrar modal
         modalTarjeta.style.display = 'none';
-        
+
         // Confirmar guardado
         alert('Datos de tarjeta guardados correctamente');
       });
@@ -1877,7 +1895,7 @@ if (window.location.pathname.includes("compra_realizada.html")) {
       window.location.href = 'formulario_compra3.html';
     });
   }
-  
+
   if (document.querySelector('.contenedor-compra')) {
     // Obtener datos guardados
     const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
@@ -1891,35 +1909,35 @@ if (window.location.pathname.includes("compra_realizada.html")) {
       // Rellenar resumen del viaje en compra_realizada.html
       function rellenarResumenCompraRealizada() {
         // Destino
-        document.querySelector('.info-fila .contenido').textContent = 
+        document.querySelector('.info-fila .contenido').textContent =
           viajeSeleccionado.titulo || viajeSeleccionado.destino;
-        
+
         // Duración
-        document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent = 
+        document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent =
           `${viajeSeleccionado.duracion} días`;
-        
+
         // Tipo de viaje
-        document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent = 
+        document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent =
           viajeSeleccionado.tipo;
-        
+
         // Número de acompañantes
         const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
         document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
-        
+
         // Mascotas
         let textoMascota = 'No';
         // Si viaja con mascota, si está disponible
         if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
-          textoMascota = `Sí`;                     
+          textoMascota = `Sí`;
         }
-      
+
         // Rellenar el campo de mascota
         document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
-        
+
         // Alergias
         const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
         document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
-        
+
         // Coste total 
         const precioBase = viajeSeleccionado.precio;
         const precioAcompañantes = numAcompañantes * precioBase;
@@ -1931,7 +1949,7 @@ if (window.location.pathname.includes("compra_realizada.html")) {
       function rellenarInfoGuia() {
         const infoGuiaTexto = document.querySelector('.info-guia-texto');
         const avatarDiv = document.querySelector('.avatar');
-        
+
         if (viajeSeleccionado.guia) {
           // Actualizar avatar si existe
           if (avatarDiv && viajeSeleccionado.guia.avatar) {
@@ -1942,21 +1960,21 @@ if (window.location.pathname.includes("compra_realizada.html")) {
             avatarImg.alt = `Avatar de ${viajeSeleccionado.guia.nombre}`;
             avatarDiv.appendChild(avatarImg);
           }
-          
+
           // Actualizar texto del guía
           if (infoGuiaTexto) {
             const parrafos = infoGuiaTexto.querySelectorAll('p');
-            
+
             // Nombre y apellidos
             if (parrafos[0]) {
               parrafos[0].textContent = viajeSeleccionado.guia.nombre || 'Nombre y apellidos';
             }
-            
+
             // Edad
             if (parrafos[1]) {
               parrafos[1].textContent = viajeSeleccionado.guia.edad || 'Edad';
             }
-            
+
             // Teléfono de contacto
             if (parrafos[2]) {
               parrafos[2].textContent = viajeSeleccionado.guia.contacto || 'Telefono';

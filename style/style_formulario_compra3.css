@@ -1,17 +1,24 @@
 /* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
-  * {
-  margin: 0;              /* Quita margen por defecto */
-  padding: 0;             /* Quita padding por defecto */
-  box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
+* {
+  margin: 0;
+  /* Quita margen por defecto */
+  padding: 0;
+  /* Quita padding por defecto */
+  box-sizing: border-box;
+  /* Hace que el ancho y alto incluyan borde y padding */
 }
+
 /* Evitar scroll horizontal accidental */
-html, body {
-  overflow-x: hidden;  /* previene scroll horizontal */
+html,
+body {
+  overflow-x: hidden;
+  /* previene scroll horizontal */
 }
+
 /* Tipografía base para todo el cuerpo */
 body {
-  font-family: Arial, sans-serif; 
-  background-color: #fff;          
+  font-family: Arial, sans-serif;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -20,133 +27,251 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* Variables CSS para alturas de header y footer */
 :root {
   --header-h: 110px; /* altura del header usada para margin-top */
   --footer-h: 30px; /* altura del footer usada para margin-bottom */
 }
+
 /* Contenedor principal que envuelve header, main y footer */
 main {
-    flex: 1;
-    width: 100%;
-    margin-top: var(--header-h);                
-    margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
+  flex: 1;
+  width: 100%;
+  margin-top: var(--header-h);
 }
+
 /* Evita que header y footer se encojan */
-header, footer {
-    flex-shrink: 0;           /* evita que se encojan */
+header,
+footer {
+  flex-shrink: 0;
+  /* evita que se encojan */
 }
+
 /* Estilo general para enlaces */
 header {
-  width: 100%;              /* ocupa todo el ancho */
-  height: 100px;            /* altura fija: prueba con 100px */
+  width: 100%;
+  /* ocupa todo el ancho */
+  height: 100px;
+  /* altura fija: prueba con 100px */
   background: #006400;
-  position: fixed;          /* fija el header en la parte superior */
-  top: 0; left:0; right: 0; /* asegura que esté en la parte superior */
-  margin-bottom: 15px;      /* separa el header del contenido */
+  position: fixed;
+  /* fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* asegura que esté en la parte superior */
+  margin-bottom: 15px;
+  /* separa el header del contenido */
   text-align: left;
-  align-items: center;      /* centra verticalmente el contenido */
+  align-items: center;
+  /* centra verticalmente el contenido */
   color: white;
-  padding: 0 20px;          /* espacio interno arriba y abajo */
-  display: flex;            
-  justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
-  z-index: 1000;                         /* asegura que esté por encima de todo el contenido */
+  padding: 0 20px;
+  /* espacio interno arriba y abajo */
+  display: flex;
+  justify-content: space-between;
+  /*Definimos 3 columnas donde poner los elementos*/
+  z-index: 1000;
+  /* asegura que esté por encima de todo el contenido */
 }
+
 /* Estilo general para footer, similar al header */
 footer {
-  width: 100%;              /* ocupa todo el ancho */
-  height: 80px;             /* altura fija: prueba con 100px */
+  width: 100%;
+  /* ocupa todo el ancho */
+  height: 80px;
+  /* altura fija: prueba con 100px */
   background: #006400;
   position: relative;       /* el footer ya no está fijo */
   bottom: 0;                /* asegura que esté en la parte inferior */
   text-align: center;
-  align-items: center;      /* centra verticalmente el contenido */
+  align-items: center;
+  /* centra verticalmente el contenido */
   color: white;
-  padding: 20px;            /* espacio interno */
+  padding: 20px;
+  /* espacio interno */
   display: flex;
-  justify-content: center;  /* centra todo el contenido horizontalmente */
+  justify-content: center;
+  /* centra todo el contenido horizontalmente */
 }
+
 /* Logo de la página */
-header img{
+header img {
   width: 80px;
   height: 80px;
 }
+
 /* título de la página */
-header .titulo{
-  font-size: 18px;          /* tamaño legible sin ser gigante */
-  font-family: "montserrat", sans-serif;  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
-  font-weight: 700;          /* peso negrita */
-  text-transform: uppercase; 
+header .titulo {
+  font-size: 18px;
+  /* tamaño legible sin ser gigante */
+  font-family: "montserrat", sans-serif;
+  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
+  font-weight: 700;
+  /* peso negrita */
+  text-transform: uppercase;
   margin-right: 50px;
 }
+
 /* Menú centrado (fila horizontal de enlaces) */
-header nav{ 
+header nav {
   padding: 0;
 }
+
 /* Lista de elementos del menú */
-header nav ul{
-  list-style: none;          /* sin viñetas */
-  display: flex;             /* pone los <li> en fila */
-  font-weight: 500;          /* peso semi-negrita */
-  text-transform: uppercase; 
-  gap: 2rem;                 /* separación entre elementos del menú */
+header nav ul {
+  list-style: none;
+  /* sin viñetas */
+  display: flex;
+  /* pone los <li> en fila */
+  font-weight: 500;
+  /* peso semi-negrita */
+  text-transform: uppercase;
+  gap: 2rem;
+  /* separación entre elementos del menú */
   margin-right: 50px;
 }
+
 /* Cada enlace del menú */
-header nav a{
-  text-decoration: none;     /* sin subrayado */
-  color: #fff;             /* color de texto del menú */
-  border-radius: .375rem;    /* esquinas suaves para el hover */
+header nav a {
+  text-decoration: none;
+  /* sin subrayado */
+  color: #fff;
+  /* color de texto del menú */
+  border-radius: .375rem;
+  /* esquinas suaves para el hover */
 }
+
 /* Utilidades (derecha): logo + selector de idioma en fila */
-header .logo_idioma{
-  display: flex;             /* elementos en línea: imagen + select */
-  align-items: center;       /* verticalmente centrados */
-  gap: .5rem;                /* separación entre logo y select */
-  padding:0;
+header .logo_idioma {
+  display: flex;
+  /* elementos en línea: imagen + select */
+  align-items: center;
+  /* verticalmente centrados */
+  gap: .5rem;
+  /* separación entre logo y select */
+  padding: 0;
 }
+
 /* Logo y selector de idioma */
-header .logo_idioma img{
-  width: 120px; height: auto; /* tamaño consistente del logo */
+header .logo_idioma img {
+  width: 120px;
+  height: auto;
+  /* tamaño consistente del logo */
 }
+
 /* Selector de idioma */
-header .logo_idioma select{
-  font: inherit;              /* que el select use la misma fuente que la página */
+header .logo_idioma select {
+  font: inherit;
+  /* que el select use la misma fuente que la página */
   border: 1px solid #cbd5e1;
   border-radius: .375rem;
   background-color: white;
 }
+
 /* Efecto hover y focus en enlaces del menú */
 header nav a:hover,
 header nav a:focus-visible {
-  text-decoration: underline;   /* subrayado al pasar el ratón o enfocar con teclado */
+  text-decoration: underline;
+  /* subrayado al pasar el ratón o enfocar con teclado */
 }
+
 /* Ocultar checkbox y botón de hamburguesa en escritorio */
 .menu-toggle,
 .hamburger-btn {
-    display: none;
+  display: none;
 }
+
 /* Oculta las utilidades en la versión de escritorio */
 .nav-menu .nav-utils {
-    display: none;
+  display: none;
 }
+
+/* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
+@media (max-width:700px) {
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .hamburger-btn {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #006400;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    padding-top: 72px;
+    z-index: 1500;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* When checkbox checked, show nav */
+  #menu-toggle:checked~.nav-menu {
+    transform: translateX(0);
+  }
+}
+
 /* Estilo para el enlace de iniciar sesión */
 header .botones_header button {
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-right: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
+
 /* Efecto hover en el botón de iniciar sesión */
 header .botones_header button:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
+
 /* Estilo de la info del footer*/
 footer nav a {
   font-weight: 500;
@@ -155,6 +280,7 @@ footer nav a {
   text-decoration: none;
   margin: 0 10rem;
 }
+
 /* Efecto hover y focus en enlaces del footer */
 footer nav a:hover,
 footer nav a:focus-visible {
@@ -163,62 +289,72 @@ footer nav a:focus-visible {
 
 /*formulario_compra2 styles*/
 /* Estilos para la columna del boton-atras de detalles del viaje */
-.columna-boton-atras-detalles{
-  position: relative;   /* fijo en la pantalla, no se mueve con scroll */
-  top: 140px;           /* margen desde la parte superior */
-  left: 20px;           /* margen desde la izquierda */
-  display: flex;                 
-  flex-direction: column; 
+.columna-boton-atras-detalles {
+  position: relative;
+  /* fijo en la pantalla, no se mueve con scroll */
+  top: 140px;
+  /* margen desde la parte superior */
+  left: 20px;
+  /* margen desde la izquierda */
+  display: flex;
+  flex-direction: column;
 }
+
 /* Estilos para el botón de vuelta atrás en detalles del viaje */
 .columna-boton-atras-detalles button {
-   width: 60px;
-   height: 50px;
-   border: 1px solid black;
-   border-radius: 10px;
-   background: #006400;
-   color: white;
-   font-size: 30px;
-   cursor: pointer;
+  width: 60px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #006400;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
 }
+
 /* Efecto hover en el botón de vuelta atrás en detalles del viaje */
 .columna-boton-atras-detalles button:hover {
-   background: #004d00;
+  background: #004d00;
 }
-.titulo-formulario{
+
+.titulo-formulario {
   text-align: center;
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 /* Estilo para el contenedor de las etapas */
-.contenedor-etapas{
+.contenedor-etapas {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
+
 /* Estilo para cada etapa */
-.etapa{
+.etapa {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
   position: relative;
 }
+
 /* Línea entre etapas */
-.etapa:not(:last-child)::after{
-  content: '';                    /* contenido vacío para el pseudo-elemento */
+.etapa:not(:last-child)::after {
+  content: '';
   position: absolute;
   top: 30px;
-  right: -50%;  
+  left: 50%;
   width: 100%;
   height: 2px;
   background-color: black;
-  z-index: -1;                   /* coloca la línea detrás del círculo */
+  z-index: -1;
 }
+
 /* Estilo para el círculo de cada etapa */
-.circulo-color{
+.circulo-color {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -232,8 +368,9 @@ footer nav a:focus-visible {
   color: white;
   margin-bottom: 5px;
 }
+
 /* Estilo para la descripción de cada etapa */
-.descripcion-etapa{
+.descripcion-etapa {
   margin-top: 10px;
   font-size: 20px;
   text-align: center;
@@ -242,8 +379,9 @@ footer nav a:focus-visible {
   padding: 14px;
   margin-bottom: 20px;
 }
+
 /* Estilo para el título de cada paso */
-.titulo-paso{
+.titulo-paso {
   display: flex;
   text-align: left;
   font-size: 30px;
@@ -252,92 +390,106 @@ footer nav a:focus-visible {
   margin-top: 5px;
   margin-left: 140px;
 }
+
 /* Contenedor principal del paso 3 (dos columnas) */
-.paso3-contenedor{
+.paso3-contenedor {
   display: flex;
   gap: 60px;
   max-width: 1320px;
   margin: 30px auto;
   padding: 0 40px;
 }
+
 /* columna izquierda */
-.columna-izquierda{
+.columna-izquierda {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
 /* columna derecha */
-.columna-derecha{
+.columna-derecha {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
 /* Estilo del resumen del viaje */
-.resumen-viaje{
+.resumen-viaje {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 /* Título del resumen del viaje */
-.resumen-viaje h3{
+.resumen-viaje h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 12px;
 }
+
 /* Fila de información con etiqueta y contenido separados */
-.info-fila{
+.info-fila {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
   gap: 15px;
 }
+
 /* Estilo para las etiquetas (Destino:, Duración:, etc.) */
-.info-fila .etiqueta{
+.info-fila .etiqueta {
   font-weight: 400;
   font-size: 16px;
   color: #222;
 }
+
 /* Estilo para el contenido */
-.info-fila .contenido{
+.info-fila .contenido {
   font-size: 16px;
   color: #222;
 }
+
 /* Coste total */
-.coste-total{
+.coste-total {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 /* Título del coste total */
-.coste-total h3{
+.coste-total h3 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 8px;
 }
+
 /* Precio final */
-.precio-final{
+.precio-final {
   font-size: 20px;
   font-weight: 700;
   color: #222;
 }
+
 /* Divisas de pago */
-.divisas-pago h3{
+.divisas-pago h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 16px;
 }
+
 /* Contenedor de los botones de divisas */
-.divisas-botones{
+.divisas-botones {
   display: flex;
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
 }
+
 /* Botón de más divisas */
-.mas-divisas{
+.mas-divisas {
   padding: 10px 20px;
   border-radius: 20px;
   background: #000;
@@ -347,43 +499,50 @@ footer nav a:focus-visible {
   font-weight: 700;
   cursor: pointer;
 }
+
 /* Efecto hover en el botón de más divisas */
-.mas-divisas:hover{
+.mas-divisas:hover {
   background: #333;
 }
+
 /* Método de pago */
-.metodo-pago{
+.metodo-pago {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 /* Título del método de pago */
-.metodo-pago h3{
+.metodo-pago h3 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 8px;
 }
+
 /* Cada opción de método de pago */
-.metodo-item{
+.metodo-item {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 16px;
   cursor: pointer;
 }
+
 /* Estilo para los radio buttons */
-.metodo-item input[type="radio"]{
+.metodo-item input[type="radio"] {
   width: 20px;
   height: 20px;
   cursor: pointer;
   margin: 0;
 }
+
 /* Estilo para el texto de cada método de pago */
-.metodo-item span{
+.metodo-item span {
   color: #222;
 }
+
 /* Botón confirmar compra */
-.boton-confirmar{
+.boton-confirmar {
   padding: 16px 32px;
   border-radius: 12px;
   background: #000;
@@ -394,21 +553,26 @@ footer nav a:focus-visible {
   cursor: pointer;
   margin-top: 20px;
 }
+
 /* Efecto hover en el botón confirmar compra */
-.boton-confirmar:hover{
+.boton-confirmar:hover {
   background: #333;
 }
+
 /* Contenedor del modal (overlay) */
 .modal-divisas {
-  display: none;                /* Oculto por defecto */
+  display: none;
+  /* Oculto por defecto */
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo oscuro semi-transparente */
 }
+
 /* Contenido del modal */
 .modal-contenido {
   background-color: #fff;
@@ -419,6 +583,7 @@ footer nav a:focus-visible {
   max-width: 600px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 /* Cabecera del modal */
 .modal-header {
   display: flex;
@@ -427,6 +592,7 @@ footer nav a:focus-visible {
   padding: 20px;
   border-bottom: 1px solid #e0e0e0;
 }
+
 /* Título del modal */
 .modal-header h3 {
   margin: 0;
@@ -434,6 +600,7 @@ footer nav a:focus-visible {
   font-weight: 700;
   color: #222;
 }
+
 /* Botón cerrar modal */
 .cerrar-modal {
   background: none;
@@ -449,20 +616,25 @@ footer nav a:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
 /* Efecto hover en el botón cerrar modal */
 .cerrar-modal:hover {
   color: red;
 }
+
 /* Cuerpo del modal */
 .modal-body {
   padding: 30px;
 }
+
 /* Contenedor de divisas en el modal usando flexbox */
 .divisas-modal-contenedor {
   display: flex;
-  flex-wrap: wrap;        /* permite que los botones se ajusten a la siguiente línea */
+  flex-wrap: wrap;
+  /* permite que los botones se ajusten a la siguiente línea */
   gap: 12px;
 }
+
 /* Botones de divisas en el modal */
 .boton-divisa-modal {
   width: 23%;
@@ -476,6 +648,7 @@ footer nav a:focus-visible {
   cursor: pointer;
   text-align: center;
 }
+
 /* Efecto hover en los botones de divisas */
 .boton-divisa-modal:hover {
   background: #006400;
@@ -494,6 +667,7 @@ footer nav a:focus-visible {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 /* Contenido del modal de tarjeta */
 .modal-contenedor-tarjeta {
   background-color: #fff;
@@ -504,6 +678,7 @@ footer nav a:focus-visible {
   max-width: 500px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 /* Botón cerrar modal de tarjeta */
 .cerrar-modal-tarjeta {
   background: none;
@@ -519,32 +694,38 @@ footer nav a:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
 /* Efecto hover en el botón cerrar modal de tarjeta */
 .cerrar-modal-tarjeta:hover {
   color: red;
 }
+
 /* Cuerpo del modal de tarjeta */
 .modal-body-tarjeta {
   padding: 15px;
 }
+
 /* Formulario de tarjeta */
 #formTarjeta {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 /* Campo individual de tarjeta */
 .campo-tarjeta {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 /* Etiqueta e input de cada campo */
 .campo-tarjeta label {
   font-size: 14px;
   font-weight: 600;
   color: #222;
 }
+
 /* Estilo de los inputs */
 .campo-tarjeta input {
   padding: 12px;
@@ -552,15 +733,18 @@ footer nav a:focus-visible {
   border-radius: 8px;
   font-size: 16px;
 }
+
 /* Campos en fila (fecha y CVC) */
 .campos-fila {
   display: flex;
   gap: 20px;
 }
+
 /* Cada campo dentro de la fila */
 .campos-fila .campo-tarjeta {
   flex: 1;
 }
+
 /* Botón guardar tarjeta */
 .boton-guardar-tarjeta {
   padding: 14px 28px;
@@ -572,6 +756,7 @@ footer nav a:focus-visible {
   font-weight: 700;
   cursor: pointer;
 }
+
 /* Efecto hover en el botón guardar tarjeta */
 .boton-guardar-tarjeta:hover {
   background: #004d00;
@@ -588,6 +773,7 @@ footer nav a:focus-visible {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 /* Contenido del modal de transferencia */
 .modal-contenedor-transferencia {
   background-color: #fff;
@@ -598,6 +784,7 @@ footer nav a:focus-visible {
   max-width: 600px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 /* Botón cerrar modal de transferencia */
 .cerrar-modal-transferencia {
   background: none;
@@ -613,10 +800,12 @@ footer nav a:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
 /* Efecto hover en el botón cerrar modal de transferencia */
 .cerrar-modal-transferencia:hover {
   color: red;
 }
+
 /* Cuerpo del modal de transferencia */
 .modal-cuerpo-transferencia {
   padding: 30px;
@@ -624,6 +813,7 @@ footer nav a:focus-visible {
   flex-direction: column;
   gap: 20px;
 }
+
 /* Información de transferencia */
 .info-transferencia {
   display: flex;
@@ -634,23 +824,27 @@ footer nav a:focus-visible {
   border-radius: 8px;
   border-left: 4px solid #006400;
 }
+
 /* Párrafos de información */
 .info-transferencia p {
   margin: 0;
   font-size: 16px;
   color: #222;
 }
+
 /* Nota de transferencia */
 .nota-transferencia {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 /* Párrafos de nota */
 .nota-transferencia p {
   font-size: 14px;
   color: black;
 }
+
 /* Botón entendido transferencia */
 .boton-transferencia {
   padding: 14px;
@@ -663,10 +857,12 @@ footer nav a:focus-visible {
   cursor: pointer;
   align-items: center;
 }
+
 /* Efecto hover en el botón entendido transferencia */
 .boton-transferencia:hover {
   background: #004d00;
 }
+
 /* Contenedor del modal de pagos digitales */
 .modal-pagos-digitales {
   display: none;
@@ -678,6 +874,7 @@ footer nav a:focus-visible {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 /* Contenido del modal de pagos digitales */
 .modal-contenedor-pagos-digitales {
   background-color: #fff;
@@ -688,6 +885,7 @@ footer nav a:focus-visible {
   max-width: 500px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 /* Botón cerrar modal de pagos digitales */
 .cerrar-modal-pagos-digitales {
   background: none;
@@ -703,10 +901,12 @@ footer nav a:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
 /* Efecto hover en el botón cerrar modal de pagos digitales */
 .cerrar-modal-pagos-digitales:hover {
   color: red;
 }
+
 /* Cuerpo del modal de pagos digitales */
 .modal-cuerpo-pagos-digitales {
   padding: 30px;
@@ -714,6 +914,7 @@ footer nav a:focus-visible {
   flex-direction: column;
   gap: 20px;
 }
+
 /* Información de pagos digitales */
 .info-pago-digital {
   display: flex;
@@ -721,18 +922,21 @@ footer nav a:focus-visible {
   gap: 20px;
   text-align: center;
 }
+
 /* Párrafo de información */
 .info-pago-digital p {
   margin: 0;
   font-size: 16px;
   color: black;
 }
+
 /* Opciones de pago digital */
 .opciones-pago-digital {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 /* Botones de pago digital */
 .boton-paypal,
 .boton-wise {
@@ -748,32 +952,38 @@ footer nav a:focus-visible {
   justify-content: center;
   gap: 12px;
 }
+
 /* Botón PayPal específico */
 .boton-paypal {
   border-color: #0070ba;
   color: #0070ba;
 }
+
 /* Botón Wise específico */
 .boton-wise {
   border-color: #00b9ff;
   color: #00b9ff;
 }
+
 /* Hover en botón PayPal */
 .boton-paypal:hover {
   background: #0070ba;
   color: #fff;
 }
+
 /* Hover en botón Wise */
 .boton-wise:hover {
   background: #00b9ff;
   color: #fff;
 }
+
 /* Iconos de PayPal y Wise */
 .icono-paypal,
 .icono-wise {
   font-size: 27px;
   margin-bottom: 7px;
 }
+
 /* Nota de pagos digitales */
 .nota-paypal {
   display: flex;
@@ -781,9 +991,64 @@ footer nav a:focus-visible {
   gap: 8px;
   text-align: center;
 }
+
 /* Texto de nota */
 .nota-paypal p {
   margin: 0;
   font-size: 14px;
   color: black;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 700px) {
+
+  /* Footer adjustments */
+  footer {
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 10px;
+  }
+
+  footer nav a {
+    margin: 5px 0;
+    display: block;
+    /* Stack links */
+  }
+
+  /* Progress Steps adjustments */
+  .contenedor-etapas {
+    gap: 0;
+  }
+
+  .etapa:not(:last-child)::after {
+    display: block;
+    /* Restore line */
+    width: 50%;
+    left: 50%;
+    top: 20px;
+  }
+
+  .descripcion-etapa {
+    display: none;
+  }
+
+  .circulo,
+  .circulo-color {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  /* Step 3 specific mobile adjustments */
+  .paso3-contenedor {
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .titulo-paso {
+    margin-left: 20px;
+    font-size: 24px;
+  }
 }
