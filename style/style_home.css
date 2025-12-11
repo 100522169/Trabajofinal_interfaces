@@ -39,13 +39,11 @@ main {
   flex: 1;
   width: 100%;
   margin-top: var(--header-h);
-  /* margin-bottom: var(--footer-h); removed */
-  /* deja espacio para el footer fijo */
+  margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
 }
 
 /* Evita que header y footer se encojan */
-header,
-footer {
+header,footer {
   flex-shrink: 0;
   /* evita que se encojan */
 }
@@ -86,7 +84,6 @@ footer {
   /* altura fija: prueba con 100px */
   background: #006400;
   position: relative;       /* el footer ya no está fijo */
-  bottom: 0;                /* asegura que esté en la parte inferior */
   text-align: center;
   align-items: center;
   /* centra verticalmente el contenido */
@@ -96,6 +93,13 @@ footer {
   display: flex;
   justify-content: center;
   /* centra todo el contenido horizontalmente */
+}
+
+/* Estilo de la info del footer*/
+footer nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 /* Logo de la página */
@@ -223,6 +227,8 @@ footer nav a:hover,
 footer nav a:focus-visible {
   text-decoration: underline;
 }
+
+
 
 /*home styles*/
 /*Estilo para contenedor-principal*/
@@ -443,6 +449,13 @@ footer nav a:focus-visible {
 .tarjeta-rating {
   color: #222;
   font-size: 14px;
+}
+
+/* Precio de la tarjeta */
+.tarjeta-precio {
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 /* Footer / Help modal styles */

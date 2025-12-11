@@ -40,7 +40,8 @@ body {
 main {
     flex: 1;
     width: 100%;
-    margin-top: var(--header-h);                
+    margin-top: var(--header-h);  
+    margin-bottom: var(--footer-h);              
 }
 
 /* Evita que header y footer se encojan */
@@ -326,8 +327,8 @@ footer nav a:focus-visible {
 .columna-listado-viajes {
   flex: 1;
   /* Take remaining space */
-  margin-left: 0;
-  /* Remove margin as we use flex gap */
+  margin-left: calc(15% + 30px);
+  /* Compensate for fixed filter column width + gap */
   width: auto;
   /* Fills the rest roughly */
   padding: 20px;

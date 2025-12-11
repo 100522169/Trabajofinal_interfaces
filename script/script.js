@@ -271,6 +271,33 @@ if (window.location.pathname.includes("home.html")) {
     window.location.href = 'registrarse.html';
   });
 
+  // Actualizar precios de las tarjetas con divisa predeterminada
+  const divisaPredeterminada = localStorage.getItem('divisaPredeterminada') || 'eur';
+  const simbolosDivisas = {
+    'eur': '€',
+    'usd': '$',
+    'gbp': '£',
+    'jpy': '¥',
+    'cny': '¥',
+    'chf': 'CHF',
+    'cad': 'CA$',
+    'aud': 'A$',
+    'mxn': 'MX$',
+    'sgd': 'S$',
+    'krw': '₩',
+    'inr': '₹'
+  };
+  const simboloDivisa = simbolosDivisas[divisaPredeterminada] || '€';
+
+  // Actualizar precios en las tarjetas de home
+  const preciosTarjetas = document.querySelectorAll('.tarjeta-precio');
+  preciosTarjetas.forEach(precioElemento => {
+    const precioActual = precioElemento.textContent.match(/[\d.]+/);
+    if (precioActual) {
+      precioElemento.textContent = `${precioActual[0]} ${simboloDivisa}`;
+    }
+  });
+
   // Hacer que las tarjetas de "Viajes en grupo" en Home abran la ficha de detalles
   // Asociamos dinámicamente cada tarjeta con un viaje del array `viajes` (añadidos al final)
   const tarjetasHome = document.querySelectorAll('.columna-tarjeta .tarjeta');
@@ -527,6 +554,24 @@ if (window.location.pathname.includes("listado_viajes.html")) {
   const ratings = { 5: '★★★★★', 4: '★★★★☆', 3: '★★★☆☆' };
   let currentFiltrados = [...viajesFiltrados];     // Copia de los viajes filtrados inicialmente
 
+  // Obtener divisa predeterminada
+  const divisaPredeterminada = localStorage.getItem('divisaPredeterminada') || 'eur';
+  const simbolosDivisas = {
+    'eur': '€',
+    'usd': '$',
+    'gbp': '£',
+    'jpy': '¥',
+    'cny': '¥',
+    'chf': 'CHF',
+    'cad': 'CA$',
+    'aud': 'A$',
+    'mxn': 'MX$',
+    'sgd': 'S$',
+    'krw': '₩',
+    'inr': '₹'
+  };
+  const simboloDivisa = simbolosDivisas[divisaPredeterminada] || '€';
+
   // Función para renderizar los viajes
   function renderViajes(filtrados) {
     columnaListado.innerHTML = '';
@@ -540,7 +585,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
       div.setAttribute('data-mascotas', viaje.mascotas);
       div.setAttribute('data-valoracion', viaje.valoracion);
       div.setAttribute('data-index', index);  // Guardar el índice del viaje
-      // Rellenar el contenido del viaje con innerHTML
+      // Rellenar el contenido del viaje con innerHTML usando la divisa predeterminada
       div.innerHTML = `                           
         <img src="${viaje.imagen}" alt="${viaje.titulo}">
         <div class="info-fila">
@@ -548,7 +593,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
           <span>${viaje.duracion} días</span>
         </div>
         <div class="info-fila">
-          <span>${viaje.precio} €</span>
+          <span>${viaje.precio} ${simboloDivisa}</span>
           <span>${viaje.tipo}</span>
         </div>
         <div class="info-fila">
@@ -1005,15 +1050,16 @@ if (window.location.pathname.includes("formulario_compra")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      // Verificar si venimos de detalles de viaje
-      const indiceViajeOrigen = localStorage.getItem('viajeReservaOrigen');
-
-      if (indiceViajeOrigen && window.location.pathname.includes("formulario_compra.html")) {
-        // Si estamos en paso 1, volver a detalles del viaje
-        localStorage.setItem('indiceViajeSeleccionado', indiceViajeOrigen);
-        window.location.href = 'detalles_viaje.html';
+      // Si estamos en formulario_compra.html (paso 1), volver a detalles del viaje
+      if (window.location.pathname.includes("formulario_compra.html")) {
+        const viajeSeleccionado = localStorage.getItem('viajeSeleccionado');
+        if (viajeSeleccionado) {
+          window.location.href = 'detalles_viaje.html';
+        } else {
+          window.history.back();
+        }
       } else {
-        // Para otros pasos o si no hay viaje origen, volver atrás en el historial
+        // Para otros pasos, volver al paso anterior
         window.history.back();
       }
     });
@@ -1545,11 +1591,30 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
       const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
       document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
 
-      // Precio final
+      // Precio final con divisa predeterminada
       const precioBase = viajeSeleccionado.precio;
       const precioAcompañantes = numAcompañantes * precioBase;
       const precioTotal = precioBase + precioAcompañantes;
-      document.querySelector('.precio-final').textContent = `${precioTotal.toFixed(2)} €`;   // Formatear a 2 decimales
+      
+      // Obtener divisa predeterminada
+      const divisaPredeterminada = localStorage.getItem('divisaPredeterminada') || 'eur';
+      const simbolosDivisas = {
+        'eur': '€',
+        'usd': '$',
+        'gbp': '£',
+        'jpy': '¥',
+        'cny': '¥',
+        'chf': 'CHF',
+        'cad': 'CA$',
+        'aud': 'A$',
+        'mxn': 'MX$',
+        'sgd': 'S$',
+        'krw': '₩',
+        'inr': '₹'
+      };
+      const simbolo = simbolosDivisas[divisaPredeterminada] || '€';
+      
+      document.querySelector('.precio-final').textContent = `${precioTotal.toFixed(2)} ${simbolo}`;   // Formatear a 2 decimales
     }
 
     rellenarResumen();
@@ -1590,16 +1655,48 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
       'INR': 'la rupia india'
     };
 
+    // Símbolos de las divisas
+    const simbolosDivisas = {
+      'USD': '$',
+      'EUR': '€',
+      'GBP': '£',
+      'JPY': '¥',
+      'CNY': '¥',
+      'CHF': 'CHF',
+      'CAD': 'CA$',
+      'AUD': 'A$',
+      'MXN': 'MX$',
+      'SGD': 'S$',
+      'KRW': '₩',
+      'INR': '₹'
+    };
+
     // Seleccionar divisa del modal
     botonesDivisaModal.forEach(boton => {
       boton.addEventListener('click', () => {
         const codigoDivisa = boton.getAttribute('data-divisa');
         const nombreCompleto = nombresDivisas[codigoDivisa];
+        const simbolo = simbolosDivisas[codigoDivisa];
 
         console.log('Divisa seleccionada:', codigoDivisa);
 
         // Cerrar el modal
         modal.style.display = 'none';
+
+        // Actualizar el símbolo de la divisa en el coste total
+        const precioFinal = document.querySelector('.precio-final');
+        if (precioFinal) {
+          // Extraer el número del precio actual
+          const precioActual = precioFinal.textContent.match(/[\d.]+/);
+          if (precioActual) {
+            precioFinal.textContent = `${precioActual[0]} ${simbolo}`;
+          }
+        }
+
+        // Actualizar el texto del botón
+        if (botonMasDivisas) {
+          botonMasDivisas.textContent = codigoDivisa;
+        }
 
         // Mostrar mensaje personalizado
         alert('Has seleccionado ' + nombreCompleto);
@@ -2178,13 +2275,33 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
       </div>
       <div class="info-fila">
         <span class="etiqueta">Coste total:</span>
-        <span class="contenido">${precioTotal.toFixed(2)} €</span>
+        <span class="contenido coste-total-reserva">${precioTotal.toFixed(2)} €</span>
       </div>
       <div class="info-fila">
         <span class="etiqueta">Fecha de compra:</span>
         <span class="contenido">${fechaFormateada}</span>
       </div>
     `;
+
+    // Aplicar divisa predeterminada al coste total
+    const divisaPredeterminada = localStorage.getItem('divisaPredeterminada') || 'eur';
+    const simbolosDivisas = {
+      'eur': '€',
+      'usd': '$',
+      'gbp': '£'
+    };
+    const simbolo = simbolosDivisas[divisaPredeterminada] || '€';
+    
+    // Actualizar el símbolo en el modal antes de mostrarlo
+    setTimeout(() => {
+      const costeTotalElemento = detalleBody.querySelector('.coste-total-reserva');
+      if (costeTotalElemento) {
+        const precio = costeTotalElemento.textContent.match(/[\d.]+/);
+        if (precio) {
+          costeTotalElemento.textContent = `${precio[0]} ${simbolo}`;
+        }
+      }
+    }, 0);
 
     // Añadir información del guía 
     if (viaje.guia) {
@@ -2247,8 +2364,63 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
     });
   }
 
+  // Configuración de divisa predeterminada
+  const divisaSelect = document.getElementById('divisa-config');
+  
+  // Símbolos de divisas
+  const simbolosDivisas = {
+    'eur': '€',
+    'usd': '$',
+    'gbp': '£',
+    'jpy': '¥',
+    'cny': '¥',
+    'chf': 'CHF',
+    'cad': 'CA$',
+    'aud': 'A$',
+    'mxn': 'MX$',
+    'sgd': 'S$',
+    'krw': '₩',
+    'inr': '₹'
+  };
+
+  // Cargar divisa guardada
+  const divisaGuardada = localStorage.getItem('divisaPredeterminada') || 'eur';
+  if (divisaSelect) {
+    divisaSelect.value = divisaGuardada;
+  }
+
+  // Evento cambio de divisa
+  if (divisaSelect) {
+    divisaSelect.addEventListener('change', () => {
+      const divisaSeleccionada = divisaSelect.value;
+      localStorage.setItem('divisaPredeterminada', divisaSeleccionada);
+      
+      // Actualizar símbolos en las reservas mostradas
+      actualizarSimbolosDivisa(divisaSeleccionada);
+      
+      alert('Divisa predeterminada actualizada');
+    });
+  }
+
+  // Función para actualizar símbolos de divisa en detalles de reserva
+  function actualizarSimbolosDivisa(divisa) {
+    const simbolo = simbolosDivisas[divisa] || '€';
+    
+    // Actualizar en el modal si está abierto
+    const modalDetalles = document.querySelectorAll('#detalle-reserva-body .contenido');
+    modalDetalles.forEach(elemento => {
+      if (elemento.textContent.includes('€') || elemento.textContent.includes('$') || elemento.textContent.includes('£')) {
+        const precio = elemento.textContent.match(/[\d.]+/);
+        if (precio) {
+          elemento.textContent = `${precio[0]} ${simbolo}`;
+        }
+      }
+    });
+  }
+
   // Cargar datos al iniciar
   cargarDatosPersonales();
   cargarReservas();
 }
+
 
