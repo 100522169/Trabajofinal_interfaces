@@ -35,7 +35,6 @@ micuentaLinks.forEach(link => {
   }
 });
 
-// ============ FUNCIONES GLOBALES: GUARDAR Y COMPARTIR ============
 
 /**
  * Muestra una notificación toast en la esquina inferior de la pantalla
@@ -43,7 +42,6 @@ micuentaLinks.forEach(link => {
  * @param {string} tipo - 'success', 'error' o 'info'
  */
 function mostrarToast(mensaje, tipo = 'success') {
-  // Crear el contenedor de toast si no existe
   let toastContainer = document.getElementById('toast-container');
   if (!toastContainer) {
     toastContainer = document.createElement('div');
@@ -60,7 +58,6 @@ function mostrarToast(mensaje, tipo = 'success') {
     document.body.appendChild(toastContainer);
   }
 
-  // Crear el toast
   const toast = document.createElement('div');
   toast.className = `toast toast-${tipo}`;
 
@@ -90,7 +87,6 @@ function mostrarToast(mensaje, tipo = 'success') {
   toast.innerHTML = `<span>${config.icon}</span> ${mensaje}`;
   toastContainer.appendChild(toast);
 
-  // Añadir animación CSS si no existe
   if (!document.getElementById('toast-styles')) {
     const style = document.createElement('style');
     style.id = 'toast-styles';
@@ -107,7 +103,6 @@ function mostrarToast(mensaje, tipo = 'success') {
     document.head.appendChild(style);
   }
 
-  // Remover después de 3 segundos
   setTimeout(() => {
     toast.style.animation = 'slideOut 0.3s ease';
     setTimeout(() => toast.remove(), 300);
@@ -159,20 +154,11 @@ function compartirViaje(viaje) {
     ? `Check out this trip: ${titulo} - ${viaje.destino}`
     : `Mira este viaje: ${titulo} - ${viaje.destino}`;
 
-  // Guardar el viaje en localStorage para que detalles_viaje pueda cargarlo
   localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
 
   if (navigator.share) {
-    // Web Share API (principalmente móvil)
-    navigator.share({
-      title: titulo,
-      text: texto,
-      url: url
-    }).catch(() => {
-      // Usuario canceló o error, no hacer nada
-    });
+    navigator.share({ title: titulo, text: texto, url: url }).catch(() => { });
   } else {
-    // Fallback: copiar al portapapeles
     const textoCompleto = `${texto}\n${url}`;
     navigator.clipboard.writeText(textoCompleto).then(() => {
       mostrarToast(idioma === 'en' ? 'Link copied to clipboard ✓' : 'Enlace copiado al portapapeles ✓', 'success');
@@ -395,9 +381,7 @@ const viajes = [
     guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
     reseñas: [{ nombre: 'Carlos V.', avatar: 'images/avatar-carlos-v.jpg', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
   },
-
-  // ============ NORTEAMERICA ============
-
+  // Norte America
   {
     destino: 'Estados Unidos', continente: 'norteamerica', duracion: 7, precio: 1100, tipo: 'Turístico', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Norte America/new_yorl.jpeg', titulo: 'New York y la Costa Este', titulo_en: 'New York and the East Coast',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'halal'],
@@ -420,9 +404,7 @@ const viajes = [
     guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Sergio.png' },
     reseñas: [{ nombre: 'Roberto S.', avatar: 'images/avatar-roberto.jpg', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
   },
-
-  // ============ AFRICA ============
-
+  // Africa
   {
     destino: 'Kenia', continente: 'africa', duracion: 8, precio: 2000, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Africa/safari kenia.jpg', titulo: 'Safari en Kenia: La Gran Migración', titulo_en: 'Kenya Safari: The Great Migration',
     dietasDisponibles: ['vegano', 'vegetariano', 'halal'],
@@ -445,9 +427,7 @@ const viajes = [
     guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/guia.jpeg' },
     reseñas: [{ nombre: 'Lucía R.', avatar: 'images/avatar-lucia.jpg', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
   },
-
-  // ============ OCEANIA ============
-
+  // Oceania
   {
     destino: 'Australia', continente: 'oceania', duracion: 7, precio: 2500, tipo: 'Turístico', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Oceania/Sidney 2.jpg', titulo: 'Australia: Sydney y la Gran Barrera', titulo_en: 'Australia: Sydney and the Great Barrier Reef',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
@@ -474,7 +454,7 @@ const viajes = [
 
 // Array de ciudades del mundo organizadas por continente
 const ciudadesDelMundo = [
-  // ============ EUROPA ============
+  // Europa
   { nombre: 'Viena', nombre_en: 'Vienna', pais: 'Austria', pais_en: 'Austria', continente: 'europa', descripcion: 'Ciudad imperial con museos y música clásica. El Palacio de Schönbrunn y la Ringstrasse condensan el barroco y el historicismo.', descripcion_en: 'Imperial city with museums and classical music. Schönbrunn Palace and Ringstrasse condense baroque and historicism.', imagen: 'https://images.unsplash.com/photo-1731223832507-ebe5373129e6?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Brujas', nombre_en: 'Bruges', pais: 'Bélgica', pais_en: 'Belgium', continente: 'europa', descripcion: 'Centro medieval perfectamente conservado, canales bordeados de árboles y plazas adoquinadas.', descripcion_en: 'Perfectly preserved medieval center, tree-lined canals and cobblestone squares.', imagen: 'https://plus.unsplash.com/premium_photo-1661963659103-9602b3811297?auto=format&fit=crop&q=80&w=1170' },
   { nombre: 'Copenhague', nombre_en: 'Copenhagen', pais: 'Dinamarca', pais_en: 'Denmark', continente: 'europa', descripcion: 'Equilibrio entre diseño contemporáneo y tradición nórdica. Nyhavn, Tívoli y barrios ciclistas.', descripcion_en: 'Balance between contemporary design and Nordic tradition. Nyhavn, Tivoli and cycling neighborhoods.', imagen: 'https://plus.unsplash.com/premium_photo-1691414363231-836e2e1bf0ed?auto=format&fit=crop&q=60&w=500' },
@@ -498,7 +478,7 @@ const ciudadesDelMundo = [
   { nombre: 'Zúrich', nombre_en: 'Zurich', pais: 'Suiza', pais_en: 'Switzerland', continente: 'europa', descripcion: 'Casco antiguo elegante junto al lago, museos, galerías y vida junto al agua.', descripcion_en: 'Elegant old town by the lake, museums, galleries and waterfront life.', imagen: 'https://images.unsplash.com/photo-1620563092215-0fbc6b55cfc5?auto=format&fit=crop&q=80&w=1171' },
   { nombre: 'Reikiavik', nombre_en: 'Reykjavik', pais: 'Islandia', pais_en: 'Iceland', continente: 'europa', descripcion: 'Arquitectura moderna como Harpa y Hallgrímskirkja entre paisajes volcánicos.', descripcion_en: 'Modern architecture like Harpa and Hallgrímskirkja amid volcanic landscapes.', imagen: 'https://plus.unsplash.com/premium_photo-1661962984700-16b03ecda58a?auto=format&fit=crop&q=60&w=500' },
 
-  // ============ ASIA ============
+  // Asia
   { nombre: 'Beijing', nombre_en: 'Beijing', pais: 'China', pais_en: 'China', continente: 'asia', descripcion: 'Capital imperial con la Ciudad Prohibida, hutongs y avenidas amplias.', descripcion_en: 'Imperial capital with Forbidden City, hutongs and wide avenues.', imagen: 'https://plus.unsplash.com/premium_photo-1723433351351-0f6cd5d21537?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Hong Kong', nombre_en: 'Hong Kong', pais: 'China', pais_en: 'China', continente: 'asia', descripcion: 'Horizonte denso en torno a un puerto lleno de ferris. Montañas e islas cercanas.', descripcion_en: 'Dense skyline around a ferry-filled harbor. Nearby mountains and islands.', imagen: 'https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Seúl', nombre_en: 'Seoul', pais: 'Corea del Sur', pais_en: 'South Korea', continente: 'asia', descripcion: 'Rascacielos y palacios, mercados nocturnos y una red de metro impecable.', descripcion_en: 'Skyscrapers and palaces, night markets and impeccable metro network.', imagen: 'https://plus.unsplash.com/premium_photo-1661936414165-3039a8d906f9?auto=format&fit=crop&q=60&w=500' },
@@ -512,22 +492,22 @@ const ciudadesDelMundo = [
   { nombre: 'Hanoi', nombre_en: 'Hanoi', pais: 'Vietnam', pais_en: 'Vietnam', continente: 'asia', descripcion: 'Lagos, templos y barrio francés con aire romántico. Calles angostas con cafés.', descripcion_en: 'Lakes, temples and French quarter with romantic air. Narrow streets with cafés.', imagen: 'https://plus.unsplash.com/premium_photo-1691960159290-6f4ace6e6c4c?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Singapur', nombre_en: 'Singapore', pais: 'Singapur', pais_en: 'Singapore', continente: 'asia', descripcion: 'Ciudad-jardín con selva urbana, Gardens by the Bay y logística impecable.', descripcion_en: 'Garden city with urban jungle, Gardens by the Bay and impeccable logistics.', imagen: 'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&q=60&w=500' },
 
-  // ============ AFRICA ============
+  // Africa
   { nombre: 'Chefchaouen', nombre_en: 'Chefchaouen', pais: 'Marruecos', pais_en: 'Morocco', continente: 'africa', descripcion: 'Medina azul entre montañas del Rif. Callejuelas pintadas y puertas artesanales.', descripcion_en: 'Blue medina among Rif mountains. Painted alleys and artisan doors.', imagen: 'https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?auto=format&fit=crop&q=80&w=1170' },
   { nombre: 'Ciudad del Cabo', nombre_en: 'Cape Town', pais: 'Sudáfrica', pais_en: 'South Africa', continente: 'africa', descripcion: 'Table Mountain, playas con pingüinos y barrios coloridos como Bo-Kaap.', descripcion_en: 'Table Mountain, beaches with penguins and colorful neighborhoods like Bo-Kaap.', imagen: 'https://plus.unsplash.com/premium_photo-1697730061063-ad499e343f26?auto=format&fit=crop&q=60&w=500' },
 
-  // ============ OCEANIA ============
+  // Oceania
   { nombre: 'Sídney', nombre_en: 'Sydney', pais: 'Australia', pais_en: 'Australia', continente: 'oceania', descripcion: 'Ópera icónica, bahía navegable y playas urbanas como Bondi.', descripcion_en: 'Iconic Opera House, navigable bay and urban beaches like Bondi.', imagen: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Queenstown', nombre_en: 'Queenstown', pais: 'Nueva Zelanda', pais_en: 'New Zealand', continente: 'oceania', descripcion: 'Capital de la adrenalina entre lago y montañas. Paisajes cinematográficos.', descripcion_en: 'Adrenaline capital between lake and mountains. Cinematic landscapes.', imagen: 'https://images.unsplash.com/photo-1600466403153-50193d187dde?auto=format&fit=crop&q=60&w=500' },
 
-  // ============ NORTEAMERICA ============
+  // Norte America
   { nombre: 'Quebec', nombre_en: 'Quebec City', pais: 'Canadá', pais_en: 'Canada', continente: 'norteamerica', descripcion: 'Casco amurallado en altura con vistas al San Lorenzo. Ambiente europeo.', descripcion_en: 'Walled old town on high ground with St. Lawrence views. European atmosphere.', imagen: 'https://images.unsplash.com/photo-1576771304215-6d4d30f7bb63?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'La Habana', nombre_en: 'Havana', pais: 'Cuba', pais_en: 'Cuba', continente: 'norteamerica', descripcion: 'Arquitectura colonial de tonos pastel, música en cada esquina y el Malecón.', descripcion_en: 'Pastel colonial architecture, music on every corner and the Malecón.', imagen: 'https://images.unsplash.com/photo-1570299437488-d430e1e677c7?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Nueva York', nombre_en: 'New York', pais: 'Estados Unidos', pais_en: 'United States', continente: 'norteamerica', descripcion: 'Arquitectura icónica, Central Park y una escena artística incomparable.', descripcion_en: 'Iconic architecture, Central Park and an incomparable art scene.', imagen: 'https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'San Francisco', nombre_en: 'San Francisco', pais: 'Estados Unidos', pais_en: 'United States', continente: 'norteamerica', descripcion: 'Puente Golden Gate, colinas y casas victorianas. Barrios con carácter.', descripcion_en: 'Golden Gate Bridge, hills and Victorian houses. Neighborhoods with character.', imagen: 'https://images.unsplash.com/photo-1719858403364-83f7442a197e?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'San Miguel de Allende', nombre_en: 'San Miguel de Allende', pais: 'México', pais_en: 'Mexico', continente: 'norteamerica', descripcion: 'Centro colonial con parroquia neogótica rosada. Calles adoquinadas y arte.', descripcion_en: 'Colonial center with pink neo-Gothic parish. Cobblestone streets and art.', imagen: 'https://plus.unsplash.com/premium_photo-1697729800872-866107ce82c4?auto=format&fit=crop&q=60&w=500' },
 
-  // ============ SUDAMERICA ============
+  // Sudamerica
   { nombre: 'Buenos Aires', nombre_en: 'Buenos Aires', pais: 'Argentina', pais_en: 'Argentina', continente: 'sudamerica', descripcion: 'Barrios con identidad, arquitectura variada y tango. Parrillas y vida cultural.', descripcion_en: 'Neighborhoods with identity, varied architecture and tango. Grills and cultural life.', imagen: 'https://plus.unsplash.com/premium_photo-1697729901052-fe8900e24993?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Río de Janeiro', nombre_en: 'Rio de Janeiro', pais: 'Brasil', pais_en: 'Brazil', continente: 'sudamerica', descripcion: 'Playas míticas, selva urbana y el Cristo Redentor. Ritmo de samba.', descripcion_en: 'Mythical beaches, urban jungle and Christ the Redeemer. Samba rhythm.', imagen: 'https://plus.unsplash.com/premium_photo-1671211307997-f4f552b0601c?auto=format&fit=crop&q=60&w=500' },
   { nombre: 'Cartagena', nombre_en: 'Cartagena', pais: 'Colombia', pais_en: 'Colombia', continente: 'sudamerica', descripcion: 'Murallas, plazas y casonas coloniales cubiertas de buganvillas.', descripcion_en: 'Walls, squares and colonial mansions covered with bougainvillea.', imagen: 'https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&q=60&w=500' },
@@ -955,11 +935,12 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         </div>
       `;
 
-      // Event listener para el botón guardar
+      // Evento para guardar viaje en favoritos
       const btnGuardar = div.querySelector('.btn-guardar-viaje');
       btnGuardar.addEventListener('click', (e) => {
         e.stopPropagation();
         const ahora = guardarViaje(viaje);
+        // Actualizar icono y texto del botón según el estado
         if (ahora) {
           btnGuardar.innerHTML = `<span>❤️</span> ${idioma === 'en' ? 'Saved' : 'Guardado'}`;
           btnGuardar.classList.add('guardado');
@@ -969,35 +950,29 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         }
       });
 
-      // Event listener para el botón compartir
+      // Evento para compartir viaje
       const btnCompartir = div.querySelector('.btn-compartir-viaje');
       btnCompartir.addEventListener('click', (e) => {
         e.stopPropagation();
         compartirViaje(viaje);
       });
 
-      // Agregar evento al botón "Ver detalles"
+      // Evento para ver detalles del viaje
       const botonVerDetalles = div.querySelector('.ver-detalles');
       botonVerDetalles.addEventListener('click', () => {
-        // Guardar el viaje seleccionado y los viajes filtrados actuales en localStorage
         localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
         localStorage.setItem('viajesFiltradosActuales', JSON.stringify(currentFiltrados));
-        // Guardar el índice del viaje en el array filtrado actual
-        localStorage.setItem('indiceViajeSeleccionado', index.toString());    //index.toString() convierte el índice a cadena
-        // Limpiar origen de continente si existe
+        localStorage.setItem('indiceViajeSeleccionado', index.toString());
         localStorage.removeItem('viajeOrigen');
-        // Marcar que venimos del listado
         localStorage.setItem('origenViaje', 'listado');
-        // Redirigir a la página de detalles
         window.location.href = 'detalles_viaje.html';
       });
 
-      columnaListado.appendChild(div);   // Agregar el div al contenedor de listado
+      columnaListado.appendChild(div);
     });
   }
 
-  // Render inicial
-  renderViajes(currentFiltrados);       // Renderizar los viajes filtrados inicialmente
+  renderViajes(currentFiltrados);
 
   // Función para aplicar filtros
   function applyFilters() {
@@ -2860,20 +2835,24 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
     const guardados = JSON.parse(localStorage.getItem('viajesGuardados')) || [];
     const idioma = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'es';
 
+    // Si no hay viajes guardados, mostrar mensaje
     if (guardados.length === 0) {
       if (contenedor) contenedor.innerHTML = '';
       if (mensajeSinGuardados) mensajeSinGuardados.style.display = 'block';
       return;
     }
 
+    // Ocultar mensaje y preparar contenedor
     if (mensajeSinGuardados) mensajeSinGuardados.style.display = 'none';
     if (!contenedor) return;
 
     contenedor.innerHTML = '';
 
+    // Mostrar cada viaje guardado
     guardados.forEach((viaje, index) => {
       const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
 
+      // Crear tarjeta del viaje guardado
       const tarjeta = document.createElement('div');
       tarjeta.className = 'viaje-guardado-item';
       tarjeta.innerHTML = `
@@ -2891,24 +2870,23 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
         </div>
       `;
 
-      // Evento ver detalles
+      // Evento para ver detalles del viaje
       tarjeta.querySelector('.btn-ver-viaje').addEventListener('click', () => {
         localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
         localStorage.removeItem('viajeOrigen');
         window.location.href = 'detalles_viaje.html';
       });
 
-      // Evento quitar de guardados
+      // Evento para quitar de guardados
       tarjeta.querySelector('.btn-quitar-guardado').addEventListener('click', () => {
-        guardarViaje(viaje); // Toggle: lo quita
-        cargarViajesGuardados(); // Recargar la lista
+        guardarViaje(viaje);
+        cargarViajesGuardados();
       });
 
       contenedor.appendChild(tarjeta);
     });
   }
 
-  // Cargar datos al iniciar
   cargarDatosPersonales();
   cargarReservas();
   cargarViajesGuardados();
@@ -3204,3 +3182,65 @@ if (window.location.pathname.includes("blog.html")) {
 }
 
 
+// ============ PÁGINA AYUDA.HTML ============
+if (window.location.pathname.includes("ayuda.html")) {
+
+  // Navegación por tabs de categorías
+  const tabs = document.querySelectorAll('.help-tab');
+  const panels = document.querySelectorAll('.help-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Quitar clase active de todos los tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      // Añadir clase active al tab clickeado
+      tab.classList.add('active');
+
+      // Ocultar todos los paneles
+      panels.forEach(panel => panel.hidden = true);
+
+      // Mostrar el panel correspondiente
+      const targetId = tab.getAttribute('data-tab');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.hidden = false;
+      }
+    });
+  });
+
+  // Toggle de preguntas FAQ (acordeón)
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const faq = question.parentElement;
+      // Toggle clase open
+      faq.classList.toggle('open');
+    });
+  });
+
+  // Buscador de preguntas
+  const searchInput = document.getElementById('help-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      const allFaqs = document.querySelectorAll('.faq');
+
+      if (query === '') {
+        // Si no hay búsqueda, mostrar todas las FAQ
+        allFaqs.forEach(faq => faq.style.display = 'block');
+      } else {
+        // Filtrar FAQ que contengan el texto buscado
+        allFaqs.forEach(faq => {
+          const questionText = faq.querySelector('.faq-question span').textContent.toLowerCase();
+          const answerText = faq.querySelector('.faq-answer').textContent.toLowerCase();
+          if (questionText.includes(query) || answerText.includes(query)) {
+            faq.style.display = 'block';
+          } else {
+            faq.style.display = 'none';
+          }
+        });
+      }
+    });
+  }
+}
