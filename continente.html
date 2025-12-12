@@ -26,7 +26,7 @@
             <ul>
                 <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
                 <li><a href="otros_rincones.html" data-i18n="nav-otros">Otros rincones</a></li>
-                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
                 <li><a href="#" data-i18n="nav-cuenta">Mi cuenta</a></li>
 
                 <li class="nav-utils">
@@ -58,6 +58,8 @@
     <main>
         <h2 class="titulo-continente" id="titulo-continente">Europa</h2>
 
+        <!-- Sección de Viajes -->
+        <h3 class="subtitulo-seccion" data-i18n="continent-trips" id="subtitulo-viajes">Viajes organizados</h3>
         <div class="grid-viajes" id="grid-viajes">
             <!-- Los viajes se cargarán dinámicamente -->
         </div>
@@ -65,18 +67,24 @@
         <div class="mensaje-sin-viajes" id="mensaje-sin-viajes" style="display: none;">
             <p data-i18n="continent-no-trips">No hay viajes disponibles para esta región.</p>
         </div>
+
+        <!-- Sección de Ciudades Destacadas -->
+        <h3 class="subtitulo-seccion" data-i18n="continent-cities" id="subtitulo-ciudades">Ciudades destacadas</h3>
+        <div class="grid-ciudades" id="grid-ciudades">
+            <!-- Las ciudades se cargarán dinámicamente -->
+        </div>
     </main>
 
     <footer>
         <nav>
             <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
-            <a href="#" data-i18n="footer-contact">Contacto</a>
-            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="sobre_nosotros.html" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 
     <script>
-        // Script para cargar viajes del continente
+        // Script para cargar viajes y ciudades del continente
         document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);
             const continente = urlParams.get('region');
@@ -103,58 +111,85 @@
                 tituloElement.textContent = nombresContinentes[continente][idioma] || nombresContinentes[continente].es;
             }
 
-            // Filtrar viajes por continente
+            // ============ VIAJES ============
             const viajesFiltrados = viajes.filter(v => v.continente === continente);
-
             const gridViajes = document.getElementById('grid-viajes');
             const mensajeSinViajes = document.getElementById('mensaje-sin-viajes');
+            const subtituloViajes = document.getElementById('subtitulo-viajes');
 
             if (viajesFiltrados.length === 0) {
                 mensajeSinViajes.style.display = 'block';
                 gridViajes.style.display = 'none';
-                return;
+                subtituloViajes.style.display = 'none';
+            } else {
+                // Generar tarjetas de viajes
+                viajesFiltrados.forEach((viaje, index) => {
+                    const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
+
+                    const tarjeta = document.createElement('div');
+                    tarjeta.className = 'tarjeta-viaje';
+                    tarjeta.innerHTML = `
+                        <div class="tarjeta-imagen">
+                            <img src="${viaje.imagen}" alt="${titulo}">
+                        </div>
+                        <div class="tarjeta-info">
+                            <h3>${viaje.destino}</h3>
+                            <p class="tarjeta-titulo">${titulo}</p>
+                            <p class="tarjeta-descripcion">${viaje.duracion} ${idioma === 'en' ? 'days' : 'días'} · ${viaje.precio}€</p>
+                        </div>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-guardar" title="${idioma === 'en' ? 'Save trip' : 'Guardar viaje'}">
+                                <span>📥</span> ${idioma === 'en' ? 'Save' : 'Guardar'}
+                            </button>
+                            <button class="btn-compartir" title="${idioma === 'en' ? 'Share' : 'Compartir'}">
+                                <span>↗</span> ${idioma === 'en' ? 'Share' : 'Compartir'}
+                            </button>
+                        </div>
+                    `;
+
+                    tarjeta.addEventListener('click', function (e) {
+                        if (!e.target.closest('button')) {
+                            localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+                            localStorage.setItem('viajeOrigen', 'continente.html?region=' + continente);
+                            window.location.href = 'detalles_viaje.html';
+                        }
+                    });
+
+                    gridViajes.appendChild(tarjeta);
+                });
             }
 
-            // Generar tarjetas de viajes
-            viajesFiltrados.forEach((viaje, index) => {
-                const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
+            // ============ CIUDADES ============
+            const ciudadesFiltradas = ciudadesDelMundo.filter(c => c.continente === continente);
+            const gridCiudades = document.getElementById('grid-ciudades');
+            const subtituloCiudades = document.getElementById('subtitulo-ciudades');
 
-                const tarjeta = document.createElement('div');
-                tarjeta.className = 'tarjeta-viaje';
-                tarjeta.innerHTML = `
-                    <div class="tarjeta-imagen">
-                        <img src="${viaje.imagen}" alt="${titulo}">
-                    </div>
-                    <div class="tarjeta-info">
-                        <h3>${viaje.destino}</h3>
-                        <p class="tarjeta-titulo">${titulo}</p>
-                        <p class="tarjeta-descripcion">${viaje.duracion} ${idioma === 'en' ? 'days' : 'días'} · ${viaje.precio}€</p>
-                    </div>
-                    <div class="tarjeta-acciones">
-                        <button class="btn-guardar" title="${idioma === 'en' ? 'Save trip' : 'Guardar viaje'}">
-                            <span>📥</span> ${idioma === 'en' ? 'Save' : 'Guardar'}
-                        </button>
-                        <button class="btn-compartir" title="${idioma === 'en' ? 'Share' : 'Compartir'}">
-                            <span>↗</span> ${idioma === 'en' ? 'Share' : 'Compartir'}
-                        </button>
-                    </div>
-                `;
+            if (ciudadesFiltradas.length === 0) {
+                subtituloCiudades.style.display = 'none';
+                gridCiudades.style.display = 'none';
+            } else {
+                // Generar tarjetas de ciudades
+                ciudadesFiltradas.forEach((ciudad) => {
+                    const nombre = idioma === 'en' && ciudad.nombre_en ? ciudad.nombre_en : ciudad.nombre;
+                    const pais = idioma === 'en' && ciudad.pais_en ? ciudad.pais_en : ciudad.pais;
+                    const descripcion = idioma === 'en' && ciudad.descripcion_en ? ciudad.descripcion_en : ciudad.descripcion;
 
-                // Al hacer clic, ir a detalles del viaje
-                tarjeta.addEventListener('click', function (e) {
-                    if (!e.target.closest('button')) {
-                        // Buscar el índice real del viaje en el array global
-                        const viajeIndex = viajes.findIndex(v => v.titulo === viaje.titulo && v.destino === viaje.destino);
-                        // Guardar el viaje en localStorage (compatible con el resto del código)
-                        localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
-                        // Guardar el origen para el botón de atrás
-                        localStorage.setItem('viajeOrigen', 'continente.html?region=' + continente);
-                        window.location.href = 'detalles_viaje.html';
-                    }
+                    const tarjeta = document.createElement('div');
+                    tarjeta.className = 'tarjeta-ciudad';
+                    tarjeta.innerHTML = `
+                        <div class="ciudad-imagen">
+                            <img src="${ciudad.imagen}" alt="${nombre}" loading="lazy">
+                        </div>
+                        <div class="ciudad-info">
+                            <h4>${nombre}</h4>
+                            <p class="ciudad-pais">${pais}</p>
+                            <p class="ciudad-descripcion">${descripcion}</p>
+                        </div>
+                    `;
+
+                    gridCiudades.appendChild(tarjeta);
                 });
-
-                gridViajes.appendChild(tarjeta);
-            });
+            }
         });
     </script>
 </body>

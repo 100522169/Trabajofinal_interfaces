@@ -271,7 +271,26 @@ const translations = {
         "dynamic-companions": "Acompañantes:",
         "dynamic-total-cost": "Coste total:",
         "dynamic-no-reservations": "No tienes reservas activas.",
-        "dynamic-none": "Ninguna"
+        "dynamic-none": "Ninguna",
+
+        // ============ BLOG ============
+        "blog-title": "Blogs",
+        "blog-categories": "Categorías",
+        "blog-cat-equipment": "Equipamiento",
+        "blog-cat-itineraries": "Itinerarios",
+        "blog-cat-experiences": "Experiencias",
+        "blog-apply-filters": "Aplicar filtros",
+        "blog-select-category": "Selecciona al menos una categoría",
+        "blog-no-blogs": "No hay blogs para las categorías seleccionadas",
+        "blog-read-article": "Leer artículo",
+        "blog-status-ongoing": "En curso",
+        "blog-status-completed": "Finalizado",
+        "blog-status": "Estado:",
+
+        // ============ CONTINENT PAGE ============
+        "continent-trips": "Viajes organizados",
+        "continent-cities": "Ciudades destacadas",
+        "continent-no-trips": "No hay viajes disponibles para esta región."
     },
 
     en: {
@@ -541,7 +560,26 @@ const translations = {
         "dynamic-total-cost": "Total cost:",
         "dynamic-no-reservations": "You have no active reservations.",
         "dynamic-none": "None",
-        "about-follow": "Follow us on social media"
+        "about-follow": "Follow us on social media",
+
+        // ============ BLOG ============
+        "blog-title": "Blogs",
+        "blog-categories": "Categories",
+        "blog-cat-equipment": "Equipment",
+        "blog-cat-itineraries": "Itineraries",
+        "blog-cat-experiences": "Experiences",
+        "blog-apply-filters": "Apply filters",
+        "blog-select-category": "Please select at least one category",
+        "blog-no-blogs": "No blogs found for the selected categories",
+        "blog-read-article": "Read article",
+        "blog-status-ongoing": "Ongoing",
+        "blog-status-completed": "Completed",
+        "blog-status": "Status:",
+
+        // ============ CONTINENT PAGE ============
+        "continent-trips": "Organized trips",
+        "continent-cities": "Featured cities",
+        "continent-no-trips": "No trips available for this region."
     }
 };
 

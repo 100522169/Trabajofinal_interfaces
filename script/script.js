@@ -285,6 +285,68 @@ const viajes = [
   }
 ];
 
+// Array de ciudades del mundo organizadas por continente
+const ciudadesDelMundo = [
+  // ============ EUROPA ============
+  { nombre: 'Viena', nombre_en: 'Vienna', pais: 'Austria', pais_en: 'Austria', continente: 'europa', descripcion: 'Ciudad imperial con museos y música clásica. El Palacio de Schönbrunn y la Ringstrasse condensan el barroco y el historicismo.', descripcion_en: 'Imperial city with museums and classical music. Schönbrunn Palace and Ringstrasse condense baroque and historicism.', imagen: 'https://images.unsplash.com/photo-1731223832507-ebe5373129e6?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Brujas', nombre_en: 'Bruges', pais: 'Bélgica', pais_en: 'Belgium', continente: 'europa', descripcion: 'Centro medieval perfectamente conservado, canales bordeados de árboles y plazas adoquinadas.', descripcion_en: 'Perfectly preserved medieval center, tree-lined canals and cobblestone squares.', imagen: 'https://plus.unsplash.com/premium_photo-1661963659103-9602b3811297?auto=format&fit=crop&q=80&w=1170' },
+  { nombre: 'Copenhague', nombre_en: 'Copenhagen', pais: 'Dinamarca', pais_en: 'Denmark', continente: 'europa', descripcion: 'Equilibrio entre diseño contemporáneo y tradición nórdica. Nyhavn, Tívoli y barrios ciclistas.', descripcion_en: 'Balance between contemporary design and Nordic tradition. Nyhavn, Tivoli and cycling neighborhoods.', imagen: 'https://plus.unsplash.com/premium_photo-1691414363231-836e2e1bf0ed?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Liubliana', nombre_en: 'Ljubljana', pais: 'Eslovenia', pais_en: 'Slovenia', continente: 'europa', descripcion: 'Capital pequeña y escénica, con casco peatonal, cafés junto al río y el castillo en lo alto.', descripcion_en: 'Small scenic capital with pedestrian old town, riverside cafés and hilltop castle.', imagen: 'https://images.unsplash.com/photo-1611576191056-3e6696029388?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Barcelona', nombre_en: 'Barcelona', pais: 'España', pais_en: 'Spain', continente: 'europa', descripcion: 'Modernismo de Gaudí, mar y montaña en un mismo plano. La Sagrada Familia, Park Güell y vida de barrio.', descripcion_en: 'Gaudí modernism, sea and mountain in one plane. Sagrada Familia, Park Güell and neighborhood life.', imagen: 'https://images.unsplash.com/photo-1630219694734-fe47ab76b15e?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Sevilla', nombre_en: 'Seville', pais: 'España', pais_en: 'Spain', continente: 'europa', descripcion: 'Casco histórico monumental, patios y azulejos. El Alcázar, la Catedral y el barrio de Santa Cruz.', descripcion_en: 'Monumental historic center, patios and tiles. The Alcázar, Cathedral and Santa Cruz district.', imagen: 'https://images.unsplash.com/photo-1559564477-6e8582270002?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Tallin', nombre_en: 'Tallinn', pais: 'Estonia', pais_en: 'Estonia', continente: 'europa', descripcion: 'Ciudad vieja medieval amurallada, torres y tejados de colores con vistas al Báltico.', descripcion_en: 'Walled medieval old town, towers and colorful rooftops with Baltic views.', imagen: 'https://images.unsplash.com/photo-1709862366377-54b16f3e51f9?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'París', nombre_en: 'Paris', pais: 'Francia', pais_en: 'France', continente: 'europa', descripcion: 'Romance urbano: Sena, bulevares y museos icónicos. Notre Dame, Sacré-Coeur y la Torre Eiffel.', descripcion_en: 'Urban romance: Seine, boulevards and iconic museums. Notre Dame, Sacré-Coeur and Eiffel Tower.', imagen: 'https://plus.unsplash.com/premium_photo-1661919210043-fd847a58522d?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Budapest', nombre_en: 'Budapest', pais: 'Hungría', pais_en: 'Hungary', continente: 'europa', descripcion: 'Arquitectura Art Nouveau, baños termales y paseos nocturnos sobre el Danubio.', descripcion_en: 'Art Nouveau architecture, thermal baths and night walks along the Danube.', imagen: 'https://images.unsplash.com/photo-1565426873118-a17ed65d74b9?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Florencia', nombre_en: 'Florence', pais: 'Italia', pais_en: 'Italy', continente: 'europa', descripcion: 'Cuna del Renacimiento: Duomo, Uffizi y artesanías en el Oltrarno.', descripcion_en: 'Birthplace of the Renaissance: Duomo, Uffizi and crafts in Oltrarno.', imagen: 'https://images.unsplash.com/photo-1476362174823-3a23f4aa6d76?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Roma', nombre_en: 'Rome', pais: 'Italia', pais_en: 'Italy', continente: 'europa', descripcion: 'La "Ciudad Eterna" combina ruinas clásicas, plazas barrocas y vida de barrio.', descripcion_en: 'The "Eternal City" combines classical ruins, baroque squares and neighborhood life.', imagen: 'https://images.unsplash.com/photo-1529154036614-a60975f5c760?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Venecia', nombre_en: 'Venice', pais: 'Italia', pais_en: 'Italy', continente: 'europa', descripcion: 'Sin coches y con un trazado acuático único. Canales, palacios y puentes conectan islas.', descripcion_en: 'No cars and a unique water layout. Canals, palaces and bridges connect islands.', imagen: 'https://plus.unsplash.com/premium_photo-1661963047742-dabc5a735357?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'La Valeta', nombre_en: 'Valletta', pais: 'Malta', pais_en: 'Malta', continente: 'europa', descripcion: 'Fortificada y barroca, con miradores al Gran Puerto. Palacios, iglesias y museos.', descripcion_en: 'Fortified and baroque, with views of the Grand Harbour. Palaces, churches and museums.', imagen: 'https://images.unsplash.com/photo-1560365337-6f42f70dd874?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Bergen', nombre_en: 'Bergen', pais: 'Noruega', pais_en: 'Norway', continente: 'europa', descripcion: 'Casas de madera en Bryggen, puerto vivo y montañas que caen a fiordos.', descripcion_en: 'Wooden houses in Bryggen, lively harbor and mountains falling into fjords.', imagen: 'https://images.unsplash.com/photo-1643193388440-50fae300e1da?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Ámsterdam', nombre_en: 'Amsterdam', pais: 'Países Bajos', pais_en: 'Netherlands', continente: 'europa', descripcion: 'Canales Patrimonio de la UNESCO, gables estrechos y cultura ciclista.', descripcion_en: 'UNESCO Heritage canals, narrow gables and cycling culture.', imagen: 'https://plus.unsplash.com/premium_photo-1661878122586-2d75a86f3400?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Oporto', nombre_en: 'Porto', pais: 'Portugal', pais_en: 'Portugal', continente: 'europa', descripcion: 'Azulejos, puentes sobre el Duero y bodegas de vino de Oporto.', descripcion_en: 'Tiles, bridges over the Douro and Port wine cellars.', imagen: 'https://plus.unsplash.com/premium_photo-1677344087971-91eee10dfeb1?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Londres', nombre_en: 'London', pais: 'Reino Unido', pais_en: 'United Kingdom', continente: 'europa', descripcion: 'Historia y vanguardia a orillas del Támesis. Museos gratuitos, parques inmensos.', descripcion_en: 'History and avant-garde on the banks of the Thames. Free museums, huge parks.', imagen: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Edimburgo', nombre_en: 'Edinburgh', pais: 'Reino Unido', pais_en: 'United Kingdom', continente: 'europa', descripcion: 'Royal Mile, castillo y colinas verdes. Arthur\'s Seat ofrece panorámicas excepcionales.', descripcion_en: 'Royal Mile, castle and green hills. Arthur\'s Seat offers exceptional panoramas.', imagen: 'https://images.unsplash.com/photo-1569668444050-b7bc2bfec0c7?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Praga', nombre_en: 'Prague', pais: 'República Checa', pais_en: 'Czech Republic', continente: 'europa', descripcion: 'Cúpulas y torres góticas sobre un casco antiguo fotogénico. Puente de Carlos al amanecer.', descripcion_en: 'Domes and Gothic towers over a photogenic old town. Charles Bridge at dawn.', imagen: 'https://plus.unsplash.com/premium_photo-1661963067279-2f7bf970c49c?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Lucerna', nombre_en: 'Lucerne', pais: 'Suiza', pais_en: 'Switzerland', continente: 'europa', descripcion: 'Lago, montes cercanos y el Kapellbrücke como postal. Tejados medievales y aire alpino.', descripcion_en: 'Lake, nearby mountains and Kapellbrücke as postcard. Medieval roofs and Alpine air.', imagen: 'https://images.unsplash.com/photo-1635855296516-837d8b00cae7?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Zúrich', nombre_en: 'Zurich', pais: 'Suiza', pais_en: 'Switzerland', continente: 'europa', descripcion: 'Casco antiguo elegante junto al lago, museos, galerías y vida junto al agua.', descripcion_en: 'Elegant old town by the lake, museums, galleries and waterfront life.', imagen: 'https://images.unsplash.com/photo-1620563092215-0fbc6b55cfc5?auto=format&fit=crop&q=80&w=1171' },
+  { nombre: 'Reikiavik', nombre_en: 'Reykjavik', pais: 'Islandia', pais_en: 'Iceland', continente: 'europa', descripcion: 'Arquitectura moderna como Harpa y Hallgrímskirkja entre paisajes volcánicos.', descripcion_en: 'Modern architecture like Harpa and Hallgrímskirkja amid volcanic landscapes.', imagen: 'https://plus.unsplash.com/premium_photo-1661962984700-16b03ecda58a?auto=format&fit=crop&q=60&w=500' },
+
+  // ============ ASIA ============
+  { nombre: 'Beijing', nombre_en: 'Beijing', pais: 'China', pais_en: 'China', continente: 'asia', descripcion: 'Capital imperial con la Ciudad Prohibida, hutongs y avenidas amplias.', descripcion_en: 'Imperial capital with Forbidden City, hutongs and wide avenues.', imagen: 'https://plus.unsplash.com/premium_photo-1723433351351-0f6cd5d21537?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Hong Kong', nombre_en: 'Hong Kong', pais: 'China', pais_en: 'China', continente: 'asia', descripcion: 'Horizonte denso en torno a un puerto lleno de ferris. Montañas e islas cercanas.', descripcion_en: 'Dense skyline around a ferry-filled harbor. Nearby mountains and islands.', imagen: 'https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Seúl', nombre_en: 'Seoul', pais: 'Corea del Sur', pais_en: 'South Korea', continente: 'asia', descripcion: 'Rascacielos y palacios, mercados nocturnos y una red de metro impecable.', descripcion_en: 'Skyscrapers and palaces, night markets and impeccable metro network.', imagen: 'https://plus.unsplash.com/premium_photo-1661936414165-3039a8d906f9?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Jaipur', nombre_en: 'Jaipur', pais: 'India', pais_en: 'India', continente: 'asia', descripcion: 'La "Ciudad Rosa": Hawa Mahal, fuertes y bazares color salmón.', descripcion_en: 'The "Pink City": Hawa Mahal, forts and salmon-colored bazaars.', imagen: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Kioto', nombre_en: 'Kyoto', pais: 'Japón', pais_en: 'Japan', continente: 'asia', descripcion: 'Templos, santuarios y jardines clásicos. Hanami en primavera y geishas en Gion.', descripcion_en: 'Temples, shrines and classical gardens. Hanami in spring and geishas in Gion.', imagen: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Luang Prabang', nombre_en: 'Luang Prabang', pais: 'Laos', pais_en: 'Laos', continente: 'asia', descripcion: 'Patrimonio UNESCO junto a ríos. Procesiones de monjes al amanecer.', descripcion_en: 'UNESCO Heritage by rivers. Monk processions at dawn.', imagen: 'https://plus.unsplash.com/premium_photo-1661882477461-20d16af70819?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Beirut', nombre_en: 'Beirut', pais: 'Líbano', pais_en: 'Lebanon', continente: 'asia', descripcion: 'Playas, clubes y azoteas frente a mezquitas y zocos históricos.', descripcion_en: 'Beaches, clubs and rooftops facing mosques and historic souks.', imagen: 'https://plus.unsplash.com/premium_photo-1661963342411-11bc8489a1fe?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Mascate', nombre_en: 'Muscat', pais: 'Omán', pais_en: 'Oman', continente: 'asia', descripcion: 'Bahías y montañas enmarcando mezquitas, zocos y fuertes portugueses.', descripcion_en: 'Bays and mountains framing mosques, souks and Portuguese forts.', imagen: 'https://images.unsplash.com/photo-1725600462847-0317804cc466?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Doha', nombre_en: 'Doha', pais: 'Qatar', pais_en: 'Qatar', continente: 'asia', descripcion: 'Corniche con skyline futurista, Souq Waqif y el Museo de Arte Islámico.', descripcion_en: 'Corniche with futuristic skyline, Souq Waqif and Museum of Islamic Art.', imagen: 'https://images.unsplash.com/photo-1539475314840-751cecc1dacd?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Chiang Mai', nombre_en: 'Chiang Mai', pais: 'Tailandia', pais_en: 'Thailand', continente: 'asia', descripcion: 'Templos en la ladera, cafés y mercados creativos. Experiencias culinarias intensas.', descripcion_en: 'Hillside temples, cafés and creative markets. Intense culinary experiences.', imagen: 'https://plus.unsplash.com/premium_photo-1661929242720-140374d97c94?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Hanoi', nombre_en: 'Hanoi', pais: 'Vietnam', pais_en: 'Vietnam', continente: 'asia', descripcion: 'Lagos, templos y barrio francés con aire romántico. Calles angostas con cafés.', descripcion_en: 'Lakes, temples and French quarter with romantic air. Narrow streets with cafés.', imagen: 'https://plus.unsplash.com/premium_photo-1691960159290-6f4ace6e6c4c?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Singapur', nombre_en: 'Singapore', pais: 'Singapur', pais_en: 'Singapore', continente: 'asia', descripcion: 'Ciudad-jardín con selva urbana, Gardens by the Bay y logística impecable.', descripcion_en: 'Garden city with urban jungle, Gardens by the Bay and impeccable logistics.', imagen: 'https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&q=60&w=500' },
+
+  // ============ AFRICA ============
+  { nombre: 'Chefchaouen', nombre_en: 'Chefchaouen', pais: 'Marruecos', pais_en: 'Morocco', continente: 'africa', descripcion: 'Medina azul entre montañas del Rif. Callejuelas pintadas y puertas artesanales.', descripcion_en: 'Blue medina among Rif mountains. Painted alleys and artisan doors.', imagen: 'https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?auto=format&fit=crop&q=80&w=1170' },
+  { nombre: 'Ciudad del Cabo', nombre_en: 'Cape Town', pais: 'Sudáfrica', pais_en: 'South Africa', continente: 'africa', descripcion: 'Table Mountain, playas con pingüinos y barrios coloridos como Bo-Kaap.', descripcion_en: 'Table Mountain, beaches with penguins and colorful neighborhoods like Bo-Kaap.', imagen: 'https://plus.unsplash.com/premium_photo-1697730061063-ad499e343f26?auto=format&fit=crop&q=60&w=500' },
+
+  // ============ OCEANIA ============
+  { nombre: 'Sídney', nombre_en: 'Sydney', pais: 'Australia', pais_en: 'Australia', continente: 'oceania', descripcion: 'Ópera icónica, bahía navegable y playas urbanas como Bondi.', descripcion_en: 'Iconic Opera House, navigable bay and urban beaches like Bondi.', imagen: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Queenstown', nombre_en: 'Queenstown', pais: 'Nueva Zelanda', pais_en: 'New Zealand', continente: 'oceania', descripcion: 'Capital de la adrenalina entre lago y montañas. Paisajes cinematográficos.', descripcion_en: 'Adrenaline capital between lake and mountains. Cinematic landscapes.', imagen: 'https://images.unsplash.com/photo-1600466403153-50193d187dde?auto=format&fit=crop&q=60&w=500' },
+
+  // ============ NORTEAMERICA ============
+  { nombre: 'Quebec', nombre_en: 'Quebec City', pais: 'Canadá', pais_en: 'Canada', continente: 'norteamerica', descripcion: 'Casco amurallado en altura con vistas al San Lorenzo. Ambiente europeo.', descripcion_en: 'Walled old town on high ground with St. Lawrence views. European atmosphere.', imagen: 'https://images.unsplash.com/photo-1576771304215-6d4d30f7bb63?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'La Habana', nombre_en: 'Havana', pais: 'Cuba', pais_en: 'Cuba', continente: 'norteamerica', descripcion: 'Arquitectura colonial de tonos pastel, música en cada esquina y el Malecón.', descripcion_en: 'Pastel colonial architecture, music on every corner and the Malecón.', imagen: 'https://images.unsplash.com/photo-1570299437488-d430e1e677c7?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Nueva York', nombre_en: 'New York', pais: 'Estados Unidos', pais_en: 'United States', continente: 'norteamerica', descripcion: 'Arquitectura icónica, Central Park y una escena artística incomparable.', descripcion_en: 'Iconic architecture, Central Park and an incomparable art scene.', imagen: 'https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'San Francisco', nombre_en: 'San Francisco', pais: 'Estados Unidos', pais_en: 'United States', continente: 'norteamerica', descripcion: 'Puente Golden Gate, colinas y casas victorianas. Barrios con carácter.', descripcion_en: 'Golden Gate Bridge, hills and Victorian houses. Neighborhoods with character.', imagen: 'https://images.unsplash.com/photo-1719858403364-83f7442a197e?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'San Miguel de Allende', nombre_en: 'San Miguel de Allende', pais: 'México', pais_en: 'Mexico', continente: 'norteamerica', descripcion: 'Centro colonial con parroquia neogótica rosada. Calles adoquinadas y arte.', descripcion_en: 'Colonial center with pink neo-Gothic parish. Cobblestone streets and art.', imagen: 'https://plus.unsplash.com/premium_photo-1697729800872-866107ce82c4?auto=format&fit=crop&q=60&w=500' },
+
+  // ============ SUDAMERICA ============
+  { nombre: 'Buenos Aires', nombre_en: 'Buenos Aires', pais: 'Argentina', pais_en: 'Argentina', continente: 'sudamerica', descripcion: 'Barrios con identidad, arquitectura variada y tango. Parrillas y vida cultural.', descripcion_en: 'Neighborhoods with identity, varied architecture and tango. Grills and cultural life.', imagen: 'https://plus.unsplash.com/premium_photo-1697729901052-fe8900e24993?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Río de Janeiro', nombre_en: 'Rio de Janeiro', pais: 'Brasil', pais_en: 'Brazil', continente: 'sudamerica', descripcion: 'Playas míticas, selva urbana y el Cristo Redentor. Ritmo de samba.', descripcion_en: 'Mythical beaches, urban jungle and Christ the Redeemer. Samba rhythm.', imagen: 'https://plus.unsplash.com/premium_photo-1671211307997-f4f552b0601c?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Cartagena', nombre_en: 'Cartagena', pais: 'Colombia', pais_en: 'Colombia', continente: 'sudamerica', descripcion: 'Murallas, plazas y casonas coloniales cubiertas de buganvillas.', descripcion_en: 'Walls, squares and colonial mansions covered with bougainvillea.', imagen: 'https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Quito', nombre_en: 'Quito', pais: 'Ecuador', pais_en: 'Ecuador', continente: 'sudamerica', descripcion: 'Casco histórico dorado bajo volcanes andinos. Mercados tradicionales.', descripcion_en: 'Golden historic center under Andean volcanoes. Traditional markets.', imagen: 'https://plus.unsplash.com/premium_photo-1697729921570-a7e324d7baac?auto=format&fit=crop&q=60&w=500' },
+  { nombre: 'Cuzco', nombre_en: 'Cusco', pais: 'Perú', pais_en: 'Peru', continente: 'sudamerica', descripcion: 'Antigua capital inca con plazas, conventos y calles empedradas. Puerta a Machu Picchu.', descripcion_en: 'Ancient Inca capital with squares, convents and cobbled streets. Gateway to Machu Picchu.', imagen: 'https://images.unsplash.com/photo-1609944433409-81bda5323abc?auto=format&fit=crop&q=60&w=500' }
+];
 
 
 /*Página home.html*/
@@ -2564,6 +2626,7 @@ if (window.location.pathname.includes("blog.html")) {
     {
       id: 1,
       titulo: "Los 10 destinos más sorprendentes de este año",
+      titulo_en: "The 10 Most Surprising Destinations of the Year",
       categoria: "itinerarios",
       estado: "en-curso",
       imagen: "images/patagonia.jpg",
@@ -2576,11 +2639,22 @@ if (window.location.pathname.includes("blog.html")) {
         <p><strong>4. Namibia:</strong> Desde las dunas rojas de Sossusvlei hasta el esquelético Skeleton Coast, Namibia es un país de contrastes asombrosos.</p>
         <p><strong>5. Islandia:</strong> Tierra de fuego y hielo, donde puedes explorar glaciares, géiseres, y cascadas en un solo día.</p>
         <p>Cada uno de estos destinos ofrece experiencias únicas que van más allá de las típicas rutas turísticas. Son lugares que desafían las expectativas y recompensan a aquellos dispuestos a salir de su zona de confort.</p>
+      `,
+      contenido_en: `
+        <h2>The 10 Most Surprising Destinations of the Year</h2>
+        <p>This year has been extraordinary for intrepid travelers seeking unique experiences around the world. We've compiled the 10 destinations that have left an unforgettable mark on those who visited them.</p>
+        <p><strong>1. Patagonia, Argentina:</strong> With its majestic glaciers and landscapes that seem from another world, Patagonia continues to be a dream destination for adventurers.</p>
+        <p><strong>2. Lofoten Islands, Norway:</strong> These islands offer dramatic landscapes with rugged mountains emerging from the Arctic sea.</p>
+        <p><strong>3. Bagan, Myanmar:</strong> Thousands of ancient temples dot the plains, creating one of the most impressive architectural landscapes in the world.</p>
+        <p><strong>4. Namibia:</strong> From the red dunes of Sossusvlei to the skeletal Skeleton Coast, Namibia is a country of amazing contrasts.</p>
+        <p><strong>5. Iceland:</strong> Land of fire and ice, where you can explore glaciers, geysers, and waterfalls in a single day.</p>
+        <p>Each of these destinations offers unique experiences that go beyond typical tourist routes. They are places that challenge expectations and reward those willing to step out of their comfort zone.</p>
       `
     },
     {
       id: 2,
       titulo: "Relatos de un viajero sin mapa",
+      titulo_en: "Tales of a Mapless Traveler",
       categoria: "experiencias",
       estado: "finalizado",
       imagen: "images/maldivas.jpg",
@@ -2591,28 +2665,46 @@ if (window.location.pathname.includes("blog.html")) {
         <p><strong>Lecciones aprendidas:</strong> Sin un itinerario estricto, te vuelves más receptivo a las oportunidades. Conocí a personas increíbles, descubrí restaurantes escondidos que ninguna guía menciona, y viví momentos que nunca habría experimentado siguiendo un plan.</p>
         <p><strong>Consejos para viajeros espontáneos:</strong> Siempre ten un presupuesto flexible, aprende algunas frases básicas del idioma local, y mantén una mente abierta. Lo inesperado suele ser lo más memorable.</p>
         <p>El verdadero viaje no consiste en llegar a un destino, sino en disfrutar del camino y las sorpresas que trae consigo.</p>
+      `,
+      contenido_en: `
+        <h2>Tales of a Mapless Traveler</h2>
+        <p>Traveling without a set plan may seem scary at first, but the best adventures often arise from spontaneity. During my last three years traveling through Asia, I learned that getting lost is actually finding yourself.</p>
+        <p><strong>The beginning:</strong> It all started when I missed my flight connection in Bangkok. Instead of getting frustrated, I decided to explore the city without a guide or map. That decision changed my perspective on travel forever.</p>
+        <p><strong>Lessons learned:</strong> Without a strict itinerary, you become more receptive to opportunities. I met incredible people, discovered hidden restaurants that no guide mentions, and lived moments I never would have experienced following a plan.</p>
+        <p><strong>Tips for spontaneous travelers:</strong> Always have a flexible budget, learn some basic phrases in the local language, and keep an open mind. The unexpected is usually the most memorable.</p>
+        <p>The real journey is not about reaching a destination, but enjoying the path and the surprises it brings.</p>
       `
     },
     {
       id: 3,
       titulo: "Guía completa de equipamiento para trekking",
+      titulo_en: "Complete Trekking Equipment Guide",
       categoria: "equipamiento",
       estado: "finalizado",
       imagen: "images/cataratas_iguazu.jpg",
       contenido: `
         <h2>Guía completa de equipamiento para trekking</h2>
         <p>Después de años de experiencia en rutas de montaña, he aprendido que el equipamiento adecuado puede marcar la diferencia entre una experiencia memorable y una pesadilla. Aquí comparto mi guía esencial.</p>
-        <p><strong>Calzado:</strong> Invierte en buenas botas de trekking. Deben ser impermeables, con buen soporte de tobillo y una suela con agarre firme. Pruébalas con los calcetines que usarás en la ruta.</p>
-        <p><strong>Mochila:</strong> Una mochila de 40-50 litros es ideal para trekkings de varios días. Debe tener un buen sistema de ventilación en la espalda y correas ajustables.</p>
-        <p><strong>Ropa en capas:</strong> La clave está en las capas: una capa base que absorba la humedad, una capa intermedia aislante, y una capa externa impermeable y cortavientos.</p>
-        <p><strong>Accesorios esenciales:</strong> Bastones de trekking, gafas de sol, protector solar, botiquín de primeros auxilios, linterna frontal, y un sistema de purificación de agua.</p>
-        <p><strong>Electrónica:</strong> Un cargador solar portátil, GPS o aplicación de mapas offline, y una powerbank de alta capacidad.</p>
+        <p><strong>Calzado:</strong> Invierte en buenas botas de trekking. Deben ser impermeables, con buen soporte de tobillo y una suela con agarre firme.</p>
+        <p><strong>Mochila:</strong> Una mochila de 40-50 litros es ideal para trekkings de varios días. Debe tener un buen sistema de ventilación.</p>
+        <p><strong>Ropa en capas:</strong> La clave está en las capas: una capa base, una capa intermedia aislante, y una capa externa impermeable.</p>
+        <p><strong>Accesorios esenciales:</strong> Bastones de trekking, gafas de sol, protector solar, botiquín de primeros auxilios, y linterna frontal.</p>
         <p>Recuerda: el mejor equipo es el que conoces bien y has probado antes del viaje importante.</p>
+      `,
+      contenido_en: `
+        <h2>Complete Trekking Equipment Guide</h2>
+        <p>After years of experience on mountain trails, I've learned that proper equipment can make the difference between a memorable experience and a nightmare. Here's my essential guide.</p>
+        <p><strong>Footwear:</strong> Invest in good trekking boots. They should be waterproof, with good ankle support and a sole with firm grip.</p>
+        <p><strong>Backpack:</strong> A 40-50 liter backpack is ideal for multi-day treks. It should have a good ventilation system.</p>
+        <p><strong>Layered clothing:</strong> The key is layers: a base layer, an insulating middle layer, and a waterproof outer layer.</p>
+        <p><strong>Essential accessories:</strong> Trekking poles, sunglasses, sunscreen, first aid kit, and headlamp.</p>
+        <p>Remember: the best equipment is the one you know well and have tested before the important trip.</p>
       `
     },
     {
       id: 4,
       titulo: "Rutas alternativas por Europa",
+      titulo_en: "Alternative Routes Through Europe",
       categoria: "itinerarios",
       estado: "finalizado",
       imagen: "images/patagonia.jpg",
@@ -2624,28 +2716,47 @@ if (window.location.pathname.includes("blog.html")) {
         <p><strong>Eslovenia:</strong> Este pequeño país tiene de todo: desde los Alpes Julianos hasta las cuevas de Postojna y la hermosa costa adriática.</p>
         <p><strong>Islas Feroe:</strong> Para los amantes de paisajes dramáticos y clima impredecible. Estas islas danesas son perfectas para desconectar.</p>
         <p>Cada una de estas rutas te permitirá conocer la Europa auténtica, interactuar con locales y crear recuerdos únicos sin gastar una fortuna.</p>
+      `,
+      contenido_en: `
+        <h2>Alternative Routes Through Europe</h2>
+        <p>Europe is full of lesser-known routes that offer authentic experiences away from tourist crowds. These are some of my favorite off-the-beaten-path itineraries.</p>
+        <p><strong>Romanian Carpathians:</strong> Medieval villages, legendary castles, and wild nature. Transylvania is much more than the Dracula legend.</p>
+        <p><strong>Albania:</strong> The hidden gem of the Balkans offers pristine beaches, impressive mountains, and unparalleled hospitality at very affordable prices.</p>
+        <p><strong>Slovenia:</strong> This small country has it all: from the Julian Alps to the Postojna caves and the beautiful Adriatic coast.</p>
+        <p><strong>Faroe Islands:</strong> For lovers of dramatic landscapes and unpredictable weather. These Danish islands are perfect for disconnecting.</p>
+        <p>Each of these routes will allow you to discover authentic Europe, interact with locals, and create unique memories without spending a fortune.</p>
       `
     },
     {
       id: 5,
       titulo: "Cómo empacar ligero para viajes largos",
+      titulo_en: "How to Pack Light for Long Trips",
       categoria: "equipamiento",
       estado: "en-curso",
       imagen: "images/maldivas.jpg",
       contenido: `
         <h2>Cómo empacar ligero para viajes largos</h2>
         <p>Después de viajar durante meses con solo una mochila de cabina, he perfeccionado el arte de empacar ligero. Aquí están mis mejores estrategias.</p>
-        <p><strong>La regla 3-3-3:</strong> 3 superiores, 3 inferiores, 3 pares de zapatos máximo. Esta regla simple te obliga a ser selectivo y priorizar prendas versátiles.</p>
-        <p><strong>Telas inteligentes:</strong> Invierte en ropa de secado rápido y resistente a arrugas. La lana merino es mi favorita: regula temperatura, no retiene olores y se puede usar varios días.</p>
-        <p><strong>Compartimentos de compresión:</strong> Los cubos organizadores y bolsas de compresión son esenciales. Te ayudan a mantener todo organizado y maximizan el espacio.</p>
-        <p><strong>Electrónica minimalista:</strong> Un solo cargador universal, cables cortos y multifuncionales, y considera si realmente necesitas ese portátil o puedes trabajar desde tu teléfono.</p>
+        <p><strong>La regla 3-3-3:</strong> 3 superiores, 3 inferiores, 3 pares de zapatos máximo. Esta regla simple te obliga a ser selectivo.</p>
+        <p><strong>Telas inteligentes:</strong> Invierte en ropa de secado rápido. La lana merino es mi favorita: regula temperatura y no retiene olores.</p>
+        <p><strong>Compartimentos de compresión:</strong> Los cubos organizadores son esenciales para mantener todo organizado.</p>
         <p><strong>El método de enrollado:</strong> Enrollar la ropa en lugar de doblarla ahorra espacio y reduce las arrugas.</p>
-        <p>Recuerda: si dudas en llevar algo, probablemente no lo necesites. La libertad de viajar ligero vale más que cualquier comodidad extra.</p>
+        <p>Recuerda: si dudas en llevar algo, probablemente no lo necesites.</p>
+      `,
+      contenido_en: `
+        <h2>How to Pack Light for Long Trips</h2>
+        <p>After traveling for months with just a carry-on backpack, I've perfected the art of packing light. Here are my best strategies.</p>
+        <p><strong>The 3-3-3 rule:</strong> 3 tops, 3 bottoms, 3 pairs of shoes maximum. This simple rule forces you to be selective.</p>
+        <p><strong>Smart fabrics:</strong> Invest in quick-dry clothing. Merino wool is my favorite: it regulates temperature and doesn't retain odors.</p>
+        <p><strong>Compression compartments:</strong> Packing cubes are essential for keeping everything organized.</p>
+        <p><strong>The rolling method:</strong> Rolling clothes instead of folding saves space and reduces wrinkles.</p>
+        <p>Remember: if you doubt whether to bring something, you probably don't need it.</p>
       `
     },
     {
       id: 6,
       titulo: "Aventuras gastronómicas en Asia",
+      titulo_en: "Culinary Adventures in Asia",
       categoria: "experiencias",
       estado: "finalizado",
       imagen: "images/cataratas_iguazu.jpg",
@@ -2653,10 +2764,19 @@ if (window.location.pathname.includes("blog.html")) {
         <h2>Aventuras gastronómicas en Asia</h2>
         <p>La comida es uno de los mejores caminos para conocer una cultura. Durante mi año recorriendo Asia, descubrí que algunas de las mejores comidas se encuentran en los lugares más inesperados.</p>
         <p><strong>Street food en Bangkok:</strong> Los mercados nocturnos tailandeses son un paraíso culinario. Desde el Pad Thai hasta los insectos fritos, cada bocado es una aventura.</p>
-        <p><strong>Ramen auténtico en Japón:</strong> Olvida los fideos instantáneos. Un buen ramen japonés es arte líquido, con caldos que se cocinan durante horas y toppings perfectos.</p>
-        <p><strong>Dim sum en Hong Kong:</strong> Las teteras de porcelana, los carritos con vaporeras, y decenas de pequeños bocados deliciosos hacen del dim sum una experiencia única.</p>
-        <p><strong>Pho vietnamita:</strong> Esta sopa de fideos es perfecta para cualquier hora del día. Los vietnamitas la desayunan, y después de probarla, entenderás por qué.</p>
-        <p>Mi consejo: come donde coman los locales, no tengas miedo de señalar y sonreír si no hablas el idioma, y siempre lleva efectivo (muchos puestos no aceptan tarjetas).</p>
+        <p><strong>Ramen auténtico en Japón:</strong> Un buen ramen japonés es arte líquido, con caldos que se cocinan durante horas.</p>
+        <p><strong>Dim sum en Hong Kong:</strong> Las teteras de porcelana y los carritos con vaporeras hacen del dim sum una experiencia única.</p>
+        <p><strong>Pho vietnamita:</strong> Esta sopa de fideos es perfecta para cualquier hora del día.</p>
+        <p>Mi consejo: come donde coman los locales y siempre lleva efectivo.</p>
+      `,
+      contenido_en: `
+        <h2>Culinary Adventures in Asia</h2>
+        <p>Food is one of the best ways to know a culture. During my year traveling through Asia, I discovered that some of the best meals are found in the most unexpected places.</p>
+        <p><strong>Street food in Bangkok:</strong> Thai night markets are a culinary paradise. From Pad Thai to fried insects, every bite is an adventure.</p>
+        <p><strong>Authentic ramen in Japan:</strong> Good Japanese ramen is liquid art, with broths that cook for hours.</p>
+        <p><strong>Dim sum in Hong Kong:</strong> Porcelain teapots and carts with steamers make dim sum a unique experience.</p>
+        <p><strong>Vietnamese Pho:</strong> This noodle soup is perfect for any time of day.</p>
+        <p>My advice: eat where locals eat and always carry cash.</p>
       `
     }
   ];
@@ -2675,30 +2795,31 @@ if (window.location.pathname.includes("blog.html")) {
   // Función para renderizar blogs
   function renderBlogs(blogsARenderizar) {
     columnaListado.innerHTML = '';
-    
+
     if (blogsARenderizar.length === 0) {
-      columnaListado.innerHTML = '<p style="text-align: center; width: 100%; padding: 40px; font-size: 18px;">No hay blogs para las categorías seleccionadas</p>';
+      columnaListado.innerHTML = `<p style="text-align: center; width: 100%; padding: 40px; font-size: 18px;">${t('blog-no-blogs')}</p>`;
       return;
     }
 
     blogsARenderizar.forEach(blog => {
       const div = document.createElement('div');
       div.className = 'blog-card';
-      
-      // Determinar clase y texto del estado
+
+      // Determinar clase y texto del estado usando traducciones
       const estadoClass = blog.estado === 'en-curso' ? 'en-curso' : 'finalizado';
-      const estadoTexto = blog.estado === 'en-curso' ? 'En curso' : 'Finalizado';
-      
+      const estadoTexto = blog.estado === 'en-curso' ? t('blog-status-ongoing') : t('blog-status-completed');
+      const tituloMostrar = getCurrentLanguage() === 'en' && blog.titulo_en ? blog.titulo_en : blog.titulo;
+
       // Rellenar contenido del blog
       div.innerHTML = `
-        <img src="${blog.imagen}" alt="${blog.titulo}">
+        <img src="${blog.imagen}" alt="${tituloMostrar}">
         <div class="blog-card-body">
-          <h3 class="blog-card-titulo">${blog.titulo}</h3>
-          <div class="blog-card-estado ${estadoClass}">Estado: ${estadoTexto}</div>
-          <button class="blog-card-button" data-blog-id="${blog.id}">Leer artículo</button>
+          <h3 class="blog-card-titulo">${tituloMostrar}</h3>
+          <div class="blog-card-estado ${estadoClass}">${t('blog-status')} ${estadoTexto}</div>
+          <button class="blog-card-button" data-blog-id="${blog.id}">${t('blog-read-article')}</button>
         </div>
       `;
-      
+
       columnaListado.appendChild(div);
     });
 
@@ -2720,21 +2841,24 @@ if (window.location.pathname.includes("blog.html")) {
   function mostrarModal(blog) {
     const modal = document.getElementById('modal-blog');
     const modalBody = document.getElementById('modal-blog-body');
-    
-    // Rellenar contenido del modal
+
+    // Rellenar contenido del modal con traducciones
     const estadoClass = blog.estado === 'en-curso' ? 'en-curso' : 'finalizado';
-    const estadoTexto = blog.estado === 'en-curso' ? 'En curso' : 'Finalizado';
-    const categoriaTexto = blog.categoria === 'equipamiento' ? 'Equipamiento' : 
-                           blog.categoria === 'itinerarios' ? 'Itinerarios' : 
-                           'Experiencias';
-    
+    const estadoTexto = blog.estado === 'en-curso' ? t('blog-status-ongoing') : t('blog-status-completed');
+    const categoriaTexto = blog.categoria === 'equipamiento' ? t('blog-cat-equipment') :
+      blog.categoria === 'itinerarios' ? t('blog-cat-itineraries') :
+        t('blog-cat-experiences');
+
+    const tituloMostrar = getCurrentLanguage() === 'en' && blog.titulo_en ? blog.titulo_en : blog.titulo;
+    const contenidoMostrar = getCurrentLanguage() === 'en' && blog.contenido_en ? blog.contenido_en : blog.contenido;
+
     modalBody.innerHTML = `
-      <img src="${blog.imagen}" alt="${blog.titulo}">
+      <img src="${blog.imagen}" alt="${tituloMostrar}">
       <span class="blog-categoria">${categoriaTexto}</span>
       <span class="blog-estado-modal ${estadoClass}">${estadoTexto}</span>
-      ${blog.contenido}
+      ${contenidoMostrar}
     `;
-    
+
     modal.style.display = 'block';
   }
 
@@ -2749,19 +2873,19 @@ if (window.location.pathname.includes("blog.html")) {
   // Aplicar filtros
   const botonFiltros = document.getElementById('aplicar-filtros-blog');
   const mensajeFiltros = document.querySelector('.mensaje-filtros-blog');
-  
+
   if (botonFiltros) {
     botonFiltros.addEventListener('click', () => {
       const checkboxes = document.querySelectorAll('input[name="categoria"]:checked');
-      
+
       // Si no hay categorías seleccionadas, mostrar mensaje
       if (checkboxes.length === 0) {
         mensajeFiltros.style.display = 'block';
         return;
       }
-      
+
       mensajeFiltros.style.display = 'none';
-      
+
       // Filtrar blogs según categorías seleccionadas
       const categoriasSeleccionadas = [];
       for (const cb of checkboxes) {
@@ -2769,10 +2893,10 @@ if (window.location.pathname.includes("blog.html")) {
       }
       // Filtrar blogs
       const blogsFiltrados = blogs.filter(blog => categoriasSeleccionadas.includes(blog.categoria));
-      
+
       currentBlogs = blogsFiltrados;
       renderBlogs(currentBlogs);
-      
+
       // Desmarcar checkboxes
       checkboxes.forEach(cb => cb.checked = false);
     });
