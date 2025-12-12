@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Mochileros sin fronteras</title>
+    <link rel="stylesheet" href="style/style_blog.css" />
+    <script src="script/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="#">Otros rincones</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
+                
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="contenedor-principal">
+        <section class="columna-filtros">
+            <h2>Blogs</h2>
+            <div class="divisor"></div>
+            
+            <h3 class="titulo-categoria">Categorías</h3>
+            <div class="categorias-lista">
+                <label class="categoria-item">
+                    <input type="checkbox" name="categoria" value="equipamiento">
+                    <span>Equipamiento</span>
+                </label>
+                <label class="categoria-item">
+                    <input type="checkbox" name="categoria" value="itinerarios">
+                    <span>Itinerarios</span>
+                </label>
+                <label class="categoria-item">
+                    <input type="checkbox" name="categoria" value="experiencias">
+                    <span>Experiencias</span>
+                </label>
+            </div>
+
+            <button id="aplicar-filtros-blog">Aplicar filtros</button>
+            <p class="mensaje-filtros-blog">Selecciona al menos una categoría</p>
+        </section>
+
+        <!-- Boton de marcha atras -->
+        <section class="columna-boton-atras">
+            <button type="button">⬅</button>
+        </section>
+
+        <section class="columna-listado-blogs">
+            <!-- Los blogs se generan dinámicamente con JavaScript -->
+        </section>
+    </main>
+
+    <!-- Modal para leer artículo -->
+    <div id="modal-blog" class="modal-blog">
+        <div class="modal-blog-contenido">
+            <span class="cerrar-modal-blog">X</span>
+            <div id="modal-blog-body">
+                <!-- El contenido se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <nav>
+            <a href="ayuda.html">Ayuda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="sobre_nosotros.html">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
