@@ -1,0 +1,472 @@
+/* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
+  * {
+  margin: 0;              /* Quita margen por defecto */
+  padding: 0;             /* Quita padding por defecto */
+  box-sizing: border-box; /* Hace que el ancho y alto incluyan borde y padding */
+}
+/* Evitar scroll horizontal accidental */
+html, body {
+  overflow-x: hidden;  /* previene scroll horizontal */
+}
+/* Tipografía base para todo el cuerpo */
+body {
+  font-family: Arial, sans-serif; 
+  background-color: #fff;          
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Variables CSS para alturas de header y footer */
+:root {
+  --header-h: 110px; /* altura del header usada para margin-top */
+  --footer-h: 20px; /* altura del footer usada para margin-bottom */
+}
+/* Contenedor principal que envuelve header, main y footer */
+main {
+    flex: 1;
+    width: 100%;
+    margin-top: var(--header-h);                
+    margin-bottom: var(--footer-h);   /* deja espacio para el footer fijo */
+}
+/* Evita que header y footer se encojan */
+header, footer {
+    flex-shrink: 0;           /* evita que se encojan */
+}
+/* Estilo general para enlaces */
+header {
+  width: 100%;              /* ocupa todo el ancho */
+  height: 100px;            /* altura fija: prueba con 100px */
+  background: #006400;
+  position: fixed;          /* fija el header en la parte superior */
+  top: 0; left:0; right: 0; /* asegura que esté en la parte superior */
+  margin-bottom: 15px;      /* separa el header del contenido */
+  text-align: left;
+  align-items: center;      /* centra verticalmente el contenido */
+  color: white;
+  padding: 0 20px;          /* espacio interno arriba y abajo */
+  display: flex;            
+  justify-content: space-between;        /*Definimos 3 columnas donde poner los elementos*/
+  z-index: 1000;                         /* asegura que esté por encima de todo el contenido */
+}
+/* Estilo general para footer, similar al header */
+footer {
+  width: 100%;              /* ocupa todo el ancho */
+  height: 80px;             /* altura fija: prueba con 100px */
+  background: #006400;
+  position: relative;       /* cambia de fixed a relative para que no sea estático */
+  text-align: center;
+  align-items: center;      /* centra verticalmente el contenido */
+  color: white;
+  padding: 20px;            /* espacio interno */
+  display: flex;
+  justify-content: center;  /* centra todo el contenido horizontalmente */
+}
+/* Logo de la página */
+header img{
+  width: 80px;
+  height: 80px;
+}
+/* título de la página */
+header .titulo{
+  font-size: 18px;          /* tamaño legible sin ser gigante */
+  font-family: "montserrat", sans-serif;  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
+  font-weight: 700;          /* peso negrita */
+  text-transform: uppercase; 
+  margin-right: 50px;
+}
+/* Menú centrado (fila horizontal de enlaces) */
+header nav{ 
+  padding: 0;
+}
+/* Lista de elementos del menú */
+header nav ul{
+  list-style: none;          /* sin viñetas */
+  display: flex;             /* pone los <li> en fila */
+  font-weight: 500;          /* peso semi-negrita */
+  text-transform: uppercase; 
+  gap: 2rem;                 /* separación entre elementos del menú */
+  margin-right: 50px;
+}
+/* Cada enlace del menú */
+header nav a{
+  text-decoration: none;     /* sin subrayado */
+  color: #fff;             /* color de texto del menú */
+  border-radius: .375rem;    /* esquinas suaves para el hover */
+}
+/* Utilidades (derecha): logo + selector de idioma en fila */
+header .logo_idioma{
+  display: flex;             /* elementos en línea: imagen + select */
+  align-items: center;       /* verticalmente centrados */
+  gap: .5rem;                /* separación entre logo y select */
+  padding:0;
+}
+/* Logo y selector de idioma */
+header .logo_idioma img{
+  width: 120px; height: auto; /* tamaño consistente del logo */
+}
+/* Selector de idioma */
+header .logo_idioma select{
+  font: inherit;              /* que el select use la misma fuente que la página */
+  border: 1px solid #cbd5e1;
+  border-radius: .375rem;
+  background-color: white;
+}
+/* Efecto hover y focus en enlaces del menú */
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;   /* subrayado al pasar el ratón o enfocar con teclado */
+}
+/* Ocultar checkbox y botón de hamburguesa en escritorio */
+.menu-toggle,
+.hamburger-btn {
+    display: none;
+}
+/* Oculta las utilidades en la versión de escritorio */
+.nav-menu .nav-utils {
+    display: none;
+}
+/* Estilo para el enlace de iniciar sesión */
+header .botones_header button {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+/* Efecto hover en el botón de iniciar sesión */
+header .botones_header button:hover {
+    background-color: #e0e0e0;
+}
+/* Estilo de la info del footer*/
+footer nav a {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0 10rem;
+}
+/* Efecto hover y focus en enlaces del footer */
+footer nav a:hover,
+footer nav a:focus-visible {
+  text-decoration: underline;
+}
+
+
+/* blog styles */
+/* Estilos para la columna de filtros */
+.contenedor-principal {
+  display: flex;
+  /* Restore flex */
+  gap: 30px;
+  /* Restore gap */
+  padding: 0 10px;
+  position: relative;
+}
+.columna-filtros{
+  position: fixed;                /* fijado respecto a la ventana, como header/footer */
+  top: 100px;                     /* evita quedar debajo del header (coincide con header height) */
+  left: 0;                        /* pegado al borde izquierdo */
+  height: calc(100vh - 100px);    /* ocupa desde el header hasta el final de la pantalla */
+  width: 15%;                    
+  display: flex;                 
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  overflow-y: auto;
+  background: black;
+}
+/*Estilo para el título de la sección de filtros*/
+.columna-filtros h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+}
+/*Estilo para el divisor entre secciones de filtros*/
+.divisor {
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+}
+/*Estilo para el botón de aplicar filtros*/
+.columna-filtros button {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+/* hover para el boton de aplicar filtros*/
+.columna-filtros button:hover {
+  background: green;
+}
+/* Ajustes para el contenedor de blogs */
+.columna-listado-blogs {
+  flex: 1;
+  margin-left: calc(15% + 30px);          /* Dejar espacio para la columna de filtros a la izquierda */
+  width: auto;
+  padding: 20px;
+  padding-top: 80px;                     /* Espacio superior para que las tarjetas estén debajo del botón */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+/* Estilos para la columna del botón de vuelta atrás */
+.columna-boton-atras {
+  position: absolute;
+  left: 15%;
+  margin-left: 20px;
+  width: 15%;
+  display: flex;                 
+  flex-direction: column;
+}
+/* Estilos para el botón de vuelta atrás */
+.columna-boton-atras button {
+  width: 30%;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #006400;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Efecto hover en el botón de vuelta atrás */
+.columna-boton-atras button:hover {
+  background: #004d00;
+}
+
+/* Tarjeta de blog */
+.blog-card {
+  flex: 0 0 calc((100% - 60px) / 3);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+/* Imagen del blog */
+.blog-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Contenido del blog */
+.blog-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Título del blog */   
+.blog-card-titulo {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+  min-height: 50px;
+}
+
+/* Estado del blog */
+.blog-card-estado {
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding: 7px;
+  border-radius: 5px;
+  font-weight: 500;
+  width: fit-content;           /* ajusta el ancho al contenido */
+}
+
+/* Estilos según el estado */
+.blog-card-estado.en-curso {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffc107;
+}
+
+.blog-card-estado.finalizado {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #28a745;
+}
+
+/* Botón leer artículo */
+.blog-card-button {
+  margin-top: auto;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* Efecto hover en el botón leer artículo */
+.blog-card-button:hover {
+  background-color: #006400;
+}
+
+/* Estilos para las categorías */
+.titulo-categoria {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  text-align: center;
+}
+
+/* Lista de categorías */
+.categorias-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para cada categoría */
+.categoria-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Efecto hover en cada categoría */
+.categoria-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para el checkbox */
+.categoria-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Estilo para el texto de cada categoría */
+.categoria-item span {
+  font-size: 15px;
+}
+
+/* mensaje de filtros aplicados*/
+.mensaje-filtros-blog {
+  display: none;
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+}
+
+/* Modal de blog */
+.modal-blog {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.modal-blog-contenido {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  animation: slideDown 0.3s ease;
+}
+
+.cerrar-modal-blog {
+  color: #aaa;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.cerrar-modal-blog:hover,
+.cerrar-modal-blog:focus {
+  color: #000;
+}
+
+#modal-blog-body h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+#modal-blog-body img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#modal-blog-body .blog-categoria {
+  display: inline-block;
+  background-color: #006400;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#modal-blog-body .blog-estado-modal {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+#modal-blog-body .blog-estado-modal.en-curso {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffc107;
+}
+
+#modal-blog-body .blog-estado-modal.finalizado {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #28a745;
+}
+
+#modal-blog-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;
+}

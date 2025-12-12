@@ -2556,3 +2556,230 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
 }
 
 
+/*Página blog.html*/
+if (window.location.pathname.includes("blog.html")) {
+
+  // Datos de blogs
+  const blogs = [
+    {
+      id: 1,
+      titulo: "Los 10 destinos más sorprendentes de este año",
+      categoria: "itinerarios",
+      estado: "en-curso",
+      imagen: "images/patagonia.jpg",
+      contenido: `
+        <h2>Los 10 destinos más sorprendentes de este año</h2>
+        <p>Este año ha sido extraordinario para los viajeros intrépidos que buscan experiencias únicas alrededor del mundo. Hemos recopilado los 10 destinos que han dejado una marca imborrable en quienes los han visitado.</p>
+        <p><strong>1. La Patagonia, Argentina:</strong> Con sus glaciares majestuosos y paisajes que parecen de otro mundo, la Patagonia continúa siendo un destino soñado para los aventureros.</p>
+        <p><strong>2. Islas Lofoten, Noruega:</strong> Estas islas ofrecen paisajes dramáticos con montañas escarpadas que emergen del mar ártico.</p>
+        <p><strong>3. Bagan, Myanmar:</strong> Miles de templos antiguos salpican las llanuras, creando uno de los paisajes arquitectónicos más impresionantes del mundo.</p>
+        <p><strong>4. Namibia:</strong> Desde las dunas rojas de Sossusvlei hasta el esquelético Skeleton Coast, Namibia es un país de contrastes asombrosos.</p>
+        <p><strong>5. Islandia:</strong> Tierra de fuego y hielo, donde puedes explorar glaciares, géiseres, y cascadas en un solo día.</p>
+        <p>Cada uno de estos destinos ofrece experiencias únicas que van más allá de las típicas rutas turísticas. Son lugares que desafían las expectativas y recompensan a aquellos dispuestos a salir de su zona de confort.</p>
+      `
+    },
+    {
+      id: 2,
+      titulo: "Relatos de un viajero sin mapa",
+      categoria: "experiencias",
+      estado: "finalizado",
+      imagen: "images/maldivas.jpg",
+      contenido: `
+        <h2>Relatos de un viajero sin mapa</h2>
+        <p>Viajar sin un plan definido puede parecer aterrador al principio, pero las mejores aventuras a menudo surgen de la espontaneidad. Durante mis últimos tres años viajando por Asia, aprendí que perderse es, en realidad, encontrarse.</p>
+        <p><strong>El comienzo:</strong> Todo empezó cuando perdí mi conexión de vuelo en Bangkok. En lugar de frustrarme, decidí explorar la ciudad sin guía ni mapa. Esa decisión cambió mi perspectiva sobre los viajes para siempre.</p>
+        <p><strong>Lecciones aprendidas:</strong> Sin un itinerario estricto, te vuelves más receptivo a las oportunidades. Conocí a personas increíbles, descubrí restaurantes escondidos que ninguna guía menciona, y viví momentos que nunca habría experimentado siguiendo un plan.</p>
+        <p><strong>Consejos para viajeros espontáneos:</strong> Siempre ten un presupuesto flexible, aprende algunas frases básicas del idioma local, y mantén una mente abierta. Lo inesperado suele ser lo más memorable.</p>
+        <p>El verdadero viaje no consiste en llegar a un destino, sino en disfrutar del camino y las sorpresas que trae consigo.</p>
+      `
+    },
+    {
+      id: 3,
+      titulo: "Guía completa de equipamiento para trekking",
+      categoria: "equipamiento",
+      estado: "finalizado",
+      imagen: "images/cataratas_iguazu.jpg",
+      contenido: `
+        <h2>Guía completa de equipamiento para trekking</h2>
+        <p>Después de años de experiencia en rutas de montaña, he aprendido que el equipamiento adecuado puede marcar la diferencia entre una experiencia memorable y una pesadilla. Aquí comparto mi guía esencial.</p>
+        <p><strong>Calzado:</strong> Invierte en buenas botas de trekking. Deben ser impermeables, con buen soporte de tobillo y una suela con agarre firme. Pruébalas con los calcetines que usarás en la ruta.</p>
+        <p><strong>Mochila:</strong> Una mochila de 40-50 litros es ideal para trekkings de varios días. Debe tener un buen sistema de ventilación en la espalda y correas ajustables.</p>
+        <p><strong>Ropa en capas:</strong> La clave está en las capas: una capa base que absorba la humedad, una capa intermedia aislante, y una capa externa impermeable y cortavientos.</p>
+        <p><strong>Accesorios esenciales:</strong> Bastones de trekking, gafas de sol, protector solar, botiquín de primeros auxilios, linterna frontal, y un sistema de purificación de agua.</p>
+        <p><strong>Electrónica:</strong> Un cargador solar portátil, GPS o aplicación de mapas offline, y una powerbank de alta capacidad.</p>
+        <p>Recuerda: el mejor equipo es el que conoces bien y has probado antes del viaje importante.</p>
+      `
+    },
+    {
+      id: 4,
+      titulo: "Rutas alternativas por Europa",
+      categoria: "itinerarios",
+      estado: "finalizado",
+      imagen: "images/patagonia.jpg",
+      contenido: `
+        <h2>Rutas alternativas por Europa</h2>
+        <p>Europa está llena de rutas menos conocidas que ofrecen experiencias auténticas lejos de las multitudes turísticas. Estos son algunos de mis itinerarios favoritos fuera de lo común.</p>
+        <p><strong>Los Cárpatos Rumanos:</strong> Pueblos medievales, castillos legendarios y naturaleza salvaje. Transilvania es mucho más que la leyenda de Drácula.</p>
+        <p><strong>Albania:</strong> La joya escondida de los Balcanes ofrece playas vírgenes, montañas impresionantes y una hospitalidad incomparable a precios muy accesibles.</p>
+        <p><strong>Eslovenia:</strong> Este pequeño país tiene de todo: desde los Alpes Julianos hasta las cuevas de Postojna y la hermosa costa adriática.</p>
+        <p><strong>Islas Feroe:</strong> Para los amantes de paisajes dramáticos y clima impredecible. Estas islas danesas son perfectas para desconectar.</p>
+        <p>Cada una de estas rutas te permitirá conocer la Europa auténtica, interactuar con locales y crear recuerdos únicos sin gastar una fortuna.</p>
+      `
+    },
+    {
+      id: 5,
+      titulo: "Cómo empacar ligero para viajes largos",
+      categoria: "equipamiento",
+      estado: "en-curso",
+      imagen: "images/maldivas.jpg",
+      contenido: `
+        <h2>Cómo empacar ligero para viajes largos</h2>
+        <p>Después de viajar durante meses con solo una mochila de cabina, he perfeccionado el arte de empacar ligero. Aquí están mis mejores estrategias.</p>
+        <p><strong>La regla 3-3-3:</strong> 3 superiores, 3 inferiores, 3 pares de zapatos máximo. Esta regla simple te obliga a ser selectivo y priorizar prendas versátiles.</p>
+        <p><strong>Telas inteligentes:</strong> Invierte en ropa de secado rápido y resistente a arrugas. La lana merino es mi favorita: regula temperatura, no retiene olores y se puede usar varios días.</p>
+        <p><strong>Compartimentos de compresión:</strong> Los cubos organizadores y bolsas de compresión son esenciales. Te ayudan a mantener todo organizado y maximizan el espacio.</p>
+        <p><strong>Electrónica minimalista:</strong> Un solo cargador universal, cables cortos y multifuncionales, y considera si realmente necesitas ese portátil o puedes trabajar desde tu teléfono.</p>
+        <p><strong>El método de enrollado:</strong> Enrollar la ropa en lugar de doblarla ahorra espacio y reduce las arrugas.</p>
+        <p>Recuerda: si dudas en llevar algo, probablemente no lo necesites. La libertad de viajar ligero vale más que cualquier comodidad extra.</p>
+      `
+    },
+    {
+      id: 6,
+      titulo: "Aventuras gastronómicas en Asia",
+      categoria: "experiencias",
+      estado: "finalizado",
+      imagen: "images/cataratas_iguazu.jpg",
+      contenido: `
+        <h2>Aventuras gastronómicas en Asia</h2>
+        <p>La comida es uno de los mejores caminos para conocer una cultura. Durante mi año recorriendo Asia, descubrí que algunas de las mejores comidas se encuentran en los lugares más inesperados.</p>
+        <p><strong>Street food en Bangkok:</strong> Los mercados nocturnos tailandeses son un paraíso culinario. Desde el Pad Thai hasta los insectos fritos, cada bocado es una aventura.</p>
+        <p><strong>Ramen auténtico en Japón:</strong> Olvida los fideos instantáneos. Un buen ramen japonés es arte líquido, con caldos que se cocinan durante horas y toppings perfectos.</p>
+        <p><strong>Dim sum en Hong Kong:</strong> Las teteras de porcelana, los carritos con vaporeras, y decenas de pequeños bocados deliciosos hacen del dim sum una experiencia única.</p>
+        <p><strong>Pho vietnamita:</strong> Esta sopa de fideos es perfecta para cualquier hora del día. Los vietnamitas la desayunan, y después de probarla, entenderás por qué.</p>
+        <p>Mi consejo: come donde coman los locales, no tengas miedo de señalar y sonreír si no hablas el idioma, y siempre lleva efectivo (muchos puestos no aceptan tarjetas).</p>
+      `
+    }
+  ];
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+  }
+
+  const columnaListado = document.querySelector('.columna-listado-blogs');
+  let currentBlogs = [...blogs];
+
+  // Función para renderizar blogs
+  function renderBlogs(blogsARenderizar) {
+    columnaListado.innerHTML = '';
+    
+    if (blogsARenderizar.length === 0) {
+      columnaListado.innerHTML = '<p style="text-align: center; width: 100%; padding: 40px; font-size: 18px;">No hay blogs para las categorías seleccionadas</p>';
+      return;
+    }
+
+    blogsARenderizar.forEach(blog => {
+      const div = document.createElement('div');
+      div.className = 'blog-card';
+      
+      // Determinar clase y texto del estado
+      const estadoClass = blog.estado === 'en-curso' ? 'en-curso' : 'finalizado';
+      const estadoTexto = blog.estado === 'en-curso' ? 'En curso' : 'Finalizado';
+      
+      // Rellenar contenido del blog
+      div.innerHTML = `
+        <img src="${blog.imagen}" alt="${blog.titulo}">
+        <div class="blog-card-body">
+          <h3 class="blog-card-titulo">${blog.titulo}</h3>
+          <div class="blog-card-estado ${estadoClass}">Estado: ${estadoTexto}</div>
+          <button class="blog-card-button" data-blog-id="${blog.id}">Leer artículo</button>
+        </div>
+      `;
+      
+      columnaListado.appendChild(div);
+    });
+
+    // Agregar event listeners a los botones
+    document.querySelectorAll('.blog-card-button').forEach(button => {
+      button.addEventListener('click', () => {
+        // Obtener el blog correspondiente
+        const blogId = parseInt(button.getAttribute('data-blog-id'));
+        // Obtener el blog por ID
+        const blog = blogs.find(b => b.id === blogId);
+        if (blog) {
+          mostrarModal(blog);
+        }
+      });
+    });
+  }
+
+  // Función para mostrar modal
+  function mostrarModal(blog) {
+    const modal = document.getElementById('modal-blog');
+    const modalBody = document.getElementById('modal-blog-body');
+    
+    // Rellenar contenido del modal
+    const estadoClass = blog.estado === 'en-curso' ? 'en-curso' : 'finalizado';
+    const estadoTexto = blog.estado === 'en-curso' ? 'En curso' : 'Finalizado';
+    const categoriaTexto = blog.categoria === 'equipamiento' ? 'Equipamiento' : 
+                           blog.categoria === 'itinerarios' ? 'Itinerarios' : 
+                           'Experiencias';
+    
+    modalBody.innerHTML = `
+      <img src="${blog.imagen}" alt="${blog.titulo}">
+      <span class="blog-categoria">${categoriaTexto}</span>
+      <span class="blog-estado-modal ${estadoClass}">${estadoTexto}</span>
+      ${blog.contenido}
+    `;
+    
+    modal.style.display = 'block';
+  }
+
+  // Cerrar modal
+  const cerrarModal = document.querySelector('.cerrar-modal-blog');
+  if (cerrarModal) {
+    cerrarModal.addEventListener('click', () => {
+      document.getElementById('modal-blog').style.display = 'none';
+    });
+  }
+
+  // Aplicar filtros
+  const botonFiltros = document.getElementById('aplicar-filtros-blog');
+  const mensajeFiltros = document.querySelector('.mensaje-filtros-blog');
+  
+  if (botonFiltros) {
+    botonFiltros.addEventListener('click', () => {
+      const checkboxes = document.querySelectorAll('input[name="categoria"]:checked');
+      
+      // Si no hay categorías seleccionadas, mostrar mensaje
+      if (checkboxes.length === 0) {
+        mensajeFiltros.style.display = 'block';
+        return;
+      }
+      
+      mensajeFiltros.style.display = 'none';
+      
+      // Filtrar blogs según categorías seleccionadas
+      const categoriasSeleccionadas = [];
+      for (const cb of checkboxes) {
+        categoriasSeleccionadas.push(cb.value);
+      }
+      // Filtrar blogs
+      const blogsFiltrados = blogs.filter(blog => categoriasSeleccionadas.includes(blog.categoria));
+      
+      currentBlogs = blogsFiltrados;
+      renderBlogs(currentBlogs);
+      
+      // Desmarcar checkboxes
+      checkboxes.forEach(cb => cb.checked = false);
+    });
+  }
+
+  // Renderizar todos los blogs al inicio
+  renderBlogs(currentBlogs);
+}
+
+
