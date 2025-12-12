@@ -38,7 +38,7 @@ micuentaLinks.forEach(link => {
 // Definir los viajes disponibles
 const viajes = [
   {
-    destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla', titulo_en: 'Madrid, Barcelona and Seville',
+    destino: 'España', continente: 'europa', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla', titulo_en: 'Madrid, Barcelona and Seville',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg'],
     itinerario: ['Madrid: Prado y Retiro', 'Barcelona: Sagrada Familia', 'Barrio Gótico y Rambla', 'Sevilla: Giralda', 'Real Alcázar', 'Plaza de España', 'Día libre'],
@@ -60,7 +60,7 @@ const viajes = [
     ]
   },
   {
-    destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos', titulo_en: 'Adventure in the Pyrenees',
+    destino: 'España', continente: 'europa', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos', titulo_en: 'Adventure in the Pyrenees',
     dietasDisponibles: ['vegano', 'sin-gluten', 'sin-frutos-secos'],
     galeria: ['images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg'],
     itinerario: ['Trekking inicial', 'Ascenso a picos', 'Barranquismo y ferratas', 'Ruta final'],
@@ -78,7 +78,7 @@ const viajes = [
     ]
   },
   {
-    destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago', titulo_en: 'Way of Saint James',
+    destino: 'España', continente: 'europa', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago', titulo_en: 'Way of Saint James',
     dietasDisponibles: ['vegetariano', 'sin-lactosa', 'sin-huevo', 'sin-frutos-secos', 'halal'],
     galeria: ['images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg'],
     itinerario: ['Sarria', 'Portomarín (20km)', 'Paisajes gallegos', 'Pueblos históricos', 'Palas de Rei', 'Arzúa', 'Etapa 7-8', 'Santiago de Compostela', 'Ceremonia'],
@@ -101,7 +101,7 @@ const viajes = [
     ]
   },
   {
-    destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
+    destino: 'Perú', continente: 'sudamerica', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
     dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg'],
     itinerario: ['City tour en Lima', 'Centro histórico y museos', 'Pachacámac', 'Playas de Miraflores'],
@@ -119,7 +119,7 @@ const viajes = [
     ]
   },
   {
-    destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico', titulo_en: 'Magical Machu Picchu',
+    destino: 'Perú', continente: 'sudamerica', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico', titulo_en: 'Magical Machu Picchu',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg'],
     itinerario: ['Cusco: aclimatación', 'Valle Sagrado', 'Camino Inca día 1', 'Camino Inca día 2', 'Machu Picchu al amanecer', 'Retorno a Cusco'],
@@ -137,7 +137,7 @@ const viajes = [
     reseñas: []
   },
   {
-    destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
+    destino: 'Japón', continente: 'asia', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
     galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
     itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
@@ -154,7 +154,7 @@ const viajes = [
     reseñas: []
   },
   {
-    destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo', titulo_en: 'Complete Japan',
+    destino: 'Japón', continente: 'asia', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo', titulo_en: 'Complete Japan',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-pescado', 'sin-gluten', 'halal'],
     galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
     itinerario: ['Tokio: Shibuya', 'Asakusa y Akihabara', 'Monte Fuji', 'Kioto: templos', 'Arashiyama', 'Osaka: castillo', 'Nara', 'Hiroshima', 'Miyajima', 'Vuelta a Tokio', 'TeamLab', 'Harajuku', 'Compras', 'Tsukiji', 'Despedida'],
@@ -182,7 +182,7 @@ const viajes = [
   },
 
   {
-    destino: 'Argentina', duracion: 10, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
+    destino: 'Argentina', continente: 'sudamerica', duracion: 10, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/patagonia.jpg', 'images/patagonia.jpg', 'images/patagonia.jpg'],
     itinerario: ['El Calafate', 'Glaciar Perito Moreno', 'Ushuaia', 'Trekking en Torres del Paine'],
@@ -193,7 +193,7 @@ const viajes = [
     reseñas: [{ nombre: 'María R.', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
   },
   {
-    destino: 'Maldivas', duracion: 7, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
+    destino: 'Maldivas', continente: 'asia', duracion: 7, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
     dietasDisponibles: ['vegano', 'vegetariano'],
     galeria: ['images/maldivas.jpg', 'images/maldivas.jpg', 'images/maldivas.jpg'],
     itinerario: ['Resort y actividades acuáticas', 'Snorkel y buceo', 'Excursión a islas cercanas'],
@@ -204,7 +204,7 @@ const viajes = [
     reseñas: [{ nombre: 'Laura G.', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
   },
   {
-    destino: 'Argentina', duracion: 6, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
+    destino: 'Argentina', continente: 'sudamerica', duracion: 6, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
     dietasDisponibles: ['vegetariano', 'sin-gluten'],
     galeria: ['images/cataratas_iguazu.jpg', 'images/cataratas_iguazu.jpg'],
     itinerario: ['Visita a las cataratas', 'Recorrido por la selva', 'Excursiones en lancha'],
@@ -213,6 +213,75 @@ const viajes = [
     condiciones_en: 'Includes entrance fees and transport.',
     guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-diego.jpg' },
     reseñas: [{ nombre: 'Carlos V.', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
+  },
+  // ============ NORTEAMERICA ============
+  {
+    destino: 'Estados Unidos', continente: 'norteamerica', duracion: 7, precio: 1100, tipo: 'Turístico', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Norte America/new_yorl.jpeg', titulo: 'New York y la Costa Este', titulo_en: 'New York and the East Coast',
+    dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'halal'],
+    galeria: ['images/viajes/Norte America/new_yorl.jpeg', 'images/viajes/Norte America/new_york_2.jpeg', 'images/viajes/Norte America/new_york_3.jpg', 'images/viajes/Norte America/costa_este.jpg'],
+    itinerario: ['Manhattan y Times Square', 'Estatua de la Libertad', 'Central Park', 'Museos', 'Washington DC', 'Filadelfia', 'Día libre'],
+    itinerarioDetallado: ['Llegada a NYC. Paseo por Times Square y Broadway.', 'Ferry a la Estatua de la Libertad y Ellis Island.', 'Recorrido por Central Park y 5th Avenue.', 'Visita al MET y al MoMA.', 'Excursión a Washington DC y monumentos.', 'Tour por Filadelfia histórica.', 'Día libre para compras.'],
+    condiciones: 'Incluye traslados y entradas principales.',
+    condiciones_en: 'Includes transfers and main entrances.',
+    guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    reseñas: [{ nombre: 'Ana M.', comentario: 'Nueva York es increíble, muy bien organizado.', comentario_en: 'New York is amazing, very well organized.' }]
+  },
+  {
+    destino: 'Estados Unidos', continente: 'norteamerica', duracion: 9, precio: 1400, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Norte America/cañon del colorado_2.jpg', titulo: 'Gran Cañón y Parques Nacionales', titulo_en: 'Grand Canyon and National Parks',
+    dietasDisponibles: ['vegano', 'vegetariano'],
+    galeria: ['images/viajes/Norte America/cañon del colorado_2.jpg', 'images/viajes/Norte America/cañon_del colorado_3.jpg'],
+    itinerario: ['Las Vegas', 'Gran Cañón', 'Monument Valley', 'Antelope Canyon', 'Zion', 'Bryce Canyon', 'Death Valley', 'Yosemite', 'San Francisco'],
+    itinerarioDetallado: ['Llegada a Las Vegas y noche libre.', 'Ruta al Gran Cañón, atardecer épico.', 'Monument Valley en Jeep con Navajos.', 'Antelope Canyon y Horseshoe Bend.', 'Trekking en Zion National Park.', 'Amanecer en Bryce Canyon.', 'Travesía por Death Valley.', 'Yosemite: El Capitán y cascadas.', 'Llegada a San Francisco, Golden Gate.'],
+    condiciones: 'Nivel físico medio-alto. Incluye camping y alojamiento.',
+    condiciones_en: 'Medium-high physical level. Includes camping and accommodation.',
+    guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    reseñas: [{ nombre: 'Roberto S.', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
+  },
+  // ============ AFRICA ============
+  {
+    destino: 'Kenia', continente: 'africa', duracion: 8, precio: 2000, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Africa/safari kenia.jpg', titulo: 'Safari en Kenia: La Gran Migración', titulo_en: 'Kenya Safari: The Great Migration',
+    dietasDisponibles: ['vegano', 'vegetariano', 'halal'],
+    galeria: ['images/viajes/Africa/safari kenia.jpg', 'images/viajes/Africa/Safari kenia 2.jpeg', 'images/viajes/Africa/Safari Kenia 3.webp', 'images/viajes/Africa/safari kenia 4.jpeg', 'images/viajes/Africa/Safari kenia 5.jpg'],
+    itinerario: ['Nairobi', 'Masai Mara Día 1', 'Gran Migración', 'Lago Nakuru', 'Amboseli', 'Safari Tsavo', 'Aldea Masai', 'Regreso a Nairobi'],
+    itinerarioDetallado: ['Llegada a Nairobi, visita al centro de elefantes.', 'Safari en Masai Mara, leones y leopardos.', 'La Gran Migración de ñus.', 'Flamencos en Lago Nakuru.', 'Elefantes con Kilimanjaro de fondo en Amboseli.', 'Safari en Tsavo, rinocerontes.', 'Visita a aldea Masai.', 'Regreso a Nairobi.'],
+    condiciones: 'Todo incluido. Alojamiento en lodges y campamentos.',
+    condiciones_en: 'All inclusive. Lodges and camp accommodation.',
+    guia: { nombre: 'Joseph Kimani', edad: '38 años', edad_en: '38 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de safari certificado', experiencias_en: 'Certified safari guide', idiomas: 'Inglés, Suajili', idiomas_en: 'English, Swahili', contacto: '+254 700 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    reseñas: [{ nombre: 'Elena P.', comentario: 'Ver los Big Five fue un sueño cumplido.', comentario_en: 'Seeing the Big Five was a dream come true.' }]
+  },
+  {
+    destino: 'Marruecos', continente: 'africa', duracion: 6, precio: 800, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Africa/marruecos 1.jpg', titulo: 'Marruecos: De Marrakech al Desierto', titulo_en: 'Morocco: From Marrakech to the Desert',
+    dietasDisponibles: ['vegano', 'vegetariano', 'halal'],
+    galeria: ['images/viajes/Africa/marruecos 1.jpg', 'images/viajes/Africa/Marruecos 2.jpg', 'images/viajes/Africa/Marruecos 3.webp', 'images/viajes/Africa/Marruecos 4.jpg', 'images/viajes/Africa/Marruecos 5.jpg', 'images/viajes/Africa/Marruecos 6.webp'],
+    itinerario: ['Marrakech', 'Montañas Atlas', 'Ait Ben Haddou', 'Desierto del Sahara', 'Fez', 'Chefchaouen'],
+    itinerarioDetallado: ['Llegada a Marrakech, Djemaa el Fna.', 'Cruce de las montañas del Atlas, Kasbah Ait Ben Haddou.', 'Noche en el desierto, paseo en camello al atardecer.', 'Amanecer en las dunas de Erg Chebbi, ruta a Fez.', 'Fez y su medina laberíntica.', 'Chefchaouen, la perla azul. Regreso.'],
+    condiciones: 'Incluye riads tradicionales y campamento en desierto.',
+    condiciones_en: 'Includes traditional riads and desert camp.',
+    guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    reseñas: [{ nombre: 'Lucía R.', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
+  },
+  // ============ OCEANIA ============
+  {
+    destino: 'Australia', continente: 'oceania', duracion: 7, precio: 2500, tipo: 'Turístico', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Oceania/Sidney 2.jpg', titulo: 'Australia: Sydney y la Gran Barrera', titulo_en: 'Australia: Sydney and the Great Barrier Reef',
+    dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
+    galeria: ['images/viajes/Oceania/Sidney 2.jpg', 'images/viajes/Oceania/Sidney 3.jpg', 'images/viajes/Oceania/Gran barrera_2.webp'],
+    itinerario: ['Llegada a Sydney', 'Ópera y Harbour', 'Blue Mountains', 'Vuelo a Cairns', 'Gran Barrera', 'Uluru', 'Melbourne y regreso'],
+    itinerarioDetallado: ['Llegada a Sydney, paseo por Circular Quay.', 'Tour por la Ópera de Sydney y Harbour Bridge.', 'Excursión a Blue Mountains, senderos y cascadas.', 'Vuelo a Cairns, tarde en la selva tropical.', 'Snorkel en la Gran Barrera de Coral, día completo.', 'Vuelo al Outback, atardecer en Uluru.', 'Melbourne, Great Ocean Road y regreso.'],
+    condiciones: 'Vuelos internos incluidos. Nivel físico bajo-medio.',
+    condiciones_en: 'Domestic flights included. Low-medium physical level.',
+    guia: { nombre: 'Emma Thompson', edad: '32 años', edad_en: '32 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía turística certificada', experiencias_en: 'Certified tour guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+61 400 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    reseñas: [{ nombre: 'Pablo G.', comentario: 'Australia superó todas mis expectativas.', comentario_en: 'Australia exceeded all my expectations.' }]
+  },
+  {
+    destino: 'Nueva Zelanda', continente: 'oceania', duracion: 7, precio: 2200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Oceania/Nueva_Zelanda_1.jpeg', titulo: 'Nueva Zelanda: Tierra Media', titulo_en: 'New Zealand: Middle Earth',
+    dietasDisponibles: ['vegano', 'vegetariano'],
+    galeria: ['images/viajes/Oceania/Nueva_Zelanda_1.jpeg', 'images/viajes/Oceania/Nueva_zelanda_3.webp', 'images/viajes/Oceania/Nueva_Zelanda_4.jpg', 'images/viajes/Oceania/Nueva_Zelanzda_4.jpeg', 'images/viajes/Oceania/NUeva_Zelanda_5.webp'],
+    itinerario: ['Llegada Auckland', 'Hobbiton', 'Rotorua', 'Wellington', 'Queenstown', 'Milford Sound', 'Glaciares y regreso'],
+    itinerarioDetallado: ['Llegada a Auckland, Sky Tower y paseo por el puerto.', 'Visita a Hobbiton, set de El Señor de los Anillos.', 'Géiseres y cultura maorí en Rotorua.', 'Wellington, Weta Workshop y ferry a Isla Sur.', 'Aventura en Queenstown: búngee o jet boat.', 'Crucero espectacular por Milford Sound.', 'Trekking en glaciares Fox y Franz Josef. Regreso.'],
+    condiciones: 'Incluye ferry entre islas y actividades de aventura.',
+    condiciones_en: 'Includes inter-island ferry and adventure activities.',
+    guia: { nombre: 'James Wilson', edad: '40 años', edad_en: '40 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en Tierra Media', experiencias_en: 'Middle Earth expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+64 21 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    reseñas: [{ nombre: 'Marta L.', comentario: 'Paisajes de película, literalmente.', comentario_en: 'Movie-like landscapes, literally.' }]
   }
 ];
 
@@ -310,19 +379,22 @@ if (window.location.pathname.includes("home.html")) {
   });
 
   // Hacer que las tarjetas de "Viajes en grupo" en Home abran la ficha de detalles
-  // Asociamos dinámicamente cada tarjeta con un viaje del array `viajes` (añadidos al final)
+  // Los viajes en grupo son: Patagonia (índice 7), Maldivas (índice 8), Cataratas del Iguazú (índice 9)
   const tarjetasHome = document.querySelectorAll('.columna-tarjeta .tarjeta');
   if (tarjetasHome && tarjetasHome.length > 0) {
-    // Los tres últimos viajes del array se utilizarán para las tarjetas del home
+    // Índices específicos de los viajes en grupo
+    const indicesViajesGrupo = [7, 8, 9]; // Patagonia, Maldivas, Iguazú
+
     tarjetasHome.forEach((tarjeta, i) => {
       tarjeta.style.cursor = 'pointer';
       tarjeta.addEventListener('click', () => {
-        // Calcular índice del viaje correspondiente (últimos N del array)
-        const offset = viajes.length - tarjetasHome.length;
-        const viajeIndex = Math.max(0, offset + i);
+        // Usar el índice específico del viaje en grupo
+        const viajeIndex = indicesViajesGrupo[i] || 0;
         const viaje = viajes[viajeIndex];
         if (viaje) {
           localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+          // Limpiar origen de continente si existe
+          localStorage.removeItem('viajeOrigen');
           // Marcar que venimos del home (no del listado)
           localStorage.setItem('origenViaje', 'home');
           // Redirigir a la página de detalles
@@ -621,6 +693,8 @@ if (window.location.pathname.includes("listado_viajes.html")) {
         localStorage.setItem('viajesFiltradosActuales', JSON.stringify(currentFiltrados));
         // Guardar el índice del viaje en el array filtrado actual
         localStorage.setItem('indiceViajeSeleccionado', index.toString());    //index.toString() convierte el índice a cadena
+        // Limpiar origen de continente si existe
+        localStorage.removeItem('viajeOrigen');
         // Marcar que venimos del listado
         localStorage.setItem('origenViaje', 'listado');
         // Redirigir a la página de detalles
@@ -704,20 +778,24 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     window.location.href = 'listado_viajes.html';
   }
 
-  // Botón de vuelta atrás - detectar si viene del home o del listado
+  // Botón de vuelta atrás - detectar si viene del home, listado o continente
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
       const origen = localStorage.getItem('origenViaje');
+      const origenContinente = localStorage.getItem('viajeOrigen');
 
       // Limpiar indicadores
       localStorage.removeItem('viajeReservaOrigen');
       localStorage.removeItem('indiceViajeSeleccionado');
       localStorage.removeItem('origenViaje');
+      localStorage.removeItem('viajeOrigen');
 
       // Redirigir según el origen
-      // Si venimos del home, redirigir a home.html; si venimos del listado, redirigir a listado_viajes.html
-      if (origen === 'home') {
+      // Prioridad: continente > home > listado
+      if (origenContinente) {
+        window.location.href = origenContinente;
+      } else if (origen === 'home') {
         window.location.href = 'home.html';
       } else {
         window.location.href = 'listado_viajes.html';
