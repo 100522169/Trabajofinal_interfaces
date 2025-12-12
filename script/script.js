@@ -183,9 +183,9 @@ const viajes = [
   },
 
   {
-    destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
+    destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Sudamerica/Argentina/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
-    galeria: ['images/patagonia.jpg', 'images/patagonia.jpg', 'images/patagonia.jpg'],
+    galeria: ['images/viajes/Sudamerica/Argentina/patagonia.jpg', 'images/viajes/Sudamerica/Argentina/ushuaia.jpg', 'images/viajes/Sudamerica/Argentina/canal-beagle.jpg'],
     itinerario: ['El Calafate', 'Glaciar Perito Moreno', 'Ushuaia', 'El Canal Beagle', 'Trekking en Torres del Paine', 'Senderismo por Mirador Base Torres', 'Regreso a El Calafate', 'Fin del viaje'],
     itinerarioDetallado: [
       'Llegada a El Calafate. Recepción en el aeropuerto y traslado al hotel. Por la tarde, exploración del centro de la ciudad y degustación de gastronomía local.',
