@@ -329,6 +329,8 @@ const viajes = [
     reseñas: []
   },
 
+  // ==== Viajes en grupo ===
+
   {
     destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Sudamerica/Argentina/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
@@ -350,22 +352,35 @@ const viajes = [
     reseñas: [{ nombre: 'María R.', avatar: 'images/avatar-maria.jpg', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
   },
   {
-    destino: 'Maldivas', continente: 'asia', duracion: 3, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
+    destino: 'Maldivas', continente: 'asia', duracion: 4, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Asia/Maldivas/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
     dietasDisponibles: ['vegano', 'vegetariano'],
-    galeria: ['images/maldivas.jpg', 'images/maldivas.jpg', 'images/maldivas.jpg'],
-    itinerario: ['Resort y actividades acuáticas', 'Snorkel y buceo', 'Excursión a islas cercanas'],
-    itinerarioDetallado: ['Llegada al resort y acomodación.', 'Día de actividades acuáticas y snorkel.', 'Excursión a islas locales y cultura.', 'Relax y salida.'],
+    galeria: ['images/viajes/Asia/Maldivas/maldivas.jpg', 'images/viajes/Asia/Maldivas/maldivas2.jpg', 'images/viajes/Asia/Maldivas/snorkel_maldivas.jpg'],
+    itinerario: ['Resort y actividades acuáticas', 'Snorkel y buceo', 'Excursión a islas cercanas', 'Relax y salida'],
+    itinerarioDetallado: [
+      'Llegada al aeropuerto internacional de Malé y traslado en lancha al resort. Acomodación y tiempo libre para disfrutar de las instalaciones del resort.', 
+      'Desayuno frente al mar. Día dedicado a actividades acuáticas como snorkel y buceo en los arrecifes de coral cercanos. Almuerzo en el resort y tarde libre para relajarse en la playa o disfrutar del spa.', 
+      'Traslado en lancha a islas cercanas para explorar la cultura local y disfrutar de playas vírgenes. Almuerzo en una isla habitada y regreso al resort por la tarde. Cena de despedida con vista al atardecer.', 
+      'Mañana libre para actividades personales y traslado al aeropuerto para el vuelo de regreso.'],
     condiciones: 'Incluye alojamiento en resort y desayunos.',
     condiciones_en: 'Includes resort accommodation and breakfast.',
     guia: { nombre: 'Ahmed Ali', edad: '30 años', edad_en: '30 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía local en islas', experiencias_en: 'Local island guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Alex.png' },
     reseñas: [{ nombre: 'Laura G.', avatar: 'images/avatar-laura-g.jpg', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
   },
   {
-    destino: 'Argentina', continente: 'sudamerica', duracion: 3, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
+    destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Sudamerica/Argentina/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
     dietasDisponibles: ['vegetariano', 'sin-gluten'],
-    galeria: ['images/cataratas_iguazu.jpg', 'images/cataratas_iguazu.jpg'],
-    itinerario: ['Visita a las cataratas', 'Recorrido por la selva', 'Excursiones en lancha'],
-    itinerarioDetallado: ['Excursión a las pasarelas de las cataratas.', 'Paseo en lancha por la garganta del diablo.', 'Ruta por la selva con guía especializado.'],
+    galeria: ['images/viajes/Sudamerica/Argentina/cataratas_iguazu.jpg', 'images/viajes/Sudamerica/Argentina/garganta_diablo.jpg', 'images/viajes/Sudamerica/Argentina/itaipu.jpg'],
+    itinerario: ['Llegada a Iguazú', 'Cataratas lado Argentino', 'Garganta del Diablo', 'Exploración de la selva', 'Cataratas lado Brasileño', 'Parque de aves y represa Itaipú', 'Cultura local', 'Fin del viaje'],
+    itinerarioDetallado: [
+      'Llegada al aeropuerto y traslado al hotel. Paseo por el centro de Puerto Iguazú, visita al Hito Tres Fronteras y degustación de gastronomía local.', 
+      'Ingreso al Parque Nacional Iguazú. Paseo por las pasarelas del lado argentino y recorrido por el circuto superior e inferior.', 
+      'Viaje en el tren ecológico hasta la Garganta del Diablo. Tiempo libre para explorar y tomar fotografías.',
+      'Excusrsión guiada por la selva misionera. Observación de flora y fauna autóctona. Regreso al hotel y descanso.',
+      'Cruce a Brasil para visitar el lado brasileño de las cataratas. Vista panorámica y paseo por las pasarelas. Opcional, vuelo en helicóptero.',
+      'Visita al Parque de las Aves para interactuar con especies tropicales. Recorrido por la represa hidroeléctrica Itaipú, una de las más grandes del mundo.',
+      'Día dedicado a la cultura local. Visita a comunidades guaraníes y artesanías típicas. Cena de despedida con show folclórico.',
+      'Tiempo libre por la mañana. Traslado al aeropuerto para el vuelo de regreso.'
+    ],
     condiciones: 'Incluye entradas y transporte.',
     condiciones_en: 'Includes entrance fees and transport.',
     guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
