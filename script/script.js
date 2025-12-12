@@ -138,7 +138,7 @@ const viajes = [
     reseñas: []
   },
   {
-    destino: 'Japón', continente: 'asia', duracion: 5, precio: 400, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Asia/Japon/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
+    destino: 'Japón', continente: 'asia', duracion: 5, precio: 500, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Asia/Japon/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
     galeria: ['images/viajes/Asia/Japon/kioto.jpg', 'images/viajes/Asia/Japon/Kinkaku-ji.jpeg', 'images/viajes/Asia/Japon/Nara.jpg', 'images/viajes/Asia/Japon/Gion.jpg'],
     itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
@@ -183,14 +183,23 @@ const viajes = [
   },
 
   {
-    destino: 'Argentina', continente: 'sudamerica', duracion: 4, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
+    destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/patagonia.jpg', 'images/patagonia.jpg', 'images/patagonia.jpg'],
-    itinerario: ['El Calafate', 'Glaciar Perito Moreno', 'Ushuaia', 'Trekking en Torres del Paine'],
-    itinerarioDetallado: ['Llegada a El Calafate y visita al glaciar.', 'Excursión al Perito Moreno con navegación.', 'Traslado a Ushuaia y actividades en el fin del mundo.', 'Trekking y observación de fauna.'],
+    itinerario: ['El Calafate', 'Glaciar Perito Moreno', 'Ushuaia', 'El Canal Beagle', 'Trekking en Torres del Paine', 'Senderismo por Mirador Base Torres', 'Regreso a El Calafate', 'Fin del viaje'],
+    itinerarioDetallado: [
+      'Llegada a El Calafate. Recepción en el aeropuerto y traslado al hotel. Por la tarde, exploración del centro de la ciudad y degustación de gastronomía local.',
+      'Excursión al Glaciar Perito Moreno. Caminata por las pasarelas con vistas espectaculares. Navegación opcional para acercarse a las paredes de hielo.',
+      'Viaje a Ushuaia, la ciudad más austral del mundo. Visita al Parque Nacional Tierra del Fuego y paseo en el Tren del Fin del Mundo.',
+      'Navegación por el Canal Beagle para observar lobos marinos y cormoranes. Tarde libre para explorar el puerto y sus alrededores.',
+      'Traslado a Torres del Paine en Chile. Caminata por senderos icónicos con vistas a los Cuernos del Paine y lagos glaciares.',
+      'Trekking al Mirador Base Torres, uno de los paisajes más emblemáticos de la Patagonia. Observación de fauna como guanacos y cóndores.',
+      'Regreso a El Calafate. Tarde libre para compras de recuerdos o actividades opcionales como cabalgatas.',
+      'Fin del viaje. Traslado al aeropuerto para el vuelo de regreso.'
+    ],
     condiciones: 'Incluye traslados y alojamiento. Nivel físico medio-alto.',
     condiciones_en: 'Includes transfers and accommodation. Medium-high physical level.',
-    guia: { nombre: 'Laura Pérez', edad: '36 años', edad_en: '36 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía en Patagonia', experiencias_en: 'Patagonia guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+54 9 11 2345 6789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-laura.jpg' },
+    guia: { nombre: 'Laura Pérez', edad: '36 años', edad_en: '36 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía en Patagonia', experiencias_en: 'Patagonia guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+54 9 11 2345 6789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/laura-perez.jpg' },
     reseñas: [{ nombre: 'María R.', avatar: 'images/avatar-maria.jpg', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
   },
   {
