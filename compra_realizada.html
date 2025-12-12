@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
     <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
     <link rel="stylesheet" href="style/style_compra_realizada.css" />
+    <script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
     <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
 
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -23,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -45,7 +46,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -63,79 +64,79 @@
         <section class='contenedor-compra'>
             <!-- Título de la sección con el circulo y el tick -->
             <div class="circulo-color">✔</div>
-            <h1>¡Compra realizada con éxito!</h1>
+            <h1 data-i18n="complete-title">¡Compra realizada con éxito!</h1>
         </section>
 
         <!-- Contenedor principal -->
         <section class="contenedor-principal">
             <!-- Resumen del viaje -->
             <article class="resumen-viaje">
-                <h2>Resumen del viaje</h2>
+                <h2 data-i18n="pay-summary">Resumen del viaje</h2>
                 <div class="info-fila">
                     <!-- Destino del viaje -->
-                    <span class="etiqueta">Destino:</span>
+                    <span class="etiqueta" data-i18n="pay-destination">Destino:</span>
                     <span class="contenido">?</span>
                 </div>
                 <div class="info-fila">
                     <!-- Duración del viaje -->
-                    <span class="etiqueta">Duración:</span>
+                    <span class="etiqueta" data-i18n="pay-duration">Duración:</span>
                     <span class="contenido">?</span>
                 </div>
                 <div class="info-fila">
                     <!-- Tipo de viaje -->
-                    <span class="etiqueta">Tipo de viaje:</span>
+                    <span class="etiqueta" data-i18n="pay-trip-type">Tipo de viaje:</span>
                     <span class="contenido">?</span>
                 </div>
                 <div class="info-fila">
                     <!-- Numero de acompañantes -->
-                    <span class="etiqueta">Acompañantes:</span>
+                    <span class="etiqueta" data-i18n="pay-companions">Acompañantes:</span>
                     <span class="contenido">?</span>
                 </div>
                 <div class="info-fila">
                     <!-- Mascotas -->
-                    <span class="etiqueta">Mascotas:</span>
+                    <span class="etiqueta" data-i18n="pay-pets">Mascotas:</span>
                     <span class="contenido">?</span>
                 </div>
                 <div class="info-fila">
                     <!-- Alergias -->
-                    <span class="etiqueta">Alergias:</span>
+                    <span class="etiqueta" data-i18n="pay-allergies">Alergias:</span>
                     <span class="contenido">?</span>
                 </div>
                 <div class="info-fila">
                     <!-- Coste total -->
-                    <span class="etiqueta">Coste total:</span>
+                    <span class="etiqueta" data-i18n="complete-total">Coste total:</span>
                     <span class="contenido">###.## €</span>
                 </div>
             </article>
 
             <!-- Información del guía -->
             <article class="info-guia-contenedor">
-                <h2>Contacto del guía</h2>
+                <h2 data-i18n="complete-guide">Contacto del guía</h2>
                 <div class="info-guia">
                     <!-- Avatar del guía -->
                     <div class="avatar"></div>
                     <!-- Información del guía -->
                     <div class="info-guia-texto">
-                        <p>Nombre y apellidos</p>
-                        <p>Edad</p>
-                        <p>Teléfono</p>
+                        <p data-i18n="complete-name">Nombre y apellidos</p>
+                        <p data-i18n="complete-age">Edad</p>
+                        <p data-i18n="complete-phone">Teléfono</p>
                     </div>
                 </div>
             </article>
 
             <!-- Botones de acción -->
             <div class="botones-accion">
-                <button type="button" class="boton-mi-cuenta">Ir a Mi Cuenta</button>
-                <button type="button" class="boton-imprimir-pdf">Imprimir en PDF</button>
+                <button type="button" class="boton-mi-cuenta" data-i18n="complete-account">Ir a Mi Cuenta</button>
+                <button type="button" class="boton-imprimir-pdf" data-i18n="complete-print">Imprimir en PDF</button>
             </div>
         </section>
     </main>
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="#">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>

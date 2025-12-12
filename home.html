@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
 <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
 <link rel="stylesheet" href="style/style_home.css" /> <!-- Enlace al archivo externo de estilos CSS -->
+<script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
 <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
 
@@ -13,7 +14,7 @@
 
     <header>
         <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -23,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -43,8 +44,8 @@
 
         <section>
             <div class="botones_header">
-                <button type="button">Iniciar sesión</button>
-                <button type="button">Registrarse</button>
+                <button type="button" data-i18n="btn-login">Iniciar sesión</button>
+                <button type="button" data-i18n="btn-register">Registrarse</button>
             </div>
         </section>
 
@@ -52,7 +53,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -64,66 +65,67 @@
         <section class="columna-izquierda">
             <!-- Carrusel de imagenes -->
             <div class="carrusel">
-                <h1>Descubre tu próximo destino</h1>
-                <h3>Filtra por destino, precio o tipo de experiencia</h3>
+                <h1 data-i18n="home-discover">Descubre tu próximo destino</h1>
+                <h3 data-i18n="home-filter-subtitle">Filtra por destino, precio o tipo de experiencia</h3>
             </div>
             <!-- Filtros funcionales -->
             <div class="filtros">
                 <select id="destino-home">
-                    <option disabled selected>Destino</option>
-                    <option value="">Todos</option>
+                    <option disabled selected data-i18n="home-destination">Destino</option>
+                    <option value="" data-i18n="home-all">Todos</option>
                     <option value="España">España</option>
                     <option value="Perú">Perú</option>
                     <option value="Japón">Japón</option>
                 </select>
                 <select id="duracion-home">
-                    <option disabled selected>Duración</option>
-                    <option value="">Todos</option>
+                    <option disabled selected data-i18n="home-duration">Duración</option>
+                    <option value="" data-i18n="home-all">Todos</option>
                     <option value="1-3">1-3 días</option>
                     <option value="4-7">4-7 días</option>
                     <option value="8-14">8-14 días</option>
                     <option value="+15">+15 días</option>
                 </select>
                 <select id="rango-precio-home">
-                    <option disabled selected>Rango de precio</option>
-                    <option value="">Todos</option>
+                    <option disabled selected data-i18n="home-price-range">Rango de precio</option>
+                    <option value="" data-i18n="home-all">Todos</option>
                     <option value="100-200">100-200 €</option>
                     <option value="201-400">200-400 €</option>
                     <option value="401-600">400-600 €</option>
                     <option value="+600">+600 €</option>
                 </select>
                 <select id="mascotas-home">
-                    <option disabled selected>Mascotas</option>
-                    <option value="si">Sí</option>
-                    <option value="no">No</option>
+                    <option disabled selected data-i18n="home-pets">Mascotas</option>
+                    <option value="si" data-i18n="home-pets-yes">Sí</option>
+                    <option value="no" data-i18n="home-pets-no">No</option>
                 </select>
                 <select id="tipo-viaje-home">
-                    <option disabled selected>Tipo de viaje</option>
-                    <option value="">Todos</option>
-                    <option value="turistico">Turístico</option>
-                    <option value="cultural">Cultural</option>
-                    <option value="aventura">Aventura</option>
-                    <option value="organizado">Organizado</option>
+                    <option disabled selected data-i18n="home-trip-type">Tipo de viaje</option>
+                    <option value="" data-i18n="home-all">Todos</option>
+                    <option value="turistico" data-i18n="home-tourist">Turístico</option>
+                    <option value="cultural" data-i18n="home-cultural">Cultural</option>
+                    <option value="aventura" data-i18n="home-adventure">Aventura</option>
+                    <option value="organizado" data-i18n="home-organized">Organizado</option>
                 </select>
             </div>
             <!-- Buscador funcional -->
             <div class="search">
                 <span class="icono">🔍</span>
-                <button type="button" id="buscar-viajes" disabled>Buscar viajes</button>
+                <button type="button" id="buscar-viajes" disabled data-i18n="home-search-trips">Buscar viajes</button>
             </div>
             <!-- Mensaje de error para filtros incompletos -->
-            <p id="mensaje-filtros" class="mensaje-filtros">Debe seleccionar una opción en todos los filtros para buscar
+            <p id="mensaje-filtros" class="mensaje-filtros" data-i18n="home-filter-message">Debe seleccionar una opción
+                en todos los filtros para buscar
             </p>
         </section>
 
         <section class="columna-derecha">
-            <h1>Viajes en grupo</h1>
+            <h1 data-i18n="home-group-trips">Viajes en grupo</h1>
             <!-- Lista de tarjetas estáticas -->
             <div class="columna-tarjeta">
                 <article class="tarjeta">
                     <img class="tarjeta-img" src="images/patagonia.jpg" alt="Patagonia">
                     <div class="tarjeta-body">
-                        <h3 class="tarjeta-titulo">Viaje a la Patagonia</h3>
+                        <h3 class="tarjeta-titulo" data-i18n="trip-patagonia">Viaje a la Patagonia</h3>
                         <div class="tarjeta-precio">800 €</div>
                     </div>
                 </article>
@@ -131,7 +133,7 @@
                 <article class="tarjeta">
                     <img class="tarjeta-img" src="images/maldivas.jpg" alt="Maldivas">
                     <div class="tarjeta-body">
-                        <h3 class="tarjeta-titulo">Viaje a las Maldivas</h3>
+                        <h3 class="tarjeta-titulo" data-i18n="trip-maldives">Viaje a las Maldivas</h3>
                         <div class="tarjeta-precio">1200 €</div>
                     </div>
                 </article>
@@ -139,7 +141,7 @@
                 <article class="tarjeta">
                     <img class="tarjeta-img" src="images/cataratas_iguazu.jpg" alt="Cataratas del Iguazú">
                     <div class="tarjeta-body">
-                        <h3 class="tarjeta-titulo">Viaje a las Cataratas del Iguazú</h3>
+                        <h3 class="tarjeta-titulo" data-i18n="trip-iguazu">Viaje a las Cataratas del Iguazú</h3>
                         <div class="tarjeta-precio">950 €</div>
                     </div>
                 </article>
@@ -149,9 +151,9 @@
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="sobre_nosotros.html">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="sobre_nosotros.html" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>

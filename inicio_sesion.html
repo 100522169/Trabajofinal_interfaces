@@ -6,14 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
 <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
 <link rel="stylesheet" href="style/style_inicio_sesion.css" /> <!-- Enlace al archivo externo de estilos CSS -->
+<script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
 <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
 
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -23,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -45,7 +46,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -57,29 +58,30 @@
         <section class="columna-izquierda2">
             <!--Dentro de esta clase tenemos un banner con un fondo-->
             <div class="banner-bienvenida">
-                <h1>Bienvenido de vuelta</h1>
-                <p>Te echábamos de menos. Entra para ver que hay de nuevo.</p>
+                <h1 data-i18n="login-welcome">Bienvenido de vuelta</h1>
+                <p data-i18n="login-welcome-sub">Te echábamos de menos. Entra para ver que hay de nuevo.</p>
             </div>
         </section>
         <section class="columna-derecha2">
             <form class="inicio-sesion-form">
-                <h1>Inicio de sesión</h1>
+                <h1 data-i18n="login-title">Inicio de sesión</h1>
                 <!--Campos para usuario y contraseña-->
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" placeholder="Contraseña" required>
+                <input type="text" placeholder="Usuario" data-i18n-placeholder="login-username" required>
+                <input type="password" placeholder="Contraseña" data-i18n-placeholder="login-password" required>
                 <!--Botón para enviar el formulario-->
-                <button type="submit">Confirmar</button>
+                <button type="submit" data-i18n="login-confirm">Confirmar</button>
                 <!--Enlace para registrarse si no se tiene cuenta-->
-                <h3>Nuevo usuario<span class="flecha">➔</span><a href="registrarse.html">Regístrate aquí</a></span></h3>
+                <h3><span data-i18n="login-new-user">Nuevo usuario</span><span class="flecha">➔</span><a
+                        href="registrarse.html" data-i18n="login-register-here">Regístrate aquí</a></span></h3>
             </form>
         </section>
     </main>
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="#">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>

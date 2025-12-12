@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Hace que la página sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
     <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
     <link rel="stylesheet" href="style/style_mi_cuenta.css" />
-    <script src="script/script.js" defer></script>                              <!-- Enlace al archivo externo de JavaScript -->
+    <script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
+    <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
+
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class ="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -21,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="#" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -43,7 +46,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -52,7 +55,7 @@
     </header>
 
     <!--botón marcha atrás-->
-     <section class="columna-boton-atras-detalles">
+    <section class="columna-boton-atras-detalles">
         <button type="button">⬅</button>
     </section>
 
@@ -60,10 +63,12 @@
         <!-- Sidebar de navegación -->
         <aside class="sidebar">
             <nav>
-                <a href="#" class="nav-item active" data-section="datos-personales">Datos personales</a>
-                <a href="#" class="nav-item" data-section="mis-reservas">Mis reservas</a>
-                <a href="#" class="nav-item" data-section="configuracion">Configuración</a>
-                <button class="nav-item boton-cerrar-sesion">Cerrar sesión</button>
+                <a href="#" class="nav-item active" data-section="datos-personales" data-i18n="account-personal">Datos
+                    personales</a>
+                <a href="#" class="nav-item" data-section="mis-reservas" data-i18n="account-reservations">Mis
+                    reservas</a>
+                <a href="#" class="nav-item" data-section="configuracion" data-i18n="account-settings">Configuración</a>
+                <button class="nav-item boton-cerrar-sesion" data-i18n="account-logout">Cerrar sesión</button>
             </nav>
         </aside>
 
@@ -71,7 +76,7 @@
         <div class="contenido-principal">
             <!-- Sección Datos Personales -->
             <section id="datos-personales" class="seccion-contenido active">
-                <h2>Datos personales</h2>
+                <h2 data-i18n="account-personal">Datos personales</h2>
                 <div class="datos-personales-content">
                     <div class="avatar-usuario">
                         <!--Imagen del avatar del usuario-->
@@ -79,27 +84,27 @@
                     </div>
                     <div class="info-usuario">
                         <div class="info-fila">
-                            <span class="etiqueta">Nombre:</span>
+                            <span class="etiqueta" data-i18n="account-name">Nombre:</span>
                             <span class="valor" id="nombre-usuario"></span>
                         </div>
                         <div class="info-fila">
-                            <span class="etiqueta">Apellidos:</span>
+                            <span class="etiqueta" data-i18n="account-surname">Apellidos:</span>
                             <span class="valor" id="apellido-usuario"></span>
                         </div>
                         <div class="info-fila">
-                            <span class="etiqueta">Correo:</span>
+                            <span class="etiqueta" data-i18n="account-email">Correo:</span>
                             <span class="valor" id="correo-usuario"></span>
                         </div>
                         <div class="info-fila">
-                            <span class="etiqueta">Fecha de nacimiento:</span>
+                            <span class="etiqueta" data-i18n="account-birthdate">Fecha de nacimiento:</span>
                             <span class="valor" id="fecha-nacimiento-usuario"></span>
                         </div>
                         <div class="info-fila">
-                            <span class="etiqueta">Usuario:</span>
+                            <span class="etiqueta" data-i18n="account-username">Usuario:</span>
                             <span class="valor" id="usuario-acceso"></span>
                         </div>
                         <div class="info-fila">
-                            <span class="etiqueta">Contraseña:</span>
+                            <span class="etiqueta" data-i18n="account-password">Contraseña:</span>
                             <span class="valor" id="contraseña-usuario"></span>
                         </div>
                     </div>
@@ -108,7 +113,7 @@
 
             <!-- Sección Mis Reservas -->
             <section id="mis-reservas" class="seccion-contenido">
-                <h2>Mis reservas</h2>
+                <h2 data-i18n="account-reservations">Mis reservas</h2>
                 <div class="reservas-contenedor">
                     <!-- Las reservas se generarán dinámicamente con JavaScript -->
                 </div>
@@ -116,11 +121,11 @@
 
             <!-- Sección Configuración -->
             <section id="configuracion" class="seccion-contenido">
-                <h2>Configuración</h2>
+                <h2 data-i18n="account-settings">Configuración</h2>
                 <div class="configuracion-contenedor">
                     <div class="config-item">
-                        <!-- Selector de idioma --> 
-                        <label for="idioma-config">Idioma</label>
+                        <!-- Selector de idioma -->
+                        <label for="idioma-config" data-i18n="account-language">Idioma</label>
                         <select id="idioma-config">
                             <option value="es">Español</option>
                             <option value="en">English</option>
@@ -129,7 +134,7 @@
                     </div>
                     <div class="config-item">
                         <!-- Selector de divisa -->
-                        <label for="divisa-config">Divisa predeterminada</label>
+                        <label for="divisa-config" data-i18n="account-currency">Divisa predeterminada</label>
                         <select id="divisa-config">
                             <option value="eur">EUR (€)</option>
                             <option value="usd">USD ($)</option>
@@ -165,10 +170,11 @@
 
     <footer>
         <nav>
-            <a href="#">Ayuda</a>
-            <a href="#">Contacto</a>
-            <a href="#">Sobre nosotros</a>
+            <a href="#" data-i18n="footer-help">Ayuda</a>
+            <a href="#" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>
+
 </html>
