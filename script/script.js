@@ -104,7 +104,7 @@ const viajes = [
   {
     destino: 'Perú', continente: 'sudamerica', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/viajes/Sudamerica/Peru/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
     dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
-    galeria: ['images/viajes/Sudamerica/Peru/peru_lima.jpg', 'images/viajes/Sudamerica/Peru/peru_lima.jpg', 'images/viajes/Sudamerica/Peru/peru_lima.jpg', 'images/viajes/Sudamerica/Peru/peru_lima.jpg'],
+    galeria: ['images/viajes/Sudamerica/Peru/peru_lima.jpg', 'images/viajes/Sudamerica/Peru/Museo-Larco.jpg', 'images/viajes/Sudamerica/Peru/pachacamac.jpg', 'images/viajes/Sudamerica/Peru/playa-miraflores.jpeg'],
     itinerario: ['City tour en Lima', 'Centro histórico y museos', 'Pachacámac', 'Playas de Miraflores'],
     itinerarioDetallado: [
       'Recorrido por Lima moderna: Miraflores y San Isidro. Parque del Amor y Malecón. Introducción a la gastronomía peruana con ceviche.',
@@ -114,7 +114,7 @@ const viajes = [
     ],
     condiciones: 'Todo incluido. Mascotas pequeñas permitidas. Nivel físico: bajo.',
     condiciones_en: 'All inclusive. Small pets allowed. Physical level: low.',
-    guia: { nombre: 'Miguel Quispe', edad: '40 años', edad_en: '40 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Experto en gastronomía peruana', experiencias_en: 'Peruvian gastronomy expert', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatar-miguel.jpg' },
+    guia: { nombre: 'Miguel Quispe', edad: '40 años', edad_en: '40 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Experto en gastronomía peruana', experiencias_en: 'Peruvian gastronomy expert', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatares/miguel-quispe.jpg' },
     reseñas: [
       { nombre: 'Laura García', avatar: 'images/avatar-laura-garcia.jpg', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.', comentario_en: 'Unique experience, the guide was very professional and attentive at all times.' }
     ]
@@ -122,7 +122,7 @@ const viajes = [
   {
     destino: 'Perú', continente: 'sudamerica', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Sudamerica/Peru/machu_pichu.jpg', titulo: 'Machu Picchu Mágico', titulo_en: 'Magical Machu Picchu',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
-    galeria: ['images/viajes/Sudamerica/Peru/machu_pichu.jpg', 'images/viajes/Sudamerica/Peru/machu_pichu.jpg', 'images/viajes/Sudamerica/Peru/machu_pichu.jpg', 'images/viajes/Sudamerica/Peru/machu_pichu.jpg'],
+    galeria: ['images/viajes/Sudamerica/Peru/machu_pichu.jpg', 'images/viajes/Sudamerica/Peru/cusco.jpg', 'images/viajes/Sudamerica/Peru/Ollantaytambo.jpg', 'images/viajes/Sudamerica/Peru/machu_pichu2.jpg'],
     itinerario: ['Cusco: aclimatación', 'Valle Sagrado', 'Camino Inca día 1', 'Camino Inca día 2', 'Machu Picchu al amanecer', 'Retorno a Cusco'],
     itinerarioDetallado: [
       'Llegada a Cusco (3.400m). Día de aclimatación suave. Visita a la Plaza de Armas, Catedral y Qoricancha. Té de coca para la altura.',
@@ -134,13 +134,13 @@ const viajes = [
     ],
     condiciones: 'Entrada incluida, equipo de camping. Muy buena condición física requerida.',
     condiciones_en: 'Entrance included, camping equipment. Very good physical condition required.',
-    guia: { nombre: 'Pedro Mamani', edad: '35 años', edad_en: '35 years old', experiencia: '11 años de experiencia', experiencia_en: '11 years of experience', experiencias: 'Guía oficial Machu Picchu', experiencias_en: 'Official Machu Picchu guide', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' },
+    guia: { nombre: 'Pedro Mamani', edad: '35 años', edad_en: '35 years old', experiencia: '11 años de experiencia', experiencia_en: '11 years of experience', experiencias: 'Guía oficial Machu Picchu', experiencias_en: 'Official Machu Picchu guide', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/pedro-mamani.jpg' },
     reseñas: []
   },
   {
-    destino: 'Japón', continente: 'asia', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
+    destino: 'Japón', continente: 'asia', duracion: 5, precio: 400, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Asia/Japon/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
-    galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
+    galeria: ['images/viajes/Asia/Japon/kioto.jpg', 'images/viajes/Asia/Japon/Kinkaku-ji.jpeg', 'images/viajes/Asia/Japon/Nara.jpg', 'images/viajes/Asia/Japon/Gion.jpg'],
     itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
     itinerarioDetallado: [
       'Llegada a Kioto. Ceremonia tradicional del té en casa de té histórica. Aprende la filosofía del Chado y disfruta matcha auténtico.',
@@ -151,13 +151,13 @@ const viajes = [
     ],
     condiciones: 'Incluye entradas, ceremonia del té y kimono. Mascotas pequeñas permitidas.',
     condiciones_en: 'Includes entrance fees, tea ceremony and kimono. Small pets allowed.',
-    guia: { nombre: 'Yuki Tanaka', edad: '30 años', edad_en: '30 years old', experiencia: '7 años de experiencia', experiencia_en: '7 years of experience', experiencias: 'Experta en ceremonias tradicionales', experiencias_en: 'Expert in traditional ceremonies', idiomas: 'Japonés, Inglés, Español', idiomas_en: 'Japanese, English, Spanish', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
+    guia: { nombre: 'Yuki Tanaka', edad: '30 años', edad_en: '30 years old', experiencia: '7 años de experiencia', experiencia_en: '7 years of experience', experiencias: 'Experta en ceremonias tradicionales', experiencias_en: 'Expert in traditional ceremonies', idiomas: 'Japonés, Inglés, Español', idiomas_en: 'Japanese, English, Spanish', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/yuki-tanaka.jpg' },
     reseñas: []
   },
   {
-    destino: 'Japón', continente: 'asia', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo', titulo_en: 'Complete Japan',
+    destino: 'Japón', continente: 'asia', duracion: 15, precio: 1000, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Asia/Japon/japon.jpg', titulo: 'Japón Completo', titulo_en: 'Complete Japan',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-pescado', 'sin-gluten', 'halal'],
-    galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
+    galeria: ['images/viajes/Asia/Japon/japon.jpg', 'images/viajes/Asia/Japon/shibuya.jpg', 'images/viajes/Asia/Japon/hiroshima.jpg', 'images/viajes/Asia/Japon/arashiyama.jpg', 'images/viajes/Asia/Japon/miyajima.jpg', 'images/viajes/Asia/Japon/monte-fuji.jpg'],
     itinerario: ['Tokio: Shibuya', 'Asakusa y Akihabara', 'Monte Fuji', 'Kioto: templos', 'Arashiyama', 'Osaka: castillo', 'Nara', 'Hiroshima', 'Miyajima', 'Vuelta a Tokio', 'TeamLab', 'Harajuku', 'Compras', 'Tsukiji', 'Despedida'],
     itinerarioDetallado: [
       'Llegada a Tokio. Cruce de Shibuya, el más transitado del mundo. Torre Hachiko. Exploración nocturna de Shinjuku y sus neones.',
@@ -178,7 +178,7 @@ const viajes = [
     ],
     condiciones: 'JR Pass incluido. Nivel físico medio. Largas caminatas diarias.',
     condiciones_en: 'JR Pass included. Medium physical level. Long daily walks.',
-    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', edad_en: '42 years old', experiencia: '16 años de experiencia', experiencia_en: '16 years of experience', experiencias: 'Especialista en tours completos', experiencias_en: 'Specialist in complete tours', idiomas: 'Japonés, Inglés, Mandarín', idiomas_en: 'Japanese, English, Mandarin', contacto: '+81 80 9876 5432', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', edad_en: '42 years old', experiencia: '16 años de experiencia', experiencia_en: '16 years of experience', experiencias: 'Especialista en tours completos', experiencias_en: 'Specialist in complete tours', idiomas: 'Japonés, Inglés, Mandarín', idiomas_en: 'Japanese, English, Mandarin', contacto: '+81 80 9876 5432', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/kenji-yamamoto.jpg' },
     reseñas: []
   },
 
