@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
     <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
     <link rel="stylesheet" href="style/style_formulario_compra3.css" />
+    <script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
     <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
 
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -23,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -45,7 +46,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -60,66 +61,66 @@
 
     <main>
         <!-- Título del formulario y etapas -->
-        <h1 class="titulo-formulario">Formulario de compra</h1>
+        <h1 class="titulo-formulario" data-i18n="form-title">Formulario de compra</h1>
         <section class="contenedor-etapas">
             <div class="etapa">
                 <div class="circulo-color">✔</div>
-                <div class="descripcion-etapa">1ºDatos personales</div>
+                <div class="descripcion-etapa" data-i18n="form-step1">1ºDatos personales</div>
             </div>
             <div class="etapa">
                 <div class="circulo-color">✔</div>
-                <div class="descripcion-etapa">2ºAcompañantes/Mascotas/Alergias</div>
+                <div class="descripcion-etapa" data-i18n="form-step2">2ºAcompañantes/Mascotas/Alergias</div>
             </div>
             <div class="etapa">
                 <div class="circulo-color">✔</div>
-                <div class="descripcion-etapa">3ºConfirmación/Pago</div>
+                <div class="descripcion-etapa" data-i18n="form-step3">3ºConfirmación/Pago</div>
             </div>
         </section>
 
         <!-- Paso 3: Confirmación / Pago -->
-        <h2 class="titulo-paso">Paso 3: Confirmación / Pago</h2>
+        <h2 class="titulo-paso" data-i18n="form-step3-title">Paso 3: Confirmación / Pago</h2>
         <section class="paso3-contenedor">
             <!-- Columna izquierda -->
             <div class="columna-izquierda">
                 <!-- Resumen del viaje -->
                 <article class="resumen-viaje">
-                    <h3>Resumen del viaje</h3>
+                    <h3 data-i18n="pay-summary">Resumen del viaje</h3>
                     <!-- Información del viaje -->
                     <div class="info-fila">
                         <!-- Destino del viaje -->
-                        <span class="etiqueta">Destino:</span>
+                        <span class="etiqueta" data-i18n="pay-destination">Destino:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
                         <!-- Duración del viaje -->
-                        <span class="etiqueta">Duración:</span>
+                        <span class="etiqueta" data-i18n="pay-duration">Duración:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
                         <!-- Tipo de viaje -->
-                        <span class="etiqueta">Tipo de viaje:</span>
+                        <span class="etiqueta" data-i18n="pay-trip-type">Tipo de viaje:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
                         <!-- Numero de acompañantes -->
-                        <span class="etiqueta">Acompañantes:</span>
+                        <span class="etiqueta" data-i18n="pay-companions">Acompañantes:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
                         <!-- Mascotas -->
-                        <span class="etiqueta">Mascotas:</span>
+                        <span class="etiqueta" data-i18n="pay-pets">Mascotas:</span>
                         <span class="contenido">?</span>
                     </div>
                     <div class="info-fila">
                         <!-- Alergias -->
-                        <span class="etiqueta">Alergias:</span>
+                        <span class="etiqueta" data-i18n="pay-allergies">Alergias:</span>
                         <span class="contenido">?</span>
                     </div>
                 </article>
 
                 <!-- Coste total -->
                 <article class="coste-total">
-                    <h3>Coste total</h3>
+                    <h3 data-i18n="pay-total">Coste total</h3>
                     <div class="precio-final">###.## €</div>
                 </article>
             </div>
@@ -128,35 +129,36 @@
             <div class="columna-derecha">
                 <!-- Divisas de pago -->
                 <section class="divisas-pago">
-                    <h3>Divisas de pago</h3>
+                    <h3 data-i18n="pay-currency">Divisas de pago</h3>
                     <!-- Botones para seleccionar divisas -->
                     <div class="divisas-botones">
-                        <button class="mas-divisas" type="button">Selecciona una divisa</button>
+                        <button class="mas-divisas" type="button" data-i18n="pay-select-currency">Selecciona una
+                            divisa</button>
                     </div>
                 </section>
 
                 <!-- Método de pago -->
                 <section class="metodo-pago">
-                    <h3>Método de pago</h3>
+                    <h3 data-i18n="pay-method">Método de pago</h3>
                     <label class="metodo-item">
                         <!-- Opción de pago con tarjeta bancaria -->
                         <input type="radio" name="metodoPago" value="tarjeta">
-                        <span>Tarjeta bancaria</span>
+                        <span data-i18n="pay-card">Tarjeta bancaria</span>
                     </label>
                     <label class="metodo-item">
                         <!-- Opción de pago con transferencia bancaria -->
                         <input type="radio" name="metodoPago" value="transferencia">
-                        <span>Transferencia bancaria</span>
+                        <span data-i18n="pay-transfer">Transferencia bancaria</span>
                     </label>
                     <label class="metodo-item">
                         <!-- Opción de pago con pagos digitales -->
                         <input type="radio" name="metodoPago" value="digital">
-                        <span>Pagos digitales (Paypal o Wise)</span>
+                        <span data-i18n="pay-digital">Pagos digitales (Paypal o Wise)</span>
                     </label>
                 </section>
 
                 <!-- Botón confirmar compra -->
-                <button class="boton-confirmar" type="button">Confirmar compra</button>
+                <button class="boton-confirmar" type="button" data-i18n="pay-confirm">Confirmar compra</button>
             </div>
         </section>
     </main>
@@ -294,9 +296,9 @@
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="#">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>

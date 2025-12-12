@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
     <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
     <link rel="stylesheet" href="style/style_formulario_compra2.css" />
+    <script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
     <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
 
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -23,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -45,7 +46,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -59,74 +60,84 @@
 
     <main>
         <!-- Título del formulario y etapas -->
-        <h1 class="titulo-formulario">Formulario de compra</h1>
+        <h1 class="titulo-formulario" data-i18n="form-title">Formulario de compra</h1>
         <section class="contenedor-etapas">
             <div class="etapa">
                 <div class="circulo-color">✔</div>
-                <div class="descripcion-etapa">1ºDatos personales</div>
+                <div class="descripcion-etapa" data-i18n="form-step1">1ºDatos personales</div>
             </div>
             <div class="etapa">
                 <div class="circulo-color">✔</div>
-                <div class="descripcion-etapa">2ºAcompañantes/Mascotas/Alergias</div>
+                <div class="descripcion-etapa" data-i18n="form-step2">2ºAcompañantes/Mascotas/Alergias</div>
             </div>
             <div class="etapa">
                 <div class="circulo"></div>
-                <div class="descripcion-etapa">3ºConfirmación/Pago</div>
+                <div class="descripcion-etapa" data-i18n="form-step3">3ºConfirmación/Pago</div>
             </div>
         </section>
 
         <!-- Paso 2: Acompañantes / Mascotas / Alergias -->
-        <h2 class="titulo-paso">Paso 2: Acompañantes / Mascotas / Alergias</h2>
+        <h2 class="titulo-paso" data-i18n="form-step2-title">Paso 2: Acompañantes / Mascotas / Alergias</h2>
         <section class="paso-2">
             <div class="paso2-columnas">
 
                 <!-- Columna de acompañantes -->
                 <div class="columna-acompañantes">
-                    <h3>Acompañantes</h3>
-                    <p class="mensaje-precio-acompañantes"> El precio del viaje se multiplicará por el número total de viajeros (tú + acompañantes)</p>
+                    <h3 data-i18n="form-companions">Acompañantes</h3>
+                    <p class="mensaje-precio-acompañantes" data-i18n="form-companions-msg"> El precio del viaje se
+                        multiplicará por el número total de
+                        viajeros (tú + acompañantes)</p>
                     <!-- Campos para añadir acompañantes -->
                     <div class="input-icon">
-                        <input type="text" placeholder="Nombre y apellidos" required>
+                        <input type="text" placeholder="Nombre y apellidos" data-i18n-placeholder="form-fullname"
+                            required>
                         <span class="icon">👤</span>
                     </div>
                     <div class="input-icon">
-                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="email" placeholder="Correo electrónico" data-i18n-placeholder="form-email"
+                            required>
                         <span class="icon">📧</span>
                     </div>
                     <!-- Botón para añadir otro acompañante -->
-                    <button class="boton-añadir" type="button"><span class="mas">+</span> Añadir otro
-                        acompañante</button>
+                    <button class="boton-añadir" type="button"><span class="mas">+</span> <span
+                            data-i18n="form-add-companion">Añadir otro
+                            acompañante</span></button>
                 </div>
 
                 <!-- Columna de mascotas -->
                 <div class="columna-mascotas">
-                    <h3>Mascotas</h3>
+                    <h3 data-i18n="form-pets">Mascotas</h3>
                     <!-- Campos para seleccionar si lleva mascota -->
                     <div class="viaja-mascota">
-                        <h3>Viaja con mascota:</h3>
-                        <label><input type="radio" name="viajaMascota" value="si"> Sí</label>
-                        <label><input type="radio" name="viajaMascota" value="no"> No</label>
+                        <h3 data-i18n="form-travels-pet">Viaja con mascota:</h3>
+                        <label><input type="radio" name="viajaMascota" value="si"> <span
+                                data-i18n="home-pets-yes">Sí</span></label>
+                        <label><input type="radio" name="viajaMascota" value="no"> <span
+                                data-i18n="home-pets-no">No</span></label>
                     </div>
                     <!-- Campos para nombre y tipo de mascota -->
                     <div class="etiqueta2">
-                        <input type="text" placeholder="Nombre de la mascota" required>
-                        <input type="text" placeholder="Tipo de mascota" required>
+                        <input type="text" placeholder="Nombre de la mascota" data-i18n-placeholder="form-pet-name"
+                            required>
+                        <input type="text" placeholder="Tipo de mascota" data-i18n-placeholder="form-pet-type" required>
                     </div>
                     <!-- Campo para subir documentación adicional -->
-                    <label class="subir-documentacion">Subir otra documentación (vacunas, pasaporte)
+                    <label class="subir-documentacion"><span data-i18n="form-upload-docs">Subir otra documentación
+                            (vacunas, pasaporte)</span>
                         <input type="file">
                     </label>
                 </div>
 
                 <!-- Columna de alergias -->
                 <div class="columna-alergias">
-                    <h3>Alergias</h3>
-                    <p class="subtitulo-dietas">Comidas adaptadas</p>
+                    <h3 data-i18n="form-allergies">Alergias</h3>
+                    <p class="subtitulo-dietas" data-i18n="form-adapted-meals">Comidas adaptadas</p>
                     <!-- Opciones de dietas - Se cargan dinámicamente desde JavaScript según el viaje -->
                     <div class="dietas"></div>
-                    <label class="etiqueta2">Alergias e intolerancias:
+                    <label class="etiqueta2"><span data-i18n="form-allergies-label">Alergias e intolerancias:</span>
                         <!-- Campo para especificar alergias o intolerancias -->
-                        <input type="text" placeholder="Especifica alergias o intolerancias">
+                        <input type="text" placeholder="Especifica alergias o intolerancias"
+                            data-i18n-placeholder="form-specify-allergies">
                     </label>
                 </div>
             </div>
@@ -134,7 +145,7 @@
             <!--Contenedor del botón para avanzar al siguiente paso -->
             <div class="contenedor-boton-next">
                 <!--Boton siguiente paso -->
-                <button class="boton-next" type="button">Siguiente paso</button>
+                <button class="boton-next" type="button" data-i18n="form-next">Siguiente paso</button>
             </div>
         </section>
     </main>
@@ -142,9 +153,9 @@
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="#">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>

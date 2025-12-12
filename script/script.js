@@ -38,7 +38,7 @@ micuentaLinks.forEach(link => {
 // Definir los viajes disponibles
 const viajes = [
   {
-    destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla',
+    destino: 'España', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla', titulo_en: 'Madrid, Barcelona and Seville',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg'],
     itinerario: ['Madrid: Prado y Retiro', 'Barcelona: Sagrada Familia', 'Barrio Gótico y Rambla', 'Sevilla: Giralda', 'Real Alcázar', 'Plaza de España', 'Día libre'],
@@ -52,14 +52,15 @@ const viajes = [
       'Día libre para actividades personales. Regreso y fin del tour.'
     ],
     condiciones: 'Incluye transporte, seguro y desayunos. Mascotas permitidas. Nivel físico: bajo-medio.',
-    guia: { nombre: 'María González', edad: '32 años', experiencia: '8 años de experiencia', experiencias: 'Especialista en cultura española', idiomas: 'Español, Inglés, Francés', contacto: '+34 612 345 678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    condiciones_en: 'Includes transport, insurance and breakfast. Pets allowed. Physical level: low-medium.',
+    guia: { nombre: 'María González', edad: '32 años', edad_en: '32 years old', experiencia: '8 años de experiencia', experiencia_en: '8 years of experience', experiencias: 'Especialista en cultura española', experiencias_en: 'Spanish culture specialist', idiomas: 'Español, Inglés, Francés', idiomas_en: 'Spanish, English, French', contacto: '+34 612 345 678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
     reseñas: [
-      { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.' },
-      { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido' }
+      { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.', comentario_en: 'The best experience of my life, highly recommended.' },
+      { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido', comentario_en: 'The food on the trip left something to be desired but the guide is one of the best I have had' }
     ]
   },
   {
-    destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos',
+    destino: 'España', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos', titulo_en: 'Adventure in the Pyrenees',
     dietasDisponibles: ['vegano', 'sin-gluten', 'sin-frutos-secos'],
     galeria: ['images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg'],
     itinerario: ['Trekking inicial', 'Ascenso a picos', 'Barranquismo y ferratas', 'Ruta final'],
@@ -70,13 +71,14 @@ const viajes = [
       'Ruta final de trekking hacia el punto de partida. Descenso controlado y ceremonia de despedida del grupo.'
     ],
     condiciones: 'Alta intensidad física. Incluye equipo de montaña y guía profesional. No mascotas.',
-    guia: { nombre: 'Carlos Fernández', edad: '38 años', experiencia: '15 años de experiencia', experiencias: 'Guía de alta montaña certificado', idiomas: 'Español, Inglés', contacto: '+34 678 234 567', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-carlos.jpg' },
+    condiciones_en: 'High physical intensity. Includes mountain equipment and professional guide. No pets.',
+    guia: { nombre: 'Carlos Fernández', edad: '38 años', edad_en: '38 years old', experiencia: '15 años de experiencia', experiencia_en: '15 years of experience', experiencias: 'Guía de alta montaña certificado', experiencias_en: 'Certified high mountain guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+34 678 234 567', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-carlos.jpg' },
     reseñas: [
-      { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.' }
+      { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.', comentario_en: 'Incredible adventure, spectacular landscapes and a great group.' }
     ]
   },
   {
-    destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago',
+    destino: 'España', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago', titulo_en: 'Way of Saint James',
     dietasDisponibles: ['vegetariano', 'sin-lactosa', 'sin-huevo', 'sin-frutos-secos', 'halal'],
     galeria: ['images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg'],
     itinerario: ['Sarria', 'Portomarín (20km)', 'Paisajes gallegos', 'Pueblos históricos', 'Palas de Rei', 'Arzúa', 'Etapa 7-8', 'Santiago de Compostela', 'Ceremonia'],
@@ -92,13 +94,14 @@ const viajes = [
       'Misa del Peregrino en la Catedral. Certificado de Compostela. Tarde libre para explorar la ciudad y celebrar.'
     ],
     condiciones: 'Incluye albergues, transporte de mochila y credencial. Buena condición física.',
-    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', experiencia: '12 años de experiencia', experiencias: 'Más de 20 Caminos completados', idiomas: 'Español, Inglés, Portugués', contacto: '+34 687 456 789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-santiago.jpg' },
+    condiciones_en: 'Includes hostels, backpack transport and credential. Good physical condition.',
+    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', edad_en: '45 years old', experiencia: '12 años de experiencia', experiencia_en: '12 years of experience', experiencias: 'Más de 20 Caminos completados', experiencias_en: 'Over 20 Caminos completed', idiomas: 'Español, Inglés, Portugués', idiomas_en: 'Spanish, English, Portuguese', contacto: '+34 687 456 789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-santiago.jpg' },
     reseñas: [
-      { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.' }
+      { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.', comentario_en: 'Very well organized, although the price could be a bit more affordable.' }
     ]
   },
   {
-    destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa',
+    destino: 'Perú', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
     dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
     galeria: ['images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg'],
     itinerario: ['City tour en Lima', 'Centro histórico y museos', 'Pachacámac', 'Playas de Miraflores'],
@@ -109,13 +112,14 @@ const viajes = [
       'Día en las playas de Miraflores. Posibilidad de parapente sobre el Pacífico. Cena de despedida con show de marinera.'
     ],
     condiciones: 'Todo incluido. Mascotas pequeñas permitidas. Nivel físico: bajo.',
-    guia: { nombre: 'Miguel Quispe', edad: '40 años', experiencia: '10 años de experiencia', experiencias: 'Experto en gastronomía peruana', idiomas: 'Español, Inglés, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatar-miguel.jpg' },
+    condiciones_en: 'All inclusive. Small pets allowed. Physical level: low.',
+    guia: { nombre: 'Miguel Quispe', edad: '40 años', edad_en: '40 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Experto en gastronomía peruana', experiencias_en: 'Peruvian gastronomy expert', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatar-miguel.jpg' },
     reseñas: [
-      { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.' }
+      { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.', comentario_en: 'Unique experience, the guide was very professional and attentive at all times.' }
     ]
   },
   {
-    destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico',
+    destino: 'Perú', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico', titulo_en: 'Magical Machu Picchu',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg'],
     itinerario: ['Cusco: aclimatación', 'Valle Sagrado', 'Camino Inca día 1', 'Camino Inca día 2', 'Machu Picchu al amanecer', 'Retorno a Cusco'],
@@ -128,10 +132,12 @@ const viajes = [
       'Tren panorámico de regreso a Cusco. Tarde libre en Cusco para compras y descanso. Cena de celebración en restaurante típico.'
     ],
     condiciones: 'Entrada incluida, equipo de camping. Muy buena condición física requerida.',
-    guia: { nombre: 'Pedro Mamani', edad: '35 años', experiencia: '11 años de experiencia', experiencias: 'Guía oficial Machu Picchu', idiomas: 'Español, Inglés, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' }
+    condiciones_en: 'Entrance included, camping equipment. Very good physical condition required.',
+    guia: { nombre: 'Pedro Mamani', edad: '35 años', edad_en: '35 years old', experiencia: '11 años de experiencia', experiencia_en: '11 years of experience', experiencias: 'Guía oficial Machu Picchu', experiencias_en: 'Official Machu Picchu guide', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' },
+    reseñas: []
   },
   {
-    destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional',
+    destino: 'Japón', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
     galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
     itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
@@ -143,11 +149,12 @@ const viajes = [
       'Día libre para explorar a tu ritmo. Sugerencias: Arashiyama, Bamboo Grove, templo Ryoan-ji. Shopping en Gion o Nishiki Market.'
     ],
     condiciones: 'Incluye entradas, ceremonia del té y kimono. Mascotas pequeñas permitidas.',
-    guia: { nombre: 'Yuki Tanaka', edad: '30 años', experiencia: '7 años de experiencia', experiencias: 'Experta en ceremonias tradicionales', idiomas: 'Japonés, Inglés, Español', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
+    condiciones_en: 'Includes entrance fees, tea ceremony and kimono. Small pets allowed.',
+    guia: { nombre: 'Yuki Tanaka', edad: '30 años', edad_en: '30 years old', experiencia: '7 años de experiencia', experiencia_en: '7 years of experience', experiencias: 'Experta en ceremonias tradicionales', experiencias_en: 'Expert in traditional ceremonies', idiomas: 'Japonés, Inglés, Español', idiomas_en: 'Japanese, English, Spanish', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
     reseñas: []
   },
   {
-    destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo',
+    destino: 'Japón', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo', titulo_en: 'Complete Japan',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-pescado', 'sin-gluten', 'halal'],
     galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
     itinerario: ['Tokio: Shibuya', 'Asakusa y Akihabara', 'Monte Fuji', 'Kioto: templos', 'Arashiyama', 'Osaka: castillo', 'Nara', 'Hiroshima', 'Miyajima', 'Vuelta a Tokio', 'TeamLab', 'Harajuku', 'Compras', 'Tsukiji', 'Despedida'],
@@ -169,39 +176,43 @@ const viajes = [
       'Check out y traslado al aeropuerto. Sayonara Japón. Entrega de regalos de despedida del tour.'
     ],
     condiciones: 'JR Pass incluido. Nivel físico medio. Largas caminatas diarias.',
-    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', experiencia: '16 años de experiencia', experiencias: 'Especialista en tours completos', idiomas: 'Japonés, Inglés, Mandarín', contacto: '+81 80 9876 5432', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    condiciones_en: 'JR Pass included. Medium physical level. Long daily walks.',
+    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', edad_en: '42 years old', experiencia: '16 años de experiencia', experiencia_en: '16 years of experience', experiencias: 'Especialista en tours completos', experiencias_en: 'Specialist in complete tours', idiomas: 'Japonés, Inglés, Mandarín', idiomas_en: 'Japanese, English, Mandarin', contacto: '+81 80 9876 5432', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
     reseñas: []
   },
 
   {
-  destino: 'Argentina', duracion: 10, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas',
-  dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
-  galeria: ['images/patagonia.jpg','images/patagonia.jpg','images/patagonia.jpg'],
+    destino: 'Argentina', duracion: 10, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
+    dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
+    galeria: ['images/patagonia.jpg', 'images/patagonia.jpg', 'images/patagonia.jpg'],
     itinerario: ['El Calafate', 'Glaciar Perito Moreno', 'Ushuaia', 'Trekking en Torres del Paine'],
     itinerarioDetallado: ['Llegada a El Calafate y visita al glaciar.', 'Excursión al Perito Moreno con navegación.', 'Traslado a Ushuaia y actividades en el fin del mundo.', 'Trekking y observación de fauna.'],
     condiciones: 'Incluye traslados y alojamiento. Nivel físico medio-alto.',
-    guia: { nombre: 'Laura Pérez', edad: '36 años', experiencia: '10 años', experiencias: 'Guía en Patagonia', idiomas: 'Español, Inglés', contacto: '+54 9 11 2345 6789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-laura.jpg' },
-    reseñas: [ { nombre: 'María R.', comentario: 'Paisajes impresionantes y guía excepcional.' } ]
+    condiciones_en: 'Includes transfers and accommodation. Medium-high physical level.',
+    guia: { nombre: 'Laura Pérez', edad: '36 años', edad_en: '36 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía en Patagonia', experiencias_en: 'Patagonia guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+54 9 11 2345 6789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-laura.jpg' },
+    reseñas: [{ nombre: 'María R.', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
   },
   {
-    destino: 'Maldivas', duracion: 7, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax',
-    dietasDisponibles: ['vegano','vegetariano'],
-    galeria: ['images/maldivas.jpg','images/maldivas.jpg','images/maldivas.jpg'],
+    destino: 'Maldivas', duracion: 7, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
+    dietasDisponibles: ['vegano', 'vegetariano'],
+    galeria: ['images/maldivas.jpg', 'images/maldivas.jpg', 'images/maldivas.jpg'],
     itinerario: ['Resort y actividades acuáticas', 'Snorkel y buceo', 'Excursión a islas cercanas'],
     itinerarioDetallado: ['Llegada al resort y acomodación.', 'Día de actividades acuáticas y snorkel.', 'Excursión a islas locales y cultura.', 'Relax y salida.'],
     condiciones: 'Incluye alojamiento en resort y desayunos.',
-    guia: { nombre: 'Ahmed Ali', edad: '30 años', experiencia: '8 años', experiencias: 'Guía local en islas', idiomas: 'Inglés', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-ahmed.jpg' },
-    reseñas: [ { nombre: 'Laura G.', comentario: 'Un paraíso, servicio excelente.' } ]
+    condiciones_en: 'Includes resort accommodation and breakfast.',
+    guia: { nombre: 'Ahmed Ali', edad: '30 años', edad_en: '30 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía local en islas', experiencias_en: 'Local island guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-ahmed.jpg' },
+    reseñas: [{ nombre: 'Laura G.', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
   },
   {
-    destino: 'Argentina', duracion: 6, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva',
-    dietasDisponibles: ['vegetariano','sin-gluten'],
-    galeria: ['images/cataratas_iguazu.jpg','images/cataratas_iguazu.jpg'],
+    destino: 'Argentina', duracion: 6, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
+    dietasDisponibles: ['vegetariano', 'sin-gluten'],
+    galeria: ['images/cataratas_iguazu.jpg', 'images/cataratas_iguazu.jpg'],
     itinerario: ['Visita a las cataratas', 'Recorrido por la selva', 'Excursiones en lancha'],
     itinerarioDetallado: ['Excursión a las pasarelas de las cataratas.', 'Paseo en lancha por la garganta del diablo.', 'Ruta por la selva con guía especializado.'],
     condiciones: 'Incluye entradas y transporte.',
-    guia: { nombre: 'Diego Morales', edad: '40 años', experiencia: '12 años', experiencias: 'Guía de naturaleza', idiomas: 'Español, Portugués', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-diego.jpg' },
-    reseñas: [ { nombre: 'Carlos V.', comentario: 'Impresionante y bien organizado.' } ]
+    condiciones_en: 'Includes entrance fees and transport.',
+    guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-diego.jpg' },
+    reseñas: [{ nombre: 'Carlos V.', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
   }
 ];
 
@@ -585,22 +596,21 @@ if (window.location.pathname.includes("listado_viajes.html")) {
       div.setAttribute('data-mascotas', viaje.mascotas);
       div.setAttribute('data-valoracion', viaje.valoracion);
       div.setAttribute('data-index', index);  // Guardar el índice del viaje
-      // Rellenar el contenido del viaje con innerHTML usando la divisa predeterminada
       div.innerHTML = `                           
         <img src="${viaje.imagen}" alt="${viaje.titulo}">
         <div class="info-fila">
           <span>${viaje.titulo}</span>
-          <span>${viaje.duracion} días</span>
+          <span>${viaje.duracion} ${t('dynamic-days')}</span>
         </div>
         <div class="info-fila">
           <span>${viaje.precio} ${simboloDivisa}</span>
           <span>${viaje.tipo}</span>
         </div>
         <div class="info-fila">
-          <span>Mascotas: ${viaje.mascotas === 'si' ? 'Sí' : 'No'}</span>
+          <span>${t('dynamic-pets')} ${viaje.mascotas === 'si' ? t('dynamic-pets-yes') : t('dynamic-pets-no')}</span>
           <span class="valoracion-estrellas">${ratings[viaje.valoracion]}</span>
         </div>
-        <button class="ver-detalles">Ver detalles</button>
+        <button class="ver-detalles">${t('dynamic-view-details')}</button>
       `;
 
       // Agregar evento al botón "Ver detalles"
@@ -693,18 +703,18 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   if (!viajeSeleccionado) {
     window.location.href = 'listado_viajes.html';
   }
-  
+
   // Botón de vuelta atrás - detectar si viene del home o del listado
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
       const origen = localStorage.getItem('origenViaje');
-      
+
       // Limpiar indicadores
       localStorage.removeItem('viajeReservaOrigen');
       localStorage.removeItem('indiceViajeSeleccionado');
       localStorage.removeItem('origenViaje');
-      
+
       // Redirigir según el origen
       // Si venimos del home, redirigir a home.html; si venimos del listado, redirigir a listado_viajes.html
       if (origen === 'home') {
@@ -718,7 +728,11 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   // Actualizar el título con el nombre del viaje
   const tituloDetalles = document.querySelector('.titulo-detalles h1');
   if (tituloDetalles && viajeSeleccionado) {
-    tituloDetalles.textContent = viajeSeleccionado.titulo;
+    const idioma = getCurrentLanguage();
+    const titulo = idioma === 'en' && viajeSeleccionado.titulo_en
+      ? viajeSeleccionado.titulo_en
+      : viajeSeleccionado.titulo;
+    tituloDetalles.textContent = titulo;
   }
 
   // Función para cargar la galería de imágenes
@@ -760,17 +774,17 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       const spanDia = document.createElement('span');
       // Si hay actividades definidas, usarlas; si no, usar texto por defecto
       spanDia.textContent = actividades[i - 1]    // Índice i-1 porque el array empieza en 0
-        ? `Día ${i}: ${actividades[i - 1]}`       // Usar la actividad definida para el día
-        : `Día ${i}: [Actividad]`;              // Texto por defecto si no hay actividad definida
+        ? `${t('dynamic-day')} ${i}: ${actividades[i - 1]}`       // Usar la actividad definida para el día
+        : `${t('dynamic-day')} ${i}: ${t('dynamic-activity')}`;              // Texto por defecto si no hay actividad definida
 
       // Crear el botón "Más detalles"
       const botonmasdetalles = document.createElement('button');
       botonmasdetalles.className = 'boton-mas-detalles';
-      botonmasdetalles.textContent = 'Más detalles';        // Texto del botón
+      botonmasdetalles.textContent = t('dynamic-more-details');        // Texto del botón
 
       botonmasdetalles.addEventListener('click', () => {    // Evento al hacer clic en el botón "Más detalles"
-        const detalleTexto = detalles[i - 1] || 'No hay información detallada disponible para este día.';     // Usar el detalle definido o un mensaje por defecto
-        alert(`Día ${i}\n\n${detalleTexto}`);
+        const detalleTexto = detalles[i - 1] || t('dynamic-no-info');     // Usar el detalle definido o un mensaje por defecto
+        alert(`${t('dynamic-day')} ${i}\n\n${detalleTexto}`);
       });
 
       // Agregar elementos al div del día
@@ -803,18 +817,20 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     const contenedor = document.querySelector('.contenedor-info-guia');
     contenedor.innerHTML = ''; // Limpiar contenido previo
 
-    // Valores por defecto si no se proporcionan
-    const {
-      nombre = 'Nombre y apellidos',
-      edad = 'Edad',
-      experiencia = 'Años de experiencia',
-      experiencias = 'Experiencias',
-      idiomas = 'Idiomas',
-      contacto = '+XX XXX XXX XXX',
-      redesSociales = ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'],
-      valoracion = 5,
-      avatar = ''
-    } = guia;
+    // Determinar idioma actual
+    const currentLang = getCurrentLanguage();
+    const isEnglish = currentLang === 'en';
+
+    // Valores por defecto si no se proporcionan - usar versiones traducidas
+    const nombre = guia.nombre || 'Nombre y apellidos';
+    const edad = isEnglish && guia.edad_en ? guia.edad_en : (guia.edad || 'Edad');
+    const experiencia = isEnglish && guia.experiencia_en ? guia.experiencia_en : (guia.experiencia || 'Años de experiencia');
+    const experiencias = isEnglish && guia.experiencias_en ? guia.experiencias_en : (guia.experiencias || 'Experiencias');
+    const idiomas = isEnglish && guia.idiomas_en ? guia.idiomas_en : (guia.idiomas || 'Idiomas');
+    const contacto = guia.contacto || '+XX XXX XXX XXX';
+    const redesSociales = guia.redesSociales || ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'];
+    const valoracion = guia.valoracion || 5;
+    const avatar = guia.avatar || '';
 
     // Crear sección de info básica
     const infoGuiaDiv = document.createElement('div');
@@ -852,13 +868,13 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
 
     // Crear párrafos de info adicional
     const parrafoExperiencias = document.createElement('p');
-    parrafoExperiencias.textContent = `Experiencias: ${experiencias}`;
+    parrafoExperiencias.textContent = `${t('dynamic-experience')} ${experiencias}`;
 
     const parrafoIdiomas = document.createElement('p');
-    parrafoIdiomas.textContent = `Idiomas: ${idiomas}`;
+    parrafoIdiomas.textContent = `${t('dynamic-languages')} ${idiomas}`;
 
     const parrafoContacto = document.createElement('p');
-    parrafoContacto.textContent = `Contactos: ${contacto}`;
+    parrafoContacto.textContent = `${t('dynamic-contact')} ${contacto}`;
 
     // Crear redes sociales
     const redesDiv = document.createElement('div');
@@ -873,7 +889,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     // Crear valoración con estrellas
     const valoracionDiv = document.createElement('p');
     const estrellas = '★'.repeat(valoracion) + '☆'.repeat(5 - valoracion);    // Generar estrellas llenas y vacías
-    valoracionDiv.innerHTML = `Valoración: <span class="valoracion-estrellas">${estrellas}</span>`;  //Empleamos el span class para aplicar el estilo de las estrellas
+    valoracionDiv.innerHTML = `${t('dynamic-rating')} <span class="valoracion-estrellas">${estrellas}</span>`;  //Empleamos el span class para aplicar el estilo de las estrellas
 
     // Agregar todos los párrafos e info adicional al div
     infoAdicionalDiv.appendChild(parrafoExperiencias);
@@ -896,10 +912,14 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       viajeSeleccionado.itinerarioDetallado || []
     );
 
-    // Generar condiciones del viaje
-    generarCondiciones(viajeSeleccionado.condiciones || '');
+    // Generar condiciones del viaje - usar versión en inglés si está en inglés
+    const idioma = getCurrentLanguage();
+    const condiciones = idioma === 'en' && viajeSeleccionado.condiciones_en
+      ? viajeSeleccionado.condiciones_en
+      : viajeSeleccionado.condiciones || '';
+    generarCondiciones(condiciones);
 
-    // Generar información del guía
+    // Generar información del guía - pasar idioma para traducciones
     generarInfoGuia(viajeSeleccionado.guia || {});
   }
 
@@ -950,10 +970,15 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     const contenedor = document.querySelector('.contenedor-reseñas');
     contenedor.innerHTML = '';
 
+    const idioma = getCurrentLanguage();
+
     // Mostrar solo las primeras 3 reseñas
     const reseñasIniciales = reseñas.slice(0, 3);  // Obtener las primeras 3 reseñas
     reseñasIniciales.forEach(reseña => {
-      contenedor.appendChild(crearReseña(reseña.nombre, reseña.comentario));
+      const comentario = idioma === 'en' && reseña.comentario_en
+        ? reseña.comentario_en
+        : reseña.comentario;
+      contenedor.appendChild(crearReseña(reseña.nombre, comentario));
     });
   }
 
@@ -962,8 +987,13 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     const modalContenedor = document.querySelector('.modal-contenedor-reseñas');
     modalContenedor.innerHTML = '';
 
+    const idioma = getCurrentLanguage();
+
     reseñas.forEach(reseña => {
-      modalContenedor.appendChild(crearReseña(reseña.nombre, reseña.comentario));
+      const comentario = idioma === 'en' && reseña.comentario_en
+        ? reseña.comentario_en
+        : reseña.comentario;
+      modalContenedor.appendChild(crearReseña(reseña.nombre, comentario));
     });
   }
 
@@ -1567,35 +1597,42 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
 
       // Duración
       document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent =
-        `${viajeSeleccionado.duracion} días`;
+        `${viajeSeleccionado.duracion} ${t('dynamic-days')}`;
 
-      // Tipo de viaje
+      // Tipo de viaje - traducir el tipo
+      const tipoViaje = viajeSeleccionado.tipo;
+      const tiposTraduccion = {
+        'Turístico': t('home-tourist'),
+        'Cultural': t('home-cultural'),
+        'Aventura': t('home-adventure'),
+        'Organizado': t('home-organized')
+      };
       document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent =
-        viajeSeleccionado.tipo;
+        tiposTraduccion[tipoViaje] || tipoViaje;
 
       // Número de acompañantes
       const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
       document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
 
       // Mascotas
-      let textoMascota = 'No';
+      let textoMascota = t('home-pets-no');
       // Si viaja con mascota, si está disponible
       if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
-        textoMascota = `Sí`;
+        textoMascota = t('home-pets-yes');
       }
 
       // Rellenar el campo de mascota
       document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
 
       // Alergias
-      const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
+      const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : t('dynamic-none');
       document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
 
       // Precio final con divisa predeterminada
       const precioBase = viajeSeleccionado.precio;
       const precioAcompañantes = numAcompañantes * precioBase;
       const precioTotal = precioBase + precioAcompañantes;
-      
+
       // Obtener divisa predeterminada
       const divisaPredeterminada = localStorage.getItem('divisaPredeterminada') || 'eur';
       const simbolosDivisas = {
@@ -1613,7 +1650,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         'inr': '₹'
       };
       const simbolo = simbolosDivisas[divisaPredeterminada] || '€';
-      
+
       document.querySelector('.precio-final').textContent = `${precioTotal.toFixed(2)} ${simbolo}`;   // Formatear a 2 decimales
     }
 
@@ -1948,7 +1985,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
         alert('Debes seleccionar un método de pago antes de finalizar la compra');
         return;
       }
-      
+
       // Guardar la reserva en localStorage antes de redirigir
       try {
         const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado')) || null;
@@ -1974,7 +2011,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
       } catch (e) {
         console.error('Error guardando la reserva:', e);
       }
-      
+
       // Redirigir a compra realizada
       window.location.href = 'compra_realizada.html';
     });
@@ -2011,28 +2048,35 @@ if (window.location.pathname.includes("compra_realizada.html")) {
 
         // Duración
         document.querySelectorAll('.info-fila')[1].querySelector('.contenido').textContent =
-          `${viajeSeleccionado.duracion} días`;
+          `${viajeSeleccionado.duracion} ${t('dynamic-days')}`;
 
-        // Tipo de viaje
+        // Tipo de viaje - traducir el tipo
+        const tipoViaje = viajeSeleccionado.tipo;
+        const tiposTraduccion = {
+          'Turístico': t('home-tourist'),
+          'Cultural': t('home-cultural'),
+          'Aventura': t('home-adventure'),
+          'Organizado': t('home-organized')
+        };
         document.querySelectorAll('.info-fila')[2].querySelector('.contenido').textContent =
-          viajeSeleccionado.tipo;
+          tiposTraduccion[tipoViaje] || tipoViaje;
 
         // Número de acompañantes
         const numAcompañantes = datosPaso2 && datosPaso2.acompañantes ? datosPaso2.acompañantes.length : 0;
         document.querySelectorAll('.info-fila')[3].querySelector('.contenido').textContent = numAcompañantes;
 
         // Mascotas
-        let textoMascota = 'No';
+        let textoMascota = t('home-pets-no');
         // Si viaja con mascota, si está disponible
         if (datosPaso2 && datosPaso2.viajaMascota === 'si') {
-          textoMascota = `Sí`;
+          textoMascota = t('home-pets-yes');
         }
 
         // Rellenar el campo de mascota
         document.querySelectorAll('.info-fila')[4].querySelector('.contenido').textContent = textoMascota;
 
         // Alergias
-        const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : 'Ninguna';
+        const alergias = datosPaso2 && datosPaso2.alergias ? datosPaso2.alergias : t('dynamic-none');
         document.querySelectorAll('.info-fila')[5].querySelector('.contenido').textContent = alergias;
 
         // Coste total 
@@ -2130,11 +2174,11 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
     item.addEventListener('click', (e) => {
       e.preventDefault();
       const seccionId = item.dataset.section;
-      
+
       // Actualizar nav items activos
       navItems.forEach(nav => nav.classList.remove('active'));
       item.classList.add('active');
-      
+
       // Mostrar sección correspondiente
       secciones.forEach(seccion => seccion.classList.remove('active'));
       document.getElementById(seccionId).classList.add('active');
@@ -2164,11 +2208,11 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
   function cargarReservas() {
     const reservasContenedor = document.querySelector('.reservas-contenedor');
     const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
-    
+
     // Filtrar reservas del usuario actual
-    const reservasUsuario = reservas.filter(r => 
-      r.usuario === usuarioActual.acceso || 
-      r.usuario === usuarioActual.correo || 
+    const reservasUsuario = reservas.filter(r =>
+      r.usuario === usuarioActual.acceso ||
+      r.usuario === usuarioActual.correo ||
       r.usuarioEmail === usuarioActual.correo
     );
 
@@ -2183,10 +2227,11 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
     reservasUsuario.forEach((reserva, index) => {
       const reservaDiv = document.createElement('div');
       reservaDiv.className = 'reserva-item';
-      
+
       // Obtirner y formatear la fecha de compra
       const fechaCompra = new Date(reserva.fechaCompra);
-      const fechaFormateada = fechaCompra.toLocaleDateString('es-ES', {   // toLocaleDateString para formato local
+      const idioma = getCurrentLanguage() === 'en' ? 'en-US' : 'es-ES';
+      const fechaFormateada = fechaCompra.toLocaleDateString(idioma, {   // toLocaleDateString para formato local
         year: 'numeric',        // Formato de fecha en español
         month: 'long',         // Mes en formato largo
         day: 'numeric'         // Día numérico
@@ -2199,11 +2244,11 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
         </div>
         <div class="reserva-info">
           <h3>${reserva.viaje.titulo || reserva.viaje.destino}</h3>
-          <p><strong>Fecha de compra:</strong> ${fechaFormateada}</p>
-          <p><strong>Duración:</strong> ${reserva.viaje.duracion} días</p>
-          <p><strong>Destino:</strong> ${reserva.viaje.destino}</p>
+          <p><strong>${t('account-purchase-date')}</strong> ${fechaFormateada}</p>
+          <p><strong>${t('pay-duration')}</strong> ${reserva.viaje.duracion} ${t('dynamic-days')}</p>
+          <p><strong>${t('pay-destination')}</strong> ${reserva.viaje.destino}</p>
         </div>
-        <button class="boton-ver-detalles" data-reserva-index="${index}">Ver detalles</button>
+        <button class="boton-ver-detalles" data-reserva-index="${index}">${t('dynamic-view-details')}</button>
       `;
 
       reservasContenedor.appendChild(reservaDiv);
@@ -2240,41 +2285,50 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
       minute: '2-digit'             // Incluir minuto
     });
 
-    let textoMascota = 'No';
+    let textoMascota = t('home-pets-no');
     if (datosPaso2.viajaMascota === 'si') {
-      textoMascota = 'Sí';
+      textoMascota = t('home-pets-yes');
     }
 
-    const alergias = datosPaso2.alergias || 'Ninguna';
+    const alergias = datosPaso2.alergias || t('dynamic-none');
+
+    // Traducir tipo de viaje
+    const tipoViaje = viaje.tipo;
+    const tiposTraduccion = {
+      'Turístico': t('home-tourist'),
+      'Cultural': t('home-cultural'),
+      'Aventura': t('home-adventure'),
+      'Organizado': t('home-organized')
+    };
 
     // Rellenar contenido del modal
     detalleBody.innerHTML = `
       <div class="info-fila">
-        <span class="etiqueta">Destino:</span>
+        <span class="etiqueta">${t('pay-destination')}</span>
         <span class="contenido">${viaje.titulo || viaje.destino}</span>
       </div>
       <div class="info-fila">
-        <span class="etiqueta">Duración:</span>
-        <span class="contenido">${viaje.duracion} días</span>
+        <span class="etiqueta">${t('pay-duration')}</span>
+        <span class="contenido">${viaje.duracion} ${t('dynamic-days')}</span>
       </div>
       <div class="info-fila">
-        <span class="etiqueta">Tipo de viaje:</span>
-        <span class="contenido">${viaje.tipo}</span>
+        <span class="etiqueta">${t('pay-trip-type')}</span>
+        <span class="contenido">${tiposTraduccion[tipoViaje] || tipoViaje}</span>
       </div>
       <div class="info-fila">
-        <span class="etiqueta">Número de acompañantes:</span>
+        <span class="etiqueta">${t('pay-companions')}</span>
         <span class="contenido">${numAcompañantes}</span>
       </div>
       <div class="info-fila">
-        <span class="etiqueta">Mascotas:</span>
+        <span class="etiqueta">${t('pay-pets')}</span>
         <span class="contenido">${textoMascota}</span>
       </div>
       <div class="info-fila">
-        <span class="etiqueta">Alergias:</span>
+        <span class="etiqueta">${t('pay-allergies')}</span>
         <span class="contenido">${alergias}</span>
       </div>
       <div class="info-fila">
-        <span class="etiqueta">Coste total:</span>
+        <span class="etiqueta">${t('complete-total')}</span>
         <span class="contenido coste-total-reserva">${precioTotal.toFixed(2)} €</span>
       </div>
       <div class="info-fila">
@@ -2291,7 +2345,7 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
       'gbp': '£'
     };
     const simbolo = simbolosDivisas[divisaPredeterminada] || '€';
-    
+
     // Actualizar el símbolo en el modal antes de mostrarlo
     setTimeout(() => {
       const costeTotalElemento = detalleBody.querySelector('.coste-total-reserva');
@@ -2342,12 +2396,12 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
     botonImprimirReserva.addEventListener('click', () => {
       const modal = document.getElementById('modal-detalle-reserva');
       const reserva = JSON.parse(modal.dataset.reservaActual);
-      
+
       // Guardar los datos de la reserva en localStorage
       localStorage.setItem('viajeSeleccionado', JSON.stringify(reserva.viaje));
       localStorage.setItem('formularioCompraPaso1', JSON.stringify(reserva.datosPaso1));
       localStorage.setItem('formularioCompraPaso2', JSON.stringify(reserva.datosPaso2));
-      
+
       // Redirigir a compra_realizada.html
       window.location.href = 'compra_realizada.html';
     });
@@ -2366,7 +2420,7 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
 
   // Configuración de divisa predeterminada
   const divisaSelect = document.getElementById('divisa-config');
-  
+
   // Símbolos de divisas
   const simbolosDivisas = {
     'eur': '€',
@@ -2394,10 +2448,10 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
     divisaSelect.addEventListener('change', () => {
       const divisaSeleccionada = divisaSelect.value;
       localStorage.setItem('divisaPredeterminada', divisaSeleccionada);
-      
+
       // Actualizar símbolos en las reservas mostradas
       actualizarSimbolosDivisa(divisaSeleccionada);
-      
+
       alert('Divisa predeterminada actualizada');
     });
   }
@@ -2405,7 +2459,7 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
   // Función para actualizar símbolos de divisa en detalles de reserva
   function actualizarSimbolosDivisa(divisa) {
     const simbolo = simbolosDivisas[divisa] || '€';
-    
+
     // Actualizar en el modal si está abierto
     const modalDetalles = document.querySelectorAll('#detalle-reserva-body .contenido');
     modalDetalles.forEach(elemento => {

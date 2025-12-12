@@ -6,14 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
 <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
 <link rel="stylesheet" href="style/style_registrarse.css" /> <!-- Enlace al archivo externo de estilos CSS -->
+<script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
 <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
 
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -23,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -45,7 +46,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -55,42 +56,48 @@
 
     <main>
         <form class="registro-form">
-            <h1>Crear cuenta</h1>
+            <h1 data-i18n="register-title">Crear cuenta</h1>
             <!-- División para agrupar los datos personales -->
-            <div class="datos-personales">Datos personales</div>
-            <input type="text" name="nombre" placeholder="Nombre" required />
-            <input type="text" name="apellido" placeholder="Apellidos" required />
-            <input type="text" name="email" placeholder="Correo electrónico" required />
-            <input type="text" name="confirmar_email" placeholder="Confirmar correo" required />
+            <div class="datos-personales" data-i18n="register-personal">Datos personales</div>
+            <input type="text" name="nombre" placeholder="Nombre" data-i18n-placeholder="register-name" required />
+            <input type="text" name="apellido" placeholder="Apellidos" data-i18n-placeholder="register-surname"
+                required />
+            <input type="text" name="email" placeholder="Correo electrónico" data-i18n-placeholder="register-email"
+                required />
+            <input type="text" name="confirmar_email" placeholder="Confirmar correo"
+                data-i18n-placeholder="register-confirm-email" required />
 
             <!-- Campo para la fecha de nacimiento -->
-            <div class="fecha-nacimiento">Fecha de nacimiento</div>
+            <div class="fecha-nacimiento" data-i18n="register-birthdate">Fecha de nacimiento</div>
             <input type="date" name="fecha_nacimiento" required>
 
             <!-- División para agrupar los datos de acceso -->
-            <div class="acceso">Acceso</div>
-            <input type="text" name="usuario" placeholder="Usuario" required />
-            <input type="password" name="contraseña" placeholder="Contraseña" required />
+            <div class="acceso" data-i18n="register-access">Acceso</div>
+            <input type="text" name="usuario" placeholder="Usuario" data-i18n-placeholder="register-username"
+                required />
+            <input type="password" name="contraseña" placeholder="Contraseña" data-i18n-placeholder="register-password"
+                required />
 
             <!-- Campo para subir una imagen de perfil -->
-            <div class="subir-imagen">Subir imagen de perfil</div>
+            <div class="subir-imagen" data-i18n="register-upload">Subir imagen de perfil</div>
             <input type="file" name="imagen" required>
 
             <!-- Checkbox para aceptar la política de privacidad -->
             <div class="checkbox-privacidad">
-                <input type="checkbox" required /> Acepto la <a href="#">política de privacidad</a>
+                <input type="checkbox" required /> <span data-i18n="register-privacy">Acepto la</span> <a href="#"
+                    data-i18n="register-privacy-link">política de privacidad</a>
             </div>
 
-            <button type="submit">Guardar datos y acceder</button>
-            <span>*Todos los campos son obligatorios</span>
+            <button type="submit" data-i18n="register-submit">Guardar datos y acceder</button>
+            <span data-i18n="register-required">*Todos los campos son obligatorios</span>
         </form>
     </main>
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="#">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>

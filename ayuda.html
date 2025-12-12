@@ -7,25 +7,26 @@
   <title>Centro de ayuda</title>
   <link rel="stylesheet" href="style/style_home.css">
   <link rel="stylesheet" href="style/style_ayuda.css">
+  <script src="script/translations.js" defer></script>
   <script src="script/script.js" defer></script>
 </head>
 
 <body>
 
   <header>
-    <img src="images/logo.png" alt="Logotipo del sitio">
-    <h1 class="titulo">Mochileros sin fronteras</h1>
+    <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+    <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
     <nav class="nav-menu">
       <ul>
-        <li><a href="home.html">Inicio</a></li>
-        <li><a href="#">Otros rincones</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="mi_cuenta.html">Mi cuenta</a></li>
+        <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+        <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+        <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+        <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
       </ul>
     </nav>
     <div class="botones_header">
-      <button type="button">Iniciar sesión</button>
-      <button type="button">Registrarse</button>
+      <button type="button" data-i18n="btn-login">Iniciar sesión</button>
+      <button type="button" data-i18n="btn-register">Registrarse</button>
     </div>
   </header>
 
@@ -35,8 +36,9 @@
         <button onclick="window.history.back()" aria-label="Volver">←</button>
       </div>
 
-      <h1 class="help-title">Centro de ayuda</h1>
-      <p class="help-description">Encuentra respuestas rápidas a las preguntas más frecuentes o
+      <h1 class="help-title" data-i18n="help-title">Centro de ayuda</h1>
+      <p class="help-description" data-i18n="help-description">Encuentra respuestas rápidas a las preguntas más
+        frecuentes o
         contacta con nuestro equipo.</p>
 
       <div class="help-page-search">
@@ -46,96 +48,115 @@
       <div class="help-page">
         <aside class="help-sidebar">
           <nav>
-            <button class="help-tab active" data-tab="general">General</button>
-            <button class="help-tab" data-tab="reservas">Reservas</button>
-            <button class="help-tab" data-tab="pagos">Pagos</button>
-            <button class="help-tab" data-tab="cancelaciones">Cancelaciones</button>
-            <button class="help-tab" data-tab="mi-cuenta">Mi cuenta</button>
-            <button class="help-tab" data-tab="grupos">Viajes en grupo</button>
+            <button class="help-tab active" data-tab="general" data-i18n="help-general">General</button>
+            <button class="help-tab" data-tab="reservas" data-i18n="help-reservations">Reservas</button>
+            <button class="help-tab" data-tab="pagos" data-i18n="help-payments">Pagos</button>
+            <button class="help-tab" data-tab="cancelaciones" data-i18n="help-cancellations">Cancelaciones</button>
+            <button class="help-tab" data-tab="mi-cuenta" data-i18n="help-account">Mi cuenta</button>
+            <button class="help-tab" data-tab="grupos" data-i18n="help-groups">Viajes en grupo</button>
           </nav>
           <div class="help-contact">
-            <h3>¿Necesitas más ayuda?</h3>
-            <p>Escríbenos a: <a href="mailto:soporte@mochileros.com">soporte@mochileros.com</a></p>
+            <h3 data-i18n="help-need-more">¿Necesitas más ayuda?</h3>
+            <p><span data-i18n="help-email">Escríbenos a:</span> <a
+                href="mailto:soporte@mochileros.com">soporte@mochileros.com</a></p>
             <p>Teléfono: +34 900 123 456 (Lun-Vie 9:00-18:00)</p>
           </div>
         </aside>
 
         <div class="help-content">
           <section id="general" class="help-panel">
-            <h2>Preguntas generales</h2>
+            <h2 data-i18n="help-general-title">Preguntas generales</h2>
             <div class="faq">
-              <button class="faq-question">¿Cómo puedo modificar una reserva?<span class="chev">▾</span></button>
-              <div class="faq-answer">Para modificar una reserva entra en "Mi cuenta → Mis reservas" y selecciona la
+              <button class="faq-question"><span data-i18n="faq-modify">¿Cómo puedo modificar una reserva?</span><span
+                  class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-modify-answer">Para modificar una reserva entra en "Mi cuenta → Mis
+                reservas" y selecciona la
                 reserva que quieras modificar. Dependiendo de la tarifa, algunos cambios generan recargo.</div>
             </div>
 
             <div class="faq">
-              <button class="faq-question">¿Cómo puedo contactar al guía?<span class="chev">▾</span></button>
-              <div class="faq-answer">El contacto del guía aparece en los detalles del viaje y en el correo de
+              <button class="faq-question"><span data-i18n="faq-contact-guide">¿Cómo puedo contactar al
+                  guía?</span><span class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-contact-guide-answer">El contacto del guía aparece en los detalles
+                del viaje y en el correo de
                 confirmación. Si no lo ves, solicita el contacto desde la reserva o escribe a soporte.</div>
             </div>
 
             <div class="faq">
-              <button class="faq-question">¿Dónde puedo ver las valoraciones?<span class="chev">▾</span></button>
-              <div class="faq-answer">Las valoraciones aparecen en la ficha del viaje y en la sección de reseñas.
+              <button class="faq-question"><span data-i18n="faq-ratings">¿Dónde puedo ver las valoraciones?</span><span
+                  class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-ratings-answer">Las valoraciones aparecen en la ficha del viaje y
+                en la sección de reseñas.
                 También incluimos comentarios de viajeros anteriores en cada viaje.</div>
             </div>
           </section>
 
           <section id="reservas" class="help-panel" hidden>
-            <h2>Reservas</h2>
+            <h2 data-i18n="help-reservations-title">Reservas</h2>
             <div class="faq">
-              <button class="faq-question">¿Puedo cambiar la fecha de mi reserva?<span class="chev">▾</span></button>
-              <div class="faq-answer">Depende de la tarifa y disponibilidad. Revisa las condiciones o contacta con
+              <button class="faq-question"><span data-i18n="faq-change-date">¿Puedo cambiar la fecha de mi
+                  reserva?</span><span class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-change-date-answer">Depende de la tarifa y disponibilidad. Revisa
+                las condiciones o contacta con
                 soporte con tu número de reserva.</div>
             </div>
 
             <div class="faq">
-              <button class="faq-question">¿Puedo añadir acompañantes después de reservar?<span
-                  class="chev">▾</span></button>
-              <div class="faq-answer">Sí, en la mayoría de los casos puedes añadir acompañantes desde "Mi cuenta" si hay
+              <button class="faq-question"><span data-i18n="faq-add-companions">¿Puedo añadir acompañantes después de
+                  reservar?</span><span class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-add-companions-answer">Sí, en la mayoría de los casos puedes añadir
+                acompañantes desde "Mi cuenta" si hay
                 plazas disponibles. En algunos casos será necesario pagar la diferencia de precio.</div>
             </div>
           </section>
 
           <section id="pagos" class="help-panel" hidden>
-            <h2>Pagos</h2>
+            <h2 data-i18n="help-payments-title">Pagos</h2>
             <div class="faq">
-              <button class="faq-question">¿Qué métodos de pago aceptan?<span class="chev">▾</span></button>
-              <div class="faq-answer">Aceptamos tarjetas de débito/crédito y transferencia bancaria. Para pagos en
+              <button class="faq-question"><span data-i18n="faq-payment-methods">¿Qué métodos de pago
+                  aceptan?</span><span class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-payment-methods-answer">Aceptamos tarjetas de débito/crédito y
+                transferencia bancaria. Para pagos en
                 plazos consulta las condiciones al reservar.</div>
             </div>
 
             <div class="faq">
-              <button class="faq-question">¿Puedo solicitar factura?<span class="chev">▾</span></button>
-              <div class="faq-answer">Puedes solicitar factura contactando a soporte indicando tus datos fiscales y el
+              <button class="faq-question"><span data-i18n="faq-invoice">¿Puedo solicitar factura?</span><span
+                  class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-invoice-answer">Puedes solicitar factura contactando a soporte
+                indicando tus datos fiscales y el
                 número de reserva.</div>
             </div>
           </section>
 
           <section id="cancelaciones" class="help-panel" hidden>
-            <h2>Cancelaciones y reembolsos</h2>
+            <h2 data-i18n="help-cancel-title">Cancelaciones y reembolsos</h2>
             <div class="faq">
-              <button class="faq-question">¿Cómo solicito un reembolso?<span class="chev">▾</span></button>
-              <div class="faq-answer">Solicita el reembolso desde la reserva o contacta con soporte indicando el motivo
+              <button class="faq-question"><span data-i18n="faq-refund">¿Cómo solicito un reembolso?</span><span
+                  class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-refund-answer">Solicita el reembolso desde la reserva o contacta
+                con soporte indicando el motivo
                 y el número de reserva. El reembolso se tramita según la política de cancelación del viaje.</div>
             </div>
           </section>
 
           <section id="mi-cuenta" class="help-panel" hidden>
-            <h2>Mi cuenta</h2>
+            <h2 data-i18n="help-account-title">Mi cuenta</h2>
             <div class="faq">
-              <button class="faq-question">¿Cómo cambio mi contraseña?<span class="chev">▾</span></button>
-              <div class="faq-answer">Accede a "Mi cuenta → Datos personales → Cambiar contraseña". Si has olvidado tu
+              <button class="faq-question"><span data-i18n="faq-change-password">¿Cómo cambio mi contraseña?</span><span
+                  class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-change-password-answer">Accede a "Mi cuenta → Datos personales →
+                Cambiar contraseña". Si has olvidado tu
                 contraseña, utiliza la opción "Olvidé mi contraseña" en el inicio de sesión.</div>
             </div>
           </section>
 
           <section id="grupos" class="help-panel" hidden>
-            <h2>Viajes en grupo</h2>
+            <h2 data-i18n="help-groups-title">Viajes en grupo</h2>
             <div class="faq">
-              <button class="faq-question">¿Cómo organizo un viaje para un grupo?<span class="chev">▾</span></button>
-              <div class="faq-answer">Contacta con nuestro equipo comercial en <a
+              <button class="faq-question"><span data-i18n="faq-organize-group">¿Cómo organizo un viaje para un
+                  grupo?</span><span class="chev">▾</span></button>
+              <div class="faq-answer" data-i18n="faq-organize-group-answer">Contacta con nuestro equipo comercial en <a
                   href="mailto:grupos@mochileros.com">grupos@mochileros.com</a> indicando el tamaño del grupo, fechas y
                 preferencias. Te mandaremos una propuesta a medida.</div>
             </div>
@@ -147,9 +168,9 @@
 
   <footer>
     <nav>
-      <a href="ayuda.html">Ayuda</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="sobre_nosotros.html">Sobre nosotros</a>
+      <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+      <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+      <a href="sobre_nosotros.html" data-i18n="footer-about">Sobre nosotros</a>
     </nav>
   </footer>
 

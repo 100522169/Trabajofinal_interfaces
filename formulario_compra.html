@@ -6,14 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
 <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
 <link rel="stylesheet" href="style/style_formulario_compra.css" /> <!-- Enlace al archivo externo de estilos CSS -->
+<script src="script/translations.js" defer></script> <!-- Sistema de traducciones -->
 <script src="script/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
 </head>
 
 <body>
 
     <header>
-        <img src="images/logo.png" alt="Logotipo del sitio">
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
@@ -23,15 +24,15 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
-                
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
                 <li class="nav-utils">
                     <div class="logo_idioma_movil">
                         <img src="images/logo.png" alt="Logotipo del sitio">
-                        <label for="idioma_movil" class="desplegable_idioma">Idioma</label>
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
                         <select id="idioma_movil">
                             <option>ES</option>
                             <option>EN</option>
@@ -45,7 +46,7 @@
         Las agrupamos para poder alinearlas todas juntas-->
         <div class="logo_idioma">
             <!--Dentro de esta clase metemos el desplegable de idioma-->
-            <label for="idioma" class="desplegable_idioma">Idioma</label>
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
             <select id="idioma">
                 <option>ES</option>
                 <option>EN</option>
@@ -59,36 +60,37 @@
 
     <main>
         <!-- Título principal del formulario de compra -->
-        <h1 class="titulo-formulario">Formulario de compra</h1>
+        <h1 class="titulo-formulario" data-i18n="form-title">Formulario de compra</h1>
 
         <!-- Contenedor de las etapas del formulario -->
         <section class="contenedor-etapas">
             <div class="etapa">
                 <!-- Etapa 1: Datos personales -->
                 <div class="circulo-color">✔</div>
-                <div class="descripcion-etapa">1ºDatos personales</div>
+                <div class="descripcion-etapa" data-i18n="form-step1">1ºDatos personales</div>
             </div>
             <div class="etapa">
                 <!-- Etapa 2: Acompañantes/Mascotas/Alergias -->
                 <div class="circulo"></div>
-                <div class="descripcion-etapa">2ºAcompañantes/Mascotas/Alergias</div>
+                <div class="descripcion-etapa" data-i18n="form-step2">2ºAcompañantes/Mascotas/Alergias</div>
             </div>
             <div class="etapa">
                 <!-- Etapa 3: Confirmación/Pago -->
                 <div class="circulo"></div>
-                <div class="descripcion-etapa">3ºConfirmación/Pago</div>
+                <div class="descripcion-etapa" data-i18n="form-step3">3ºConfirmación/Pago</div>
             </div>
         </section>
 
         <!-- Formulario de pasos -->
         <section class="formulario-pasos">
-            <h2 class="titulo-pasos">Paso 1: Datos personales</h2>
+            <h2 class="titulo-pasos" data-i18n="form-step1-title">Paso 1: Datos personales</h2>
             <form>
                 <!-- Campos del formulario primera fila -->
                 <div class="campo-formulario">
                     <label class="etiqueta">
                         <!-- Nombre y apellidos -->
-                        <input type="text" placeholder="Nombre y apellidos" required>
+                        <input type="text" placeholder="Nombre y apellidos" data-i18n-placeholder="form-fullname"
+                            required>
                         <span class="icon">👤</span>
                     </label>
                     <label class="etiqueta">
@@ -98,7 +100,7 @@
                     </label>
                     <label class="etiqueta">
                         <!-- Teléfono -->
-                        <input type="tel" placeholder="Teléfono" required>
+                        <input type="tel" placeholder="Teléfono" data-i18n-placeholder="form-phone" required>
                         <span class="icon">📞</span>
                     </label>
                 </div>
@@ -106,24 +108,25 @@
                 <div class="campo-formulario">
                     <label class="etiqueta">
                         <!-- Nacionalidad -->
-                        <input type="text" placeholder="Nacionalidad" required>
+                        <input type="text" placeholder="Nacionalidad" data-i18n-placeholder="form-nationality" required>
                         <span class="icon">🆔</span>
                     </label>
                     <label class="etiqueta">
                         <!-- Correo electrónico -->
-                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="email" placeholder="Correo electrónico" data-i18n-placeholder="form-email"
+                            required>
                         <span class="icon">📧</span>
                     </label>
                     <label class="etiqueta">
                         <!-- Dirección -->
-                        <input type="text" placeholder="Dirección" required>
+                        <input type="text" placeholder="Dirección" data-i18n-placeholder="form-address" required>
                         <span class="icon">🏠</span>
                     </label>
                 </div>
                 <!-- Contenedor del botón para avanzar al siguiente paso -->
                 <div class="contenedor-boton-siguiente-paso">
                     <!-- Botón siguiente paso -->
-                    <button type="submit" class="boton-siguiente-paso">Siguiente paso</button>
+                    <button type="submit" class="boton-siguiente-paso" data-i18n="form-next">Siguiente paso</button>
                 </div>
             </form>
         </section>
@@ -131,9 +134,9 @@
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="#">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 </body>

@@ -7,6 +7,7 @@
     <title>Contacto - Mochileros sin fronteras</title>
     <link rel="stylesheet" href="style/style_home.css">
     <link rel="stylesheet" href="style/style_contacto.css">
+    <script src="script/translations.js" defer></script>
     <script src="script/script.js" defer></script>
 </head>
 
@@ -14,7 +15,7 @@
 
     <header>
         <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
-        <h1 class="titulo">Mochileros sin fronteras</h1>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
             <span class="bar"></span>
@@ -23,15 +24,17 @@
         </label>
         <nav class="nav-menu">
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="#">Otros rincones</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
             </ul>
         </nav>
         <div class="botones_header">
-            <button type="button" onclick="window.location.href='inicio_sesion.html'">Iniciar sesión</button>
-            <button type="button" onclick="window.location.href='registrarse.html'">Registrarse</button>
+            <button type="button" onclick="window.location.href='inicio_sesion.html'" data-i18n="btn-login">Iniciar
+                sesión</button>
+            <button type="button" onclick="window.location.href='registrarse.html'"
+                data-i18n="btn-register">Registrarse</button>
         </div>
     </header>
 
@@ -41,51 +44,52 @@
                 <button onclick="window.history.back()" aria-label="Volver">←</button>
             </div>
 
-            <h1 class="contacto-titulo">Contáctanos</h1>
+            <h1 class="contacto-titulo" data-i18n="contact-title">Contáctanos</h1>
 
             <div class="contacto-contenido">
                 <!-- Formulario de contacto -->
                 <form class="contacto-form" id="form-contacto">
                     <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
+                        <label for="nombre" data-i18n="contact-fullname">Nombre completo</label>
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
+                        <label for="email" data-i18n="contact-email">Correo electrónico</label>
                         <input type="email" id="email" name="email" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="motivo">Motivo de consulta</label>
+                        <label for="motivo" data-i18n="contact-reason">Motivo de consulta</label>
                         <select id="motivo" name="motivo" required>
-                            <option value="" disabled selected>Opciones como reservas, pagos, sugerencias, etc</option>
-                            <option value="reservas">Reservas</option>
-                            <option value="pagos">Pagos</option>
-                            <option value="cancelaciones">Cancelaciones</option>
-                            <option value="sugerencias">Sugerencias</option>
-                            <option value="quejas">Quejas</option>
-                            <option value="otros">Otros</option>
+                            <option value="" disabled selected data-i18n="contact-reason-placeholder">Opciones como
+                                reservas, pagos, sugerencias, etc</option>
+                            <option value="reservas" data-i18n="contact-reservations">Reservas</option>
+                            <option value="pagos" data-i18n="contact-payments">Pagos</option>
+                            <option value="cancelaciones" data-i18n="contact-cancellations">Cancelaciones</option>
+                            <option value="sugerencias" data-i18n="contact-suggestions">Sugerencias</option>
+                            <option value="quejas" data-i18n="contact-complaints">Quejas</option>
+                            <option value="otros" data-i18n="contact-other">Otros</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
+                        <label for="mensaje" data-i18n="contact-message">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                    <button type="submit" class="btn-enviar" data-i18n="contact-send">Enviar mensaje</button>
                 </form>
 
                 <!-- Información de contacto -->
                 <aside class="contacto-info">
-                    <h2>Otros métodos de contacto</h2>
+                    <h2 data-i18n="contact-other-methods">Otros métodos de contacto</h2>
 
-                    <p><strong>Teléfono:</strong> +34 XXX XXX XXX</p>
+                    <p><strong data-i18n="contact-phone">Teléfono:</strong> +34 XXX XXX XXX</p>
                     <p><strong>Email:</strong> mochileros@sinfrontera.es</p>
 
                     <div class="contacto-direccion">
-                        <p><strong>Dirección física:</strong></p>
+                        <p><strong data-i18n="contact-address">Dirección física:</strong></p>
                         <div class="mapa-container">
                             <iframe
                                 src="https://www.openstreetmap.org/export/embed.html?bbox=-3.7074%2C40.4165%2C-3.6974%2C40.4200&layer=mapnik&marker=40.4183%2C-3.7024"
@@ -100,9 +104,9 @@
 
     <footer>
         <nav>
-            <a href="ayuda.html">Ayuda</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="sobre_nosotros.html">Sobre nosotros</a>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="sobre_nosotros.html" data-i18n="footer-about">Sobre nosotros</a>
         </nav>
     </footer>
 
