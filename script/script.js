@@ -184,6 +184,9 @@ function compartirViaje(viaje) {
 
 // Definir los viajes disponibles
 const viajes = [
+
+  // === Europa ===
+
   {
     destino: 'España', continente: 'europa', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/viajes/Europa/España/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla', titulo_en: 'Madrid, Barcelona and Seville',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
@@ -248,6 +251,9 @@ const viajes = [
       { nombre: 'Carlos López', avatar: 'images/avatar-carlos-lopez.jpg', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.', comentario_en: 'Very well organized, although the price could be a bit more affordable.' }
     ]
   },
+
+  // === Sudamérica ===
+
   {
     destino: 'Perú', continente: 'sudamerica', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/viajes/Sudamerica/Peru/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
     dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
@@ -284,6 +290,9 @@ const viajes = [
     guia: { nombre: 'Pedro Mamani', edad: '35 años', edad_en: '35 years old', experiencia: '11 años de experiencia', experiencia_en: '11 years of experience', experiencias: 'Guía oficial Machu Picchu', experiencias_en: 'Official Machu Picchu guide', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/pedro-mamani.jpg' },
     reseñas: []
   },
+
+  // === Asia ===
+
   {
     destino: 'Japón', continente: 'asia', duracion: 5, precio: 500, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Asia/Japon/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
@@ -386,7 +395,9 @@ const viajes = [
     guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
     reseñas: [{ nombre: 'Carlos V.', avatar: 'images/avatar-carlos-v.jpg', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
   },
+
   // ============ NORTEAMERICA ============
+
   {
     destino: 'Estados Unidos', continente: 'norteamerica', duracion: 7, precio: 1100, tipo: 'Turístico', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Norte America/new_yorl.jpeg', titulo: 'New York y la Costa Este', titulo_en: 'New York and the East Coast',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'halal'],
@@ -409,7 +420,9 @@ const viajes = [
     guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Sergio.png' },
     reseñas: [{ nombre: 'Roberto S.', avatar: 'images/avatar-roberto.jpg', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
   },
+
   // ============ AFRICA ============
+
   {
     destino: 'Kenia', continente: 'africa', duracion: 8, precio: 2000, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Africa/safari kenia.jpg', titulo: 'Safari en Kenia: La Gran Migración', titulo_en: 'Kenya Safari: The Great Migration',
     dietasDisponibles: ['vegano', 'vegetariano', 'halal'],
@@ -432,9 +445,11 @@ const viajes = [
     guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/guia.jpeg' },
     reseñas: [{ nombre: 'Lucía R.', avatar: 'images/avatar-lucia.jpg', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
   },
+
   // ============ OCEANIA ============
+
   {
-    destino: 'Australia', continente: 'oceania', duracion: 7, precio: 2500, tipo: 'Turístico', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Oceania/Sidney 2.jpg', titulo: 'Australia: Sydney y la Gran Barrera', titulo_en: 'Australia: Sydney and the Great Barrier Reef',
+    destino: 'Australia', continente: 'oceania', duracion: 7, precio: 2500, tipo: 'Turístico', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Oceania/Sidney 2.jpg', titulo: 'Australia: Sydney y la Gran Barrera', titulo_en: 'Australia: Sydney and the Great Barrier Reef',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/viajes/Oceania/Sidney 2.jpg', 'images/viajes/Oceania/Sidney 3.jpg', 'images/viajes/Oceania/Gran barrera_2.webp'],
     itinerario: ['Llegada a Sydney', 'Ópera y Harbour', 'Blue Mountains', 'Vuelo a Cairns', 'Gran Barrera', 'Uluru', 'Melbourne y regreso'],
