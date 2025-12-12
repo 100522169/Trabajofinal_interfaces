@@ -35,6 +35,153 @@ micuentaLinks.forEach(link => {
   }
 });
 
+// ============ FUNCIONES GLOBALES: GUARDAR Y COMPARTIR ============
+
+/**
+ * Muestra una notificación toast en la esquina inferior de la pantalla
+ * @param {string} mensaje - Texto a mostrar
+ * @param {string} tipo - 'success', 'error' o 'info'
+ */
+function mostrarToast(mensaje, tipo = 'success') {
+  // Crear el contenedor de toast si no existe
+  let toastContainer = document.getElementById('toast-container');
+  if (!toastContainer) {
+    toastContainer = document.createElement('div');
+    toastContainer.id = 'toast-container';
+    toastContainer.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    `;
+    document.body.appendChild(toastContainer);
+  }
+
+  // Crear el toast
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${tipo}`;
+
+  const colores = {
+    success: { bg: '#4caf50', icon: '✓' },
+    error: { bg: '#f44336', icon: '✕' },
+    info: { bg: '#2196f3', icon: 'ℹ' }
+  };
+
+  const config = colores[tipo] || colores.info;
+
+  toast.style.cssText = `
+    background: ${config.bg};
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+    min-width: 200px;
+  `;
+
+  toast.innerHTML = `<span>${config.icon}</span> ${mensaje}`;
+  toastContainer.appendChild(toast);
+
+  // Añadir animación CSS si no existe
+  if (!document.getElementById('toast-styles')) {
+    const style = document.createElement('style');
+    style.id = 'toast-styles';
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // Remover después de 3 segundos
+  setTimeout(() => {
+    toast.style.animation = 'slideOut 0.3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+/**
+ * Guarda o quita un viaje de la lista de guardados (toggle)
+ * @param {Object} viaje - Objeto del viaje a guardar
+ * @returns {boolean} - true si se guardó, false si se quitó
+ */
+function guardarViaje(viaje) {
+  let guardados = JSON.parse(localStorage.getItem('viajesGuardados')) || [];
+  const yaGuardado = guardados.some(v => v.titulo === viaje.titulo && v.destino === viaje.destino);
+  const idioma = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'es';
+
+  if (!yaGuardado) {
+    guardados.push(viaje);
+    localStorage.setItem('viajesGuardados', JSON.stringify(guardados));
+    mostrarToast(idioma === 'en' ? 'Trip saved ✓' : 'Viaje guardado ✓', 'success');
+    return true;
+  } else {
+    guardados = guardados.filter(v => !(v.titulo === viaje.titulo && v.destino === viaje.destino));
+    localStorage.setItem('viajesGuardados', JSON.stringify(guardados));
+    mostrarToast(idioma === 'en' ? 'Trip removed from saved' : 'Viaje quitado de guardados', 'info');
+    return false;
+  }
+}
+
+/**
+ * Verifica si un viaje está guardado
+ * @param {Object} viaje - Objeto del viaje
+ * @returns {boolean}
+ */
+function estaGuardado(viaje) {
+  const guardados = JSON.parse(localStorage.getItem('viajesGuardados')) || [];
+  return guardados.some(v => v.titulo === viaje.titulo && v.destino === viaje.destino);
+}
+
+/**
+ * Comparte un viaje usando Web Share API o copiando al portapapeles
+ * @param {Object} viaje - Objeto del viaje a compartir
+ */
+function compartirViaje(viaje) {
+  const idioma = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'es';
+  const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
+  const url = window.location.origin + '/detalles_viaje.html';
+  const texto = idioma === 'en'
+    ? `Check out this trip: ${titulo} - ${viaje.destino}`
+    : `Mira este viaje: ${titulo} - ${viaje.destino}`;
+
+  // Guardar el viaje en localStorage para que detalles_viaje pueda cargarlo
+  localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+
+  if (navigator.share) {
+    // Web Share API (principalmente móvil)
+    navigator.share({
+      title: titulo,
+      text: texto,
+      url: url
+    }).catch(() => {
+      // Usuario canceló o error, no hacer nada
+    });
+  } else {
+    // Fallback: copiar al portapapeles
+    const textoCompleto = `${texto}\n${url}`;
+    navigator.clipboard.writeText(textoCompleto).then(() => {
+      mostrarToast(idioma === 'en' ? 'Link copied to clipboard ✓' : 'Enlace copiado al portapapeles ✓', 'success');
+    }).catch(() => {
+      mostrarToast(idioma === 'en' ? 'Could not copy link' : 'No se pudo copiar el enlace', 'error');
+    });
+  }
+}
+
 // Definir los viajes disponibles
 const viajes = [
   {
@@ -210,7 +357,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada al resort y acomodación.', 'Día de actividades acuáticas y snorkel.', 'Excursión a islas locales y cultura.', 'Relax y salida.'],
     condiciones: 'Incluye alojamiento en resort y desayunos.',
     condiciones_en: 'Includes resort accommodation and breakfast.',
-    guia: { nombre: 'Ahmed Ali', edad: '30 años', edad_en: '30 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía local en islas', experiencias_en: 'Local island guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-ahmed.jpg' },
+    guia: { nombre: 'Ahmed Ali', edad: '30 años', edad_en: '30 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía local en islas', experiencias_en: 'Local island guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Alex.png' },
     reseñas: [{ nombre: 'Laura G.', avatar: 'images/avatar-laura-g.jpg', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
   },
   {
@@ -221,7 +368,7 @@ const viajes = [
     itinerarioDetallado: ['Excursión a las pasarelas de las cataratas.', 'Paseo en lancha por la garganta del diablo.', 'Ruta por la selva con guía especializado.'],
     condiciones: 'Incluye entradas y transporte.',
     condiciones_en: 'Includes entrance fees and transport.',
-    guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-diego.jpg' },
+    guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
     reseñas: [{ nombre: 'Carlos V.', avatar: 'images/avatar-carlos-v.jpg', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
   },
   // ============ NORTEAMERICA ============
@@ -233,7 +380,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a NYC. Paseo por Times Square y Broadway.', 'Ferry a la Estatua de la Libertad y Ellis Island.', 'Recorrido por Central Park y 5th Avenue.', 'Visita al MET y al MoMA.', 'Excursión a Washington DC y monumentos.', 'Tour por Filadelfia histórica.', 'Día libre para compras.'],
     condiciones: 'Incluye traslados y entradas principales.',
     condiciones_en: 'Includes transfers and main entrances.',
-    guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Marcos.png' },
     reseñas: [{ nombre: 'Ana M.', avatar: 'images/avatar-ana-m.jpg', comentario: 'Nueva York es increíble, muy bien organizado.', comentario_en: 'New York is amazing, very well organized.' }]
   },
   {
@@ -244,7 +391,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Las Vegas y noche libre.', 'Ruta al Gran Cañón, atardecer épico.', 'Monument Valley en Jeep con Navajos.', 'Antelope Canyon y Horseshoe Bend.', 'Trekking en Zion National Park.', 'Amanecer en Bryce Canyon.', 'Travesía por Death Valley.', 'Yosemite: El Capitán y cascadas.', 'Llegada a San Francisco, Golden Gate.'],
     condiciones: 'Nivel físico medio-alto. Incluye camping y alojamiento.',
     condiciones_en: 'Medium-high physical level. Includes camping and accommodation.',
-    guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Sergio.png' },
     reseñas: [{ nombre: 'Roberto S.', avatar: 'images/avatar-roberto.jpg', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
   },
   // ============ AFRICA ============
@@ -256,7 +403,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Nairobi, visita al centro de elefantes.', 'Safari en Masai Mara, leones y leopardos.', 'La Gran Migración de ñus.', 'Flamencos en Lago Nakuru.', 'Elefantes con Kilimanjaro de fondo en Amboseli.', 'Safari en Tsavo, rinocerontes.', 'Visita a aldea Masai.', 'Regreso a Nairobi.'],
     condiciones: 'Todo incluido. Alojamiento en lodges y campamentos.',
     condiciones_en: 'All inclusive. Lodges and camp accommodation.',
-    guia: { nombre: 'Joseph Kimani', edad: '38 años', edad_en: '38 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de safari certificado', experiencias_en: 'Certified safari guide', idiomas: 'Inglés, Suajili', idiomas_en: 'English, Swahili', contacto: '+254 700 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'Joseph Kimani', edad: '38 años', edad_en: '38 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de safari certificado', experiencias_en: 'Certified safari guide', idiomas: 'Inglés, Suajili', idiomas_en: 'English, Swahili', contacto: '+254 700 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Jesus.png' },
     reseñas: [{ nombre: 'Elena P.', avatar: 'images/avatar-elena.jpg', comentario: 'Ver los Big Five fue un sueño cumplido.', comentario_en: 'Seeing the Big Five was a dream come true.' }]
   },
   {
@@ -267,7 +414,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Marrakech, Djemaa el Fna.', 'Cruce de las montañas del Atlas, Kasbah Ait Ben Haddou.', 'Noche en el desierto, paseo en camello al atardecer.', 'Amanecer en las dunas de Erg Chebbi, ruta a Fez.', 'Fez y su medina laberíntica.', 'Chefchaouen, la perla azul. Regreso.'],
     condiciones: 'Incluye riads tradicionales y campamento en desierto.',
     condiciones_en: 'Includes traditional riads and desert camp.',
-    guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/guia.jpeg' },
     reseñas: [{ nombre: 'Lucía R.', avatar: 'images/avatar-lucia.jpg', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
   },
   // ============ OCEANIA ============
@@ -279,7 +426,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Sydney, paseo por Circular Quay.', 'Tour por la Ópera de Sydney y Harbour Bridge.', 'Excursión a Blue Mountains, senderos y cascadas.', 'Vuelo a Cairns, tarde en la selva tropical.', 'Snorkel en la Gran Barrera de Coral, día completo.', 'Vuelo al Outback, atardecer en Uluru.', 'Melbourne, Great Ocean Road y regreso.'],
     condiciones: 'Vuelos internos incluidos. Nivel físico bajo-medio.',
     condiciones_en: 'Domestic flights included. Low-medium physical level.',
-    guia: { nombre: 'Emma Thompson', edad: '32 años', edad_en: '32 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía turística certificada', experiencias_en: 'Certified tour guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+61 400 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'Emma Thompson', edad: '32 años', edad_en: '32 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía turística certificada', experiencias_en: 'Certified tour guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+61 400 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/personas.jpeg' },
     reseñas: [{ nombre: 'Pablo G.', avatar: 'images/avatar-pablo.jpg', comentario: 'Australia superó todas mis expectativas.', comentario_en: 'Australia exceeded all my expectations.' }]
   },
   {
@@ -290,7 +437,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Auckland, Sky Tower y paseo por el puerto.', 'Visita a Hobbiton, set de El Señor de los Anillos.', 'Géiseres y cultura maorí en Rotorua.', 'Wellington, Weta Workshop y ferry a Isla Sur.', 'Aventura en Queenstown: búngee o jet boat.', 'Crucero espectacular por Milford Sound.', 'Trekking en glaciares Fox y Franz Josef. Regreso.'],
     condiciones: 'Incluye ferry entre islas y actividades de aventura.',
     condiciones_en: 'Includes inter-island ferry and adventure activities.',
-    guia: { nombre: 'James Wilson', edad: '40 años', edad_en: '40 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en Tierra Media', experiencias_en: 'Middle Earth expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+64 21 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'James Wilson', edad: '40 años', edad_en: '40 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en Tierra Media', experiencias_en: 'Middle Earth expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+64 21 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Alex.png' },
     reseñas: [{ nombre: 'Marta L.', avatar: 'images/avatar-marta.jpg', comentario: 'Paisajes de película, literalmente.', comentario_en: 'Movie-like landscapes, literally.' }]
   }
 ];
@@ -705,14 +852,14 @@ if (window.location.pathname.includes("listado_viajes.html")) {
   if (viajesFiltradosActuales) {
     localStorage.removeItem('viajesFiltradosActuales');
   }
-  
+
   // Excluir viajes que aparecen en el home (viajes en grupo: Patagonia, Maldivas, Iguazú)
   const indicesViajesGrupo = [7, 8, 9];
   const viajesFiltradosSinGrupo = viajesFiltrados.filter((viaje, index) => {
     const indiceEnArrayPrincipal = viajes.findIndex(v => v.titulo === viaje.titulo);
     return !indicesViajesGrupo.includes(indiceEnArrayPrincipal);
   });
-  
+
   const columnaListado = document.querySelector('.columna-listado-viajes');
   const ratings = { 5: '★★★★★', 4: '★★★★☆', 3: '★★★☆☆' };
   let currentFiltrados = [...viajesFiltradosSinGrupo];     // Copia de los viajes filtrados inicialmente
@@ -738,6 +885,8 @@ if (window.location.pathname.includes("listado_viajes.html")) {
   // Función para renderizar los viajes
   function renderViajes(filtrados) {
     columnaListado.innerHTML = '';
+    const idioma = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'es';
+
     filtrados.forEach((viaje, index) => {
       const div = document.createElement('div');   // Crear un nuevo div para cada viaje
       div.className = 'viaje';
@@ -748,6 +897,9 @@ if (window.location.pathname.includes("listado_viajes.html")) {
       div.setAttribute('data-mascotas', viaje.mascotas);
       div.setAttribute('data-valoracion', viaje.valoracion);
       div.setAttribute('data-index', index);  // Guardar el índice del viaje
+
+      const guardado = estaGuardado(viaje);
+
       div.innerHTML = `                           
         <img src="${viaje.imagen}" alt="${viaje.titulo}">
         <div class="info-fila">
@@ -762,8 +914,37 @@ if (window.location.pathname.includes("listado_viajes.html")) {
           <span>${t('dynamic-pets')} ${viaje.mascotas === 'si' ? t('dynamic-pets-yes') : t('dynamic-pets-no')}</span>
           <span class="valoracion-estrellas">${ratings[viaje.valoracion]}</span>
         </div>
-        <button class="ver-detalles">${t('dynamic-view-details')}</button>
+        <div class="viaje-acciones">
+          <button class="btn-guardar-viaje ${guardado ? 'guardado' : ''}" title="${idioma === 'en' ? 'Save trip' : 'Guardar viaje'}">
+            <span>${guardado ? '❤️' : '🤍'}</span> ${guardado ? (idioma === 'en' ? 'Saved' : 'Guardado') : (idioma === 'en' ? 'Save' : 'Guardar')}
+          </button>
+          <button class="btn-compartir-viaje" title="${idioma === 'en' ? 'Share' : 'Compartir'}">
+            <span>↗</span> ${idioma === 'en' ? 'Share' : 'Compartir'}
+          </button>
+          <button class="ver-detalles">${t('dynamic-view-details')}</button>
+        </div>
       `;
+
+      // Event listener para el botón guardar
+      const btnGuardar = div.querySelector('.btn-guardar-viaje');
+      btnGuardar.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const ahora = guardarViaje(viaje);
+        if (ahora) {
+          btnGuardar.innerHTML = `<span>❤️</span> ${idioma === 'en' ? 'Saved' : 'Guardado'}`;
+          btnGuardar.classList.add('guardado');
+        } else {
+          btnGuardar.innerHTML = `<span>🤍</span> ${idioma === 'en' ? 'Save' : 'Guardar'}`;
+          btnGuardar.classList.remove('guardado');
+        }
+      });
+
+      // Event listener para el botón compartir
+      const btnCompartir = div.querySelector('.btn-compartir-viaje');
+      btnCompartir.addEventListener('click', (e) => {
+        e.stopPropagation();
+        compartirViaje(viaje);
+      });
 
       // Agregar evento al botón "Ver detalles"
       const botonVerDetalles = div.querySelector('.ver-detalles');
@@ -799,7 +980,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
 
     // Partir siempre de TODOS los viajes disponibles, no solo de los pre-filtrados
     let filtrados = [...viajes];
-    
+
     // Excluir viajes en grupo (índices 7, 8, 9: Patagonia, Maldivas, Iguazú)
     const indicesViajesGrupo = [7, 8, 9];
     filtrados = filtrados.filter((viaje, index) => !indicesViajesGrupo.includes(index));
@@ -1111,7 +1292,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     // Crear el avatar
     const avatar = document.createElement('div');
     avatar.className = 'reseña-avatar';
-    
+
     // Si hay URL de avatar, agregar la imagen
     if (avatarUrl) {
       const img = document.createElement('img');
@@ -2642,9 +2823,65 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
     });
   }
 
+  // Función para cargar viajes guardados
+  function cargarViajesGuardados() {
+    const contenedor = document.querySelector('.viajes-guardados-contenedor');
+    const mensajeSinGuardados = document.querySelector('.mensaje-sin-guardados');
+    const guardados = JSON.parse(localStorage.getItem('viajesGuardados')) || [];
+    const idioma = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'es';
+
+    if (guardados.length === 0) {
+      if (contenedor) contenedor.innerHTML = '';
+      if (mensajeSinGuardados) mensajeSinGuardados.style.display = 'block';
+      return;
+    }
+
+    if (mensajeSinGuardados) mensajeSinGuardados.style.display = 'none';
+    if (!contenedor) return;
+
+    contenedor.innerHTML = '';
+
+    guardados.forEach((viaje, index) => {
+      const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
+
+      const tarjeta = document.createElement('div');
+      tarjeta.className = 'viaje-guardado-item';
+      tarjeta.innerHTML = `
+        <div class="viaje-guardado-imagen">
+          <img src="${viaje.imagen}" alt="${titulo}">
+        </div>
+        <div class="viaje-guardado-info">
+          <h3>${titulo}</h3>
+          <p class="viaje-destino">${viaje.destino}</p>
+          <p class="viaje-detalles">${viaje.duracion} ${idioma === 'en' ? 'days' : 'días'} · ${viaje.precio}€</p>
+        </div>
+        <div class="viaje-guardado-acciones">
+          <button class="btn-ver-viaje">${idioma === 'en' ? 'View details' : 'Ver detalles'}</button>
+          <button class="btn-quitar-guardado">${idioma === 'en' ? 'Remove' : 'Quitar'}</button>
+        </div>
+      `;
+
+      // Evento ver detalles
+      tarjeta.querySelector('.btn-ver-viaje').addEventListener('click', () => {
+        localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+        localStorage.removeItem('viajeOrigen');
+        window.location.href = 'detalles_viaje.html';
+      });
+
+      // Evento quitar de guardados
+      tarjeta.querySelector('.btn-quitar-guardado').addEventListener('click', () => {
+        guardarViaje(viaje); // Toggle: lo quita
+        cargarViajesGuardados(); // Recargar la lista
+      });
+
+      contenedor.appendChild(tarjeta);
+    });
+  }
+
   // Cargar datos al iniciar
   cargarDatosPersonales();
   cargarReservas();
+  cargarViajesGuardados();
 }
 
 
