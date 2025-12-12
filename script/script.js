@@ -38,9 +38,9 @@ micuentaLinks.forEach(link => {
 // Definir los viajes disponibles
 const viajes = [
   {
-    destino: 'España', continente: 'europa', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla', titulo_en: 'Madrid, Barcelona and Seville',
+    destino: 'España', continente: 'europa', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/viajes/Europa/España/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla', titulo_en: 'Madrid, Barcelona and Seville',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
-    galeria: ['images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg', 'images/madrid.jpg'],
+    galeria: ['images/viajes/Europa/España/madrid.jpg', 'images/viajes/Europa/España/sagrada_familia.jpg', 'images/viajes/Europa/España/real_alcazar.jpg', 'images/viajes/Europa/España/parque_guell.jpg'],
     itinerario: ['Madrid: Prado y Retiro', 'Barcelona: Sagrada Familia', 'Barrio Gótico y Rambla', 'Sevilla: Giralda', 'Real Alcázar', 'Plaza de España', 'Día libre'],
     itinerarioDetallado: [
       'Llegada a Madrid. Visita guiada al Museo del Prado con las obras de Velázquez y Goya. Por la tarde, paseo relajante por el Parque del Retiro.',
@@ -53,16 +53,16 @@ const viajes = [
     ],
     condiciones: 'Incluye transporte, seguro y desayunos. Mascotas permitidas. Nivel físico: bajo-medio.',
     condiciones_en: 'Includes transport, insurance and breakfast. Pets allowed. Physical level: low-medium.',
-    guia: { nombre: 'María González', edad: '32 años', edad_en: '32 years old', experiencia: '8 años de experiencia', experiencia_en: '8 years of experience', experiencias: 'Especialista en cultura española', experiencias_en: 'Spanish culture specialist', idiomas: 'Español, Inglés, Francés', idiomas_en: 'Spanish, English, French', contacto: '+34 612 345 678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'María González', edad: '32 años', edad_en: '32 years old', experiencia: '8 años de experiencia', experiencia_en: '8 years of experience', experiencias: 'Especialista en cultura española', experiencias_en: 'Spanish culture specialist', idiomas: 'Español, Inglés, Francés', idiomas_en: 'Spanish, English, French', contacto: '+34 612 345 678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/maria_gonzalez.jpeg' },
     reseñas: [
-      { nombre: 'Sergio Aladro', comentario: 'La mejor experiencia de mi vida, muy recomendado.', comentario_en: 'The best experience of my life, highly recommended.' },
-      { nombre: 'Marcos Rodríguez', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido', comentario_en: 'The food on the trip left something to be desired but the guide is one of the best I have had' }
+      { nombre: 'Sergio Aladro', avatar: 'images/avatares/Sergio.png', comentario: 'La mejor experiencia de mi vida, muy recomendado.', comentario_en: 'The best experience of my life, highly recommended.' },
+      { nombre: 'Marcos Rodríguez', avatar: 'images/avatares/Marcos.png', comentario: 'La comida en el viaje daba que desear pero el guía es uno de los mejores que he tenido', comentario_en: 'The food on the trip left something to be desired but the guide is one of the best I have had' }
     ]
   },
   {
-    destino: 'España', continente: 'europa', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/pirineos.jpg', titulo: 'Aventura en los Pirineos', titulo_en: 'Adventure in the Pyrenees',
+    destino: 'España', continente: 'europa', duracion: 4, precio: 800, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Europa/España/pirineos.jpg', titulo: 'Aventura en los Pirineos', titulo_en: 'Adventure in the Pyrenees',
     dietasDisponibles: ['vegano', 'sin-gluten', 'sin-frutos-secos'],
-    galeria: ['images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg', 'images/pirineos.jpg'],
+    galeria: ['images/viajes/Europa/España/pirineos.jpg', 'images/viajes/Europa/España/pirineos2.jpg', 'images/viajes/Europa/España/pirineos3.jpeg', 'images/viajes/Europa/España/rio_vero.jpeg'],
     itinerario: ['Trekking inicial', 'Ascenso a picos', 'Barranquismo y ferratas', 'Ruta final'],
     itinerarioDetallado: [
       'Llegada al valle de Ordesa. Trekking de aclimatación de 3 horas por senderos de dificultad media. Briefing de seguridad y revisión de equipo.',
@@ -72,15 +72,16 @@ const viajes = [
     ],
     condiciones: 'Alta intensidad física. Incluye equipo de montaña y guía profesional. No mascotas.',
     condiciones_en: 'High physical intensity. Includes mountain equipment and professional guide. No pets.',
-    guia: { nombre: 'Carlos Fernández', edad: '38 años', edad_en: '38 years old', experiencia: '15 años de experiencia', experiencia_en: '15 years of experience', experiencias: 'Guía de alta montaña certificado', experiencias_en: 'Certified high mountain guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+34 678 234 567', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-carlos.jpg' },
+    guia: { nombre: 'Carlos Fernández', edad: '38 años', edad_en: '38 years old', experiencia: '15 años de experiencia', experiencia_en: '15 years of experience', experiencias: 'Guía de alta montaña certificado', experiencias_en: 'Certified high mountain guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+34 678 234 567', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/carlos-fernandez.jpg' },
     reseñas: [
-      { nombre: 'Ana Martínez', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.', comentario_en: 'Incredible adventure, spectacular landscapes and a great group.' }
+      { nombre: 'Jesus Galán', avatar: 'images/avatares/Jesus.png', comentario: 'Increíble aventura, paisajes espectaculares y un grupo genial.', comentario_en: 'Incredible adventure, spectacular landscapes and a great group.' },
+      { nombre: 'Alex Raboaca', avatar: 'images/avatares/Alex.png', comentario: 'El guía fue muy profesional y atento, me sentí muy seguro en todo momento.', comentario_en: 'The guide was very professional and attentive, I felt safe at all times.' }
     ]
   },
   {
-    destino: 'España', continente: 'europa', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/camino_santiago.jpeg', titulo: 'Camino de Santiago', titulo_en: 'Way of Saint James',
+    destino: 'España', continente: 'europa', duracion: 10, precio: 500, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Europa/España/camino_santiago.jpeg', titulo: 'Camino de Santiago', titulo_en: 'Way of Saint James',
     dietasDisponibles: ['vegetariano', 'sin-lactosa', 'sin-huevo', 'sin-frutos-secos', 'halal'],
-    galeria: ['images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg', 'images/camino_santiago.jpeg'],
+    galeria: ['images/viajes/Europa/España/camino_santiago.jpeg', 'images/viajes/Europa/España/catedral-santiago.jpeg', 'images/viajes/Europa/España/palas_de_rei.jpg', 'images/viajes/Europa/España/arzua.jpg'],
     itinerario: ['Sarria', 'Portomarín (20km)', 'Paisajes gallegos', 'Pueblos históricos', 'Palas de Rei', 'Arzúa', 'Etapa 7-8', 'Santiago de Compostela', 'Ceremonia'],
     itinerarioDetallado: [
       'Inicio del Camino desde Sarria. Recepción de credencial del peregrino. Primera etapa de 22 km con bosques y aldeas gallegas.',
@@ -95,15 +96,15 @@ const viajes = [
     ],
     condiciones: 'Incluye albergues, transporte de mochila y credencial. Buena condición física.',
     condiciones_en: 'Includes hostels, backpack transport and credential. Good physical condition.',
-    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', edad_en: '45 years old', experiencia: '12 años de experiencia', experiencia_en: '12 years of experience', experiencias: 'Más de 20 Caminos completados', experiencias_en: 'Over 20 Caminos completed', idiomas: 'Español, Inglés, Portugués', idiomas_en: 'Spanish, English, Portuguese', contacto: '+34 687 456 789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-santiago.jpg' },
+    guia: { nombre: 'Santiago Rodríguez', edad: '45 años', edad_en: '45 years old', experiencia: '12 años de experiencia', experiencia_en: '12 years of experience', experiencias: 'Más de 20 Caminos completados', experiencias_en: 'Over 20 Caminos completed', idiomas: 'Español, Inglés, Portugués', idiomas_en: 'Spanish, English, Portuguese', contacto: '+34 687 456 789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Santiago-rodriguez.jpg' },
     reseñas: [
-      { nombre: 'Carlos López', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.', comentario_en: 'Very well organized, although the price could be a bit more affordable.' }
+      { nombre: 'Carlos López', avatar: 'images/avatar-carlos-lopez.jpg', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.', comentario_en: 'Very well organized, although the price could be a bit more affordable.' }
     ]
   },
   {
-    destino: 'Perú', continente: 'sudamerica', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
+    destino: 'Perú', continente: 'sudamerica', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/viajes/Sudamerica/Peru/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
     dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
-    galeria: ['images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg', 'images/peru_lima.jpg'],
+    galeria: ['images/viajes/Sudamerica/Peru/peru_lima.jpg', 'images/viajes/Sudamerica/Peru/Museo-Larco.jpg', 'images/viajes/Sudamerica/Peru/pachacamac.jpg', 'images/viajes/Sudamerica/Peru/playa-miraflores.jpeg'],
     itinerario: ['City tour en Lima', 'Centro histórico y museos', 'Pachacámac', 'Playas de Miraflores'],
     itinerarioDetallado: [
       'Recorrido por Lima moderna: Miraflores y San Isidro. Parque del Amor y Malecón. Introducción a la gastronomía peruana con ceviche.',
@@ -113,15 +114,15 @@ const viajes = [
     ],
     condiciones: 'Todo incluido. Mascotas pequeñas permitidas. Nivel físico: bajo.',
     condiciones_en: 'All inclusive. Small pets allowed. Physical level: low.',
-    guia: { nombre: 'Miguel Quispe', edad: '40 años', edad_en: '40 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Experto en gastronomía peruana', experiencias_en: 'Peruvian gastronomy expert', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatar-miguel.jpg' },
+    guia: { nombre: 'Miguel Quispe', edad: '40 años', edad_en: '40 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Experto en gastronomía peruana', experiencias_en: 'Peruvian gastronomy expert', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatares/miguel-quispe.jpg' },
     reseñas: [
-      { nombre: 'Laura García', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.', comentario_en: 'Unique experience, the guide was very professional and attentive at all times.' }
+      { nombre: 'Laura García', avatar: 'images/avatar-laura-garcia.jpg', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.', comentario_en: 'Unique experience, the guide was very professional and attentive at all times.' }
     ]
   },
   {
-    destino: 'Perú', continente: 'sudamerica', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/machu_pichu.jpg', titulo: 'Machu Picchu Mágico', titulo_en: 'Magical Machu Picchu',
+    destino: 'Perú', continente: 'sudamerica', duracion: 6, precio: 600, tipo: 'Aventura', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Sudamerica/Peru/machu_pichu.jpg', titulo: 'Machu Picchu Mágico', titulo_en: 'Magical Machu Picchu',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
-    galeria: ['images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg', 'images/machu_pichu.jpg'],
+    galeria: ['images/viajes/Sudamerica/Peru/machu_pichu.jpg', 'images/viajes/Sudamerica/Peru/cusco.jpg', 'images/viajes/Sudamerica/Peru/Ollantaytambo.jpg', 'images/viajes/Sudamerica/Peru/machu_pichu2.jpg'],
     itinerario: ['Cusco: aclimatación', 'Valle Sagrado', 'Camino Inca día 1', 'Camino Inca día 2', 'Machu Picchu al amanecer', 'Retorno a Cusco'],
     itinerarioDetallado: [
       'Llegada a Cusco (3.400m). Día de aclimatación suave. Visita a la Plaza de Armas, Catedral y Qoricancha. Té de coca para la altura.',
@@ -133,13 +134,13 @@ const viajes = [
     ],
     condiciones: 'Entrada incluida, equipo de camping. Muy buena condición física requerida.',
     condiciones_en: 'Entrance included, camping equipment. Very good physical condition required.',
-    guia: { nombre: 'Pedro Mamani', edad: '35 años', edad_en: '35 years old', experiencia: '11 años de experiencia', experiencia_en: '11 years of experience', experiencias: 'Guía oficial Machu Picchu', experiencias_en: 'Official Machu Picchu guide', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-pedro.jpg' },
+    guia: { nombre: 'Pedro Mamani', edad: '35 años', edad_en: '35 years old', experiencia: '11 años de experiencia', experiencia_en: '11 years of experience', experiencias: 'Guía oficial Machu Picchu', experiencias_en: 'Official Machu Picchu guide', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/pedro-mamani.jpg' },
     reseñas: []
   },
   {
-    destino: 'Japón', continente: 'asia', duracion: 5, precio: 900, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
+    destino: 'Japón', continente: 'asia', duracion: 5, precio: 400, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Asia/Japon/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
-    galeria: ['images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg', 'images/kioto.jpg'],
+    galeria: ['images/viajes/Asia/Japon/kioto.jpg', 'images/viajes/Asia/Japon/Kinkaku-ji.jpeg', 'images/viajes/Asia/Japon/Nara.jpg', 'images/viajes/Asia/Japon/Gion.jpg'],
     itinerario: ['Ceremonia del té', 'Templo Dorado y Fushimi Inari', 'Distrito Gion y kimono', 'Excursión a Nara', 'Día libre'],
     itinerarioDetallado: [
       'Llegada a Kioto. Ceremonia tradicional del té en casa de té histórica. Aprende la filosofía del Chado y disfruta matcha auténtico.',
@@ -150,13 +151,13 @@ const viajes = [
     ],
     condiciones: 'Incluye entradas, ceremonia del té y kimono. Mascotas pequeñas permitidas.',
     condiciones_en: 'Includes entrance fees, tea ceremony and kimono. Small pets allowed.',
-    guia: { nombre: 'Yuki Tanaka', edad: '30 años', edad_en: '30 years old', experiencia: '7 años de experiencia', experiencia_en: '7 years of experience', experiencias: 'Experta en ceremonias tradicionales', experiencias_en: 'Expert in traditional ceremonies', idiomas: 'Japonés, Inglés, Español', idiomas_en: 'Japanese, English, Spanish', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-yuki.jpg' },
+    guia: { nombre: 'Yuki Tanaka', edad: '30 años', edad_en: '30 years old', experiencia: '7 años de experiencia', experiencia_en: '7 years of experience', experiencias: 'Experta en ceremonias tradicionales', experiencias_en: 'Expert in traditional ceremonies', idiomas: 'Japonés, Inglés, Español', idiomas_en: 'Japanese, English, Spanish', contacto: '+81 90 1234 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/yuki-tanaka.jpg' },
     reseñas: []
   },
   {
-    destino: 'Japón', continente: 'asia', duracion: 15, precio: 400, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/japon.jpg', titulo: 'Japón Completo', titulo_en: 'Complete Japan',
+    destino: 'Japón', continente: 'asia', duracion: 15, precio: 1000, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Asia/Japon/japon.jpg', titulo: 'Japón Completo', titulo_en: 'Complete Japan',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-pescado', 'sin-gluten', 'halal'],
-    galeria: ['images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg', 'images/japon.jpg'],
+    galeria: ['images/viajes/Asia/Japon/japon.jpg', 'images/viajes/Asia/Japon/shibuya.jpg', 'images/viajes/Asia/Japon/hiroshima.jpg', 'images/viajes/Asia/Japon/arashiyama.jpg', 'images/viajes/Asia/Japon/miyajima.jpg', 'images/viajes/Asia/Japon/monte-fuji.jpg'],
     itinerario: ['Tokio: Shibuya', 'Asakusa y Akihabara', 'Monte Fuji', 'Kioto: templos', 'Arashiyama', 'Osaka: castillo', 'Nara', 'Hiroshima', 'Miyajima', 'Vuelta a Tokio', 'TeamLab', 'Harajuku', 'Compras', 'Tsukiji', 'Despedida'],
     itinerarioDetallado: [
       'Llegada a Tokio. Cruce de Shibuya, el más transitado del mundo. Torre Hachiko. Exploración nocturna de Shinjuku y sus neones.',
@@ -177,12 +178,12 @@ const viajes = [
     ],
     condiciones: 'JR Pass incluido. Nivel físico medio. Largas caminatas diarias.',
     condiciones_en: 'JR Pass included. Medium physical level. Long daily walks.',
-    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', edad_en: '42 years old', experiencia: '16 años de experiencia', experiencia_en: '16 years of experience', experiencias: 'Especialista en tours completos', experiencias_en: 'Specialist in complete tours', idiomas: 'Japonés, Inglés, Mandarín', idiomas_en: 'Japanese, English, Mandarin', contacto: '+81 80 9876 5432', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
+    guia: { nombre: 'Kenji Yamamoto', edad: '42 años', edad_en: '42 years old', experiencia: '16 años de experiencia', experiencia_en: '16 years of experience', experiencias: 'Especialista en tours completos', experiencias_en: 'Specialist in complete tours', idiomas: 'Japonés, Inglés, Mandarín', idiomas_en: 'Japanese, English, Mandarin', contacto: '+81 80 9876 5432', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/kenji-yamamoto.jpg' },
     reseñas: []
   },
 
   {
-    destino: 'Argentina', continente: 'sudamerica', duracion: 10, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
+    destino: 'Argentina', continente: 'sudamerica', duracion: 4, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/patagonia.jpg', 'images/patagonia.jpg', 'images/patagonia.jpg'],
     itinerario: ['El Calafate', 'Glaciar Perito Moreno', 'Ushuaia', 'Trekking en Torres del Paine'],
@@ -190,10 +191,10 @@ const viajes = [
     condiciones: 'Incluye traslados y alojamiento. Nivel físico medio-alto.',
     condiciones_en: 'Includes transfers and accommodation. Medium-high physical level.',
     guia: { nombre: 'Laura Pérez', edad: '36 años', edad_en: '36 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía en Patagonia', experiencias_en: 'Patagonia guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+54 9 11 2345 6789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-laura.jpg' },
-    reseñas: [{ nombre: 'María R.', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
+    reseñas: [{ nombre: 'María R.', avatar: 'images/avatar-maria.jpg', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
   },
   {
-    destino: 'Maldivas', continente: 'asia', duracion: 7, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
+    destino: 'Maldivas', continente: 'asia', duracion: 3, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
     dietasDisponibles: ['vegano', 'vegetariano'],
     galeria: ['images/maldivas.jpg', 'images/maldivas.jpg', 'images/maldivas.jpg'],
     itinerario: ['Resort y actividades acuáticas', 'Snorkel y buceo', 'Excursión a islas cercanas'],
@@ -201,10 +202,10 @@ const viajes = [
     condiciones: 'Incluye alojamiento en resort y desayunos.',
     condiciones_en: 'Includes resort accommodation and breakfast.',
     guia: { nombre: 'Ahmed Ali', edad: '30 años', edad_en: '30 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía local en islas', experiencias_en: 'Local island guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatar-ahmed.jpg' },
-    reseñas: [{ nombre: 'Laura G.', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
+    reseñas: [{ nombre: 'Laura G.', avatar: 'images/avatar-laura-g.jpg', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
   },
   {
-    destino: 'Argentina', continente: 'sudamerica', duracion: 6, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
+    destino: 'Argentina', continente: 'sudamerica', duracion: 3, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
     dietasDisponibles: ['vegetariano', 'sin-gluten'],
     galeria: ['images/cataratas_iguazu.jpg', 'images/cataratas_iguazu.jpg'],
     itinerario: ['Visita a las cataratas', 'Recorrido por la selva', 'Excursiones en lancha'],
@@ -212,7 +213,7 @@ const viajes = [
     condiciones: 'Incluye entradas y transporte.',
     condiciones_en: 'Includes entrance fees and transport.',
     guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatar-diego.jpg' },
-    reseñas: [{ nombre: 'Carlos V.', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
+    reseñas: [{ nombre: 'Carlos V.', avatar: 'images/avatar-carlos-v.jpg', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
   },
   // ============ NORTEAMERICA ============
   {
@@ -224,7 +225,7 @@ const viajes = [
     condiciones: 'Incluye traslados y entradas principales.',
     condiciones_en: 'Includes transfers and main entrances.',
     guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
-    reseñas: [{ nombre: 'Ana M.', comentario: 'Nueva York es increíble, muy bien organizado.', comentario_en: 'New York is amazing, very well organized.' }]
+    reseñas: [{ nombre: 'Ana M.', avatar: 'images/avatar-ana-m.jpg', comentario: 'Nueva York es increíble, muy bien organizado.', comentario_en: 'New York is amazing, very well organized.' }]
   },
   {
     destino: 'Estados Unidos', continente: 'norteamerica', duracion: 9, precio: 1400, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Norte America/cañon del colorado_2.jpg', titulo: 'Gran Cañón y Parques Nacionales', titulo_en: 'Grand Canyon and National Parks',
@@ -235,7 +236,7 @@ const viajes = [
     condiciones: 'Nivel físico medio-alto. Incluye camping y alojamiento.',
     condiciones_en: 'Medium-high physical level. Includes camping and accommodation.',
     guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
-    reseñas: [{ nombre: 'Roberto S.', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
+    reseñas: [{ nombre: 'Roberto S.', avatar: 'images/avatar-roberto.jpg', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
   },
   // ============ AFRICA ============
   {
@@ -247,7 +248,7 @@ const viajes = [
     condiciones: 'Todo incluido. Alojamiento en lodges y campamentos.',
     condiciones_en: 'All inclusive. Lodges and camp accommodation.',
     guia: { nombre: 'Joseph Kimani', edad: '38 años', edad_en: '38 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de safari certificado', experiencias_en: 'Certified safari guide', idiomas: 'Inglés, Suajili', idiomas_en: 'English, Swahili', contacto: '+254 700 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
-    reseñas: [{ nombre: 'Elena P.', comentario: 'Ver los Big Five fue un sueño cumplido.', comentario_en: 'Seeing the Big Five was a dream come true.' }]
+    reseñas: [{ nombre: 'Elena P.', avatar: 'images/avatar-elena.jpg', comentario: 'Ver los Big Five fue un sueño cumplido.', comentario_en: 'Seeing the Big Five was a dream come true.' }]
   },
   {
     destino: 'Marruecos', continente: 'africa', duracion: 6, precio: 800, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Africa/marruecos 1.jpg', titulo: 'Marruecos: De Marrakech al Desierto', titulo_en: 'Morocco: From Marrakech to the Desert',
@@ -258,7 +259,7 @@ const viajes = [
     condiciones: 'Incluye riads tradicionales y campamento en desierto.',
     condiciones_en: 'Includes traditional riads and desert camp.',
     guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/pirineos.jpg' },
-    reseñas: [{ nombre: 'Lucía R.', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
+    reseñas: [{ nombre: 'Lucía R.', avatar: 'images/avatar-lucia.jpg', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
   },
   // ============ OCEANIA ============
   {
@@ -270,7 +271,7 @@ const viajes = [
     condiciones: 'Vuelos internos incluidos. Nivel físico bajo-medio.',
     condiciones_en: 'Domestic flights included. Low-medium physical level.',
     guia: { nombre: 'Emma Thompson', edad: '32 años', edad_en: '32 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía turística certificada', experiencias_en: 'Certified tour guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+61 400 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
-    reseñas: [{ nombre: 'Pablo G.', comentario: 'Australia superó todas mis expectativas.', comentario_en: 'Australia exceeded all my expectations.' }]
+    reseñas: [{ nombre: 'Pablo G.', avatar: 'images/avatar-pablo.jpg', comentario: 'Australia superó todas mis expectativas.', comentario_en: 'Australia exceeded all my expectations.' }]
   },
   {
     destino: 'Nueva Zelanda', continente: 'oceania', duracion: 7, precio: 2200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Oceania/Nueva_Zelanda_1.jpeg', titulo: 'Nueva Zelanda: Tierra Media', titulo_en: 'New Zealand: Middle Earth',
@@ -281,7 +282,7 @@ const viajes = [
     condiciones: 'Incluye ferry entre islas y actividades de aventura.',
     condiciones_en: 'Includes inter-island ferry and adventure activities.',
     guia: { nombre: 'James Wilson', edad: '40 años', edad_en: '40 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en Tierra Media', experiencias_en: 'Middle Earth expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+64 21 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/pirineos.jpg' },
-    reseñas: [{ nombre: 'Marta L.', comentario: 'Paisajes de película, literalmente.', comentario_en: 'Movie-like landscapes, literally.' }]
+    reseñas: [{ nombre: 'Marta L.', avatar: 'images/avatar-marta.jpg', comentario: 'Paisajes de película, literalmente.', comentario_en: 'Movie-like landscapes, literally.' }]
   }
 ];
 
@@ -695,9 +696,17 @@ if (window.location.pathname.includes("listado_viajes.html")) {
   if (viajesFiltradosActuales) {
     localStorage.removeItem('viajesFiltradosActuales');
   }
+  
+  // Excluir viajes que aparecen en el home (viajes en grupo: Patagonia, Maldivas, Iguazú)
+  const indicesViajesGrupo = [7, 8, 9];
+  const viajesFiltradosSinGrupo = viajesFiltrados.filter((viaje, index) => {
+    const indiceEnArrayPrincipal = viajes.findIndex(v => v.titulo === viaje.titulo);
+    return !indicesViajesGrupo.includes(indiceEnArrayPrincipal);
+  });
+  
   const columnaListado = document.querySelector('.columna-listado-viajes');
   const ratings = { 5: '★★★★★', 4: '★★★★☆', 3: '★★★☆☆' };
-  let currentFiltrados = [...viajesFiltrados];     // Copia de los viajes filtrados inicialmente
+  let currentFiltrados = [...viajesFiltradosSinGrupo];     // Copia de los viajes filtrados inicialmente
 
   // Obtener divisa predeterminada
   const divisaPredeterminada = localStorage.getItem('divisaPredeterminada') || 'eur';
@@ -781,6 +790,10 @@ if (window.location.pathname.includes("listado_viajes.html")) {
 
     // Partir siempre de TODOS los viajes disponibles, no solo de los pre-filtrados
     let filtrados = [...viajes];
+    
+    // Excluir viajes en grupo (índices 7, 8, 9: Patagonia, Maldivas, Iguazú)
+    const indicesViajesGrupo = [7, 8, 9];
+    filtrados = filtrados.filter((viaje, index) => !indicesViajesGrupo.includes(index));
 
     if (destino && destino !== '') filtrados = filtrados.filter(v => v.destino === destino);   //Si se ha seleccionado un destino y es diferente de cadena vacía, entonces filtrar por destino
     if (duracion && duracion !== '') {
@@ -1081,7 +1094,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
   let reseñasViaje = obtenerReseñas(viajeSeleccionado);
 
   // Función para crear una reseña
-  function crearReseña(nombre, comentario) {
+  function crearReseña(nombre, comentario, avatarUrl = null) {
     // Crear el contenedor de la reseña
     const reseñaDiv = document.createElement('div');
     reseñaDiv.className = 'reseña';
@@ -1089,6 +1102,14 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
     // Crear el avatar
     const avatar = document.createElement('div');
     avatar.className = 'reseña-avatar';
+    
+    // Si hay URL de avatar, agregar la imagen
+    if (avatarUrl) {
+      const img = document.createElement('img');
+      img.src = avatarUrl;
+      img.alt = nombre;
+      avatar.appendChild(img);
+    }
 
     // Crear el comentario
     const comentarioDiv = document.createElement('div');
@@ -1118,7 +1139,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       const comentario = idioma === 'en' && reseña.comentario_en
         ? reseña.comentario_en
         : reseña.comentario;
-      contenedor.appendChild(crearReseña(reseña.nombre, comentario));
+      contenedor.appendChild(crearReseña(reseña.nombre, comentario, reseña.avatar));
     });
   }
 
@@ -1133,7 +1154,7 @@ if (window.location.pathname.includes("detalles_viaje.html")) {
       const comentario = idioma === 'en' && reseña.comentario_en
         ? reseña.comentario_en
         : reseña.comentario;
-      modalContenedor.appendChild(crearReseña(reseña.nombre, comentario));
+      modalContenedor.appendChild(crearReseña(reseña.nombre, comentario, reseña.avatar));
     });
   }
 
