@@ -148,12 +148,12 @@
                         </div>
                     `;
 
-                    // Event listener para el botón guardar
+                    // Evento para guardar viaje en favoritos
                     const btnGuardar = tarjeta.querySelector('.btn-guardar');
                     btnGuardar.addEventListener('click', function (e) {
                         e.stopPropagation();
                         const ahora = guardarViaje(viaje);
-                        // Actualizar el icono y texto
+                        // Actualizar icono y texto del botón según el estado
                         if (ahora) {
                             this.innerHTML = `<span>❤️</span> ${idioma === 'en' ? 'Saved' : 'Guardado'}`;
                             this.classList.add('guardado');
@@ -163,14 +163,14 @@
                         }
                     });
 
-                    // Event listener para el botón compartir
+                    // Evento para compartir viaje
                     const btnCompartir = tarjeta.querySelector('.btn-compartir');
                     btnCompartir.addEventListener('click', function (e) {
                         e.stopPropagation();
                         compartirViaje(viaje);
                     });
 
-                    // Click en la tarjeta para ir a detalles
+                    // Evento para ver detalles del viaje
                     tarjeta.addEventListener('click', function (e) {
                         if (!e.target.closest('button')) {
                             localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));

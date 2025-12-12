@@ -38,27 +38,34 @@
         </div>
     </header>
 
+    <!-- Contenedor principal de la página de contacto -->
     <main class="contenedor-principal">
         <section class="contacto-wrapper">
+            <!-- Botón para volver atrás -->
             <div class="columna-boton-atras">
                 <button onclick="window.history.back()" aria-label="Volver">←</button>
             </div>
 
+            <!-- Título de la página -->
             <h1 class="contacto-titulo" data-i18n="contact-title">Contáctanos</h1>
 
+            <!-- Layout de dos columnas: formulario e info -->
             <div class="contacto-contenido">
                 <!-- Formulario de contacto -->
                 <form class="contacto-form" id="form-contacto">
+                    <!-- Campo nombre completo -->
                     <div class="form-group">
                         <label for="nombre" data-i18n="contact-fullname">Nombre completo</label>
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
 
+                    <!-- Campo email -->
                     <div class="form-group">
                         <label for="email" data-i18n="contact-email">Correo electrónico</label>
                         <input type="email" id="email" name="email" required>
                     </div>
 
+                    <!-- Selector de motivo de consulta -->
                     <div class="form-group">
                         <label for="motivo" data-i18n="contact-reason">Motivo de consulta</label>
                         <select id="motivo" name="motivo" required>
@@ -73,21 +80,24 @@
                         </select>
                     </div>
 
+                    <!-- Campo de mensaje -->
                     <div class="form-group">
                         <label for="mensaje" data-i18n="contact-message">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
                     </div>
 
+                    <!-- Botón de envío -->
                     <button type="submit" class="btn-enviar" data-i18n="contact-send">Enviar mensaje</button>
                 </form>
 
-                <!-- Información de contacto -->
+                <!-- Información de contacto alternativa -->
                 <aside class="contacto-info">
                     <h2 data-i18n="contact-other-methods">Otros métodos de contacto</h2>
 
                     <p><strong data-i18n="contact-phone">Teléfono:</strong> +34 XXX XXX XXX</p>
                     <p><strong>Email:</strong> mochileros@sinfrontera.es</p>
 
+                    <!-- Mapa de ubicación -->
                     <div class="contacto-direccion">
                         <p><strong data-i18n="contact-address">Dirección física:</strong></p>
                         <div class="mapa-container">

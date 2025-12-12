@@ -30,22 +30,28 @@
     </div>
   </header>
 
+  <!-- Contenedor principal de la página de ayuda -->
   <main class="contenedor-principal">
     <section class="help-section">
+      <!-- Botón para volver atrás -->
       <div class="columna-boton-atras">
         <button onclick="window.history.back()" aria-label="Volver">←</button>
       </div>
 
+      <!-- Título y descripción de la página -->
       <h1 class="help-title" data-i18n="help-title">Centro de ayuda</h1>
       <p class="help-description" data-i18n="help-description">Encuentra respuestas rápidas a las preguntas más
         frecuentes o
         contacta con nuestro equipo.</p>
 
+      <!-- Buscador de preguntas frecuentes -->
       <div class="help-page-search">
         <input id="help-search" type="search" placeholder="Buscar petición" aria-label="Buscar petición">
       </div>
 
+      <!-- Layout de dos columnas: sidebar y contenido -->
       <div class="help-page">
+        <!-- Sidebar con navegación por categorías -->
         <aside class="help-sidebar">
           <nav>
             <button class="help-tab active" data-tab="general" data-i18n="help-general">General</button>
@@ -55,6 +61,7 @@
             <button class="help-tab" data-tab="mi-cuenta" data-i18n="help-account">Mi cuenta</button>
             <button class="help-tab" data-tab="grupos" data-i18n="help-groups">Viajes en grupo</button>
           </nav>
+          <!-- Información de contacto de soporte -->
           <div class="help-contact">
             <h3 data-i18n="help-need-more">¿Necesitas más ayuda?</h3>
             <p><span data-i18n="help-email">Escríbenos a:</span> <a
@@ -63,7 +70,9 @@
           </div>
         </aside>
 
+        <!-- Contenido de las FAQ por categoría -->
         <div class="help-content">
+          <!-- Panel de preguntas generales -->
           <section id="general" class="help-panel">
             <h2 data-i18n="help-general-title">Preguntas generales</h2>
             <div class="faq">
@@ -90,6 +99,8 @@
                 También incluimos comentarios de viajeros anteriores en cada viaje.</div>
             </div>
           </section>
+
+          <!-- Panel de preguntas sobre reservas -->
 
           <section id="reservas" class="help-panel" hidden>
             <h2 data-i18n="help-reservations-title">Reservas</h2>
