@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viajes por Continente</title>
+    <link rel="stylesheet" href="style/style_otros_rincones.css" />
+    <link rel="stylesheet" href="style/style_continente.css" />
+    <script src="script/translations.js" defer></script>
+    <script src="script/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="home.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="otros_rincones.html" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="#" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="#" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="logo_idioma">
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="columna-boton-atras-detalles">
+        <button type="button" onclick="window.location.href='otros_rincones.html'">⬅</button>
+    </section>
+
+    <main>
+        <h2 class="titulo-continente" id="titulo-continente">Europa</h2>
+
+        <div class="grid-viajes" id="grid-viajes">
+            <!-- Los viajes se cargarán dinámicamente -->
+        </div>
+
+        <div class="mensaje-sin-viajes" id="mensaje-sin-viajes" style="display: none;">
+            <p data-i18n="continent-no-trips">No hay viajes disponibles para esta región.</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="#" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
+        </nav>
+    </footer>
+
+    <script>
+        // Script para cargar viajes del continente
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const continente = urlParams.get('region');
+
+            if (!continente) {
+                window.location.href = 'otros_rincones.html';
+                return;
+            }
+
+            // Mapeo de nombres de continentes
+            const nombresContinentes = {
+                'norteamerica': { es: 'América del Norte', en: 'North America' },
+                'sudamerica': { es: 'América del Sur', en: 'South America' },
+                'europa': { es: 'Europa', en: 'Europe' },
+                'africa': { es: 'África', en: 'Africa' },
+                'asia': { es: 'Asia', en: 'Asia' },
+                'oceania': { es: 'Oceanía', en: 'Oceania' }
+            };
+
+            // Actualizar título
+            const tituloElement = document.getElementById('titulo-continente');
+            const idioma = getCurrentLanguage();
+            if (nombresContinentes[continente]) {
+                tituloElement.textContent = nombresContinentes[continente][idioma] || nombresContinentes[continente].es;
+            }
+
+            // Filtrar viajes por continente
+            const viajesFiltrados = viajes.filter(v => v.continente === continente);
+
+            const gridViajes = document.getElementById('grid-viajes');
+            const mensajeSinViajes = document.getElementById('mensaje-sin-viajes');
+
+            if (viajesFiltrados.length === 0) {
+                mensajeSinViajes.style.display = 'block';
+                gridViajes.style.display = 'none';
+                return;
+            }
+
+            // Generar tarjetas de viajes
+            viajesFiltrados.forEach((viaje, index) => {
+                const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
+
+                const tarjeta = document.createElement('div');
+                tarjeta.className = 'tarjeta-viaje';
+                tarjeta.innerHTML = `
+                    <div class="tarjeta-imagen">
+                        <img src="${viaje.imagen}" alt="${titulo}">
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3>${viaje.destino}</h3>
+                        <p class="tarjeta-titulo">${titulo}</p>
+                        <p class="tarjeta-descripcion">${viaje.duracion} ${idioma === 'en' ? 'days' : 'días'} · ${viaje.precio}€</p>
+                    </div>
+                    <div class="tarjeta-acciones">
+                        <button class="btn-guardar" title="${idioma === 'en' ? 'Save trip' : 'Guardar viaje'}">
+                            <span>📥</span> ${idioma === 'en' ? 'Save' : 'Guardar'}
+                        </button>
+                        <button class="btn-compartir" title="${idioma === 'en' ? 'Share' : 'Compartir'}">
+                            <span>↗</span> ${idioma === 'en' ? 'Share' : 'Compartir'}
+                        </button>
+                    </div>
+                `;
+
+                // Al hacer clic, ir a detalles del viaje
+                tarjeta.addEventListener('click', function (e) {
+                    if (!e.target.closest('button')) {
+                        // Buscar el índice real del viaje en el array global
+                        const viajeIndex = viajes.findIndex(v => v.titulo === viaje.titulo && v.destino === viaje.destino);
+                        // Guardar el viaje en localStorage (compatible con el resto del código)
+                        localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+                        // Guardar el origen para el botón de atrás
+                        localStorage.setItem('viajeOrigen', 'continente.html?region=' + continente);
+                        window.location.href = 'detalles_viaje.html';
+                    }
+                });
+
+                gridViajes.appendChild(tarjeta);
+            });
+        });
+    </script>
+</body>
+
+</html>
