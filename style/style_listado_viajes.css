@@ -38,10 +38,10 @@ body {
 
 /* Contenedor principal que envuelve header, main y footer */
 main {
-    flex: 1;
-    width: 100%;
-    margin-top: var(--header-h);  
-    margin-bottom: var(--footer-h);              
+  flex: 1;
+  width: 100%;
+  margin-top: var(--header-h);
+  margin-bottom: var(--footer-h);
 }
 
 /* Evita que header y footer se encojan */
@@ -86,7 +86,8 @@ footer {
   height: 80px;
   /* altura fija: prueba con 100px */
   background: #006400;
-  position: relative;       /* el footer ya no está fijo */
+  position: relative;
+  /* el footer ya no está fijo */
   text-align: center;
   align-items: center;
   /* centra verticalmente el contenido */
@@ -238,12 +239,15 @@ footer nav a:focus-visible {
 }
 
 /* Estilos para la columna de filtros */
-.columna-filtros{
-  position: fixed;                /* fijado respecto a la ventana, como header/footer */
-  top: 100px;                     /* evita quedar debajo del header (coincide con header height) */
-  height: calc(100vh - 100px);    /* ocupa desde el header hasta el final de la pantalla */
-  width: 15%;                    
-  display: flex;                 
+.columna-filtros {
+  position: fixed;
+  /* fijado respecto a la ventana, como header/footer */
+  top: 100px;
+  /* evita quedar debajo del header (coincide con header height) */
+  height: calc(100vh - 100px);
+  /* ocupa desde el header hasta el final de la pantalla */
+  width: 15%;
+  display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 12px;
@@ -287,10 +291,12 @@ footer nav a:focus-visible {
   font-size: 16px;
   margin-bottom: 10px;
 }
+
 /* Efecto hover sobre el boton de filtros*/
 .columna-filtros button:hover {
   background: green;
 }
+
 /* mensaje de filtros aplicados*/
 .mensaje-filtros-listado {
   display: none;
@@ -305,7 +311,7 @@ footer nav a:focus-visible {
   left: 15%;
   margin-left: 20px;
   width: 15%;
-  display: flex;                 
+  display: flex;
   flex-direction: column;
 }
 
@@ -400,5 +406,51 @@ footer nav a:focus-visible {
 
 /* Estilo para las estrellas de valoración */
 .valoracion-estrellas {
-  color: black; /* Cambia el color de las estrellas a negro */
+  color: black;
+  /* Cambia el color de las estrellas a negro */
+}
+
+/* Contenedor de acciones del viaje */
+.viaje-acciones {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Botones de guardar y compartir */
+.btn-guardar-viaje,
+.btn-compartir-viaje {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #333;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-guardar-viaje:hover,
+.btn-compartir-viaje:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+/* Estado guardado */
+.btn-guardar-viaje.guardado {
+  background: #ffebee;
+  border-color: #ef5350;
+  color: #c62828;
+}
+
+/* Botón ver detalles ocupa todo el ancho cuando hay acciones */
+.viaje-acciones .ver-detalles {
+  flex: 100%;
+  margin-top: 5px;
 }

@@ -95,6 +95,8 @@ const translations = {
         // ============ MY ACCOUNT ============
         "account-personal": "Datos personales",
         "account-reservations": "Mis reservas",
+        "account-saved-trips": "Viajes guardados",
+        "account-no-saved": "No tienes viajes guardados aún.",
         "account-settings": "Configuración",
         "account-logout": "Cerrar sesión",
         "account-name": "Nombre:",
@@ -385,6 +387,8 @@ const translations = {
         // ============ MY ACCOUNT ============
         "account-personal": "Personal data",
         "account-reservations": "My reservations",
+        "account-saved-trips": "Saved trips",
+        "account-no-saved": "You don't have any saved trips yet.",
         "account-settings": "Settings",
         "account-logout": "Log out",
         "account-name": "Name:",

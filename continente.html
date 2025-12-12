@@ -125,6 +125,7 @@
                 // Generar tarjetas de viajes
                 viajesFiltrados.forEach((viaje, index) => {
                     const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
+                    const guardado = estaGuardado(viaje);
 
                     const tarjeta = document.createElement('div');
                     tarjeta.className = 'tarjeta-viaje';
@@ -138,8 +139,8 @@
                             <p class="tarjeta-descripcion">${viaje.duracion} ${idioma === 'en' ? 'days' : 'días'} · ${viaje.precio}€</p>
                         </div>
                         <div class="tarjeta-acciones">
-                            <button class="btn-guardar" title="${idioma === 'en' ? 'Save trip' : 'Guardar viaje'}">
-                                <span>📥</span> ${idioma === 'en' ? 'Save' : 'Guardar'}
+                            <button class="btn-guardar ${guardado ? 'guardado' : ''}" title="${idioma === 'en' ? 'Save trip' : 'Guardar viaje'}">
+                                <span>${guardado ? '❤️' : '🤍'}</span> ${guardado ? (idioma === 'en' ? 'Saved' : 'Guardado') : (idioma === 'en' ? 'Save' : 'Guardar')}
                             </button>
                             <button class="btn-compartir" title="${idioma === 'en' ? 'Share' : 'Compartir'}">
                                 <span>↗</span> ${idioma === 'en' ? 'Share' : 'Compartir'}
@@ -147,6 +148,29 @@
                         </div>
                     `;
 
+                    // Event listener para el botón guardar
+                    const btnGuardar = tarjeta.querySelector('.btn-guardar');
+                    btnGuardar.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        const ahora = guardarViaje(viaje);
+                        // Actualizar el icono y texto
+                        if (ahora) {
+                            this.innerHTML = `<span>❤️</span> ${idioma === 'en' ? 'Saved' : 'Guardado'}`;
+                            this.classList.add('guardado');
+                        } else {
+                            this.innerHTML = `<span>🤍</span> ${idioma === 'en' ? 'Save' : 'Guardar'}`;
+                            this.classList.remove('guardado');
+                        }
+                    });
+
+                    // Event listener para el botón compartir
+                    const btnCompartir = tarjeta.querySelector('.btn-compartir');
+                    btnCompartir.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        compartirViaje(viaje);
+                    });
+
+                    // Click en la tarjeta para ir a detalles
                     tarjeta.addEventListener('click', function (e) {
                         if (!e.target.closest('button')) {
                             localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
