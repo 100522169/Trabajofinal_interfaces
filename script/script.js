@@ -170,6 +170,9 @@ function compartirViaje(viaje) {
 
 // Definir los viajes disponibles
 const viajes = [
+
+  // Europa
+
   {
     destino: 'España', continente: 'europa', duracion: 7, precio: 600, tipo: 'Turístico', mascotas: 'si', valoracion: 4, imagen: 'images/viajes/Europa/España/madrid.jpg', titulo: 'Madrid, Barcelona y Sevilla', titulo_en: 'Madrid, Barcelona and Seville',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
@@ -234,6 +237,9 @@ const viajes = [
       { nombre: 'Carlos López', avatar: 'images/avatar-carlos-lopez.jpg', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.', comentario_en: 'Very well organized, although the price could be a bit more affordable.' }
     ]
   },
+
+  // Sudamérica
+
   {
     destino: 'Perú', continente: 'sudamerica', duracion: 4, precio: 400, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/viajes/Sudamerica/Peru/peru_lima.jpg', titulo: 'Lima y la Costa', titulo_en: 'Lima and the Coast',
     dietasDisponibles: ['sin-pescado', 'vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa'],
@@ -270,6 +276,9 @@ const viajes = [
     guia: { nombre: 'Pedro Mamani', edad: '35 años', edad_en: '35 years old', experiencia: '11 años de experiencia', experiencia_en: '11 years of experience', experiencias: 'Guía oficial Machu Picchu', experiencias_en: 'Official Machu Picchu guide', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 965 432 187', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/pedro-mamani.jpg' },
     reseñas: []
   },
+
+  // Asia 
+
   {
     destino: 'Japón', continente: 'asia', duracion: 5, precio: 500, tipo: 'Cultural', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Asia/Japon/kioto.jpg', titulo: 'Kioto Tradicional', titulo_en: 'Traditional Kyoto',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'sin-lactosa', 'halal'],
@@ -315,7 +324,7 @@ const viajes = [
     reseñas: []
   },
 
-  // ==== Viajes en grupo ===
+  //Viajes en grupo
 
   {
     destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Sudamerica/Argentina/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
@@ -372,7 +381,9 @@ const viajes = [
     guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
     reseñas: [{ nombre: 'Carlos V.', avatar: 'images/avatar-carlos-v.jpg', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
   },
+
   // Norte America
+
   {
     destino: 'Estados Unidos', continente: 'norteamerica', duracion: 7, precio: 1100, tipo: 'Turístico', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Norte America/new_yorl.jpeg', titulo: 'New York y la Costa Este', titulo_en: 'New York and the East Coast',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten', 'halal'],
@@ -395,7 +406,9 @@ const viajes = [
     guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Sergio.png' },
     reseñas: [{ nombre: 'Roberto S.', avatar: 'images/avatar-roberto.jpg', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
   },
+
   // Africa
+
   {
     destino: 'Kenia', continente: 'africa', duracion: 8, precio: 2000, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Africa/safari kenia.jpg', titulo: 'Safari en Kenia: La Gran Migración', titulo_en: 'Kenya Safari: The Great Migration',
     dietasDisponibles: ['vegano', 'vegetariano', 'halal'],
@@ -418,9 +431,11 @@ const viajes = [
     guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/guia.jpeg' },
     reseñas: [{ nombre: 'Lucía R.', avatar: 'images/avatar-lucia.jpg', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
   },
+
   // Oceania
+
   {
-    destino: 'Australia', continente: 'oceania', duracion: 7, precio: 2500, tipo: 'Turístico', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Oceania/Sidney 2.jpg', titulo: 'Australia: Sydney y la Gran Barrera', titulo_en: 'Australia: Sydney and the Great Barrier Reef',
+    destino: 'Australia', continente: 'oceania', duracion: 7, precio: 2500, tipo: 'Turístico', mascotas: 'si', valoracion: 5, imagen: 'images/viajes/Oceania/Sidney 2.jpg', titulo: 'Australia: Sydney y la Gran Barrera', titulo_en: 'Australia: Sydney and the Great Barrier Reef',
     dietasDisponibles: ['vegano', 'vegetariano', 'sin-gluten'],
     galeria: ['images/viajes/Oceania/Sidney 2.jpg', 'images/viajes/Oceania/Sidney 3.jpg', 'images/viajes/Oceania/Gran barrera_2.webp'],
     itinerario: ['Llegada a Sydney', 'Ópera y Harbour', 'Blue Mountains', 'Vuelo a Cairns', 'Gran Barrera', 'Uluru', 'Melbourne y regreso'],
@@ -2895,7 +2910,7 @@ if (window.location.pathname.includes("blog.html")) {
       titulo_en: "The 10 Most Surprising Destinations of the Year",
       categoria: "itinerarios",
       estado: "en-curso",
-      imagen: "images/patagonia.jpg",
+      imagen: "images/blogs/top-sorprendentes.jpg",
       contenido: `
         <h2>Los 10 destinos más sorprendentes de este año</h2>
         <p>Este año ha sido extraordinario para los viajeros intrépidos que buscan experiencias únicas alrededor del mundo. Hemos recopilado los 10 destinos que han dejado una marca imborrable en quienes los han visitado.</p>
@@ -2923,7 +2938,7 @@ if (window.location.pathname.includes("blog.html")) {
       titulo_en: "Tales of a Mapless Traveler",
       categoria: "experiencias",
       estado: "finalizado",
-      imagen: "images/maldivas.jpg",
+      imagen: "images/blogs/sin-mapa.jpg",
       contenido: `
         <h2>Relatos de un viajero sin mapa</h2>
         <p>Viajar sin un plan definido puede parecer aterrador al principio, pero las mejores aventuras a menudo surgen de la espontaneidad. Durante mis últimos tres años viajando por Asia, aprendí que perderse es, en realidad, encontrarse.</p>
@@ -2947,7 +2962,7 @@ if (window.location.pathname.includes("blog.html")) {
       titulo_en: "Complete Trekking Equipment Guide",
       categoria: "equipamiento",
       estado: "finalizado",
-      imagen: "images/cataratas_iguazu.jpg",
+      imagen: "images/blogs/trekking.jpg",
       contenido: `
         <h2>Guía completa de equipamiento para trekking</h2>
         <p>Después de años de experiencia en rutas de montaña, he aprendido que el equipamiento adecuado puede marcar la diferencia entre una experiencia memorable y una pesadilla. Aquí comparto mi guía esencial.</p>
@@ -2973,7 +2988,7 @@ if (window.location.pathname.includes("blog.html")) {
       titulo_en: "Alternative Routes Through Europe",
       categoria: "itinerarios",
       estado: "finalizado",
-      imagen: "images/patagonia.jpg",
+      imagen: "images/blogs/Europa.jpg",
       contenido: `
         <h2>Rutas alternativas por Europa</h2>
         <p>Europa está llena de rutas menos conocidas que ofrecen experiencias auténticas lejos de las multitudes turísticas. Estos son algunos de mis itinerarios favoritos fuera de lo común.</p>
@@ -2999,7 +3014,7 @@ if (window.location.pathname.includes("blog.html")) {
       titulo_en: "How to Pack Light for Long Trips",
       categoria: "equipamiento",
       estado: "en-curso",
-      imagen: "images/maldivas.jpg",
+      imagen: "images/blogs/empacar-ligero.jpeg",
       contenido: `
         <h2>Cómo empacar ligero para viajes largos</h2>
         <p>Después de viajar durante meses con solo una mochila de cabina, he perfeccionado el arte de empacar ligero. Aquí están mis mejores estrategias.</p>
@@ -3025,7 +3040,7 @@ if (window.location.pathname.includes("blog.html")) {
       titulo_en: "Culinary Adventures in Asia",
       categoria: "experiencias",
       estado: "finalizado",
-      imagen: "images/cataratas_iguazu.jpg",
+      imagen: "images/blogs/asia-gastro.jpg",
       contenido: `
         <h2>Aventuras gastronómicas en Asia</h2>
         <p>La comida es uno de los mejores caminos para conocer una cultura. Durante mi año recorriendo Asia, descubrí que algunas de las mejores comidas se encuentran en los lugares más inesperados.</p>
@@ -3173,8 +3188,16 @@ if (window.location.pathname.includes("blog.html")) {
 }
 
 
-// ============ PÁGINA AYUDA.HTML ============
+// ayuda.html
 if (window.location.pathname.includes("ayuda.html")) {
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+  }
 
   // Navegación por tabs de categorías
   const tabs = document.querySelectorAll('.help-tab');
