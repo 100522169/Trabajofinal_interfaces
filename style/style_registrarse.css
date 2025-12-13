@@ -30,8 +30,10 @@ body {
 
 /* Variables CSS para alturas de header y footer */
 :root {
-  --header-h: 110px; /* altura del header usada para margin-top */
-  --footer-h: 30px; /* altura del footer usada para margin-bottom */
+  --header-h: 110px;
+  /* altura del header usada para margin-top */
+  --footer-h: 30px;
+  /* altura del footer usada para margin-bottom */
 }
 
 /* Contenedor principal que envuelve header, main y footer */
@@ -39,7 +41,7 @@ main {
   flex: 1;
   width: 100%;
   margin-top: var(--header-h);
-  margin-bottom: var(--footer-h); 
+  margin-bottom: var(--footer-h);
 }
 
 /* Evita que header y footer se encojan */
@@ -84,8 +86,10 @@ footer {
   height: 80px;
   /* altura fija: prueba con 100px */
   background: #006400;
-  position: relative;       /* el footer ya no está fijo */
-  bottom: 0;                /* asegura que esté en la parte inferior */
+  position: relative;
+  /* el footer ya no está fijo */
+  bottom: 0;
+  /* asegura que esté en la parte inferior */
   text-align: center;
   align-items: center;
   /* centra verticalmente el contenido */
@@ -190,7 +194,7 @@ header nav a:focus-visible {
 }
 
 /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
-@media (max-width:700px) {
+@media (max-width:768px) {
   .menu-toggle {
     position: absolute;
     left: -9999px;
