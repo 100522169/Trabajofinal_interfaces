@@ -3188,8 +3188,16 @@ if (window.location.pathname.includes("blog.html")) {
 }
 
 
-// ============ PÁGINA AYUDA.HTML ============
+// ayuda.html
 if (window.location.pathname.includes("ayuda.html")) {
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
+  if (botonVueltaAtras) {
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+  }
 
   // Navegación por tabs de categorías
   const tabs = document.querySelectorAll('.help-tab');
