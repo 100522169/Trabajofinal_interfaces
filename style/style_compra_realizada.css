@@ -30,8 +30,10 @@ body {
 
 /* Variables CSS para alturas de header y footer */
 :root {
-  --header-h: 110px; /* altura del header usada para margin-top */
-  --footer-h: 20px; /* altura del footer usada para margin-bottom */
+  --header-h: 110px;
+  /* altura del header usada para margin-top */
+  --footer-h: 20px;
+  /* altura del footer usada para margin-bottom */
 }
 
 /* Contenedor principal que envuelve header, main y footer */
@@ -83,7 +85,8 @@ footer {
   height: 80px;
   /* altura fija: prueba con 100px */
   background: #006400;
-  position: relative;       /* cambia de fixed a relative para que no sea estático */
+  position: relative;
+  /* cambia de fixed a relative para que no sea estático */
   text-align: center;
   align-items: center;
   /* centra verticalmente el contenido */
@@ -188,7 +191,7 @@ header nav a:focus-visible {
 }
 
 /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
-@media (max-width:700px) {
+@media (max-width:768px) {
   .menu-toggle {
     position: absolute;
     left: -9999px;
@@ -338,8 +341,9 @@ footer nav a:focus-visible {
   font-weight: bold;
   color: white;
   margin-bottom: 5px;
-  -webkit-print-color-adjust: exact;        /* asegura que el color de fondo se imprima correctamente */
-  print-color-adjust: exact;              
+  -webkit-print-color-adjust: exact;
+  /* asegura que el color de fondo se imprima correctamente */
+  print-color-adjust: exact;
 }
 
 /* Estilo para el título de compra realizada */
@@ -454,6 +458,7 @@ footer nav a:focus-visible {
   font-size: 16px;
   color: #222;
 }
+
 /* Botones de acción */
 .botones-accion {
   display: flex;
@@ -461,6 +466,7 @@ footer nav a:focus-visible {
   justify-content: center;
   margin-top: 30px;
 }
+
 /* Estilo de los botones */
 .boton-mi-cuenta,
 .boton-imprimir-pdf {
@@ -478,6 +484,7 @@ footer nav a:focus-visible {
   color: #006400;
   border: 2px solid #006400;
 }
+
 /* Efecto hover para el botón Mi Cuenta */
 .boton-mi-cuenta:hover {
   background-color: #006400;
@@ -490,23 +497,29 @@ footer nav a:focus-visible {
   color: #006400;
   border: 2px solid #006400;
 }
+
 /* Efecto hover para el botón Imprimir PDF */
 .boton-imprimir-pdf:hover {
   background-color: #006400;
   color: #fff;
 }
+
 /* Ocultar botones al imprimir */
 @media print {
+
   .botones-accion,
   header,
   footer,
   .columna-boton-atras-detalles {
-    display: none !important;         /* oculta estos elementos al imprimir */
+    display: none !important;
+    /* oculta estos elementos al imprimir */
   }
+
   body {
     margin: 0;
     padding: 20px;
   }
+
   .contenedor-principal {
     margin: 0;
     padding: 0;
