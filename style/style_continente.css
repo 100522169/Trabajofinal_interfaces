@@ -186,6 +186,22 @@
     line-height: 1.4;
 }
 
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+
+    .grid-viajes,
+    .grid-ciudades {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cols for tablet */
+        padding: 1.5rem;
+    }
+
+    /* Footer alignment for tablet */
+    footer nav a {
+        margin: 0 2rem;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .titulo-continente {

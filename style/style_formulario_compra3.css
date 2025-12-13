@@ -1003,6 +1003,25 @@ footer nav a:focus-visible {
   color: black;
 }
 
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+  .formulario-pasos {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .contenedor-compra-finalizada {
+    /* Ensure content is centered and readable */
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Footer alignment for tablet */
+  footer nav a {
+    margin: 0 2rem;
+  }
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
 

@@ -450,7 +450,34 @@ footer nav a:focus-visible {
 }
 
 /* Botón ver detalles ocupa todo el ancho cuando hay acciones */
+/* Botón ver detalles ocupa todo el ancho cuando hay acciones */
 .viaje-acciones .ver-detalles {
   flex: 100%;
   margin-top: 5px;
+}
+
+/* Tablet Responsive Styles */
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+
+  /* Keep layout close to desktop but tighter */
+  .columna-listado-viajes {
+    width: auto;
+    margin-left: calc(15% + 10px);
+    /* Reduce margin */
+    padding-top: 20px;
+  }
+
+  .viaje {
+    /* Maintain 3 columns if possible, or let flex-wrap handle it naturally 
+       by slightly reducing the basis or just keeping 33% but smaller gap */
+    flex: 0 0 calc((100% - 20px) / 3);
+    /* Try to keep 3 columns */
+  }
+
+  /* Footer alignment for tablet */
+  footer nav a {
+    margin: 0 1rem;
+    /* Smaller margins for links */
+  }
 }

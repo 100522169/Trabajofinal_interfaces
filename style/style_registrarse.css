@@ -193,6 +193,42 @@ header nav a:focus-visible {
   display: none;
 }
 
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+  .registro-form {
+    padding: 0 20px;
+    margin-top: 120px;
+    /* Ensure it's not hidden behind header */
+  }
+
+  /* Reset massive fixed margins and center titles */
+  .datos-personales,
+  .fecha-nacimiento,
+  .acceso,
+  .subir-imagen {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .registro-form input[type="text"],
+  .registro-form input[type="password"],
+  .registro-form input[type="date"],
+  .registro-form input[type="file"] {
+    width: 90%;
+  }
+
+  .checkbox-privacidad {
+    width: 90%;
+    justify-content: center;
+  }
+
+  .registro-form button {
+    width: 90%;
+  }
+}
+
 /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
 @media (max-width:768px) {
   .menu-toggle {

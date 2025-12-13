@@ -620,13 +620,24 @@ footer nav a {
 
   /* tablet */
   :root {
-    --header-h: 90px;
+    --header-h: 120px;
     --footer-h: 90px;
+  }
+
+  body {
+    min-height: auto;
+    /* Allow footer to rise up */
   }
 
   header {
     height: 90px;
     padding: 10px 16px;
+  }
+
+  /* Wrap filters on tablet so all are visible */
+  .filtros {
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   header .titulo {

@@ -194,6 +194,20 @@ header nav a:focus-visible {
 }
 
 /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+  .inicio-sesion-form {
+    width: 80%;
+    margin-top: 140px;
+    /* Adjust for header */
+  }
+
+  /* Footer alignment for tablet */
+  footer nav a {
+    margin: 0 2rem;
+  }
+}
+
 @media (max-width:768px) {
   .menu-toggle {
     position: absolute;

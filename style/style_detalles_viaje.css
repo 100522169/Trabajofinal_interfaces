@@ -701,125 +701,144 @@ body.modal-abierto {
     height: 120px;
   }
 
-  /* Fix footer margins on tablet */
-  footer nav a {
-    margin: 0 2rem;
-  }
-}
+  /* Tablet Responsive Styles */
+  @media (max-width: 1024px) {
 
-@media (max-width:768px) {
-  .contenedor-detalles {
-    margin-top: var(--header-h);
-    padding: 10px;
-  }
+    /* Enforce side-by-side layout (Desktop-like) */
+    .fila-informacion {
+      flex-direction: row;
+      /* Force row */
+      gap: 20px;
+    }
 
-  .titulo-detalles h1 {
-    font-size: 26px;
-  }
+    .columna-itinerario {
+      flex: 0 0 55%;
+      /* Slightly smaller than desktop */
+    }
 
-  .fila-informacion {
-    flex-direction: column;
-  }
+    .columna-reserva {
+      flex: 0 0 40%;
+    }
 
-  .columna-itinerario {
-    margin-right: 0;
-  }
-
-  .avatar {
-    width: 64px;
-    height: 64px;
+    /* Fix footer margins on tablet */
+    footer nav a {
+      margin: 0 1rem;
+    }
   }
 
-  .imagen {
-    width: 140px;
-    height: 90px;
+  @media (max-width:768px) {
+    .contenedor-detalles {
+      margin-top: var(--header-h);
+      padding: 10px;
+    }
+
+    .titulo-detalles h1 {
+      font-size: 26px;
+    }
+
+    .fila-informacion {
+      flex-direction: column;
+    }
+
+    .columna-itinerario {
+      margin-right: 0;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+    }
+
+    .imagen {
+      width: 140px;
+      height: 90px;
+    }
+
+    /* Pull "Más detalles" buttons closer to the right edge overriding container padding */
+    .boton-mas-detalles {
+      margin-right: -15px;
+    }
+
+    .modal-contenido {
+      width: 96%;
+      margin: 6% auto;
+      padding: 16px;
+    }
+
+
+    /* Fix footer layout on mobile */
+    footer {
+      height: auto;
+      padding: 20px 0;
+    }
+
+    footer nav a {
+      margin: 0 10px;
+      font-size: 12px;
+    }
   }
 
-  /* Pull "Más detalles" buttons closer to the right edge overriding container padding */
-  .boton-mas-detalles {
-    margin-right: -15px;
-  }
+  /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
+  @media (max-width:768px) {
+    .menu-toggle {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
 
-  .modal-contenido {
-    width: 96%;
-    margin: 6% auto;
-    padding: 16px;
-  }
+    .hamburger-btn {
+      display: block;
+      width: 36px;
+      height: 28px;
+      position: relative;
+      cursor: pointer;
+      z-index: 2000;
+    }
 
+    .hamburger-btn .bar {
+      display: block;
+      height: 3px;
+      background: #fff;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
 
-  /* Fix footer layout on mobile */
-  footer {
-    height: auto;
-    padding: 20px 0;
-  }
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 260px;
+      background: #006400;
+      transform: translateX(100%);
+      transition: transform .28s ease;
+      padding-top: 72px;
+      z-index: 1500;
+      box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+    }
 
-  footer nav a {
-    margin: 0 10px;
-    font-size: 12px;
-  }
-}
+    .nav-menu ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 12px;
+    }
 
-/* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
-@media (max-width:768px) {
-  .menu-toggle {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-  }
+    .nav-menu li {
+      margin: 8px 0;
+    }
 
-  .hamburger-btn {
-    display: block;
-    width: 36px;
-    height: 28px;
-    position: relative;
-    cursor: pointer;
-    z-index: 2000;
-  }
+    .nav-menu a {
+      display: block;
+      padding: 12px 14px;
+      color: #fff;
+      font-weight: 700;
+    }
 
-  .hamburger-btn .bar {
-    display: block;
-    height: 3px;
-    background: #fff;
-    margin: 5px 0;
-    border-radius: 2px;
+    /* When checkbox checked, show nav */
+    #menu-toggle:checked~.nav-menu {
+      transform: translateX(0);
+    }
   }
-
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 260px;
-    background: #006400;
-    transform: translateX(100%);
-    transition: transform .28s ease;
-    padding-top: 72px;
-    z-index: 1500;
-    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
-  }
-
-  .nav-menu ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 12px;
-  }
-
-  .nav-menu li {
-    margin: 8px 0;
-  }
-
-  .nav-menu a {
-    display: block;
-    padding: 12px 14px;
-    color: #fff;
-    font-weight: 700;
-  }
-
-  /* When checkbox checked, show nav */
-  #menu-toggle:checked~.nav-menu {
-    transform: translateX(0);
-  }
-}

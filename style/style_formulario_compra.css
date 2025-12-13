@@ -496,6 +496,30 @@ footer nav a:focus-visible {
   background-color: #333;
 }
 
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+  .formulario-pasos {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .campo-formulario {
+    gap: 20px;
+  }
+
+  .etiqueta input[type="text"],
+  .etiqueta input[type="email"],
+  .etiqueta input[type="tel"],
+  .etiqueta input[type="date"] {
+    width: 100%;
+  }
+
+  /* Footer alignment for tablet */
+  footer nav a {
+    margin: 0 2rem;
+  }
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
 

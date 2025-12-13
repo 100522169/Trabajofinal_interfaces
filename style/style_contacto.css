@@ -4,31 +4,34 @@
     width: 100%;
     padding: 0 20px;
 }
+
 /* Botón de volver atrás */
 .columna-boton-atras {
-  position: relative;
-  /* fijo en la pantalla, no se mueve con scroll */
-  top: 140px;
-  /* margen desde la parte superior */
-  left: 20px;
-  /* margen desde la izquierda */
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    /* fijo en la pantalla, no se mueve con scroll */
+    top: 140px;
+    /* margen desde la parte superior */
+    left: 20px;
+    /* margen desde la izquierda */
+    display: flex;
+    flex-direction: column;
 }
+
 /* Estilos del botón */
 .columna-boton-atras button {
-  width: 60px;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 10px;
-  background: #006400;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
+    width: 60px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: #006400;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }
+
 /* Efecto hover del botón */
 .columna-boton-atras button:hover {
-  background: #004d00;
+    background: #004d00;
 }
 
 .contacto-titulo {
@@ -140,6 +143,14 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+
+    /* Footer alignment for tablet */
+    footer nav a {
+        margin: 0 2rem;
+    }
+}
+
 @media (max-width: 900px) {
     .contacto-contenido {
         flex-direction: column;

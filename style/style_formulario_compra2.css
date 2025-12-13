@@ -774,6 +774,25 @@ input[type="email"]::placeholder {
   background: #004d00;
 }
 
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+  .formulario-pasos {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .contenedor-paso2 {
+    grid-template-columns: 1fr;
+    /* Stack columns on tablet if needed, or stick to 2 but tighter */
+    gap: 20px;
+  }
+
+  /* Footer alignment for tablet */
+  footer nav a {
+    margin: 0 2rem;
+  }
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
 
