@@ -343,9 +343,9 @@ const viajes = [
     galeria: ['images/viajes/Asia/Maldivas/maldivas.jpg', 'images/viajes/Asia/Maldivas/maldivas2.jpg', 'images/viajes/Asia/Maldivas/snorkel_maldivas.jpg'],
     itinerario: ['Resort y actividades acuáticas', 'Snorkel y buceo', 'Excursión a islas cercanas', 'Relax y salida'],
     itinerarioDetallado: [
-      'Llegada al aeropuerto internacional de Malé y traslado en lancha al resort. Acomodación y tiempo libre para disfrutar de las instalaciones del resort.', 
-      'Desayuno frente al mar. Día dedicado a actividades acuáticas como snorkel y buceo en los arrecifes de coral cercanos. Almuerzo en el resort y tarde libre para relajarse en la playa o disfrutar del spa.', 
-      'Traslado en lancha a islas cercanas para explorar la cultura local y disfrutar de playas vírgenes. Almuerzo en una isla habitada y regreso al resort por la tarde. Cena de despedida con vista al atardecer.', 
+      'Llegada al aeropuerto internacional de Malé y traslado en lancha al resort. Acomodación y tiempo libre para disfrutar de las instalaciones del resort.',
+      'Desayuno frente al mar. Día dedicado a actividades acuáticas como snorkel y buceo en los arrecifes de coral cercanos. Almuerzo en el resort y tarde libre para relajarse en la playa o disfrutar del spa.',
+      'Traslado en lancha a islas cercanas para explorar la cultura local y disfrutar de playas vírgenes. Almuerzo en una isla habitada y regreso al resort por la tarde. Cena de despedida con vista al atardecer.',
       'Mañana libre para actividades personales y traslado al aeropuerto para el vuelo de regreso.'],
     condiciones: 'Incluye alojamiento en resort y desayunos.',
     condiciones_en: 'Includes resort accommodation and breakfast.',
@@ -358,8 +358,8 @@ const viajes = [
     galeria: ['images/viajes/Sudamerica/Argentina/cataratas_iguazu.jpg', 'images/viajes/Sudamerica/Argentina/garganta_diablo.jpg', 'images/viajes/Sudamerica/Argentina/itaipu.jpg'],
     itinerario: ['Llegada a Iguazú', 'Cataratas lado Argentino', 'Garganta del Diablo', 'Exploración de la selva', 'Cataratas lado Brasileño', 'Parque de aves y represa Itaipú', 'Cultura local', 'Fin del viaje'],
     itinerarioDetallado: [
-      'Llegada al aeropuerto y traslado al hotel. Paseo por el centro de Puerto Iguazú, visita al Hito Tres Fronteras y degustación de gastronomía local.', 
-      'Ingreso al Parque Nacional Iguazú. Paseo por las pasarelas del lado argentino y recorrido por el circuto superior e inferior.', 
+      'Llegada al aeropuerto y traslado al hotel. Paseo por el centro de Puerto Iguazú, visita al Hito Tres Fronteras y degustación de gastronomía local.',
+      'Ingreso al Parque Nacional Iguazú. Paseo por las pasarelas del lado argentino y recorrido por el circuto superior e inferior.',
       'Viaje en el tren ecológico hasta la Garganta del Diablo. Tiempo libre para explorar y tomar fotografías.',
       'Excusrsión guiada por la selva misionera. Observación de flora y fauna autóctona. Regreso al hotel y descanso.',
       'Cruce a Brasil para visitar el lado brasileño de las cataratas. Vista panorámica y paseo por las pasarelas. Opcional, vuelo en helicóptero.',
@@ -3233,5 +3233,137 @@ if (window.location.pathname.includes("ayuda.html")) {
         });
       }
     });
+  }
+}
+
+
+// Continente
+if (window.location.pathname.includes("continente.html")) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const continente = urlParams.get('region');
+
+  if (!continente) {
+    window.location.href = 'otros_rincones.html';
+  } else {
+    // Mapeo de nombres de continentes
+    const nombresContinentes = {
+      'norteamerica': { es: 'América del Norte', en: 'North America' },
+      'sudamerica': { es: 'América del Sur', en: 'South America' },
+      'europa': { es: 'Europa', en: 'Europe' },
+      'africa': { es: 'África', en: 'Africa' },
+      'asia': { es: 'Asia', en: 'Asia' },
+      'oceania': { es: 'Oceanía', en: 'Oceania' }
+    };
+
+    // Actualizar título
+    const tituloElement = document.getElementById('titulo-continente');
+    const idioma = getCurrentLanguage();
+    if (nombresContinentes[continente]) {
+      tituloElement.textContent = nombresContinentes[continente][idioma] || nombresContinentes[continente].es;
+    }
+
+    // Viajes
+    const viajesFiltrados = viajes.filter(v => v.continente === continente);
+    const gridViajes = document.getElementById('grid-viajes');
+    const mensajeSinViajes = document.getElementById('mensaje-sin-viajes');
+    const subtituloViajes = document.getElementById('subtitulo-viajes');
+
+    if (viajesFiltrados.length === 0) {
+      mensajeSinViajes.style.display = 'block';
+      gridViajes.style.display = 'none';
+      subtituloViajes.style.display = 'none';
+    } else {
+      // Generar tarjetas de viajes
+      viajesFiltrados.forEach((viaje, index) => {
+        const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
+        const guardado = estaGuardado(viaje);
+
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'tarjeta-viaje';
+        tarjeta.innerHTML = `
+          <div class="tarjeta-imagen">
+            <img src="${viaje.imagen}" alt="${titulo}">
+          </div>
+          <div class="tarjeta-info">
+            <h3>${viaje.destino}</h3>
+            <p class="tarjeta-titulo">${titulo}</p>
+            <p class="tarjeta-descripcion">${viaje.duracion} ${idioma === 'en' ? 'days' : 'días'} · ${viaje.precio}€</p>
+          </div>
+          <div class="tarjeta-acciones">
+            <button class="btn-guardar ${guardado ? 'guardado' : ''}" title="${idioma === 'en' ? 'Save trip' : 'Guardar viaje'}">
+              <span>${guardado ? '❤️' : '🤍'}</span> ${guardado ? (idioma === 'en' ? 'Saved' : 'Guardado') : (idioma === 'en' ? 'Save' : 'Guardar')}
+            </button>
+            <button class="btn-compartir" title="${idioma === 'en' ? 'Share' : 'Compartir'}">
+              <span>↗</span> ${idioma === 'en' ? 'Share' : 'Compartir'}
+            </button>
+          </div>
+        `;
+
+        // Evento para guardar viaje en favoritos
+        const btnGuardar = tarjeta.querySelector('.btn-guardar');
+        btnGuardar.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const ahora = guardarViaje(viaje);
+          // Actualizar icono y texto del botón según el estado
+          if (ahora) {
+            this.innerHTML = `<span>❤️</span> ${idioma === 'en' ? 'Saved' : 'Guardado'}`;
+            this.classList.add('guardado');
+          } else {
+            this.innerHTML = `<span>🤍</span> ${idioma === 'en' ? 'Save' : 'Guardar'}`;
+            this.classList.remove('guardado');
+          }
+        });
+
+        // Evento para compartir viaje
+        const btnCompartir = tarjeta.querySelector('.btn-compartir');
+        btnCompartir.addEventListener('click', function (e) {
+          e.stopPropagation();
+          compartirViaje(viaje);
+        });
+
+        // Evento para ver detalles del viaje
+        tarjeta.addEventListener('click', function (e) {
+          if (!e.target.closest('button')) {
+            localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
+            localStorage.setItem('viajeOrigen', 'continente.html?region=' + continente);
+            window.location.href = 'detalles_viaje.html';
+          }
+        });
+
+        gridViajes.appendChild(tarjeta);
+      });
+    }
+
+    // Ciudades
+    const ciudadesFiltradas = ciudadesDelMundo.filter(c => c.continente === continente);
+    const gridCiudades = document.getElementById('grid-ciudades');
+    const subtituloCiudades = document.getElementById('subtitulo-ciudades');
+
+    if (ciudadesFiltradas.length === 0) {
+      subtituloCiudades.style.display = 'none';
+      gridCiudades.style.display = 'none';
+    } else {
+      // Generar tarjetas de ciudades
+      ciudadesFiltradas.forEach((ciudad) => {
+        const nombre = idioma === 'en' && ciudad.nombre_en ? ciudad.nombre_en : ciudad.nombre;
+        const pais = idioma === 'en' && ciudad.pais_en ? ciudad.pais_en : ciudad.pais;
+        const descripcion = idioma === 'en' && ciudad.descripcion_en ? ciudad.descripcion_en : ciudad.descripcion;
+
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'tarjeta-ciudad';
+        tarjeta.innerHTML = `
+          <div class="ciudad-imagen">
+            <img src="${ciudad.imagen}" alt="${nombre}" loading="lazy">
+          </div>
+          <div class="ciudad-info">
+            <h4>${nombre}</h4>
+            <p class="ciudad-pais">${pais}</p>
+            <p class="ciudad-descripcion">${descripcion}</p>
+          </div>
+        `;
+
+        gridCiudades.appendChild(tarjeta);
+      });
+    }
   }
 }
