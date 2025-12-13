@@ -3258,3 +3258,27 @@ if (window.location.pathname.includes("ayuda.html")) {
     });
   }
 }
+
+// contacto.html
+if (window.location.pathname.includes("contacto.html")) {
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
+  if (botonVueltaAtras){
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+  }
+}
+
+// sobre_nosotros.html
+if (window.location.pathname.includes("sobre_nosotros.html")) {
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
+  if (botonVueltaAtras){
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+  }
+}
