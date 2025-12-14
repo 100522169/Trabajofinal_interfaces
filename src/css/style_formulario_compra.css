@@ -1,0 +1,617 @@
+/* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
+* {
+  margin: 0;
+  /* Quita margen por defecto */
+  padding: 0;
+  /* Quita padding por defecto */
+  box-sizing: border-box;
+  /* Hace que el ancho y alto incluyan borde y padding */
+}
+
+/* Evitar scroll horizontal accidental */
+html,
+body {
+  overflow-x: hidden;
+  /* previene scroll horizontal */
+}
+
+/* Tipografía base para todo el cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables CSS para alturas de header y footer */
+:root {
+  --header-h: 110px;
+  /* altura del header usada para margin-top */
+  --footer-h: 30px;
+  /* altura del footer usada para margin-bottom */
+}
+
+/* Contenedor principal que envuelve header, main y footer */
+main {
+  flex: 1;
+  width: 100%;
+  margin-top: var(--header-h);
+}
+
+/* Evita que header y footer se encojan */
+header,
+footer {
+  flex-shrink: 0;
+  /* evita que se encojan */
+}
+
+/* Estilo general para enlaces */
+/* Estilo general para enlaces */
+header {
+  width: 100%;
+  height: 100px;
+  background: #006400;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 15px;
+  text-align: left;
+  align-items: center;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
+/* Estilo general para footer, similar al header */
+footer {
+  width: 100%;
+  height: 80px;
+  background: #006400;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Logo de la página */
+header img {
+  width: 80px;
+  height: 80px;
+}
+
+/* título de la página */
+header .titulo {
+  font-size: 18px;
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 50px;
+}
+
+header nav {
+  padding: 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  font-weight: 500;
+  text-transform: uppercase;
+  gap: 2rem;
+  white-space: nowrap;
+  align-items: center;
+  margin-right: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  border-radius: .375rem;
+}
+
+header .logo_idioma {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0;
+}
+
+header .logo_idioma img {
+  width: 120px;
+  height: auto;
+}
+
+header .logo_idioma select {
+  font: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: .375rem;
+  background-color: white;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.menu-toggle,
+.hamburger-btn {
+  display: none;
+}
+
+.nav-menu .nav-utils {
+  display: none;
+}
+
+/* Oculta las utilidades en la versión de escritorio */
+.nav-menu .nav-utils,
+.nav-auth-mobile {
+  display: none;
+}
+
+.botones_header {
+  display: flex;
+  gap: 10px;
+}
+
+header .botones_header button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+header .botones_header button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilo para el enlace de iniciar sesión */
+header .botones_header button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Efecto hover en el botón de iniciar sesión */
+header .botones_header button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilo de la info del footer*/
+footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+}
+
+footer nav a {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+
+/* Efecto hover y focus en enlaces del footer */
+footer nav a:hover,
+footer nav a:focus-visible {
+  text-decoration: underline;
+}
+
+
+
+/*formulario_compra styles*/
+/* Estilos para la columna del boton-atras de detalles del viaje */
+.columna-boton-atras-detalles {
+  position: relative;
+  /* fijo en la pantalla, no se mueve con scroll */
+  top: 140px;
+  /* margen desde la parte superior */
+  left: 20px;
+  /* margen desde la izquierda */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button {
+  width: 60px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #006400;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Efecto hover en el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button:hover {
+  background: #004d00;
+}
+
+.titulo-formulario {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de las etapas */
+.contenedor-etapas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Estilo para cada etapa */
+.etapa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+/* Línea entre etapas */
+.etapa:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  z-index: 0;
+}
+
+/* Estilo para el círculo de cada etapa */
+.circulo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.circulo-color {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: green;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilo para la descripción de cada etapa */
+.descripcion-etapa {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor del formulario */
+.formulario-pasos {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo para el título de cada paso */
+.titulo-pasos {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Estilo para cada campo del formulario */
+.campo-formulario {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Estilo para la etiqueta y el input */
+.etiqueta {
+  position: relative;
+  flex: 1;
+}
+
+/* Estilo para los inputs de la etiqueta */
+.etiqueta input[type="text"],
+.etiqueta input[type="email"],
+.etiqueta input[type="tel"],
+.etiqueta input[type="date"] {
+  width: 70%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* Estilo para el placeholder de los inputs */
+.etiqueta input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  color: black;
+}
+
+/* Estilo para el contenedor del botón siguiente paso */
+.contenedor-boton-siguiente-paso {
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo para el botón siguiente paso */
+.boton-siguiente-paso {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 17px;
+}
+
+/* Efecto hover en el botón siguiente paso */
+.boton-siguiente-paso:hover {
+  background-color: #333;
+}
+
+
+@media (max-width: 768px) {
+
+  :root {
+    --header-h: 64px;
+    --footer-h: 64px;
+  }
+
+  header {
+    position: fixed;
+    height: var(--header-h);
+    align-items: center;
+    padding: 8px 12px;
+    display: flex;
+    gap: 12px;
+  }
+
+  header img {
+    width: 48px;
+    height: 48px;
+  }
+
+  header .titulo {
+    font-size: 16px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .hamburger-btn {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #006400;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    padding-top: 72px;
+    z-index: 1500;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
+  }
+
+  /* When checkbox checked OR open class is added, show nav */
+  #menu-toggle:checked~.nav-menu,
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  /* hide language selectors and desktop buttons */
+  .botones_header,
+  .logo_idioma,
+  .logo_idioma_movil,
+  .nav-utils {
+    display: none;
+  }
+
+  /* Footer adjustments */
+  footer {
+    height: auto;
+    min-height: var(--footer-h);
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  footer nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  footer nav a {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+
+  /* Progress Steps adjustments */
+  .contenedor-etapas {
+    gap: 10px;
+  }
+
+  .etapa:not(:last-child)::after {
+    display: block;
+    width: calc(100% - 20px);
+    left: calc(50% + 20px);
+    top: 20px;
+  }
+
+  .descripcion-etapa {
+    display: none;
+    /* Hide text description on mobile to save space, or make very small */
+  }
+
+  .circulo,
+  .circulo-color {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  /* Form adjustments */
+  .campo-formulario {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .etiqueta {
+    left: 0;
+    width: 100%;
+  }
+
+  .etiqueta input[type="text"],
+  .etiqueta input[type="email"],
+  .etiqueta input[type="tel"],
+  .etiqueta input[type="date"] {
+    width: 100%;
+    /* Full width inputs */
+    max-width: none;
+  }
+
+  .columna-boton-atras-detalles {
+    top: 70px;
+    left: 10px;
+  }
+
+  .columna-boton-atras-detalles button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  /* Main container adjustments */
+  main {
+    padding: 10px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Form title adjustments */
+  .titulo-formulario {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  /* Form container adjustments */
+  .formulario-pasos {
+    padding: 15px 10px;
+    margin: 0 5px;
+    width: calc(100% - 10px);
+  }
+
+  .titulo-pasos {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+}

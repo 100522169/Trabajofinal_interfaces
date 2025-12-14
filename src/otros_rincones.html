@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
+    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/style_otros_rincones.css" />
+    <script src="js/translations.js" defer></script> <!-- Sistema de traducciones -->
+    <script src="js/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
+    <script src="js/mapa_continentes.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html"><img src="assets/images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="otros_rincones.html" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+                <li class="nav-auth-mobile"><a href="inicio_sesion.html" data-i18n="btn-login">Iniciar sesión</a></li>
+                <li class="nav-auth-mobile"><a href="registrarse.html" data-i18n="btn-register">Registrarse</a></li>
+
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="assets/images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="botones_header">
+                <button type="button" data-i18n="btn-login">Iniciar sesión</button>
+                <button type="button" data-i18n="btn-register">Registrarse</button>
+            </div>
+        </section>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <!--botón marcha atrás-->
+    <section class="columna-boton-atras-detalles">
+       <button type="button">⬅</button>
+    </section>
+
+    <main>
+        <h2 class="titulo-mapa" data-i18n="places-title">Otros rincones del mundo</h2>
+        <p class="subtitulo-mapa" data-i18n="places-subtitle">Pincha sobre un continente para saber más</p>
+
+        <!-- Mapa interactivo de continentes -->
+        <div class="mapa-wrapper">
+            <canvas id="hover-canvas"></canvas>
+            <img src="assets/images/mapa-continentes.png" alt="Mapa del mundo" usemap="#mapa-mundo" id="mapa-imagen">
+        </div>
+
+        <!-- Mapa de imagen con áreas clicables -->
+        <map name="mapa-mundo">
+            <!-- América del Norte -->
+            <area shape="poly" coords="148,233,214,149,843,45,921,82,548,384,558,473,427,542,282,402,293,211"
+                href="continente.html?region=norteamerica" alt="América del Norte" title="América del Norte"
+                data-continente="norteamerica">
+
+            <!-- América del Sur -->
+            <area shape="poly" coords="669,909,752,604,563,479,438,544,517,759,556,945"
+                href="continente.html?region=sudamerica" alt="América del Sur" title="América del Sur"
+                data-continente="sudamerica">
+
+            <!-- Europa -->
+            <area shape="poly" coords="1075,288,1045,357,950,330,861,359,808,178,935,74,1183,83,1227,253,1179,323"
+                href="continente.html?region=europa" alt="Europa" title="Europa" data-continente="europa">
+
+            <!-- África -->
+            <area shape="poly"
+                coords="1177,579,1220,735,1020,819,962,733,930,586,787,502,821,367,948,340,1054,363,1151,512,1211,495"
+                href="continente.html?region=africa" alt="África" title="África" data-continente="africa">
+
+            <!-- Asia -->
+            <area shape="poly"
+                coords="1592,381,1641,559,1622,646,1314,567,1270,460,1160,506,1054,354,1074,292,1174,331,1231,255,1190,82,1353,86,1492,109,1729,154,1666,362"
+                href="continente.html?region=asia" alt="Asia" title="Asia" data-continente="asia">
+
+            <!-- Oceanía -->
+            <area shape="poly" coords="1756,775,1679,867,1518,848,1481,733,1626,646,1652,523,1748,592"
+                href="continente.html?region=oceania" alt="Oceanía" title="Oceanía" data-continente="oceania">
+        </map>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="sobre_nosotros.html" data-i18n="footer-about">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+
+</html>

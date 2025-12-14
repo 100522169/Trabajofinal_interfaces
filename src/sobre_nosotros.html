@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros - Mochileros sin fronteras</title>
+    <!-- <link rel="stylesheet" href="css/style_home.css" /> Link removed to use self-contained styles -->
+    <link rel="stylesheet" href="css/style_sobre_nosotros.css" />
+    <script src="js/translations.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html"><img src="assets/images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="otros_rincones.html" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+                <li class="nav-auth-mobile"><a href="inicio_sesion.html" data-i18n="btn-login">Iniciar sesión</a></li>
+                <li class="nav-auth-mobile"><a href="registrarse.html" data-i18n="btn-register">Registrarse</a></li>
+
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="assets/images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="botones_header">
+                <button type="button" data-i18n="btn-login">Iniciar sesión</button>
+                <button type="button" data-i18n="btn-register">Registrarse</button>
+            </div>
+        </section>
+
+        <div class="logo_idioma">
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Botón para volver atrás -->
+    <section class="columna-boton-atras">
+        <button type="button">⬅</button>
+    </section>
+
+    <!-- Contenedor principal de la página Sobre Nosotros -->
+    <main class="contenedor-principal">
+        <section class="sobre-section">
+
+            <!-- Título de la página -->
+            <h1 class="sobre-titulo" data-i18n="about-title">Sobre nosotros</h1>
+
+            <!-- Grid de contenido: info izquierda, imagen derecha -->
+            <div class="sobre-grid">
+                <!-- Columna izquierda: Quiénes somos y filosofía -->
+                <div class="sobre-left">
+                    <label class="sobre-label" data-i18n="about-who">Quienes somos</label>
+                    <div class="sobre-box" data-i18n="about-who-text">Somos una comunidad de viajeros apasionados que
+                        busca ofrecer experiencias
+                        auténticas y responsables alrededor del mundo.</div>
+
+                    <label class="sobre-label sobre-label-secondary" data-i18n="about-philosophy">Nuestra filosofía y
+                        valores</label>
+                    <div class="sobre-box" data-i18n="about-philosophy-text">Promovemos el turismo sostenible, el
+                        respeto por las culturas locales y la
+                        conexión entre las personas mediante viajes responsables y bien organizados.</div>
+                </div>
+
+                <!-- Columna derecha: imagen y redes sociales -->
+                <div class="sobre-right">
+                    <!-- Imagen representativa -->
+                    <div class="imagen-placeholder">
+                        <!-- Division para meter 4 imagenes -->
+                        <div class="imagen-item imagen-1"></div>
+                        <div class="imagen-item imagen-2"></div>
+                        <div class="imagen-item imagen-3"></div>
+                        <div class="imagen-item imagen-4"></div>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <div class="redes">
+                        <label class="sobre-label" data-i18n="about-follow">Síguenos en redes</label>
+                        <div class="redes-row">
+                            <input type="text" placeholder="texto" aria-label="síguenos" />
+                        </div>
+                        <div class="social-icons">
+                            <img src="assets/images/redes_sociales/facebook.png" alt="facebook">
+                            <img src="assets/images/redes_sociales/instagram.png" alt="instagram">
+                            <img src="assets/images/redes_sociales/X.png" alt="X">
+                            <img src="assets/images/redes_sociales/linkedin.png" alt="linkedin">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="sobre_nosotros.html" data-i18n="footer-about">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+
+</html>

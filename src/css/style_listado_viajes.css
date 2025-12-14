@@ -1,0 +1,637 @@
+/* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
+* {
+  margin: 0;
+  /* Quita margen por defecto */
+  padding: 0;
+  /* Quita padding por defecto */
+  box-sizing: border-box;
+  /* Hace que el ancho y alto incluyan borde y padding */
+}
+
+/* Evitar scroll horizontal accidental */
+html,
+body {
+  overflow-x: hidden;
+  /* previene scroll horizontal */
+}
+
+/* Tipografía base para todo el cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables CSS para alturas de header y footer */
+:root {
+  --header-h: 110px;
+  /* altura del header usada para margin-top */
+  --footer-h: 20px;
+  /* altura del footer usada para margin-bottom */
+}
+
+/* Contenedor principal que envuelve header, main y footer */
+main {
+  flex: 1;
+  width: 100%;
+  margin-top: var(--header-h);
+  margin-bottom: var(--footer-h);
+}
+
+/* Evita que header y footer se encojan */
+header,
+footer {
+  flex-shrink: 0;
+  /* evita que se encojan */
+}
+
+/* Estilo general para enlaces */
+/* Estilo general para enlaces */
+header {
+  width: 100%;
+  height: 100px;
+  background: #006400;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 15px;
+  text-align: left;
+  align-items: center;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
+/* Estilo general para footer, similar al header */
+footer {
+  width: 100%;
+  height: 80px;
+  background: #006400;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Logo de la página */
+header img {
+  width: 80px;
+  height: 80px;
+}
+
+/* título de la página */
+header .titulo {
+  font-size: 18px;
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 50px;
+}
+
+header nav {
+  padding: 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  font-weight: 500;
+  text-transform: uppercase;
+  gap: 2rem;
+  white-space: nowrap;
+  align-items: center;
+  margin-right: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  border-radius: .375rem;
+}
+
+header .logo_idioma {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0;
+}
+
+header .logo_idioma img {
+  width: 120px;
+  height: auto;
+}
+
+header .logo_idioma select {
+  font: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: .375rem;
+  background-color: white;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.menu-toggle,
+.hamburger-btn {
+  display: none;
+}
+
+.nav-menu .nav-utils,
+.nav-auth-mobile {
+  display: none;
+}
+
+.botones_header {
+  display: flex;
+  gap: 10px;
+}
+
+header .botones_header button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+header .botones_header button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilo de la info del footer*/
+footer nav a {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0 10rem;
+}
+
+/* Efecto hover y focus en enlaces del footer */
+footer nav a:hover,
+footer nav a:focus-visible {
+  text-decoration: underline;
+}
+
+
+
+/*Listado_viajes styles*/
+/*Filtro fijo (ignorando :root) */
+.contenedor-principal {
+  display: flex;
+  /* Restore flex */
+  gap: 30px;
+  /* Restore gap */
+  padding: 0 10px;
+  position: relative;
+}
+
+/* Estilos para la columna de filtros */
+.columna-filtros {
+  position: fixed;
+  /* fijado respecto a la ventana, como header/footer */
+  top: 100px;
+  /* evita quedar debajo del header (coincide con header height) */
+  height: calc(100vh - 100px);
+  /* ocupa desde el header hasta el final de la pantalla */
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  overflow-y: auto;
+  /* scroll interno si hay más filtros que altura */
+  background: black;
+  /* fondo negro para que quede sobre el contenido */
+}
+
+/*Estilo para el título de la sección de filtros*/
+.columna-filtros h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/*Estilo para el divisor entre secciones de filtros*/
+.divisor {
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+}
+
+/* Estilos para selects en filtros */
+.columna-filtros select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/*Estilo para el botón de aplicar filtros*/
+.columna-filtros button {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Efecto hover sobre el boton de filtros*/
+.columna-filtros button:hover {
+  background: green;
+}
+
+/* mensaje de filtros aplicados*/
+.mensaje-filtros-listado {
+  display: none;
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+}
+
+/* Estilos para la columna del botón de vuelta atrás */
+.columna-boton-atras {
+  position: absolute;
+  left: 15%;
+  margin-left: 20px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el botón de vuelta atrás */
+/* Hacer coincidir el botón de volver con el estilo usado en otras páginas (verde, tamaño fijo) */
+.columna-boton-atras button {
+  width: 60px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #006400;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efecto hover en el botón de vuelta atrás */
+.columna-boton-atras button:hover {
+  background: #004d00;
+}
+
+/* Estilos para la columna de listado de viajes */
+.columna-listado-viajes {
+  flex: 1;
+  margin-left: calc(15% + 30px);
+  width: auto;
+  padding: 10px;
+  padding-top: 80px;
+  /* Espacio superior para que las tarjetas estén debajo del botón */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Estilo para cada viaje */
+.viaje {
+  flex: 0 0 calc((100% - 40px) / 3);
+  /* 3 viajes por fila con espacio entre ellos */
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Estilo para la imagen del viaje */
+.viaje img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  /* asegura que la imagen cubra el área sin distorsión */
+  margin-bottom: 30px;
+}
+
+/* Estilo para las filas de información */
+.info-fila {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+/* Estilo para los spans dentro de las filas de información */
+.info-fila span {
+  font-size: 14px;
+  flex-wrap: nowrap;
+}
+
+/* Alineación específica para el primer y último span */
+.info-fila span:first-child {
+  text-align: left;
+}
+
+/* Alineación específica para el último span */
+.info-fila span:last-child {
+  text-align: right;
+}
+
+/* Estilo para el botón "Ver detalles" */
+.ver-detalles {
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: black;
+}
+
+/* Estilo para las estrellas de valoración */
+.valoracion-estrellas {
+  color: black;
+  /* Cambia el color de las estrellas a negro */
+}
+
+/* Contenedor de acciones del viaje */
+.viaje-acciones {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Botones de guardar y compartir */
+.btn-guardar-viaje,
+.btn-compartir-viaje {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #333;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-guardar-viaje:hover,
+.btn-compartir-viaje:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+/* Estado guardado */
+.btn-guardar-viaje.guardado {
+  background: #ffebee;
+  border-color: #ef5350;
+  color: #c62828;
+}
+
+/* Botón ver detalles ocupa todo el ancho cuando hay acciones */
+/* Botón ver detalles ocupa todo el ancho cuando hay acciones */
+.viaje-acciones .ver-detalles {
+  flex: 100%;
+  margin-top: 5px;
+}
+
+/* Tablet Responsive Styles */
+
+@media (max-width:768px) {
+
+  /* Mobile Header & Nav */
+  :root {
+    --header-h: 64px;
+    --footer-h: 64px;
+  }
+
+  header {
+    position: fixed;
+    height: var(--header-h);
+    align-items: center;
+    padding: 8px 12px;
+    display: flex;
+    gap: 12px;
+  }
+
+  header img {
+    width: 48px;
+    height: 48px;
+  }
+
+  header .titulo {
+    font-size: 16px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .hamburger-btn {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #006400;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    padding-top: 72px;
+    z-index: 1500;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  #menu-toggle:checked~.nav-menu,
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .botones_header,
+  .logo_idioma,
+  .logo_idioma_movil,
+  .nav-utils {
+    display: none;
+  }
+
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
+  }
+
+  /* Listado viajes overrides */
+  main {
+    margin-top: var(--header-h);
+  }
+
+  /* En móvil: apilar en columna, filtros arriba (bloque negro) y listar viajes uno por fila */
+  .contenedor-principal {
+    flex-direction: column;
+    gap: 0; /* quitar gap horizontal y usar padding en bloques */
+    padding-left: 0; /* quitar padding lateral para que el bloque de filtros llegue al borde */
+    padding-right: 0;
+  }
+
+  .columna-filtros {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px 16px;
+    background: #000;
+    color: white;
+    box-shadow: none;
+    border-right: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    left: auto;
+    top: auto;
+    z-index: 1;
+    overflow: visible;
+  }
+
+  .columna-filtros h2 {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  /* Mover botón de volver dentro de los filtros en móvil */
+  .columna-boton-atras {
+    display: inline-flex !important;
+    position: absolute;
+    left: 12px;
+    top: 16px;
+    z-index: 100;
+  }
+
+  .columna-boton-atras button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .columna-filtros select,
+  .columna-filtros button {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000;
+  }
+
+  .columna-listado-viajes {
+    margin-left: 0;
+    width: 100%;
+    padding: 18px 12px;
+  }
+  
+  .columna-listado-viajes .viaje {
+    flex: 0 0 100%;
+    transform: none;
+    margin-left: 0;
+    margin-bottom: 18px;
+  }
+
+  footer {
+    height: auto;
+    min-height: var(--footer-h);
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  footer nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  footer nav a {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small screens: reduce title size and limit width */
+@media (max-width: 400px) {
+  header .titulo {
+    font-size: 11px;
+    max-width: 200px;
+    line-height: 1.2;
+  }
+}

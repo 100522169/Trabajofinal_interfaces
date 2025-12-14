@@ -1,0 +1,953 @@
+/* Reset básico: elimina márgenes y paddings por defecto y establece el box-sizing para incluir padding y border dentro del ancho/alto */
+* {
+  margin: 0;
+  /* Quita margen por defecto */
+  padding: 0;
+  /* Quita padding por defecto */
+  box-sizing: border-box;
+  /* Hace que el ancho y alto incluyan borde y padding */
+}
+
+/* Evitar scroll horizontal accidental */
+html,
+body {
+  overflow-x: hidden;
+  /* previene scroll horizontal */
+}
+
+/* Tipografía base para todo el cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables CSS para alturas de header y footer */
+:root {
+  --header-h: 110px;
+  /* altura del header usada para margin-top */
+  --footer-h: 20px;
+  /* altura del footer usada para margin-bottom */
+}
+
+/* Contenedor principal que envuelve header, main y footer */
+main {
+  flex: 1;
+  width: 100%;
+  margin-top: var(--header-h);
+  margin-bottom: var(--footer-h);
+  /* deja espacio para el footer fijo */
+}
+
+/* Evita que header y footer se encojan */
+header,
+footer {
+  flex-shrink: 0;
+  /* evita que se encojan */
+}
+
+/* Estilo general para enlaces */
+/* Estilo general para enlaces */
+header {
+  width: 100%;
+  height: 100px;
+  background: #006400;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 15px;
+  text-align: left;
+  align-items: center;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
+/* Estilo general para footer, similar al header */
+footer {
+  width: 100%;
+  height: 80px;
+  background: #006400;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Logo de la página */
+header img {
+  width: 80px;
+  height: 80px;
+}
+
+/* título de la página */
+header .titulo {
+  font-size: 18px;
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 50px;
+}
+
+header nav {
+  padding: 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  font-weight: 500;
+  text-transform: uppercase;
+  gap: 2rem;
+  white-space: nowrap;
+  align-items: center;
+  margin-right: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  border-radius: .375rem;
+}
+
+header .logo_idioma {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0;
+}
+
+header .logo_idioma img {
+  width: 120px;
+  height: auto;
+}
+
+header .logo_idioma select {
+  font: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: .375rem;
+  background-color: white;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.menu-toggle,
+.hamburger-btn {
+  display: none;
+}
+
+.nav-menu .nav-utils {
+  display: none;
+}
+
+/* Oculta las utilidades en la versión de escritorio */
+.nav-menu .nav-utils,
+.nav-auth-mobile {
+  display: none;
+}
+
+
+.botones_header {
+  display: flex;
+  gap: 10px;
+}
+
+header .botones_header button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+header .botones_header button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilo de la info del footer*/
+footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+}
+
+footer nav a {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+
+/* Efecto hover y focus en enlaces del footer */
+footer nav a:hover,
+footer nav a:focus-visible {
+  text-decoration: underline;
+}
+
+
+
+/*formulario_compra2 styles*/
+/* Estilos para la columna del boton-atras de detalles del viaje */
+.columna-boton-atras-detalles {
+  position: relative;
+  /* fijo en la pantalla, no se mueve con scroll */
+  top: 140px;
+  /* margen desde la parte superior */
+  left: 20px;
+  /* margen desde la izquierda */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button {
+  width: 60px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #006400;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Efecto hover en el botón de vuelta atrás en detalles del viaje */
+.columna-boton-atras-detalles button:hover {
+  background: #004d00;
+}
+
+/*Css de mi_cuenta.html */
+/* Contenedor principal */
+.mi-cuenta-contenedor {
+  display: flex;
+  margin-top: var(--header-h);
+  min-height: calc(100vh - var(--header-h) - 80px);
+  padding: 20px;
+  gap: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #000;
+  padding: 20px 0;
+  border-radius: 8px;
+  height: fit-content;
+  position: relative;
+  top: 30px;
+}
+
+/* Navegación del sidebar */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cada elemento del menú de navegación */
+.nav-item {
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Efecto hover en los elementos del menú */
+.nav-item:hover {
+  background: #333;
+}
+
+/* Estilo para el elemento activo del menú */
+.nav-item.active {
+  background: #006400;
+  font-weight: bold;
+}
+
+/* Estilo para el botón de cerrar sesión */
+.boton-cerrar-sesion {
+  color: white;
+}
+
+/* Estilo para el botón de cerrar sesión */
+.boton-cerrar-sesion:hover {
+  background: #333;
+  color: white;
+}
+
+/* Contenido principal */
+.contenido-principal {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Secciones de contenido (Datos Personales, Mis Reservas, Configuración) */
+.seccion-contenido {
+  display: none;
+}
+
+/* Mostrar la sección activa */
+.seccion-contenido.active {
+  display: block;
+}
+
+/* Títulos de las secciones */
+.seccion-contenido h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #006400;
+}
+
+/* Datos Personales */
+.datos-personales-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Avatar del usuario */
+.avatar-usuario {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #006400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* no se encoge */
+}
+
+/* Avatar imagen */
+.avatar-usuario img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Información del usuario */
+.info-usuario {
+  flex: 1;
+}
+
+/* Información de cada fila */
+.info-fila {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Etiqueta y valor en cada fila */
+.info-fila .etiqueta {
+  font-weight: bold;
+  width: 200px;
+  color: #000;
+}
+
+/* Tablet (<=768px): apilar todo en una sola columna, sidebar como bloque negro arriba */
+@media (max-width: 768px) {
+  .mi-cuenta-contenedor {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    margin-top: calc(var(--header-h) + 8px);
+  }
+
+  /* Sidebar se convierte en bloque negro en la parte superior */
+  .sidebar {
+    width: 100% !important;
+    position: relative !important;
+    top: 0 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    box-shadow: none !important;
+  }
+
+  .sidebar nav {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-item {
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+  }
+
+  /* Contenido principal ocupa todo el ancho debajo del bloque de filtros */
+  .contenido-principal {
+    width: 100% !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Datos Personales: apilar avatar encima de la info y centrar */
+  .datos-personales-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+
+  .avatar-usuario {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto !important;
+    border-width: 3px !important;
+  }
+
+  .info-usuario {
+    width: 100% !important;
+  }
+
+  .info-fila {
+    display: flex !important;
+    gap: 8px !important;
+    padding: 10px 0 !important;
+  }
+
+  .info-fila .etiqueta {
+    width: 140px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .info-fila .valor {
+    flex: 1 !important;
+  }
+
+  /* Ajustes para el botón de volver */
+  .columna-boton-atras-detalles {
+    position: relative !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+}
+
+/* Valor en cada fila */
+.info-fila .valor {
+  color: black;
+}
+
+/* Mis Reservas */
+.reservas-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cada reserva individual */
+.reserva-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de la reserva */
+.reserva-imagen {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ccc;
+}
+
+/* Imagen dentro de la reserva */
+.reserva-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Información de la reserva */
+.reserva-info {
+  flex: 1;
+}
+
+/* Título de la reserva */
+.reserva-info h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #006400;
+}
+
+/* Detalles de la reserva */
+.reserva-info p {
+  color: black;
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Botón para ver detalles de la reserva */
+.boton-ver-detalles {
+  background: #006400;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Efecto hover en el botón de ver detalles */
+.boton-ver-detalles:hover {
+  background: #005000;
+}
+
+/* Mensaje si no hay reservas */
+.mensaje-sin-reservas {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 18px;
+}
+
+/* Configuración */
+.configuracion-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 500px;
+}
+
+/* Cada elemento de configuración */
+.config-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Etiqueta del elemento de configuración */
+.config-item label {
+  font-weight: bold;
+  color: #000;
+}
+
+/* Selector de configuración */
+.config-item select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Modal de detalles de reserva */
+.modal-reserva {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: auto;
+}
+
+/* Contenido del modal */
+.modal-reserva-contenido {
+  background: white;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+/* Botón de cerrar modal */
+.cerrar-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Efecto hover en el botón de cerrar modal */
+.cerrar-modal:hover {
+  color: red;
+}
+
+/* Título del modal */
+.modal-reserva-contenido h2 {
+  font-size: 25px;
+  color: #006400;
+  margin-bottom: 25px;
+}
+
+/* Cuerpo del detalle de la reserva */
+#detalle-reserva-body {
+  margin-bottom: 25px;
+}
+
+/* Cada fila de información en el detalle */
+#detalle-reserva-body .info-fila {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Etiqueta en cada fila */
+#detalle-reserva-body .etiqueta {
+  font-weight: bold;
+  width: 250px;
+  color: #000;
+}
+
+/* Contenido en cada fila */
+#detalle-reserva-body .contenido {
+  color: black;
+}
+
+/* Información del guía en el modal */
+.info-guia-modal {
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+/* Título de la sección del guía */
+.info-guia-modal h3 {
+  font-size: 20px;
+  color: #006400;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de datos del guía */
+.guia-contacto-modal {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Avatar del guía en el modal */
+.guia-avatar-modal {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid black;
+  flex-shrink: 0;
+  background: #f5f5f5;
+}
+
+/* Imagen del avatar del guía */
+.guia-avatar-modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Datos del guía en el modal */
+.guia-datos-modal {
+  flex: 1;
+}
+
+/* Cada párrafo de datos del guía */
+.guia-datos-modal p {
+  margin: 5px 0;
+  color: black;
+  font-size: 14px;
+}
+
+/* Botón para imprimir la reserva */
+.btn-imprimir-reserva {
+  background: #006400;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Efecto hover en el botón de imprimir reserva */
+.btn-imprimir-reserva:hover {
+  background: #005000;
+}
+
+/* ========== VIAJES GUARDADOS ========== */
+/* Contenedor de viajes guardados */
+.viajes-guardados-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Cada tarjeta de viaje guardado */
+.viaje-guardado-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.viaje-guardado-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del viaje guardado */
+.viaje-guardado-imagen {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.viaje-guardado-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Información del viaje guardado */
+.viaje-guardado-info {
+  padding: 15px;
+}
+
+.viaje-guardado-info h3 {
+  font-size: 18px;
+  color: #006400;
+  margin-bottom: 8px;
+}
+
+.viaje-guardado-info .viaje-destino {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.viaje-guardado-info .viaje-detalles {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Botones de acciones del viaje guardado */
+.viaje-guardado-acciones {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #eee;
+}
+
+.btn-ver-viaje {
+  flex: 1;
+  background: #006400;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-ver-viaje:hover {
+  background: #005000;
+}
+
+.btn-quitar-guardado {
+  flex: 1;
+  background: white;
+  color: #dc3545;
+  border: 2px solid #dc3545;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-quitar-guardado:hover {
+  background: #dc3545;
+  color: white;
+}
+
+/* Mensaje cuando no hay viajes guardados */
+.mensaje-sin-guardados {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 18px;
+}
+
+@media (max-width:768px) {
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
+  }
+
+  /* Mobile Header & Nav */
+  :root {
+    --header-h: 64px;
+    --footer-h: 64px;
+  }
+
+  header {
+    position: fixed;
+    height: var(--header-h);
+    align-items: center;
+    padding: 8px 12px;
+    display: flex;
+    gap: 12px;
+  }
+
+  header img {
+    width: 48px;
+    height: 48px;
+  }
+
+  header .titulo {
+    font-size: 16px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .hamburger-btn {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #006400;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    padding-top: 72px;
+    z-index: 1500;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  #menu-toggle:checked~.nav-menu,
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .botones_header,
+  .logo_idioma,
+  .logo_idioma_movil,
+  .nav-utils {
+    display: none;
+  }
+
+  main {
+    margin-top: var(--header-h);
+  }
+
+  footer {
+    height: auto;
+    min-height: var(--footer-h);
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  footer nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  footer nav a {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small screens: reduce title size and limit width */
+@media (max-width: 400px) {
+  header .titulo {
+    font-size: 11px;
+    max-width: 200px;
+    line-height: 1.2;
+  }
+}

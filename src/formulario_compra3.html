@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
+    <title>trabajo_final</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/style_formulario_compra3.css" />
+    <script src="js/translations.js" defer></script> <!-- Sistema de traducciones -->
+    <script src="js/script.js" defer></script> <!-- Enlace al archivo externo de JavaScript -->
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html"><img src="assets/images/logo.png" alt="Logotipo del sitio"></a>
+        <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="otros_rincones.html" data-i18n="nav-otros">Otros rincones</a></li>
+                <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+                <li class="nav-auth-mobile"><a href="inicio_sesion.html" data-i18n="btn-login">Iniciar sesión</a></li>
+                <li class="nav-auth-mobile"><a href="registrarse.html" data-i18n="btn-register">Registrarse</a></li>
+
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="assets/images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="botones_header">
+                <button type="button" data-i18n="btn-login">Iniciar sesión</button>
+                <button type="button" data-i18n="btn-register">Registrarse</button>
+            </div>
+        </section>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="columna-boton-atras-detalles">
+        <button type="button">⬅</button>
+    </section>
+
+
+    <main>
+        <!-- Título del formulario y etapas -->
+        <h1 class="titulo-formulario" data-i18n="form-title">Formulario de compra</h1>
+        <section class="contenedor-etapas">
+            <div class="etapa">
+                <div class="circulo-color">✔</div>
+                <div class="descripcion-etapa" data-i18n="form-step1">1ºDatos personales</div>
+            </div>
+            <div class="etapa">
+                <div class="circulo-color">✔</div>
+                <div class="descripcion-etapa" data-i18n="form-step2">2ºAcompañantes/Mascotas/Alergias</div>
+            </div>
+            <div class="etapa">
+                <div class="circulo-color">✔</div>
+                <div class="descripcion-etapa" data-i18n="form-step3">3ºConfirmación/Pago</div>
+            </div>
+        </section>
+
+        <!-- Paso 3: Confirmación / Pago -->
+        <h2 class="titulo-paso" data-i18n="form-step3-title">Paso 3: Confirmación / Pago</h2>
+        <section class="paso3-contenedor">
+            <!-- Columna izquierda -->
+            <div class="columna-izquierda">
+                <!-- Resumen del viaje -->
+                <article class="resumen-viaje">
+                    <h3 data-i18n="pay-summary">Resumen del viaje</h3>
+                    <!-- Información del viaje -->
+                    <div class="info-fila">
+                        <!-- Destino del viaje -->
+                        <span class="etiqueta" data-i18n="pay-destination">Destino:</span>
+                        <span class="contenido">?</span>
+                    </div>
+                    <div class="info-fila">
+                        <!-- Duración del viaje -->
+                        <span class="etiqueta" data-i18n="pay-duration">Duración:</span>
+                        <span class="contenido">?</span>
+                    </div>
+                    <div class="info-fila">
+                        <!-- Tipo de viaje -->
+                        <span class="etiqueta" data-i18n="pay-trip-type">Tipo de viaje:</span>
+                        <span class="contenido">?</span>
+                    </div>
+                    <div class="info-fila">
+                        <!-- Numero de acompañantes -->
+                        <span class="etiqueta" data-i18n="pay-companions">Acompañantes:</span>
+                        <span class="contenido">?</span>
+                    </div>
+                    <div class="info-fila">
+                        <!-- Mascotas -->
+                        <span class="etiqueta" data-i18n="pay-pets">Mascotas:</span>
+                        <span class="contenido">?</span>
+                    </div>
+                    <div class="info-fila">
+                        <!-- Alergias -->
+                        <span class="etiqueta" data-i18n="pay-allergies">Alergias:</span>
+                        <span class="contenido">?</span>
+                    </div>
+                </article>
+
+                <!-- Coste total -->
+                <article class="coste-total">
+                    <h3 data-i18n="pay-total">Coste total</h3>
+                    <div class="precio-final">###.## €</div>
+                </article>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="columna-derecha">
+                <!-- Divisas de pago -->
+                <section class="divisas-pago">
+                    <h3 data-i18n="pay-currency">Divisas de pago</h3>
+                    <!-- Botones para seleccionar divisas -->
+                    <div class="divisas-botones">
+                        <button class="mas-divisas" type="button" data-i18n="pay-select-currency">Selecciona una
+                            divisa</button>
+                    </div>
+                </section>
+
+                <!-- Método de pago -->
+                <section class="metodo-pago">
+                    <h3 data-i18n="pay-method">Método de pago</h3>
+                    <label class="metodo-item">
+                        <!-- Opción de pago con tarjeta bancaria -->
+                        <input type="radio" name="metodoPago" value="tarjeta">
+                        <span data-i18n="pay-card">Tarjeta bancaria</span>
+                    </label>
+                    <label class="metodo-item">
+                        <!-- Opción de pago con transferencia bancaria -->
+                        <input type="radio" name="metodoPago" value="transferencia">
+                        <span data-i18n="pay-transfer">Transferencia bancaria</span>
+                    </label>
+                    <label class="metodo-item">
+                        <!-- Opción de pago con pagos digitales -->
+                        <input type="radio" name="metodoPago" value="digital">
+                        <span data-i18n="pay-digital">Pagos digitales (Paypal o Wise)</span>
+                    </label>
+                </section>
+
+                <!-- Botón confirmar compra -->
+                <button class="boton-confirmar" type="button" data-i18n="pay-confirm">Confirmar compra</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de más divisas -->
+    <section class="modal-divisas">
+        <!-- Contenedor del modal de más divisas -->
+        <article class="modal-contenido">
+            <div class="modal-header">
+                <h3>Selecciona una divisa</h3>
+                <button class="cerrar-modal" type="button">X</button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenedor de botones de divisas -->
+                <div class="divisas-modal-contenedor">
+                    <!-- Botones de divisas -->
+                    <button class="boton-divisa-modal" type="button" data-divisa="USD">USD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="EUR">EUR €</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="GBP">GBP £</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="JPY">JPY ¥</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="CNY">CNY ¥</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="CHF">CHF ₣</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="CAD">CAD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="AUD">AUD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="SGD">SGD $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="MXN">MXN $</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="KRW">KRW ₩</button>
+                    <button class="boton-divisa-modal" type="button" data-divisa="INR">INR ₹</button>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Modal de tarjeta bancaria -->
+    <section class="modal-tarjeta">
+        <!-- Contenedor del modal de tarjeta bancaria -->
+        <article class="modal-contenedor-tarjeta">
+            <div class="modal-header">
+                <h3>Datos de la tarjeta</h3>
+                <button class="cerrar-modal-tarjeta" type="button">X</button>
+            </div>
+            <!-- Cuerpo del modal de tarjeta bancaria -->
+            <div class="modal-body-tarjeta">
+                <!-- Formulario de tarjeta bancaria -->
+                <form id="formTarjeta">
+                    <div class="campo-tarjeta">
+                        <!-- Campo para el número de tarjeta -->
+                        <label for="numeroTarjeta">Número de tarjeta</label>
+                        <input type="text" id="numeroTarjeta" placeholder="1234 2356 2389 4422" required>
+                    </div>
+                    <!-- Contenedor para fecha de expiración y CVC -->
+                    <div class="campos-fila">
+                        <div class="campo-tarjeta">
+                            <!-- Campo para la fecha de expiración -->
+                            <label for="fechaExpiracion">Fecha de expiración</label>
+                            <input type="text" id="fechaExpiracion" placeholder="MM/AA" required>
+                        </div>
+                        <div class="campo-tarjeta">
+                            <!-- Campo para el CVC -->
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" placeholder="123" required>
+                        </div>
+                    </div>
+                    <!-- Botón para guardar la tarjeta -->
+                    <button type="button" class="boton-guardar-tarjeta">Guardar tarjeta</button>
+                </form>
+            </div>
+        </article>
+    </section>
+
+    <!-- Modal de transferencia bancaria -->
+    <section class="modal-transferencia">
+        <!-- Contenedor del modal de transferencia bancaria -->
+        <article class="modal-contenedor-transferencia">
+            <div class="modal-header">
+                <h3>Datos para transferencia bancaria</h3>
+                <!-- Botón para cerrar el modal -->
+                <button class="cerrar-modal-transferencia" type="button">X</button>
+            </div>
+            <!-- Cuerpo del modal de transferencia bancaria -->
+            <div class="modal-cuerpo-transferencia">
+                <!-- Información de transferencia -->
+                <div class="info-transferencia">
+                    <p><strong>Banco:</strong> Banco Nacional de España</p>
+                    <p><strong>Titular:</strong> Mochileros sin fronteras S.L.</p>
+                    <p><strong>IBAN:</strong> ES91 2100 0419 5402 0015 1732</p>
+                    <p><strong>BIC/SWIFT:</strong> BBVAESMM</p>
+                    <p><strong>Concepto:</strong> Viaje [Nombre del destino] - [Tu nombre]</p>
+                </div>
+                <!-- Nota adicional -->
+                <div class="nota-transferencia">
+                    <p>Por favor, incluye tu nombre y destino en el concepto de la transferencia.</p>
+                    <p>Una vez realizada la transferencia, te confirmaremos la reserva en un plazo máximo de 48 horas.
+                    </p>
+                </div>
+                <!-- Botón para confirmar que se ha leído la información -->
+                <button type="button" class="boton-transferencia">Entendido</button>
+            </div>
+        </article>
+    </section>
+
+    <!-- Modal de PayPal/Wise -->
+    <section class="modal-pagos-digitales">
+        <!-- Contenedor del modal de PayPal -->
+        <article class="modal-contenedor-pagos-digitales">
+            <div class="modal-header">
+                <h3>Pago con PayPal o Wise</h3>
+                <!-- botón para cerrar el modal -->
+                <button class="cerrar-modal-pagos-digitales" type="button">X</button>
+            </div>
+            <!-- Cuerpo del modal de PayPal -->
+            <div class="modal-cuerpo-pagos-digitales">
+                <div class="info-pago-digital">
+                    <p>Serás redirigido a la plataforma de pago para completar tu compra de forma segura</p>
+                    <!-- Opciones de pago digital -->
+                    <div class="opciones-pago-digital">
+                        <!-- Botones para PayPal y Wise -->
+                        <button type="button" class="boton-paypal">
+                            <span class="icono-paypal">💳</span>
+                            <span>Pagar con PayPal</span>
+                        </button>
+                        <button type="button" class="boton-wise">
+                            <span class="icono-wise">💰</span>
+                            <span>Pagar con Wise</span>
+                        </button>
+                    </div>
+                </div>
+                <!--Nota de aviso-->
+                <div class="nota-paypal">
+                    <p>Realizarás el pago en la plataforma oficial de PayPal o Wise</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <nav>
+            <a href="ayuda.html" data-i18n="footer-help">Ayuda</a>
+            <a href="contacto.html" data-i18n="footer-contact">Contacto</a>
+            <a href="#" data-i18n="footer-about">Sobre nosotros</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
