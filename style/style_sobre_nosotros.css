@@ -393,60 +393,6 @@ footer nav a:focus-visible {
 }
 
 /* Tablet Responsive Styles */
-/* Tablet Responsive Styles */
-@media (max-width: 1024px) {
-  .sobre-grid {
-    grid-template-columns: 1fr 350px;
-    /* Keep 2 columns, just narrower right col */
-    gap: 20px;
-  }
-
-  .sobre-right {
-    margin-top: 0;
-  }
-
-  /* Footer alignment for tablet */
-  footer nav a {
-    margin: 0 1rem;
-  }
-}
-
-@media (max-width:900px) {
-  .sobre-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .imagen-placeholder {
-    height: 160px;
-  }
-
-  .sobre-box {
-    min-height: auto;
-  }
-
-  .social-icons {
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width:480px) {
-  .sobre-grid {
-    padding: 0 12px;
-  }
-
-  .sobre-label {
-    font-size: 14px;
-  }
-
-  .sobre-box {
-    padding: 12px;
-  }
-
-  .imagen-placeholder {
-    height: 140px;
-  }
-}
 
 @media (max-width:768px) {
 
@@ -576,5 +522,71 @@ footer nav a:focus-visible {
   /* Espaciado lateral en tablet para que el contenido no toque los bordes */
   .sobre-section {
     padding: 0 20px;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .imagen-placeholder {
+    height: 350px;
+  }
+  
+  .columna-boton-atras {
+    position: relative;
+    top: 70px;
+    left: 10px;
+    margin-top: 20px;
+  }
+
+  .columna-boton-atras button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobre-titulo {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .imagen-placeholder {
+    height: 300px;
+  }
+
+  .sobre-box {
+    min-height: 80px;
+    padding: 12px;
+  }
+
+  .columna-boton-atras {
+    position: relative;
+    top: 70px;
+    left: 10px;
+    margin-top: 20px;
+  }
+
+  .columna-boton-atras button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .sobre-section {
+    padding: 0 12px;
+  }
+
+  .social-icons img,
+  .social {
+    width: 36px;
+    height: 36px;
   }
 }

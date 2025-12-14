@@ -335,27 +335,6 @@ footer nav a:focus-visible {
   border-radius: 6px;
 }
 
-/* Tablet Responsive Styles */
-@media (max-width: 1024px) {
-  .help-page {
-    flex-direction: row;
-    /* Keep side-by-side */
-    gap: 15px;
-    /* Reduce gap */
-  }
-
-  .help-sidebar {
-    width: 220px;
-    /* Squeeze sidebar slightly */
-    margin-bottom: 0;
-  }
-
-  /* Footer alignment for tablet */
-  footer nav a {
-    margin: 0 1rem;
-  }
-}
-
 .help-content {
   flex: 1;
   background: #f6f6f6;
@@ -401,7 +380,7 @@ footer nav a:focus-visible {
   display: block;
 }
 
-@media (max-width:900px) {
+@media (max-width: 600px) {
   .help-page {
     flex-direction: column;
   }
@@ -413,17 +392,7 @@ footer nav a:focus-visible {
 
   .help-content {
     order: 1;
-  }
-
-  .help-page-search input {
-    width: 92%;
-  }
-}
-
-@media (max-width:480px) {
-  .help-tab {
-    padding: 10px;
-    font-size: 14px;
+    padding: 12px;
   }
 
   .help-page-search input {
@@ -431,13 +400,29 @@ footer nav a:focus-visible {
     font-size: 15px;
   }
 
-  .help-content {
-    padding: 12px;
+  .help-tab {
+    padding: 10px;
+    font-size: 14px;
   }
 
   .faq-question {
     font-size: 16px;
     padding: 12px;
+  }
+
+  .columna-boton-atras {
+    top: 70px;
+    left: 10px;
+  }
+  
+  .columna-boton-atras button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+  }
+  
+  .help-title {
+    margin-top: 20px;
   }
 }
 
@@ -556,5 +541,20 @@ footer nav a:focus-visible {
   footer nav a {
     margin: 0 5px;
     font-size: 14px;
+  }
+
+  .columna-boton-atras {
+    top: 70px;
+    left: 10px;
+  }
+  
+  .columna-boton-atras button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+  }
+  
+  .help-title {
+    margin-top: 20px;
   }
 }
