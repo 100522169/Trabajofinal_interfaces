@@ -288,8 +288,9 @@ footer nav a:focus-visible {
 }
 
 /* Estilos para el botón de vuelta atrás */
+/* Hacer coincidir el botón de volver con el estilo usado en otras páginas (verde, tamaño fijo) */
 .columna-boton-atras button {
-  width: 30%;
+  width: 60px;
   height: 50px;
   border: 1px solid black;
   border-radius: 10px;
@@ -297,6 +298,9 @@ footer nav a:focus-visible {
   color: white;
   font-size: 30px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Efecto hover en el botón de vuelta atrás */
@@ -555,14 +559,65 @@ footer nav a:focus-visible {
     margin-top: var(--header-h);
   }
 
+  /* En móvil: apilar en columna, filtros arriba (bloque negro) y listar viajes uno por fila */
+  .contenedor-principal {
+    flex-direction: column;
+    gap: 0; /* quitar gap horizontal y usar padding en bloques */
+    padding-left: 0; /* quitar padding lateral para que el bloque de filtros llegue al borde */
+    padding-right: 0;
+  }
+
+  .columna-filtros {
+    position: relative; /* para posicionar el botón dentro */
+    width: 100%;
+    height: auto;
+    padding: 20px 16px; /* subir un poco para que el botón no toque el título */
+    background: #000; /* bloque negro */
+    color: white;
+    box-shadow: none;
+    border-right: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    left: auto;
+    top: auto;
+    z-index: 1;
+    overflow: visible; /* permitir que el botón sobresalga visualmente si es necesario */
+  }
+
+  .columna-filtros h2 {
+    text-align: center; /* centrar horizontalmente sin cambiar altura */
+    color: white;
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+
+
+  .columna-filtros select,
+  .columna-filtros button {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000;
+  }
+
+
+
   .columna-listado-viajes {
     margin-left: 0;
     width: 100%;
-    padding-top: 20px;
+    padding: 18px 12px;
   }
 
   .columna-boton-atras {
     display: none;
+  }
+  
+  .columna-listado-viajes .viaje {
+    flex: 0 0 100%;
+    transform: none;
+    margin-left: 0;
+    margin-bottom: 18px;
   }
 
   footer {
@@ -581,4 +636,14 @@ footer nav a:focus-visible {
     margin: 0 5px;
     font-size: 14px;
   }
+
+  /* Mostrar el botón de volver original en móvil */
+  .columna-boton-atras {
+    display: inline-flex;
+    position: fixed;
+    left: 12px;
+    top: calc(var(--header-h) + 8px);
+    z-index: 1200;
+  }
+
 }
