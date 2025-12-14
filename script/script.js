@@ -649,11 +649,11 @@ if (window.location.pathname.includes("index.html")) {
   });
 
   // Hacer que las tarjetas de "Viajes en grupo" en Home abran la ficha de detalles
-  // Los viajes en grupo son: Patagonia (índice 7), Maldivas (índice 8), Cataratas del Iguazú (índice 9)
+  // Los viajes en grupo son: Patagonia (índice 8), Maldivas (índice 9), Cataratas del Iguazú (índice 10)
   const tarjetasHome = document.querySelectorAll('.columna-tarjeta .tarjeta');
   if (tarjetasHome && tarjetasHome.length > 0) {
     // Índices específicos de los viajes en grupo
-    const indicesViajesGrupo = [7, 8, 9]; // Patagonia, Maldivas, Iguazú
+    const indicesViajesGrupo = [8, 9, 10]; // Patagonia, Maldivas, Iguazú
 
     tarjetasHome.forEach((tarjeta, i) => {
       tarjeta.style.cursor = 'pointer';
