@@ -234,7 +234,7 @@ const viajes = [
     condiciones_en: 'Includes hostels, backpack transport and credential. Good physical condition.',
     guia: { nombre: 'Santiago Rodríguez', edad: '45 años', edad_en: '45 years old', experiencia: '12 años de experiencia', experiencia_en: '12 years of experience', experiencias: 'Más de 20 Caminos completados', experiencias_en: 'Over 20 Caminos completed', idiomas: 'Español, Inglés, Portugués', idiomas_en: 'Spanish, English, Portuguese', contacto: '+34 687 456 789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Santiago-rodriguez.jpg' },
     reseñas: [
-      { nombre: 'Carlos López', avatar: 'images/avatar-carlos-lopez.jpg', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.', comentario_en: 'Very well organized, although the price could be a bit more affordable.' }
+      { nombre: 'Álvaro Ponz', avatar: 'images/avatares/alvaro-ponz.png', comentario: 'Muy bien organizado, aunque el precio podría ser un poco más accesible.', comentario_en: 'Very well organized, although the price could be a bit more affordable.' }
     ]
   },
 
@@ -255,7 +255,7 @@ const viajes = [
     condiciones_en: 'All inclusive. Small pets allowed. Physical level: low.',
     guia: { nombre: 'Miguel Quispe', edad: '40 años', edad_en: '40 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Experto en gastronomía peruana', experiencias_en: 'Peruvian gastronomy expert', idiomas: 'Español, Inglés, Quechua', idiomas_en: 'Spanish, English, Quechua', contacto: '+51 987 654 321', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatares/miguel-quispe.jpg' },
     reseñas: [
-      { nombre: 'Laura García', avatar: 'images/avatar-laura-garcia.jpg', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.', comentario_en: 'Unique experience, the guide was very professional and attentive at all times.' }
+      { nombre: 'Laura García', avatar: 'images/avatares/laura-garcia.jpg', comentario: 'Experiencia única, el guía fue muy profesional y atento en todo momento.', comentario_en: 'Unique experience, the guide was very professional and attentive at all times.' }
     ]
   },
   {
@@ -344,7 +344,7 @@ const viajes = [
     condiciones: 'Incluye traslados y alojamiento. Nivel físico medio-alto.',
     condiciones_en: 'Includes transfers and accommodation. Medium-high physical level.',
     guia: { nombre: 'Laura Pérez', edad: '36 años', edad_en: '36 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía en Patagonia', experiencias_en: 'Patagonia guide', idiomas: 'Español, Inglés', idiomas_en: 'Spanish, English', contacto: '+54 9 11 2345 6789', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/laura-perez.jpg' },
-    reseñas: [{ nombre: 'María R.', avatar: 'images/avatar-maria.jpg', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
+    reseñas: [{ nombre: 'María R.', avatar: 'images/avatares/maria-r.jpg', comentario: 'Paisajes impresionantes y guía excepcional.', comentario_en: 'Impressive landscapes and exceptional guide.' }]
   },
   {
     destino: 'Maldivas', continente: 'asia', duracion: 4, precio: 1500, tipo: 'Organizado', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Asia/Maldivas/maldivas.jpg', titulo: 'Maldivas: Paraíso y Relax', titulo_en: 'Maldives: Paradise and Relaxation',
@@ -379,7 +379,7 @@ const viajes = [
     condiciones: 'Incluye entradas y transporte.',
     condiciones_en: 'Includes entrance fees and transport.',
     guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
-    reseñas: [{ nombre: 'Carlos V.', avatar: 'images/avatar-carlos-v.jpg', comentario: 'Impresionante y bien organizado.', comentario_en: 'Impressive and well organized.' }]
+    reseñas: []
   },
 
   // Norte America
@@ -392,8 +392,8 @@ const viajes = [
     itinerarioDetallado: ['Llegada a NYC. Paseo por Times Square y Broadway.', 'Ferry a la Estatua de la Libertad y Ellis Island.', 'Recorrido por Central Park y 5th Avenue.', 'Visita al MET y al MoMA.', 'Excursión a Washington DC y monumentos.', 'Tour por Filadelfia histórica.', 'Día libre para compras.'],
     condiciones: 'Incluye traslados y entradas principales.',
     condiciones_en: 'Includes transfers and main entrances.',
-    guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Marcos.png' },
-    reseñas: [{ nombre: 'Ana M.', avatar: 'images/avatar-ana-m.jpg', comentario: 'Nueva York es increíble, muy bien organizado.', comentario_en: 'New York is amazing, very well organized.' }]
+    guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/michael-johnson.jpg' },
+    reseñas: [{ nombre: 'Marco G.', avatar: 'images/avatares/Marco.png', comentario: 'Nueva York es increíble, muy bien organizado.', comentario_en: 'New York is amazing, very well organized.' }]
   },
   {
     destino: 'Estados Unidos', continente: 'norteamerica', duracion: 9, precio: 1400, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Norte America/cañon del colorado_2.jpg', titulo: 'Gran Cañón y Parques Nacionales', titulo_en: 'Grand Canyon and National Parks',
@@ -403,8 +403,8 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Las Vegas y noche libre.', 'Ruta al Gran Cañón, atardecer épico.', 'Monument Valley en Jeep con Navajos.', 'Antelope Canyon y Horseshoe Bend.', 'Trekking en Zion National Park.', 'Amanecer en Bryce Canyon.', 'Travesía por Death Valley.', 'Yosemite: El Capitán y cascadas.', 'Llegada a San Francisco, Golden Gate.'],
     condiciones: 'Nivel físico medio-alto. Incluye camping y alojamiento.',
     condiciones_en: 'Medium-high physical level. Includes camping and accommodation.',
-    guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Sergio.png' },
-    reseñas: [{ nombre: 'Roberto S.', avatar: 'images/avatar-roberto.jpg', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
+    guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/david-williams.jpg' },
+    reseñas: [{ nombre: 'Pablo R.', avatar: 'images/avatares/Pablo.png', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
   },
 
   // Africa
@@ -417,7 +417,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Nairobi, visita al centro de elefantes.', 'Safari en Masai Mara, leones y leopardos.', 'La Gran Migración de ñus.', 'Flamencos en Lago Nakuru.', 'Elefantes con Kilimanjaro de fondo en Amboseli.', 'Safari en Tsavo, rinocerontes.', 'Visita a aldea Masai.', 'Regreso a Nairobi.'],
     condiciones: 'Todo incluido. Alojamiento en lodges y campamentos.',
     condiciones_en: 'All inclusive. Lodges and camp accommodation.',
-    guia: { nombre: 'Joseph Kimani', edad: '38 años', edad_en: '38 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de safari certificado', experiencias_en: 'Certified safari guide', idiomas: 'Inglés, Suajili', idiomas_en: 'English, Swahili', contacto: '+254 700 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Jesus.png' },
+    guia: { nombre: 'Joseph Kimani', edad: '38 años', edad_en: '38 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de safari certificado', experiencias_en: 'Certified safari guide', idiomas: 'Inglés, Suajili', idiomas_en: 'English, Swahili', contacto: '+254 700 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/joseph-kimani.jpg' },
     reseñas: [{ nombre: 'Elena P.', avatar: 'images/avatar-elena.jpg', comentario: 'Ver los Big Five fue un sueño cumplido.', comentario_en: 'Seeing the Big Five was a dream come true.' }]
   },
   {
@@ -428,7 +428,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Marrakech, Djemaa el Fna.', 'Cruce de las montañas del Atlas, Kasbah Ait Ben Haddou.', 'Noche en el desierto, paseo en camello al atardecer.', 'Amanecer en las dunas de Erg Chebbi, ruta a Fez.', 'Fez y su medina laberíntica.', 'Chefchaouen, la perla azul. Regreso.'],
     condiciones: 'Incluye riads tradicionales y campamento en desierto.',
     condiciones_en: 'Includes traditional riads and desert camp.',
-    guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/guia.jpeg' },
+    guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/hassan-benali.jpg' },
     reseñas: [{ nombre: 'Lucía R.', avatar: 'images/avatar-lucia.jpg', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
   },
 
@@ -442,7 +442,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Sydney, paseo por Circular Quay.', 'Tour por la Ópera de Sydney y Harbour Bridge.', 'Excursión a Blue Mountains, senderos y cascadas.', 'Vuelo a Cairns, tarde en la selva tropical.', 'Snorkel en la Gran Barrera de Coral, día completo.', 'Vuelo al Outback, atardecer en Uluru.', 'Melbourne, Great Ocean Road y regreso.'],
     condiciones: 'Vuelos internos incluidos. Nivel físico bajo-medio.',
     condiciones_en: 'Domestic flights included. Low-medium physical level.',
-    guia: { nombre: 'Emma Thompson', edad: '32 años', edad_en: '32 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía turística certificada', experiencias_en: 'Certified tour guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+61 400 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/personas.jpeg' },
+    guia: { nombre: 'Emma Thompson', edad: '32 años', edad_en: '32 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía turística certificada', experiencias_en: 'Certified tour guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+61 400 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/emma-thompson.jpg' },
     reseñas: [{ nombre: 'Pablo G.', avatar: 'images/avatar-pablo.jpg', comentario: 'Australia superó todas mis expectativas.', comentario_en: 'Australia exceeded all my expectations.' }]
   },
   {
@@ -453,7 +453,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Auckland, Sky Tower y paseo por el puerto.', 'Visita a Hobbiton, set de El Señor de los Anillos.', 'Géiseres y cultura maorí en Rotorua.', 'Wellington, Weta Workshop y ferry a Isla Sur.', 'Aventura en Queenstown: búngee o jet boat.', 'Crucero espectacular por Milford Sound.', 'Trekking en glaciares Fox y Franz Josef. Regreso.'],
     condiciones: 'Incluye ferry entre islas y actividades de aventura.',
     condiciones_en: 'Includes inter-island ferry and adventure activities.',
-    guia: { nombre: 'James Wilson', edad: '40 años', edad_en: '40 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en Tierra Media', experiencias_en: 'Middle Earth expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+64 21 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Alex.png' },
+    guia: { nombre: 'James Wilson', edad: '40 años', edad_en: '40 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en Tierra Media', experiencias_en: 'Middle Earth expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+64 21 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/james-wilson.jpg' },
     reseñas: [{ nombre: 'Marta L.', avatar: 'images/avatar-marta.jpg', comentario: 'Paisajes de película, literalmente.', comentario_en: 'Movie-like landscapes, literally.' }]
   }
 ];
@@ -3408,6 +3408,19 @@ if (window.location.pathname.includes("sobre_nosotros.html")) {
 
   // Botón de vuelta atrás
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
+  if (botonVueltaAtras){
+    botonVueltaAtras.addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+  }
+}
+
+
+// otros_rincones.html
+if (window.location.pathname.includes("otros_rincones.html")) {
+
+  // Botón de vuelta atrás
+  const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras){
     botonVueltaAtras.addEventListener('click', () => {
       window.location.href = 'home.html';

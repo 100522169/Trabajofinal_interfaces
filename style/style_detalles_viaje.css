@@ -761,26 +761,27 @@ body.modal-abierto {
   background-color: #0056b3;
 }
 
-/* Responsive tweaks for detalles_viaje */
-@media (max-width:1024px) {
-  .contenedor-detalles {
-    padding: 14px;
-    max-width: 1000px;
-  }
+  /* Responsive tweaks for detalles_viaje */
+  @media (max-width:1024px) {
+    .contenedor-detalles {
+      padding: 14px;
+      max-width: 1000px;
+    }
 
-  .fila-informacion {
-    flex-direction: column;
-    gap: 18px;
-  }
+    .fila-informacion {
+      flex-direction: column;
+      gap: 18px;
+    }
 
-  .galeria-imagenes {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .galeria-imagenes {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-  .imagen {
-    width: 180px;
-    height: 120px;
+    .imagen {
+      width: 180px;
+      height: 120px;
+    }
   }
 
   /* Tablet Responsive Styles */
