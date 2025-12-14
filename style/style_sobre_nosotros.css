@@ -196,7 +196,8 @@ header nav a:focus-visible {
 }
 
 /* Oculta las utilidades en la versión de escritorio */
-.nav-menu .nav-utils {
+.nav-menu .nav-utils,
+.nav-auth-mobile {
   display: none;
 }
 
@@ -492,14 +493,6 @@ footer nav a:focus-visible {
 
   main {
     margin-top: var(--header-h);
-  }
-
-  /* Subir botón de volver en móvil/tablet pequeño para que quede visible */
-  .columna-boton-atras {
-    position: fixed;
-    top: calc(var(--header-h) + 8px);
-    left: 12px;
-    z-index: 1600;
   }
 
   footer {
