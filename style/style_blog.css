@@ -54,7 +54,7 @@ footer {
 /* Estilo general para enlaces */
 header {
   width: 100%;
-  height: 100px;
+  height: var(--header-h);
   background: #006400;
   position: fixed;
   top: 0;
@@ -84,12 +84,117 @@ header nav ul {
 
 /* Tablet (<=768px): apilar filtros arriba y mostrar artículos uno-por-fila */
 @media (max-width: 768px) {
+  header {
+    z-index: 3000; /* asegurar que el header quede encima */
+  }
+
+  /* Columna principal apilada como en móvil */
   .contenedor-principal {
+    display: flex;
     flex-direction: column;
     gap: 0;
     padding-left: 0;
     padding-right: 0;
+    margin-top: var(--header-h) !important; /* empezar justo debajo del header */
   }
+
+  /* Bloque negro de filtros: bloque completo, arriba primero */
+  .columna-filtros {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 18px 12px !important;
+    background: #000 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 1500 !important;
+    overflow: visible !important;
+  }
+
+  .columna-filtros h2 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  /* Botón volver: dentro del flujo, sin solapar */
+  .columna-boton-atras {
+    display: block !important;
+    position: relative !important;
+    margin: 6px 12px !important;
+    width: auto !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 1600 !important;
+  }
+
+  .columna-boton-atras button {
+    width: 48px !important;
+    height: 44px !important;
+    font-size: 22px !important;
+  }
+
+  /* Listado: debajo del bloque de filtros, una columna */
+  .columna-listado-blogs {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 14px 12px !important;
+  }
+
+  .blog-card {
+    flex: 0 0 100% !important;
+    transform: none !important;
+    margin-left: 0 !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* Asegurar imágenes con tamaño uniforme */
+  .blog-card img {
+    height: 200px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+  }
+
+  /* Mostrar el carrusel superior (copiado de home) */
+  .columna-carrusel {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 12px;
+  }
+
+  .carrusel {
+    width: 100%;
+    height: 330px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-image: url('../images/imagen_bali.jpg');
+    background-size: cover;
+    background-position: center 30%;
+  }
+
+  .carrusel h1 {
+    text-align: left;
+    font-size: 50px;
+    padding: 20px 0 0 20px;
+    margin-top: 180px;
+    color: white;
+  }
+
+  .carrusel h3 {
+    text-align: left;
+    padding: 0 0 0 20px;
+    color: white;
+  }
+
+  header .titulo { font-size: 16px !important; }
 
   .columna-filtros {
     position: relative;
@@ -115,6 +220,41 @@ header nav ul {
     margin-bottom: 12px;
   }
 
+  /* Forzar comportamiento móvil en tablet (más específico y con !important) */
+  .contenedor-principal {
+    margin-top: var(--header-h) !important;
+    align-items: stretch !important;
+  }
+
+  .columna-filtros {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    padding: 18px 16px !important;
+    box-shadow: none !important;
+    border-right: none !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+  }
+
+  /* Asegurar que el listado esté siempre debajo del bloque de filtros */
+  .columna-listado-blogs {
+    margin-left: 0 !important;
+    padding-top: 18px !important;
+  }
+
+  /* Mantener el botón de volver en su sitio inicial (no fijo) */
+  .columna-boton-atras {
+    /* Pasamos el botón a flujo para que no solape filtros ni contenido */
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 8px 12px !important;
+    z-index: 900 !important;
+  }
+
   .columna-filtros .categoria-item,
   .columna-filtros button {
     width: 100%;
@@ -126,7 +266,27 @@ header nav ul {
   .columna-listado-blogs {
     margin-left: 0;
     width: 100%;
-    padding: 18px 12px;
+    padding: 24px 12px !important;
+  }
+
+  /* Ajustes adicionales para que la versión tablet se comporte como la móvil */
+  main {
+    margin-top: var(--header-h);
+  }
+
+  /* Asegurar que el carrusel se muestre en todas las resoluciones */
+  .carrusel {
+    display: block;
+  }
+
+  /* Titular más pequeño como en móvil */
+  header .titulo {
+    font-size: 16px;
+  }
+
+  /* Asegurar que el listado no quede oculto detrás del header */
+  .columna-listado-blogs {
+    padding-top: 12px;
   }
 
   .blog-card {
@@ -140,10 +300,28 @@ header nav ul {
     display: inline-flex;
     /* Posición absoluta dentro de .contenedor-principal para que el botón
        no quede fijo en la ventana y se mueva cuando el usuario haga scroll */
-    position: absolute;
-    left: 12px;
-    top: 8px;
+    position: relative;
+    left: auto;
+    top: auto;
     z-index: 900;
+  }
+  
+  /* Forzar que el bloque de filtros quede justo debajo del header y no lo solape */
+  .contenedor-principal {
+    margin-top: calc(var(--header-h) + 8px) !important;
+  }
+  
+  /* Mantener los filtros en el flujo (no sticky) para que aparezcan debajo del carrusel como en home */
+  .columna-filtros {
+    position: relative;
+    top: auto;
+    z-index: 1;
+  }
+  
+  /* Forzar tamaño de las imágenes en tablet para que no ocupen demasiado espacio */
+  .blog-card img {
+    height: 200px !important;
+    object-fit: cover !important;
   }
 }
 
@@ -310,7 +488,7 @@ footer nav a:focus-visible {
 .columna-filtros {
   position: fixed;
   /* fijado respecto a la ventana, como header/footer */
-  top: 100px;
+  top: var(--header-h);
   /* evita quedar debajo del header (coincide con header height) */
   left: 0;
   /* pegado al borde izquierdo */
