@@ -238,6 +238,24 @@ const viajes = [
     ]
   },
 
+  {
+    destino: 'Polonia', continente: 'europa', duracion: 3, precio: 200, tipo: 'Organizado', mascotas: 'si', valoracion: 3, imagen: 'images/viajes/Europa/Polonia/varsovia.jpg', titulo: 'Varsovia: Historia y Renacimiento', titulo_en: 'Waersaw: History and Renaissance',
+    dietasDisponibles: ['vegetariano', 'vegano', 'sin-gluten'],
+    galeria: ['images/viajes/Europa/Polonia/varsovia.jpg', 'images/viajes/Europa/Polonia/castillo-real.jpg', 'images/viajes/Europa/Polonia/museo-polin.jpg', 'images/viajes/Europa/Polonia/parque-Łazienki.jpg'],
+    itinerario: ['Llegada y Casco Antiguo', 'Historia y cultura', 'Parques y despedida'],
+    itinerarioDetallado: [
+      'Llegada a Varsovia. Paseo por el Casco Antiguo reconstruido, Patrimonio de la Humanidad. Visita al Castillo Real y la Plaza del Mercado.',
+      'Visita al Museo de la Historia de los Judíos Polacos POLIN. Tarde en el Palacio de la Cultura y la Ciencia. Cena tradicional polaca.',
+      'Exploración del Parque Łazienki con el Palacio sobre el Agua. Tiempo libre para compras y despedida en un café local.'
+    ],
+    condiciones: 'Incluye entradas y transporte local. Mascotas pequeñas permitidas. Nivel físico: bajo.',
+    condiciones_en: 'Includes entrance fees and local transport. Small pets allowed. Physical level: low.',
+    guia: { nombre: 'Anna Kowalska', edad: '30 años', edad_en: '30 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Experta en cultura e historia polaca', experiencias_en: 'Expert in Polish culture and history', idiomas: 'Español, Inglés, Polaco', idiomas_en: 'Spanish, English, Polish', contacto: '+48 600 123 576', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/anna-kowalska.jpg' },
+    reseñas: [
+      { nombre: 'Jon B.', avatar: 'images/avatares/Jon.png', comentario: 'Me encantó la experiencia, muy bien organizada y con un guía excelente.', comentario_en: 'I loved the experience, very well organized and with an excellent guide.' }
+    ]
+  },
+
   // Sudamérica
 
   {
@@ -324,7 +342,7 @@ const viajes = [
     reseñas: []
   },
 
-  //Viajes en grupo
+  // Viajes en grupo
 
   {
     destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 1200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Sudamerica/Argentina/patagonia.jpg', titulo: 'Patagonia: Glaciares y Montañas', titulo_en: 'Patagonia: Glaciers and Mountains',
@@ -358,8 +376,8 @@ const viajes = [
       'Mañana libre para actividades personales y traslado al aeropuerto para el vuelo de regreso.'],
     condiciones: 'Incluye alojamiento en resort y desayunos.',
     condiciones_en: 'Includes resort accommodation and breakfast.',
-    guia: { nombre: 'Ahmed Ali', edad: '30 años', edad_en: '30 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía local en islas', experiencias_en: 'Local island guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/Alex.png' },
-    reseñas: [{ nombre: 'Laura G.', avatar: 'images/avatar-laura-g.jpg', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
+    guia: { nombre: 'Ahmed Ali', edad: '30 años', edad_en: '30 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía local en islas', experiencias_en: 'Local island guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+960 777 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/ahmed-ali.jpg' },
+    reseñas: [{ nombre: 'Jaime C.', avatar: 'images/avatares/Jaime.png', comentario: 'Un paraíso, servicio excelente.', comentario_en: 'A paradise, excellent service.' }]
   },
   {
     destino: 'Argentina', continente: 'sudamerica', duracion: 8, precio: 900, tipo: 'Turístico', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Sudamerica/Argentina/cataratas_iguazu.jpg', titulo: 'Cataratas del Iguazú y Selva', titulo_en: 'Iguazu Falls and Jungle',
@@ -410,26 +428,43 @@ const viajes = [
   // Africa
 
   {
-    destino: 'Kenia', continente: 'africa', duracion: 8, precio: 2000, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Africa/safari kenia.jpg', titulo: 'Safari en Kenia: La Gran Migración', titulo_en: 'Kenya Safari: The Great Migration',
+    destino: 'Kenia', continente: 'africa', duracion: 8, precio: 2000, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Africa/Kenia/safari kenia.jpg', titulo: 'Safari en Kenia: La Gran Migración', titulo_en: 'Kenya Safari: The Great Migration',
     dietasDisponibles: ['vegano', 'vegetariano', 'halal'],
-    galeria: ['images/viajes/Africa/safari kenia.jpg', 'images/viajes/Africa/Safari kenia 2.jpeg', 'images/viajes/Africa/Safari Kenia 3.webp', 'images/viajes/Africa/safari kenia 4.jpeg', 'images/viajes/Africa/Safari kenia 5.jpg'],
+    galeria: ['images/viajes/Africa/Kenia/safari kenia.jpg', 'images/viajes/Africa/Kenia/Safari kenia 2.jpeg', 'images/viajes/Africa/Kenia/Safari Kenia 3.webp', 'images/viajes/Africa/Kenia/safari kenia 4.jpeg', 'images/viajes/Africa/Kenia/Safari kenia 5.jpg'],
     itinerario: ['Nairobi', 'Masai Mara Día 1', 'Gran Migración', 'Lago Nakuru', 'Amboseli', 'Safari Tsavo', 'Aldea Masai', 'Regreso a Nairobi'],
     itinerarioDetallado: ['Llegada a Nairobi, visita al centro de elefantes.', 'Safari en Masai Mara, leones y leopardos.', 'La Gran Migración de ñus.', 'Flamencos en Lago Nakuru.', 'Elefantes con Kilimanjaro de fondo en Amboseli.', 'Safari en Tsavo, rinocerontes.', 'Visita a aldea Masai.', 'Regreso a Nairobi.'],
     condiciones: 'Todo incluido. Alojamiento en lodges y campamentos.',
     condiciones_en: 'All inclusive. Lodges and camp accommodation.',
     guia: { nombre: 'Joseph Kimani', edad: '38 años', edad_en: '38 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de safari certificado', experiencias_en: 'Certified safari guide', idiomas: 'Inglés, Suajili', idiomas_en: 'English, Swahili', contacto: '+254 700 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/joseph-kimani.jpg' },
-    reseñas: [{ nombre: 'Elena P.', avatar: 'images/avatar-elena.jpg', comentario: 'Ver los Big Five fue un sueño cumplido.', comentario_en: 'Seeing the Big Five was a dream come true.' }]
+    reseñas: [{ nombre: 'David H.', avatar: 'images/avatares/David.png', comentario: 'Ver los Big Five fue un sueño cumplido.', comentario_en: 'Seeing the Big Five was a dream come true.' }]
   },
+
   {
-    destino: 'Marruecos', continente: 'africa', duracion: 6, precio: 800, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Africa/marruecos 1.jpg', titulo: 'Marruecos: De Marrakech al Desierto', titulo_en: 'Morocco: From Marrakech to the Desert',
+    destino: 'Egipto', continente: 'africa', duracion: 3, precio: 150, tipo: 'Aventura', mascotas: 'no', valoracion: 3, imagen: 'images/viajes/Africa/Egipto/el-cairo.jpg', titulo: 'Aventura por Egipto', titulo_en: 'Adventure through Egypt',
+    dietasDisponibles: ['vegetariano', 'sin-pescado', 'sin-huevo','halal'],
+    galeria: ['images/viajes/Africa/Egipto/el-cairo.jpg', 'images/viajes/Africa/Egipto/bazar-egipto.jpg', 'images/viajes/Africa/Egipto/piramide-giza.jpg', 'images/viajes/Africa/Egipto/esfinge.jpg', 'images/viajes/Africa/Egipto/Nilo.jpg'],
+    itinerario: ['Llegada a El Cairo', 'Pirámides y desierto', 'Museo Egipcio y Nilo'],
+    itinerarioDetallado: [
+      'Llegada a El Cairo. Visita a la Ciudadela de Saladino y la Mezquita de Alabastro. Paseo por el bazar Khan El Khalili para compras y cultura local.',
+      'Excursión a las Pirámides de Giza y la Esfinge. Opción de paseo en camello por el desierto. Almuerzo con vista a las pirámides y regreso al hotel para descanso.',
+      'Visita al Museo Egipcio para admirar tesoros faraónicos, incluyendo la máscara de Tutankamón. Paseo en feluca por el río Nilo al atardecer. Cena de despedida con espectáculo tradicional.'
+      ],
+    condiciones: 'Incluye alojamiento, transporte pero no entradas, excepto pirámides.',
+    condiciones_en: 'Includes accommodation, transport but not entrance fees, except pyramids.',
+    guia: { nombre: 'Omar Hussein', edad: '39 años', edad_en: '39 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Egiptólogo y conocedor de gastronomía local', experiencias_en: 'Egyptologist and local gastronomy expert', idiomas: 'Árabe, Español, Inglés', idiomas_en: 'Arabic, Spanish, English', contacto: '+20 100 034 2589', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 3, avatar: 'images/avatares/omar-hussein.jpg' },
+    reseñas: [{ nombre: 'Juan Manuel C.', avatar: 'images/avatares/Juancho.png', comentario: 'Una experiencia cultural enriquecedora.', comentario_en: 'An enriching cultural experience.' }]
+  },
+
+  {
+    destino: 'Marruecos', continente: 'africa', duracion: 6, precio: 800, tipo: 'Cultural', mascotas: 'no', valoracion: 4, imagen: 'images/viajes/Africa/Marruecos/marruecos 1.jpg', titulo: 'Marruecos: De Marrakech al Desierto', titulo_en: 'Morocco: From Marrakech to the Desert',
     dietasDisponibles: ['vegano', 'vegetariano', 'halal'],
-    galeria: ['images/viajes/Africa/marruecos 1.jpg', 'images/viajes/Africa/Marruecos 2.jpg', 'images/viajes/Africa/Marruecos 3.webp', 'images/viajes/Africa/Marruecos 4.jpg', 'images/viajes/Africa/Marruecos 5.jpg', 'images/viajes/Africa/Marruecos 6.webp'],
+    galeria: ['images/viajes/Africa/Marruecos/marruecos 1.jpg', 'images/viajes/Africa/Marruecos/Marruecos 2.jpg', 'images/viajes/Africa/Marruecos/Marruecos 3.webp', 'images/viajes/Africa/Marruecos/Marruecos 4.jpg', 'images/viajes/Africa/Marruecos/Marruecos 5.jpg', 'images/viajes/Africa/Marruecos/Marruecos 6.webp'],
     itinerario: ['Marrakech', 'Montañas Atlas', 'Ait Ben Haddou', 'Desierto del Sahara', 'Fez', 'Chefchaouen'],
     itinerarioDetallado: ['Llegada a Marrakech, Djemaa el Fna.', 'Cruce de las montañas del Atlas, Kasbah Ait Ben Haddou.', 'Noche en el desierto, paseo en camello al atardecer.', 'Amanecer en las dunas de Erg Chebbi, ruta a Fez.', 'Fez y su medina laberíntica.', 'Chefchaouen, la perla azul. Regreso.'],
     condiciones: 'Incluye riads tradicionales y campamento en desierto.',
     condiciones_en: 'Includes traditional riads and desert camp.',
     guia: { nombre: 'Hassan Benali', edad: '45 años', edad_en: '45 years old', experiencia: '20 años', experiencia_en: '20 years of experience', experiencias: 'Experto en cultura bereber', experiencias_en: 'Berber culture expert', idiomas: 'Árabe, Francés, Español, Inglés', idiomas_en: 'Arabic, French, Spanish, English', contacto: '+212 600 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/hassan-benali.jpg' },
-    reseñas: [{ nombre: 'Lucía R.', avatar: 'images/avatar-lucia.jpg', comentario: 'Marruecos es mágico, colores y sabores únicos.', comentario_en: 'Morocco is magical, unique colors and flavors.' }]
+    reseñas: []
   },
 
   // Oceania
@@ -443,7 +478,7 @@ const viajes = [
     condiciones: 'Vuelos internos incluidos. Nivel físico bajo-medio.',
     condiciones_en: 'Domestic flights included. Low-medium physical level.',
     guia: { nombre: 'Emma Thompson', edad: '32 años', edad_en: '32 years old', experiencia: '8 años', experiencia_en: '8 years of experience', experiencias: 'Guía turística certificada', experiencias_en: 'Certified tour guide', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+61 400 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/emma-thompson.jpg' },
-    reseñas: [{ nombre: 'Pablo G.', avatar: 'images/avatar-pablo.jpg', comentario: 'Australia superó todas mis expectativas.', comentario_en: 'Australia exceeded all my expectations.' }]
+    reseñas: [{ nombre: 'Dani S.', avatar: 'images/avatares/Dani_S.png', comentario: 'Australia superó todas mis expectativas.', comentario_en: 'Australia exceeded all my expectations.' }]
   },
   {
     destino: 'Nueva Zelanda', continente: 'oceania', duracion: 7, precio: 2200, tipo: 'Aventura', mascotas: 'no', valoracion: 5, imagen: 'images/viajes/Oceania/Nueva_Zelanda_1.jpeg', titulo: 'Nueva Zelanda: Tierra Media', titulo_en: 'New Zealand: Middle Earth',
@@ -454,7 +489,7 @@ const viajes = [
     condiciones: 'Incluye ferry entre islas y actividades de aventura.',
     condiciones_en: 'Includes inter-island ferry and adventure activities.',
     guia: { nombre: 'James Wilson', edad: '40 años', edad_en: '40 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en Tierra Media', experiencias_en: 'Middle Earth expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+64 21 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/james-wilson.jpg' },
-    reseñas: [{ nombre: 'Marta L.', avatar: 'images/avatar-marta.jpg', comentario: 'Paisajes de película, literalmente.', comentario_en: 'Movie-like landscapes, literally.' }]
+    reseñas: []
   }
 ];
 
@@ -992,8 +1027,8 @@ if (window.location.pathname.includes("listado_viajes.html")) {
     // Partir siempre de TODOS los viajes disponibles, no solo de los pre-filtrados
     let filtrados = [...viajes];
 
-    // Excluir viajes en grupo (índices 7, 8, 9: Patagonia, Maldivas, Iguazú)
-    const indicesViajesGrupo = [7, 8, 9];
+    // Excluir viajes en grupo (índices 8, 9, 10: Patagonia, Maldivas, Iguazú)
+    const indicesViajesGrupo = [8, 9, 10];
     filtrados = filtrados.filter((viaje, index) => !indicesViajesGrupo.includes(index));
 
     if (destino && destino !== '') filtrados = filtrados.filter(v => v.destino === destino);   //Si se ha seleccionado un destino y es diferente de cadena vacía, entonces filtrar por destino
@@ -1657,6 +1692,12 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
 
   renderizarDietasDelViaje();
 
+  // Ocultar columna de mascotas si el viaje no permite mascotas
+  const columnaMascotas = document.querySelector('.columna-mascotas');
+  if (viajeSeleccionado.mascotas === 'no' && columnaMascotas) {
+    columnaMascotas.style.display = 'none';
+  }
+
   // Modal de dietas - mostrar todas las dietas del viaje
   function abrirModalDietas() {
     const modal = document.createElement('div');
@@ -1877,13 +1918,18 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
         }
       });
 
-      // Validar selección de mascota (obligatorio seleccionar sí o no)
-      const viajaMascota = document.querySelector('input[name="viajaMascota"]:checked')?.value;
+      // Validar selección de mascota (solo si el viaje permite mascotas)
+      let viajaMascota = document.querySelector('input[name="viajaMascota"]:checked')?.value;
 
-      // Si no se ha seleccionado ninguna opción
-      if (!viajaMascota) {
-        alert('Debes seleccionar si viajas con mascota o no');
-        return;
+      // Si el viaje no permite mascotas, establecer automáticamente como 'no'
+      if (viajeSeleccionado.mascotas === 'no') {
+        viajaMascota = 'no';
+      } else {
+        // Si el viaje permite mascotas, es obligatorio seleccionar sí o no
+        if (!viajaMascota) {
+          alert('Debes seleccionar si viajas con mascota o no');
+          return;
+        }
       }
 
       // Mascota inicialmente nula
