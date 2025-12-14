@@ -720,9 +720,12 @@ if (window.location.pathname.includes("inicio_sesion.html") || window.location.p
       // Guardar el usuario actual en localStorage
       localStorage.setItem("usuarioActual", JSON.stringify(usuarioEncontrado));
       // Redirigir a la página index.html si los datos coinciden
-      navegarA("index.html");
+      mostrarToast("Inicio de sesión exitoso", "success");
+      setTimeout(() => {
+        navegarA("index.html");
+      }, 800);
     } else {
-      alert("Usuario o contraseña incorrectos");
+      mostrarToast("Usuario o contraseña incorrectos", "error");
     }
   });
 }
@@ -891,8 +894,11 @@ if (window.location.pathname.includes("registrarse.html") || window.location.pat
         localStorage.setItem("usuarios", JSON.stringify(usuarios));          // Guardar el array actualizado en localStorage
         localStorage.setItem("usuarioActual", JSON.stringify(nuevoUsuario)); // Guardar el usuario actual en localStorage
 
-        alert("Datos guardados correctamente");           // Mostrar mensaje de éxito
-        navegarA("index.html");               // Redirigir a la página index.html
+        // Mostrar mensaje de éxito y redirigir
+        mostrarToast("Registro exitoso. Redirigiendo...", "success");
+        setTimeout(() => {
+          navegarA("index.html");               // Redirigir a la página index.html
+        }, 1000);
       };
 
       lector.readAsDataURL(archivo); // Leer el archivo como una URL de datos (base64)
