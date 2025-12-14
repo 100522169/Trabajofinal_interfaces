@@ -54,7 +54,7 @@ footer {
 /* Estilo general para enlaces */
 header {
   width: 100%;
-  height: 100px;
+  height: var(--header-h);
   background: #006400;
   position: fixed;
   top: 0;
@@ -237,7 +237,7 @@ footer nav a:focus-visible {
 .columna-filtros {
   position: fixed;
   /* fijado respecto a la ventana, como header/footer */
-  top: 100px;
+  top: var(--header-h);
   /* evita quedar debajo del header (coincide con header height) */
   left: 0;
   /* pegado al borde izquierdo */
