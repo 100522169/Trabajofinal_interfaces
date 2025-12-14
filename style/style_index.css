@@ -792,6 +792,11 @@ footer nav a {
     display: none;
   }
 
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
+  }
+
   main.contenedor-principal {
     margin-top: var(--header-h);
     padding: 12px;

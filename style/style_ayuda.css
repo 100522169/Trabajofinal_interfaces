@@ -196,7 +196,8 @@ header nav a:focus-visible {
 }
 
 /* Oculta las utilidades en la versión de escritorio */
-.nav-menu .nav-utils {
+.nav-menu .nav-utils,
+.nav-auth-mobile {
   display: none;
 }
 
@@ -520,6 +521,11 @@ footer nav a:focus-visible {
   .logo_idioma_movil,
   .nav-utils {
     display: none;
+  }
+
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
   }
 
   main {

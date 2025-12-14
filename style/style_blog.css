@@ -25,6 +25,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 /* Variables CSS para alturas de header y footer */
@@ -40,8 +41,6 @@ main {
   flex: 1;
   width: 100%;
   margin-top: var(--header-h);
-  margin-bottom: var(--footer-h);
-  /* deja espacio para el footer fijo */
 }
 
 /* Evita que header y footer se encojan */
@@ -51,6 +50,7 @@ footer {
   /* evita que se encojan */
 }
 
+/* Estilo general para enlaces */
 /* Estilo general para enlaces */
 header {
   width: 100%;
@@ -70,7 +70,45 @@ header {
   z-index: 1000;
 }
 
-/* Menú centrado (fila horizontal de enlaces) */
+header,
+footer {
+  flex-shrink: 0;
+}
+
+/* Estilo general para footer, similar al header */
+footer {
+  width: 100%;
+  height: 80px;
+  background: #006400;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Logo de la página */
+header img {
+  width: 80px;
+  height: 80px;
+}
+
+/* título de la página */
+header .titulo {
+  font-size: 18px;
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 50px;
+}
+
+header nav {
+  padding: 0;
+}
+
 header nav ul {
   list-style: none;
   display: flex;
@@ -81,137 +119,6 @@ header nav ul {
   align-items: center;
   margin-right: 20px;
 }
-
-/* Tablet (<=768px): apilar filtros arriba y mostrar artículos uno-por-fila */
-@media (max-width: 768px) {
-  .contenedor-principal {
-    flex-direction: column;
-    gap: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .columna-filtros {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 20px 16px;
-    background: #000;
-    color: white;
-    box-shadow: none;
-    border-right: none;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    left: auto;
-    top: auto;
-    z-index: 1;
-    overflow: visible;
-  }
-
-  .columna-filtros h2 {
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    margin-bottom: 12px;
-  }
-
-  .columna-filtros .categoria-item,
-  .columna-filtros button {
-    width: 100%;
-    box-sizing: border-box;
-    background: #fff;
-    color: #000;
-  }
-
-  .columna-listado-blogs {
-    margin-left: 0;
-    width: 100%;
-    padding: 18px 12px;
-  }
-
-  .blog-card {
-    flex: 0 0 100%;
-    transform: none;
-    margin-left: 0;
-    margin-bottom: 18px;
-  }
-
-  .columna-boton-atras {
-    display: inline-flex;
-    /* Posición absoluta dentro de .contenedor-principal para que el botón
-       no quede fijo en la ventana y se mueva cuando el usuario haga scroll */
-    position: absolute;
-    left: 12px;
-    top: 8px;
-    z-index: 900;
-  }
-}
-
-/* Móvil (<=600px): ajustes específicos para pantallas pequeñas */
-@media (max-width: 600px) {
-  .contenedor-principal {
-    flex-direction: column;
-    gap: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .columna-filtros {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 16px 12px;
-    background: #000;
-    color: white;
-    box-shadow: none;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    left: auto;
-    top: auto;
-    z-index: 1;
-    overflow: visible;
-  }
-
-  .columna-filtros h2 {
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .columna-filtros .categoria-item,
-  .columna-filtros button {
-    width: 100%;
-    box-sizing: border-box;
-    background: #fff;
-    color: #000;
-  }
-
-  .columna-listado-blogs {
-    margin-left: 0;
-    width: 100%;
-    padding: 12px;
-  }
-
-  .blog-card {
-    flex: 0 0 100%;
-    transform: none;
-    margin-left: 0;
-    margin-bottom: 18px;
-  }
-
-  .blog-card img {
-    height: 200px;
-  }
-
-  .columna-boton-atras {
-    display: inline-flex;
-    /* Igual comportamiento en pantallas muy pequeñas */
-    position: absolute;
-    left: 12px;
-    top: 8px;
-    z-index: 900;
-  }
 
 header nav a {
   text-decoration: none;
@@ -248,7 +155,8 @@ header nav a:focus-visible {
   display: none;
 }
 
-.nav-menu .nav-utils {
+.nav-menu .nav-utils,
+.nav-auth-mobile {
   display: none;
 }
 
@@ -274,10 +182,30 @@ header .botones_header button:hover {
   background-color: #e0e0e0;
 }
 
-/* Estilo de la info del footer (igual que en home) */
+/* Estilo para el enlace de iniciar sesión */
+header .botones_header button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Efecto hover en el botón de iniciar sesión */
+header .botones_header button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilo de la info del footer*/
 footer nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5rem;
   width: 100%;
 }
 
@@ -286,7 +214,7 @@ footer nav a {
   text-transform: uppercase;
   color: white;
   text-decoration: none;
-  margin: 0 10rem;
+  margin: 0;
 }
 
 /* Efecto hover y focus en enlaces del footer */
@@ -294,7 +222,6 @@ footer nav a:hover,
 footer nav a:focus-visible {
   text-decoration: underline;
 }
-
 
 /* blog styles */
 /* Estilos para la columna de filtros */
@@ -631,26 +558,157 @@ footer nav a:focus-visible {
   text-align: justify;
 }
 
-/* Tablet Responsive Styles */
-@media (max-width: 1024px) {
-  .contenedor-blog {
-    width: 95%;
+/* Móvil (<=600px): ajustes específicos para pantallas pequeñas */
+@media (max-width: 600px) {
+  .contenedor-principal {
+    flex-direction: column;
+    gap: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  /* Keep 3 columns layout (desktop-like) */
+  .columna-filtros {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 16px 12px;
+    background: #000;
+    color: white;
+    box-shadow: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    left: auto;
+    top: auto;
+    z-index: 1;
+    overflow: visible;
+  }
+
+  .columna-filtros h2 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .columna-filtros .categoria-item,
+  .columna-filtros button {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000;
+  }
+
+  .columna-listado-blogs {
+    margin-left: 0;
+    width: 100%;
+    padding: 12px;
+  }
+
   .blog-card {
-    flex: 0 0 calc((100% - 20px) / 3);
+    flex: 0 0 100%;
+    transform: none;
+    margin-left: 0;
+    margin-bottom: 18px;
   }
 
-  /* Footer alignment for tablet */
+  .blog-card img {
+    height: 200px;
+  }
+
+  .columna-boton-atras {
+    display: inline-flex;
+    /* Igual comportamiento en pantallas muy pequeñas */
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    z-index: 900;
+  }
+
+  header nav a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: .375rem;
+  }
+
+  header .logo_idioma {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 0;
+  }
+
+  header .logo_idioma img {
+    width: 120px;
+    height: auto;
+  }
+
+  header .logo_idioma select {
+    font: inherit;
+    border: 1px solid #cbd5e1;
+    border-radius: .375rem;
+    background-color: white;
+  }
+
+  header nav a:hover,
+  header nav a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .menu-toggle,
+  .hamburger-btn {
+    display: none;
+  }
+
+  .nav-menu .nav-utils {
+    display: none;
+  }
+
+  .botones_header {
+    display: flex;
+    gap: 10px;
+  }
+
+  header .botones_header button {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  header .botones_header button:hover {
+    background-color: #e0e0e0;
+  }
+
+  /* Estilo de la info del footer (igual que en home) */
+  footer nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
   footer nav a {
-    margin: 0 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    margin: 0 10rem;
+  }
+
+  /* Efecto hover y focus en enlaces del footer */
+  footer nav a:hover,
+  footer nav a:focus-visible {
+    text-decoration: underline;
   }
 }
 
-@media (max-width:768px) {
 
-  /* Mobile Header & Nav */
+@media (max-width:768px) {
   :root {
     --header-h: 64px;
     --footer-h: 64px;
@@ -744,46 +802,34 @@ footer nav a:focus-visible {
     display: none;
   }
 
-  /* Blog specific overrides or main adjustments */
-  main.contenedor-principal {
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
+  }
+
+  main {
     margin-top: var(--header-h);
   }
 
-  .columna-filtros {
-    top: var(--header-h);
-    height: calc(100vh - var(--header-h));
-  }
-
-  /* En móvil: apilar en columna, filtros arriba (bloque negro) y listar blogs uno por fila */
   .contenedor-principal {
     flex-direction: column;
-    gap: 0; /* quitar gap horizontal y usar padding en bloques */
-    padding-left: 0; /* quitar padding lateral para que el bloque de filtros llegue al borde */
-    padding-right: 0;
+    gap: 0;
+    padding: 0;
   }
 
   .columna-filtros {
-    position: relative; /* para posicionar el botón dentro */
+    position: relative;
     width: 100%;
     height: auto;
-    padding: 20px 16px; /* subir un poco para que el botón no toque el título */
-    background: #000; /* bloque negro */
-    color: white;
-    box-shadow: none;
-    border-right: none;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 20px 16px;
     left: auto;
     top: auto;
-    z-index: 1;
-    overflow: visible; /* permitir que el botón sobresalga visualmente si es necesario */
   }
 
-  .columna-filtros h2 {
-    text-align: center; /* centrar horizontalmente sin cambiar altura */
-    color: white;
-    font-size: 22px;
-    margin-bottom: 12px;
+  .columna-listado-blogs {
+    margin-left: 0;
+    width: 100%;
+    padding: 18px 12px;
   }
 
   .columna-filtros .categoria-item,
@@ -794,27 +840,26 @@ footer nav a:focus-visible {
     color: #000;
   }
 
-  .columna-listado-blogs {
-    margin-left: 0;
-    width: 100%;
-    padding: 18px 12px;
-  }
-
-  /* Cada blog ocupa toda la fila en móvil */
   .blog-card {
     flex: 0 0 100%;
-    transform: none;
-    margin-left: 0;
-    margin-bottom: 18px;
   }
 
-  /* Mostrar el botón de volver original en móvil */
+  .blog-card img {
+    height: 220px;
+  }
+
   .columna-boton-atras {
     display: inline-flex;
-    position: fixed;
+    position: absolute;
     left: 12px;
-    top: calc(var(--header-h) + 8px);
-    z-index: 1200;
+    top: 16px;
+    z-index: 100;
+  }
+
+  .columna-boton-atras button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
   }
 
   footer {
@@ -832,45 +877,5 @@ footer nav a:focus-visible {
   footer nav a {
     margin: 0 5px;
     font-size: 14px;
-  }
-
-  /* Mostrar el botón de volver original en móvil */
-  .columna-boton-atras {
-    display: inline-flex;
-    position: fixed;
-    left: 12px;
-    top: calc(var(--header-h) + 8px);
-    z-index: 1200;
-  }
-}
-
-/* Footer: make it visually match Home on small screens */
-@media (max-width: 768px) {
-  footer {
-    position: relative;
-    height: auto;
-    min-height: var(--footer-h);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-    background: #006400;
-  }
-
-  footer nav a {
-    margin: 0;
-    font-size: 14px;
-    color: #fff;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
-  footer nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
   }
 }

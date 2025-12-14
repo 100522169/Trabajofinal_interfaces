@@ -491,6 +491,11 @@ footer nav a:focus-visible {
     display: none;
   }
 
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
+  }
+
   main {
     margin-top: var(--header-h);
   }
