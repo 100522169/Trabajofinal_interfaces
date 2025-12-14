@@ -1032,26 +1032,7 @@ footer nav a:focus-visible {
   color: black;
 }
 
-/* Tablet Responsive Styles */
-@media (max-width: 1024px) {
-  .formulario-pasos {
-    width: 90%;
-    margin: 20px auto;
-  }
 
-  .contenedor-compra-finalizada {
-    /* Ensure content is centered and readable */
-    width: 100%;
-    padding: 20px;
-  }
-
-  /* Footer alignment for tablet */
-  footer nav a {
-    margin: 0 2rem;
-  }
-}
-
-/* Mobile Responsive Styles */
 @media (max-width: 768px) {
 
   /* Footer adjustments */
@@ -1070,14 +1051,13 @@ footer nav a:focus-visible {
 
   /* Progress Steps adjustments */
   .contenedor-etapas {
-    gap: 0;
+    gap: 10px;
   }
 
   .etapa:not(:last-child)::after {
     display: block;
-    /* Restore line */
-    width: 50%;
-    left: 50%;
+    width: calc(100% - 20px);
+    left: calc(50% + 20px);
     top: 20px;
   }
 
@@ -1102,5 +1082,16 @@ footer nav a:focus-visible {
   .titulo-paso {
     margin-left: 20px;
     font-size: 24px;
+  }
+    .columna-boton-atras-detalles {
+    top: 70px;
+    left: 10px;
+    margin-bottom: 20px;
+  }
+
+  .columna-boton-atras-detalles button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
   }
 }

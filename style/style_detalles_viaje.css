@@ -761,54 +761,6 @@ body.modal-abierto {
   background-color: #0056b3;
 }
 
-  /* Responsive tweaks for detalles_viaje */
-  @media (max-width:1024px) {
-    .contenedor-detalles {
-      padding: 14px;
-      max-width: 1000px;
-    }
-
-    .fila-informacion {
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .galeria-imagenes {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .imagen {
-      width: 180px;
-      height: 120px;
-    }
-  }
-
-  /* Tablet Responsive Styles */
-  @media (max-width: 1024px) {
-
-    /* Enforce side-by-side layout (Desktop-like) */
-    .fila-informacion {
-      flex-direction: row;
-      /* Force row */
-      gap: 20px;
-    }
-
-    .columna-itinerario {
-      flex: 0 0 55%;
-      /* Slightly smaller than desktop */
-    }
-
-    .columna-reserva {
-      flex: 0 0 40%;
-    }
-
-    /* Fix footer margins on tablet */
-    footer nav a {
-      margin: 0 1rem;
-    }
-  }
-
   /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
   @media (max-width:768px) {
     :root {
@@ -908,7 +860,8 @@ body.modal-abierto {
     /* Fix layout for details page on mobile */
     .contenedor-detalles {
       margin-top: var(--header-h);
-      padding: 10px;
+      padding: 16px;
+      gap: 24px;
     }
 
     .titulo-detalles h1 {
@@ -917,10 +870,22 @@ body.modal-abierto {
 
     .fila-informacion {
       flex-direction: column;
+      gap: 24px;
+    }
+
+    .galeria-imagenes {
+      gap: 10px;
     }
 
     .columna-itinerario {
       margin-right: 0;
+    }
+
+    .dia-itinerario {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 170px;
+      align-items: center;
     }
 
     .avatar {
@@ -954,10 +919,6 @@ body.modal-abierto {
       margin: 0 10px;
       font-size: 12px;
     }
-  }
-
-  /* Mobile override for back button position */
-  @media (max-width: 768px) {
     .columna-boton-atras-detalles {
       top: 70px;
     }

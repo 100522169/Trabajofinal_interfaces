@@ -433,30 +433,6 @@ footer nav a:focus-visible {
 }
 
 /* Tablet Responsive Styles */
-/* Tablet Responsive Styles */
-@media (max-width: 1024px) {
-
-  /* Keep layout close to desktop but tighter */
-  .columna-listado-viajes {
-    width: auto;
-    margin-left: calc(15% + 10px);
-    /* Reduce margin */
-    padding-top: 20px;
-  }
-
-  .viaje {
-    /* Maintain 3 columns if possible, or let flex-wrap handle it naturally 
-       by slightly reducing the basis or just keeping 33% but smaller gap */
-    flex: 0 0 calc((100% - 20px) / 3);
-    /* Try to keep 3 columns */
-  }
-
-  /* Footer alignment for tablet */
-  footer nav a {
-    margin: 0 1rem;
-    /* Smaller margins for links */
-  }
-}
 
 @media (max-width:768px) {
 
@@ -568,11 +544,11 @@ footer nav a:focus-visible {
   }
 
   .columna-filtros {
-    position: relative; /* para posicionar el botón dentro */
+    position: relative;
     width: 100%;
     height: auto;
-    padding: 20px 16px; /* subir un poco para que el botón no toque el título */
-    background: #000; /* bloque negro */
+    padding: 20px 16px;
+    background: #000;
     color: white;
     box-shadow: none;
     border-right: none;
@@ -581,17 +557,30 @@ footer nav a:focus-visible {
     left: auto;
     top: auto;
     z-index: 1;
-    overflow: visible; /* permitir que el botón sobresalga visualmente si es necesario */
+    overflow: visible;
   }
 
   .columna-filtros h2 {
-    text-align: center; /* centrar horizontalmente sin cambiar altura */
+    text-align: center;
     color: white;
     font-size: 22px;
     margin-bottom: 12px;
   }
 
+  /* Mover botón de volver dentro de los filtros en móvil */
+  .columna-boton-atras {
+    display: inline-flex !important;
+    position: absolute;
+    left: 12px;
+    top: 16px;
+    z-index: 100;
+  }
 
+  .columna-boton-atras button {
+    width: 45px;
+    height: 40px;
+    font-size: 22px;
+  }
 
   .columna-filtros select,
   .columna-filtros button {
@@ -601,16 +590,10 @@ footer nav a:focus-visible {
     color: #000;
   }
 
-
-
   .columna-listado-viajes {
     margin-left: 0;
     width: 100%;
     padding: 18px 12px;
-  }
-
-  .columna-boton-atras {
-    display: none;
   }
   
   .columna-listado-viajes .viaje {
@@ -636,14 +619,4 @@ footer nav a:focus-visible {
     margin: 0 5px;
     font-size: 14px;
   }
-
-  /* Mostrar el botón de volver original en móvil */
-  .columna-boton-atras {
-    display: inline-flex;
-    position: fixed;
-    left: 12px;
-    top: calc(var(--header-h) + 8px);
-    z-index: 1200;
-  }
-
 }
