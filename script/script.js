@@ -396,7 +396,7 @@ const viajes = [
     ],
     condiciones: 'Incluye entradas y transporte.',
     condiciones_en: 'Includes entrance fees and transport.',
-    guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
+    guia: { nombre: 'Diego Morales', edad: '40 años', edad_en: '40 years old', experiencia: '12 años de experiencia', experiencia_en: '12 years of experience', experiencias: 'Guía de naturaleza', experiencias_en: 'Nature guide', idiomas: 'Español, Portugués', idiomas_en: 'Spanish, Portuguese', contacto: '+54 9 377 123 456', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 4, avatar: 'images/avatares/Roberto.jpg' },
     reseñas: []
   },
 
@@ -410,7 +410,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a NYC. Paseo por Times Square y Broadway.', 'Ferry a la Estatua de la Libertad y Ellis Island.', 'Recorrido por Central Park y 5th Avenue.', 'Visita al MET y al MoMA.', 'Excursión a Washington DC y monumentos.', 'Tour por Filadelfia histórica.', 'Día libre para compras.'],
     condiciones: 'Incluye traslados y entradas principales.',
     condiciones_en: 'Includes transfers and main entrances.',
-    guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/michael-johnson.jpg' },
+    guia: { nombre: 'Michael Johnson', edad: '35 años', edad_en: '35 years old', experiencia: '10 años de experiencia', experiencia_en: '10 years of experience', experiencias: 'Guía turístico Nueva York', experiencias_en: 'New York tour guide', idiomas: 'Inglés, Español', idiomas_en: 'English, Spanish', contacto: '+1 212 555 1234', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/michael-johnson.jpg' },
     reseñas: [{ nombre: 'Marco G.', avatar: 'images/avatares/Marco.png', comentario: 'Nueva York es increíble, muy bien organizado.', comentario_en: 'New York is amazing, very well organized.' }]
   },
   {
@@ -421,7 +421,7 @@ const viajes = [
     itinerarioDetallado: ['Llegada a Las Vegas y noche libre.', 'Ruta al Gran Cañón, atardecer épico.', 'Monument Valley en Jeep con Navajos.', 'Antelope Canyon y Horseshoe Bend.', 'Trekking en Zion National Park.', 'Amanecer en Bryce Canyon.', 'Travesía por Death Valley.', 'Yosemite: El Capitán y cascadas.', 'Llegada a San Francisco, Golden Gate.'],
     condiciones: 'Nivel físico medio-alto. Incluye camping y alojamiento.',
     condiciones_en: 'Medium-high physical level. Includes camping and accommodation.',
-    guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/david-williams.jpg' },
+    guia: { nombre: 'David Williams', edad: '42 años', edad_en: '42 years old', experiencia: '15 años de experiencia', experiencia_en: '15 years of experience', experiencias: 'Experto en parques nacionales', experiencias_en: 'National parks expert', idiomas: 'Inglés', idiomas_en: 'English', contacto: '+1 702 555 5678', redesSociales: ['<img src="images/redes_sociales/instagram.png" alt="Instagram"/>', '<img src="images/redes_sociales/facebook.png" alt="Facebook"/>', '<img src="images/redes_sociales/linkedin.png" alt="LinkedIn"/>'], valoracion: 5, avatar: 'images/avatares/david-williams.jpg' },
     reseñas: [{ nombre: 'Pablo R.', avatar: 'images/avatares/Pablo.png', comentario: 'Paisajes de otro planeta, una experiencia única.', comentario_en: 'Landscapes from another planet, a unique experience.' }]
   },
 
