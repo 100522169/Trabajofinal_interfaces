@@ -373,6 +373,89 @@ footer nav a:focus-visible {
   color: #000;
 }
 
+/* Tablet (<=768px): apilar todo en una sola columna, sidebar como bloque negro arriba */
+@media (max-width: 768px) {
+  .mi-cuenta-contenedor {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    margin-top: calc(var(--header-h) + 8px);
+  }
+
+  /* Sidebar se convierte en bloque negro en la parte superior */
+  .sidebar {
+    width: 100% !important;
+    position: relative !important;
+    top: 0 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    box-shadow: none !important;
+  }
+
+  .sidebar nav {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-item {
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+  }
+
+  /* Contenido principal ocupa todo el ancho debajo del bloque de filtros */
+  .contenido-principal {
+    width: 100% !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Datos Personales: apilar avatar encima de la info y centrar */
+  .datos-personales-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+
+  .avatar-usuario {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto !important;
+    border-width: 3px !important;
+  }
+
+  .info-usuario {
+    width: 100% !important;
+  }
+
+  .info-fila {
+    display: flex !important;
+    gap: 8px !important;
+    padding: 10px 0 !important;
+  }
+
+  .info-fila .etiqueta {
+    width: 140px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .info-fila .valor {
+    flex: 1 !important;
+  }
+
+  /* Ajustes para el botón de volver */
+  .columna-boton-atras-detalles {
+    position: relative !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+}
+
 /* Valor en cada fila */
 .info-fila .valor {
   color: black;
