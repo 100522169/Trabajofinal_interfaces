@@ -1,3 +1,24 @@
+// Función para obtener la ruta base correcta (soporta GitHub Pages y desarrollo local)
+function obtenerRutaBase() {
+  const path = window.location.pathname;
+  // Obtener la ruta hasta el último slash (incluyendo el slash)
+  const lastSlashIndex = path.lastIndexOf('/');
+  if (lastSlashIndex === -1) return './';
+  return path.substring(0, lastSlashIndex + 1);
+}
+
+// Función para navegar a una página (compatible con GitHub Pages)
+function navegarA(pagina) {
+  // Si la página ya contiene una ruta completa (empieza con / o http), usarla directamente
+  if (pagina.startsWith('/') || pagina.startsWith('http')) {
+    window.location.href = pagina;
+    return;
+  }
+  
+  const rutaBase = obtenerRutaBase();
+  window.location.href = rutaBase + pagina;
+}
+
 // Menú hamburguesa - toggle para móvil
 const hamburgerBtn = document.querySelector('.hamburger-btn');
 const navMenu = document.querySelector('.nav-menu');
@@ -26,10 +47,10 @@ micuentaLinks.forEach(link => {
       link.parentElement.style.display = 'none';
     } else {
       // Configurar enlace si está logueado
-      link.href = 'mi_cuenta.html';
+      link.href = '#';
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'mi_cuenta.html';
+        navegarA('mi_cuenta.html');
       });
     }
   }
@@ -149,7 +170,8 @@ function estaGuardado(viaje) {
 function compartirViaje(viaje) {
   const idioma = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'es';
   const titulo = idioma === 'en' && viaje.titulo_en ? viaje.titulo_en : viaje.titulo;
-  const url = window.location.origin + '/detalles_viaje.html';
+  const rutaBase = obtenerRutaBase();
+  const url = window.location.origin + rutaBase + 'detalles_viaje.html';
   const texto = idioma === 'en'
     ? `Check out this trip: ${titulo} - ${viaje.destino}`
     : `Mira este viaje: ${titulo} - ${viaje.destino}`;
@@ -607,18 +629,7 @@ if (window.location.pathname.includes("index.html") || window.location.pathname 
 
     // Guardar en localStorage
     localStorage.setItem('viajesFiltrados', JSON.stringify(filtrados));
-    window.location.href = 'listado_viajes.html';
-  });
-
-  // Botones de iniciar sesión y registrarse en el header
-  const botoniniciosesion = document.querySelector('header .botones_header button:first-child');
-  botoniniciosesion.addEventListener('click', () => {
-    window.location.href = 'inicio_sesion.html';
-  });
-
-  const botonregistrarse = document.querySelector('header .botones_header button:last-child');
-  botonregistrarse.addEventListener('click', () => {
-    window.location.href = 'registrarse.html';
+    navegarA('listado_viajes.html');
   });
 
   // Actualizar precios de las tarjetas con divisa predeterminada
@@ -668,13 +679,27 @@ if (window.location.pathname.includes("index.html") || window.location.pathname 
           // Marcar que venimos del home (no del listado)
           localStorage.setItem('origenViaje', 'home');
           // Redirigir a la página de detalles
-          window.location.href = 'detalles_viaje.html';
+          navegarA('detalles_viaje.html');
         }
       });
     });
   }
 }
 
+// Botones de iniciar sesión y registrarse en el header (funciona en todas las páginas)
+const botoniniciosesion = document.querySelector('header .botones_header button:first-child');
+if (botoniniciosesion) {
+  botoniniciosesion.addEventListener('click', () => {
+    navegarA('inicio_sesion.html');
+  });
+}
+
+const botonregistrarse = document.querySelector('header .botones_header button:last-child');
+if (botonregistrarse) {
+  botonregistrarse.addEventListener('click', () => {
+    navegarA('registrarse.html');
+  });
+}
 
 /*Pagina inicio_sesion.html*/
 if (window.location.pathname.includes("inicio_sesion.html") || window.location.pathname.endsWith("inicio_sesion")) {
@@ -695,7 +720,7 @@ if (window.location.pathname.includes("inicio_sesion.html") || window.location.p
       // Guardar el usuario actual en localStorage
       localStorage.setItem("usuarioActual", JSON.stringify(usuarioEncontrado));
       // Redirigir a la página index.html si los datos coinciden
-      window.location.href = "index.html";
+      navegarA("index.html");
     } else {
       alert("Usuario o contraseña incorrectos");
     }
@@ -869,7 +894,7 @@ if (window.location.pathname.includes("registrarse.html") || window.location.pat
         localStorage.setItem("usuarioActual", JSON.stringify(nuevoUsuario)); // Guardar el usuario actual en localStorage
 
         alert("Datos guardados correctamente");           // Mostrar mensaje de éxito
-        window.location.href = "index.html";               // Redirigir a la página index.html
+        navegarA("index.html");               // Redirigir a la página index.html
       };
 
       lector.readAsDataURL(archivo); // Leer el archivo como una URL de datos (base64)
@@ -892,7 +917,7 @@ if (window.location.pathname.includes("listado_viajes.html") || window.location.
   // Botón de vuelta atrás a index.html
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
   botonVueltaAtras.addEventListener('click', () => {
-    window.location.href = 'index.html';
+    navegarA('index.html');
   });
 
   // Generar los divs de viajes dinámicamente
@@ -1006,7 +1031,7 @@ if (window.location.pathname.includes("listado_viajes.html") || window.location.
         localStorage.setItem('indiceViajeSeleccionado', index.toString());
         localStorage.removeItem('viajeOrigen');
         localStorage.setItem('origenViaje', 'listado');
-        window.location.href = 'detalles_viaje.html';
+        navegarA('detalles_viaje.html');
       });
 
       columnaListado.appendChild(div);
@@ -1086,7 +1111,7 @@ if (window.location.pathname.includes("detalles_viaje.html") || window.location.
 
   // Si no hay viaje seleccionado, redirigir a la página de listado
   if (!viajeSeleccionado) {
-    window.location.href = 'listado_viajes.html';
+    navegarA('listado_viajes.html');
   }
 
   // Botón de vuelta atrás - detectar si viene del home, listado o continente
@@ -1105,11 +1130,11 @@ if (window.location.pathname.includes("detalles_viaje.html") || window.location.
       // Redirigir según el origen
       // Prioridad: continente > home > listado
       if (origenContinente) {
-        window.location.href = origenContinente;
+        navegarA(origenContinente);
       } else if (origen === 'home') {
-        window.location.href = 'index.html';
+        navegarA('index.html');
       } else {
-        window.location.href = 'listado_viajes.html';
+        navegarA('listado_viajes.html');
       }
     });
   }
@@ -1465,7 +1490,7 @@ if (window.location.pathname.includes("detalles_viaje.html") || window.location.
         localStorage.setItem('viajeReservaOrigen', indiceViaje);
       }
       // Redirigir al formulario de compra
-      window.location.href = 'formulario_compra.html';
+      navegarA('formulario_compra.html');
     });
   }
 }
@@ -1481,7 +1506,7 @@ if (window.location.pathname.includes("formulario_compra")) {
       if (window.location.pathname.includes("formulario_compra.html")) {
         const viajeSeleccionado = localStorage.getItem('viajeSeleccionado');
         if (viajeSeleccionado) {
-          window.location.href = 'detalles_viaje.html';
+          navegarA('detalles_viaje.html');
         } else {
           window.history.back();
         }
@@ -1616,7 +1641,7 @@ if (window.location.pathname.includes("formulario_compra.html")) {
 
       // Mensaje de éxito y redirección
       alert('Datos guardados correctamente. Ahora serás redirigido al siguiente paso.');
-      window.location.href = 'formulario_compra2.html';
+      navegarA('formulario_compra2.html');
     });
   }
 }
@@ -1631,7 +1656,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
 
   if (!viajeSeleccionado) {
     alert('No se ha seleccionado ningún viaje');
-    window.location.href = 'listado_viajes.html';
+    navegarA('listado_viajes.html');
   }
 
   // Catálogo completo de dietas con iconos
@@ -1832,7 +1857,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'formulario_compra.html';
+      navegarA('formulario_compra.html');
     });
   }
 
@@ -1970,7 +1995,7 @@ if (window.location.pathname.includes("formulario_compra2.html")) {
 
       // Redirigir al paso 3
       alert('Datos guardados correctamente. Ahora serás redirigido al siguiente paso.');
-      window.location.href = 'formulario_compra3.html';
+      navegarA('formulario_compra3.html');
     });
   }
 }
@@ -1983,7 +2008,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'formulario_compra2.html';
+      navegarA('formulario_compra2.html');
     });
   }
 
@@ -1994,7 +2019,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
   // Verificar que existan los datos
   if (!viajeSeleccionado) {
     alert('No se ha seleccionado ningún viaje');
-    window.location.href = 'listado_viajes.html';
+    navegarA('listado_viajes.html');
   } else {
 
     // Rellenar resumen del viaje
@@ -2421,7 +2446,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
       }
 
       // Redirigir a compra realizada
-      window.location.href = 'compra_realizada.html';
+      navegarA('compra_realizada.html');
     });
   }
 }
@@ -2434,7 +2459,7 @@ if (window.location.pathname.includes("compra_realizada.html") || window.locatio
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'formulario_compra3.html';
+      navegarA('formulario_compra3.html');
     });
   }
 
@@ -2446,7 +2471,7 @@ if (window.location.pathname.includes("compra_realizada.html") || window.locatio
     // Verificar que existan los datos
     if (!viajeSeleccionado) {
       alert('No se ha seleccionado ningún viaje');
-      window.location.href = 'listado_viajes.html';
+      navegarA('listado_viajes.html');
     } else {
       // Rellenar resumen del viaje en compra_realizada.html
       function rellenarResumenCompraRealizada() {
@@ -2550,7 +2575,7 @@ if (window.location.pathname.includes("compra_realizada.html") || window.locatio
   const botonMiCuenta = document.querySelector('.boton-mi-cuenta');
   if (botonMiCuenta) {
     botonMiCuenta.addEventListener('click', () => {
-      window.location.href = 'mi_cuenta.html';
+      navegarA('mi_cuenta.html');
     });
   }
 }
@@ -2562,14 +2587,14 @@ if (window.location.pathname.includes("mi_cuenta.html") || window.location.pathn
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   if (!usuarioActual) {
     alert('Debes iniciar sesión para acceder a tu cuenta');
-    window.location.href = 'inicio_sesion.html';
+    navegarA('inicio_sesion.html');
   }
 
   // Botón de vuelta atrás
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      navegarA('index.html');
     });
   }
 
@@ -2811,7 +2836,7 @@ if (window.location.pathname.includes("mi_cuenta.html") || window.location.pathn
       localStorage.setItem('formularioCompraPaso2', JSON.stringify(reserva.datosPaso2));
 
       // Redirigir a compra_realizada.html
-      window.location.href = 'compra_realizada.html';
+      navegarA('compra_realizada.html');
     });
   }
 
@@ -2821,7 +2846,7 @@ if (window.location.pathname.includes("mi_cuenta.html") || window.location.pathn
     botonCerrarSesion.addEventListener('click', () => {
       if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
         localStorage.removeItem('usuarioActual');
-        window.location.href = 'index.html';
+        navegarA('index.html');
       }
     });
   }
@@ -2926,7 +2951,7 @@ if (window.location.pathname.includes("mi_cuenta.html") || window.location.pathn
       tarjeta.querySelector('.btn-ver-viaje').addEventListener('click', () => {
         localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
         localStorage.removeItem('viajeOrigen');
-        window.location.href = 'detalles_viaje.html';
+        navegarA('detalles_viaje.html');
       });
 
       // Evento para quitar de guardados
@@ -3112,7 +3137,7 @@ if (window.location.pathname.includes("blog.html") || window.location.pathname.e
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      navegarA('index.html');
     });
   }
 
@@ -3241,7 +3266,7 @@ if (window.location.pathname.includes("ayuda.html") || window.location.pathname.
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      navegarA('index.html');
     });
   }
 
@@ -3312,7 +3337,7 @@ if (window.location.pathname.includes("continente.html") || window.location.path
   const continente = urlParams.get('region');
 
   if (!continente) {
-    window.location.href = 'otros_rincones.html';
+    navegarA('otros_rincones.html');
   } else {
     // Mapeo de nombres de continentes
     const nombresContinentes = {
@@ -3395,7 +3420,7 @@ if (window.location.pathname.includes("continente.html") || window.location.path
           if (!e.target.closest('button')) {
             localStorage.setItem('viajeSeleccionado', JSON.stringify(viaje));
             localStorage.setItem('viajeOrigen', 'continente.html?region=' + continente);
-            window.location.href = 'detalles_viaje.html';
+            navegarA('detalles_viaje.html');
           }
         });
 
@@ -3444,7 +3469,7 @@ if (window.location.pathname.includes("contacto.html") || window.location.pathna
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
   if (botonVueltaAtras){
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      navegarA('index.html');
     });
   }
 }
@@ -3456,7 +3481,7 @@ if (window.location.pathname.includes("sobre_nosotros.html") || window.location.
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
   if (botonVueltaAtras){
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      navegarA('index.html');
     });
   }
 }
@@ -3469,7 +3494,7 @@ if (window.location.pathname.includes("otros_rincones.html") || window.location.
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras){
     botonVueltaAtras.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      navegarA('index.html');
     });
   }
 }

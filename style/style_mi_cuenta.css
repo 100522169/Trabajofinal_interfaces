@@ -161,6 +161,13 @@ header nav a:focus-visible {
   display: none;
 }
 
+/* Oculta las utilidades en la versión de escritorio */
+.nav-menu .nav-utils,
+.nav-auth-mobile {
+  display: none;
+}
+
+
 .botones_header {
   display: flex;
   gap: 10px;
@@ -815,6 +822,10 @@ footer nav a:focus-visible {
 }
 
 @media (max-width:768px) {
+  /* Show auth links in mobile menu */
+  .nav-auth-mobile {
+    display: block;
+  }
 
   /* Mobile Header & Nav */
   :root {
@@ -929,5 +940,14 @@ footer nav a:focus-visible {
   footer nav a {
     margin: 0 5px;
     font-size: 14px;
+  }
+}
+
+/* Extra small screens: reduce title size and limit width */
+@media (max-width: 400px) {
+  header .titulo {
+    font-size: 11px;
+    max-width: 200px;
+    line-height: 1.2;
   }
 }

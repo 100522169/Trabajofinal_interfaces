@@ -588,3 +588,12 @@ footer nav a:focus-visible {
     height: 36px;
   }
 }
+
+/* Extra small screens: reduce title size and limit width */
+@media (max-width: 400px) {
+  header .titulo {
+    font-size: 11px;
+    max-width: 200px;
+    line-height: 1.2;
+  }
+}
