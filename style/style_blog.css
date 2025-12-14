@@ -161,40 +161,9 @@ header nav ul {
     width: 100% !important;
   }
 
-  /* Mostrar el carrusel superior (copiado de home) */
-  .columna-carrusel {
-    flex: 0 0 100%;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-bottom: 12px;
-  }
-
-  .carrusel {
-    width: 100%;
-    height: 330px;
-    border-radius: 10px;
-    border: 1px solid black;
-    background-image: url('../images/imagen_bali.jpg');
-    background-size: cover;
-    background-position: center 30%;
-  }
-
-  .carrusel h1 {
-    text-align: left;
-    font-size: 50px;
-    padding: 20px 0 0 20px;
-    margin-top: 180px;
-    color: white;
-  }
-
-  .carrusel h3 {
-    text-align: left;
-    padding: 0 0 0 20px;
-    color: white;
-  }
-
-  header .titulo { font-size: 16px !important; }
+  /* Hero eliminado: ocultamos cualquier carrusel en blog */
+  .columna-carrusel { display: none !important; }
+  .carrusel { display: none !important; }
 
   .columna-filtros {
     position: relative;
@@ -274,9 +243,9 @@ header nav ul {
     margin-top: var(--header-h);
   }
 
-  /* Asegurar que el carrusel se muestre en todas las resoluciones */
+  /* Ocultar carrusel en blog (usa el hero de home solo en home) */
   .carrusel {
-    display: block;
+    display: none !important;
   }
 
   /* Titular más pequeño como en móvil */
