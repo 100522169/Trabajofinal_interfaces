@@ -548,6 +548,14 @@ footer nav a:focus-visible {
     margin-top: var(--header-h);
   }
 
+  /* Subir botón de volver en móvil/tablet pequeño para que quede visible */
+  .columna-boton-atras {
+    position: fixed;
+    top: calc(var(--header-h) + 8px);
+    left: 12px;
+    z-index: 1600;
+  }
+
   footer {
     height: auto;
     min-height: var(--footer-h);
