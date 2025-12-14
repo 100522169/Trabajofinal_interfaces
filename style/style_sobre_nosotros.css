@@ -564,4 +564,9 @@ footer nav a:focus-visible {
     margin: 0 5px;
     font-size: 14px;
   }
+
+  /* Espaciado lateral en tablet para que el contenido no toque los bordes */
+  .sobre-section {
+    padding: 0 20px;
+  }
 }
