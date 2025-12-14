@@ -703,9 +703,9 @@ if (botonregistrarse) {
 
 /*Pagina inicio_sesion.html*/
 if (window.location.pathname.includes("inicio_sesion.html") || window.location.pathname.endsWith("inicio_sesion")) {
-  const botonIniciarSesion = document.querySelector(".inicio-sesion-form button");
+  const formularioInicioSesion = document.querySelector(".inicio-sesion-form");
 
-  botonIniciarSesion.addEventListener("click", (event) => {
+  formularioInicioSesion.addEventListener("submit", (event) => {
     event.preventDefault(); // Prevenir el envío del formulario
     const usuarioInput = document.querySelector(".inicio-sesion-form input[type='text']").value;          // Obtener el valor del campo de usuario
     const contrasenaInput = document.querySelector(".inicio-sesion-form input[type='password']").value;   // Obtener el valor del campo de contraseña
@@ -843,7 +843,7 @@ if (window.location.pathname.includes("registrarse.html") || window.location.pat
 
   // Checkbox de privacidad que habilitara o deshabilitara el botón de guardar datos y acceder
   const registroPrivacidad = document.querySelector(".registro-form input[type = 'checkbox']");
-  const botonGuardar = document.querySelector(".registro-form button");
+  const formulario = document.querySelector(".registro-form"); // Referencia al formulario
 
   registroPrivacidad.addEventListener("change", () => {      // Evento que se dispara cuando cambia el estado del checkbox
     if (!registroPrivacidad.checked) {                        // Verificar si el checkbox no está marcado         
@@ -853,13 +853,11 @@ if (window.location.pathname.includes("registrarse.html") || window.location.pat
     }
   });
 
-  //El boton guardar datos y acceder redirige a la página version_b.html guardando los datos del formulario en localStorage
+  //El formulario de registro redirige al home guardando los datos del formulario en localStorage
   //Al guardar los datos, se enseñará un mensaje informando que los datos se han guardado correctamente
-  botonGuardar.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del botón
+  formulario.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
 
-
-    const formulario = document.querySelector(".registro-form"); // Referencia al formulario
     const esValido = formulario.checkValidity();                 // Verificar si el formulario es válido
 
     if (esValido) {
@@ -1441,11 +1439,13 @@ if (window.location.pathname.includes("detalles_viaje.html") || window.location.
   });
 
   // Evento para enviar reseña
-  const enviarReseñaBoton = document.getElementById('enviar-reseña');
+  const formularioReseña = document.querySelector('.formulario-reseña');
   const nombreReseñaInput = document.getElementById('nombre-reseña');
   const comentarioReseñaInput = document.getElementById('comentario-reseña');
 
-  enviarReseñaBoton.addEventListener('click', () => {
+  if (formularioReseña) {
+    formularioReseña.addEventListener('submit', (event) => {
+      event.preventDefault();
     const nombre = nombreReseñaInput.value.trim();          // Obtener y limpiar el nombre
     const comentario = comentarioReseñaInput.value.trim();  // Obtener y limpiar el comentario
 
@@ -1478,7 +1478,8 @@ if (window.location.pathname.includes("detalles_viaje.html") || window.location.
 
     // Actualizar reseñas mostradas
     generarReseñasIniciales(reseñasViaje);
-  });
+    });
+  }
 
   // Botón "Reservar ahora" - guardar índice del viaje y redirigir
   const botonReservar = document.querySelector('.boton-reservar');
