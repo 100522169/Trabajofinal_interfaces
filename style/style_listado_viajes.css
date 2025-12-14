@@ -52,51 +52,43 @@ footer {
 }
 
 /* Estilo general para enlaces */
+/* Estilo general para enlaces */
 header {
   width: 100%;
-  /* ocupa todo el ancho */
   height: 100px;
-  /* altura fija: prueba con 100px */
   background: #006400;
   position: fixed;
-  /* fija el header en la parte superior */
   top: 0;
   left: 0;
   right: 0;
-  /* asegura que esté en la parte superior */
   margin-bottom: 15px;
-  /* separa el header del contenido */
   text-align: left;
   align-items: center;
-  /* centra verticalmente el contenido */
   color: white;
   padding: 0 20px;
-  /* espacio interno arriba y abajo */
   display: flex;
   justify-content: space-between;
-  /*Definimos 3 columnas donde poner los elementos*/
   z-index: 1000;
-  /* asegura que esté por encima de todo el contenido */
+}
+
+header,
+footer {
+  flex-shrink: 0;
 }
 
 /* Estilo general para footer, similar al header */
 footer {
   width: 100%;
-  /* ocupa todo el ancho */
   height: 80px;
-  /* altura fija: prueba con 100px */
   background: #006400;
   position: relative;
-  /* el footer ya no está fijo */
+  bottom: 0;
   text-align: center;
   align-items: center;
-  /* centra verticalmente el contenido */
   color: white;
   padding: 20px;
-  /* espacio interno */
   display: flex;
   justify-content: center;
-  /* centra todo el contenido horizontalmente */
 }
 
 /* Logo de la página */
@@ -108,90 +100,71 @@ header img {
 /* título de la página */
 header .titulo {
   font-size: 18px;
-  /* tamaño legible sin ser gigante */
   font-family: "montserrat", sans-serif;
-  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
   font-weight: 700;
-  /* peso negrita */
   text-transform: uppercase;
   margin-right: 50px;
 }
 
-/* Menú centrado (fila horizontal de enlaces) */
 header nav {
   padding: 0;
 }
 
-/* Lista de elementos del menú */
 header nav ul {
   list-style: none;
-  /* sin viñetas */
   display: flex;
-  /* pone los <li> en fila */
   font-weight: 500;
-  /* peso semi-negrita */
   text-transform: uppercase;
   gap: 2rem;
-  /* separación entre elementos del menú */
-  margin-right: 50px;
+  white-space: nowrap;
+  align-items: center;
+  margin-right: 20px;
 }
 
-/* Cada enlace del menú */
 header nav a {
   text-decoration: none;
-  /* sin subrayado */
   color: #fff;
-  /* color de texto del menú */
   border-radius: .375rem;
-  /* esquinas suaves para el hover */
 }
 
-/* Utilidades (derecha): logo + selector de idioma en fila */
 header .logo_idioma {
   display: flex;
-  /* elementos en línea: imagen + select */
   align-items: center;
-  /* verticalmente centrados */
   gap: .5rem;
-  /* separación entre logo y select */
   padding: 0;
 }
 
-/* Logo y selector de idioma */
 header .logo_idioma img {
   width: 120px;
   height: auto;
-  /* tamaño consistente del logo */
 }
 
-/* Selector de idioma */
 header .logo_idioma select {
   font: inherit;
-  /* que el select use la misma fuente que la página */
   border: 1px solid #cbd5e1;
   border-radius: .375rem;
   background-color: white;
 }
 
-/* Efecto hover y focus en enlaces del menú */
 header nav a:hover,
 header nav a:focus-visible {
   text-decoration: underline;
-  /* subrayado al pasar el ratón o enfocar con teclado */
 }
 
-/* Ocultar checkbox y botón de hamburguesa en escritorio */
 .menu-toggle,
 .hamburger-btn {
   display: none;
 }
 
-/* Oculta las utilidades en la versión de escritorio */
 .nav-menu .nav-utils {
   display: none;
 }
 
-/* Estilo para el enlace de iniciar sesión */
+.botones_header {
+  display: flex;
+  gap: 10px;
+}
+
 header .botones_header button {
   text-decoration: none;
   color: black;
@@ -205,7 +178,6 @@ header .botones_header button {
   cursor: pointer;
 }
 
-/* Efecto hover en el botón de iniciar sesión */
 header .botones_header button:hover {
   background-color: #e0e0e0;
 }
@@ -479,5 +451,134 @@ footer nav a:focus-visible {
   footer nav a {
     margin: 0 1rem;
     /* Smaller margins for links */
+  }
+}
+
+@media (max-width:768px) {
+
+  /* Mobile Header & Nav */
+  :root {
+    --header-h: 64px;
+    --footer-h: 64px;
+  }
+
+  header {
+    position: fixed;
+    height: var(--header-h);
+    align-items: center;
+    padding: 8px 12px;
+    display: flex;
+    gap: 12px;
+  }
+
+  header img {
+    width: 48px;
+    height: 48px;
+  }
+
+  header .titulo {
+    font-size: 16px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .hamburger-btn {
+    display: block;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger-btn .bar {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background: #006400;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    padding-top: 72px;
+    z-index: 1500;
+    box-shadow: -6px 0 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+  }
+
+  .nav-menu li {
+    margin: 8px 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  #menu-toggle:checked~.nav-menu,
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .botones_header,
+  .logo_idioma,
+  .logo_idioma_movil,
+  .nav-utils {
+    display: none;
+  }
+
+  /* Listado viajes overrides */
+  main {
+    margin-top: var(--header-h);
+  }
+
+  .columna-listado-viajes {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .columna-boton-atras {
+    display: none;
+  }
+
+  footer {
+    height: auto;
+    min-height: var(--footer-h);
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  footer nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  footer nav a {
+    margin: 0 5px;
+    font-size: 14px;
   }
 }

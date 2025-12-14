@@ -52,53 +52,43 @@ footer {
 }
 
 /* Estilo general para enlaces */
+/* Estilo general para enlaces */
 header {
   width: 100%;
-  /* ocupa todo el ancho */
   height: 100px;
-  /* altura fija: prueba con 100px */
   background: #006400;
   position: fixed;
-  /* fija el header en la parte superior */
   top: 0;
   left: 0;
   right: 0;
-  /* asegura que esté en la parte superior */
   margin-bottom: 15px;
-  /* separa el header del contenido */
   text-align: left;
   align-items: center;
-  /* centra verticalmente el contenido */
   color: white;
   padding: 0 20px;
-  /* espacio interno arriba y abajo */
   display: flex;
   justify-content: space-between;
-  /*Definimos 3 columnas donde poner los elementos*/
   z-index: 1000;
-  /* asegura que esté por encima de todo el contenido */
+}
+
+header,
+footer {
+  flex-shrink: 0;
 }
 
 /* Estilo general para footer, similar al header */
 footer {
   width: 100%;
-  /* ocupa todo el ancho */
   height: 80px;
-  /* altura fija: prueba con 100px */
   background: #006400;
   position: relative;
-  /* el footer ya no está fijo */
   bottom: 0;
-  /* asegura que esté en la parte inferior */
   text-align: center;
   align-items: center;
-  /* centra verticalmente el contenido */
   color: white;
   padding: 20px;
-  /* espacio interno */
   display: flex;
   justify-content: center;
-  /* centra todo el contenido horizontalmente */
 }
 
 /* Logo de la página */
@@ -110,87 +100,86 @@ header img {
 /* título de la página */
 header .titulo {
   font-size: 18px;
-  /* tamaño legible sin ser gigante */
   font-family: "montserrat", sans-serif;
-  /*aplicamos la fuente montserrat que hemos importado en fonts.css*/
   font-weight: 700;
-  /* peso negrita */
   text-transform: uppercase;
   margin-right: 50px;
 }
 
-/* Menú centrado (fila horizontal de enlaces) */
 header nav {
   padding: 0;
 }
 
-/* Lista de elementos del menú */
 header nav ul {
   list-style: none;
-  /* sin viñetas */
   display: flex;
-  /* pone los <li> en fila */
   font-weight: 500;
-  /* peso semi-negrita */
   text-transform: uppercase;
   gap: 2rem;
-  /* separación entre elementos del menú */
-  margin-right: 50px;
+  white-space: nowrap;
+  align-items: center;
+  margin-right: 20px;
 }
 
-/* Cada enlace del menú */
 header nav a {
   text-decoration: none;
-  /* sin subrayado */
   color: #fff;
-  /* color de texto del menú */
   border-radius: .375rem;
-  /* esquinas suaves para el hover */
 }
 
-/* Utilidades (derecha): logo + selector de idioma en fila */
 header .logo_idioma {
   display: flex;
-  /* elementos en línea: imagen + select */
   align-items: center;
-  /* verticalmente centrados */
   gap: .5rem;
-  /* separación entre logo y select */
   padding: 0;
 }
 
-/* Logo y selector de idioma */
 header .logo_idioma img {
   width: 120px;
   height: auto;
-  /* tamaño consistente del logo */
 }
 
-/* Selector de idioma */
 header .logo_idioma select {
   font: inherit;
-  /* que el select use la misma fuente que la página */
   border: 1px solid #cbd5e1;
   border-radius: .375rem;
   background-color: white;
 }
 
-/* Efecto hover y focus en enlaces del menú */
 header nav a:hover,
 header nav a:focus-visible {
   text-decoration: underline;
-  /* subrayado al pasar el ratón o enfocar con teclado */
 }
 
-/* Ocultar checkbox y botón de hamburguesa en escritorio */
 .menu-toggle,
 .hamburger-btn {
   display: none;
 }
 
-/* Oculta las utilidades en la versión de escritorio */
 .nav-menu .nav-utils {
   display: none;
+}
+
+.botones_header {
+  display: flex;
+  gap: 10px;
+}
+
+header .botones_header button {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+header .botones_header button:hover {
+  background-color: #e0e0e0;
 }
 
 /* Tablet Responsive Styles */
@@ -231,6 +220,31 @@ header nav a:focus-visible {
 
 /* Mobile: show hamburger and off-canvas nav (parity with style_home.css) */
 @media (max-width:768px) {
+  :root {
+    --header-h: 64px;
+    --footer-h: 64px;
+  }
+
+  header {
+    position: fixed;
+    height: var(--header-h);
+    align-items: center;
+    padding: 8px 12px;
+    display: flex;
+    gap: 12px;
+  }
+
+  header img {
+    width: 48px;
+    height: 48px;
+  }
+
+  header .titulo {
+    font-size: 16px;
+    margin: 0;
+    flex: 1;
+  }
+
   .menu-toggle {
     position: absolute;
     left: -9999px;
@@ -291,6 +305,14 @@ header nav a:focus-visible {
   /* When checkbox checked, show nav */
   #menu-toggle:checked~.nav-menu {
     transform: translateX(0);
+  }
+
+  /* hide language selectors and desktop buttons */
+  .botones_header,
+  .logo_idioma,
+  .logo_idioma_movil,
+  .nav-utils {
+    display: none;
   }
 }
 

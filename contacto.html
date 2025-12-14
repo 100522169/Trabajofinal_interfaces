@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contacto - Mochileros sin fronteras</title>
-    <link rel="stylesheet" href="style/style_home.css">
+    <!-- <link rel="stylesheet" href="style/style_home.css"> Link removed to use self-contained styles -->
     <link rel="stylesheet" href="style/style_contacto.css">
     <script src="script/translations.js" defer></script>
     <script src="script/script.js" defer></script>
@@ -16,6 +16,7 @@
     <header>
         <a href="home.html"><img src="images/logo.png" alt="Logotipo del sitio"></a>
         <h1 class="titulo" data-i18n="site-title">Mochileros sin fronteras</h1>
+        <!--Nav hace referencia a zona de enlaces de navegación, en este caso estamos en la principal-->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger-btn">
             <span class="bar"></span>
@@ -28,13 +29,36 @@
                 <li><a href="otros_rincones.html" data-i18n="nav-otros">Otros rincones</a></li>
                 <li><a href="blog.html" data-i18n="nav-blog">Blog</a></li>
                 <li><a href="mi_cuenta.html" data-i18n="nav-cuenta">Mi cuenta</a></li>
+
+                <li class="nav-utils">
+                    <div class="logo_idioma_movil">
+                        <img src="images/logo.png" alt="Logotipo del sitio">
+                        <label for="idioma_movil" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+                        <select id="idioma_movil">
+                            <option>ES</option>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                </li>
             </ul>
         </nav>
-        <div class="botones_header">
-            <button type="button" onclick="window.location.href='inicio_sesion.html'" data-i18n="btn-login">Iniciar
-                sesión</button>
-            <button type="button" onclick="window.location.href='registrarse.html'"
-                data-i18n="btn-register">Registrarse</button>
+
+        <section>
+            <div class="botones_header">
+                <button type="button" data-i18n="btn-login">Iniciar sesión</button>
+                <button type="button" data-i18n="btn-register">Registrarse</button>
+            </div>
+        </section>
+
+        <!--Es un contenedor para utilidades del header, como el menú, el logo e idioma
+        Las agrupamos para poder alinearlas todas juntas-->
+        <div class="logo_idioma">
+            <!--Dentro de esta clase metemos el desplegable de idioma-->
+            <label for="idioma" class="desplegable_idioma" data-i18n="language-label">Idioma</label>
+            <select id="idioma">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
         </div>
     </header>
 
