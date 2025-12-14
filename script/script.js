@@ -558,7 +558,7 @@ const ciudadesDelMundo = [
 
 
 /*Página index.html*/
-if (window.location.pathname.includes("index.html")) {
+if (window.location.pathname.includes("index.html") || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
   // Lógica para habilitar/deshabilitar el botón de buscar viajes
   const botonsearch = document.getElementById('buscar-viajes');
   // IDs de los select a verificar
@@ -677,7 +677,7 @@ if (window.location.pathname.includes("index.html")) {
 
 
 /*Pagina inicio_sesion.html*/
-if (window.location.pathname.includes("inicio_sesion.html")) {
+if (window.location.pathname.includes("inicio_sesion.html") || window.location.pathname.endsWith("inicio_sesion")) {
   const botonIniciarSesion = document.querySelector(".inicio-sesion-form button");
 
   botonIniciarSesion.addEventListener("click", (event) => {
@@ -704,7 +704,7 @@ if (window.location.pathname.includes("inicio_sesion.html")) {
 
 
 /*Pagina registrarse.html*/
-if (window.location.pathname.includes("registrarse.html")) {
+if (window.location.pathname.includes("registrarse.html") || window.location.pathname.endsWith("registrarse")) {
   const registroNombre = document.querySelector(".registro-form input[placeholder = 'Nombre']");
 
   // Validar que el nombre tenga al menos 3 caracteres
@@ -882,7 +882,7 @@ if (window.location.pathname.includes("registrarse.html")) {
 
 /*Pagina listado_viajes.html*/
 // Ajustes específicos para evitar que el padding del contenedor principal empuje la columna de filtros
-if (window.location.pathname.includes("listado_viajes.html")) {
+if (window.location.pathname.includes("listado_viajes.html") || window.location.pathname.endsWith("listado_viajes")) {
   const contenedor = document.querySelector('.contenedor-principal');
   if (contenedor) {
     // quitar padding lateral que pueda empujar la columna de filtros
@@ -1079,7 +1079,7 @@ if (window.location.pathname.includes("listado_viajes.html")) {
 
 
 /*Página detalles_viaje.html*/
-if (window.location.pathname.includes("detalles_viaje.html")) {
+if (window.location.pathname.includes("detalles_viaje.html") || window.location.pathname.endsWith("detalles_viaje")) {
 
   // Obtener el viaje seleccionado desde localStorage
   const viajeSeleccionado = JSON.parse(localStorage.getItem('viajeSeleccionado'));
@@ -2430,7 +2430,7 @@ if (window.location.pathname.includes("formulario_compra3.html")) {
 
 
 /*Página compra_realizada.html*/
-if (window.location.pathname.includes("compra_realizada.html")) {
+if (window.location.pathname.includes("compra_realizada.html") || window.location.pathname.endsWith("compra_realizada")) {
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
   if (botonVueltaAtras) {
     botonVueltaAtras.addEventListener('click', () => {
@@ -2557,7 +2557,7 @@ if (window.location.pathname.includes("compra_realizada.html")) {
 
 
 /*Página mi_cuenta.html*/
-if (window.location.pathname.includes("mi_cuenta.html")) {
+if (window.location.pathname.includes("mi_cuenta.html") || window.location.pathname.endsWith("mi_cuenta")) {
   // Verificar si hay usuario logueado
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   if (!usuarioActual) {
@@ -2946,7 +2946,7 @@ if (window.location.pathname.includes("mi_cuenta.html")) {
 
 
 /*Página blog.html*/
-if (window.location.pathname.includes("blog.html")) {
+if (window.location.pathname.includes("blog.html") || window.location.pathname.endsWith("blog")) {
 
   // Datos de blogs
   const blogs = [
@@ -3235,7 +3235,7 @@ if (window.location.pathname.includes("blog.html")) {
 
 
 // ayuda.html
-if (window.location.pathname.includes("ayuda.html")) {
+if (window.location.pathname.includes("ayuda.html") || window.location.pathname.endsWith("ayuda")) {
 
   // Botón de vuelta atrás
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
@@ -3307,7 +3307,7 @@ if (window.location.pathname.includes("ayuda.html")) {
 
 
 // Continente
-if (window.location.pathname.includes("continente.html")) {
+if (window.location.pathname.includes("continente.html") || window.location.pathname.endsWith("continente")) {
   const urlParams = new URLSearchParams(window.location.search);
   const continente = urlParams.get('region');
 
@@ -3438,7 +3438,7 @@ if (window.location.pathname.includes("continente.html")) {
 }
 
 // contacto.html
-if (window.location.pathname.includes("contacto.html")) {
+if (window.location.pathname.includes("contacto.html") || window.location.pathname.endsWith("contacto")) {
 
   // Botón de vuelta atrás
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
@@ -3450,7 +3450,7 @@ if (window.location.pathname.includes("contacto.html")) {
 }
 
 // sobre_nosotros.html
-if (window.location.pathname.includes("sobre_nosotros.html")) {
+if (window.location.pathname.includes("sobre_nosotros.html") || window.location.pathname.endsWith("sobre_nosotros")) {
 
   // Botón de vuelta atrás
   const botonVueltaAtras = document.querySelector('.columna-boton-atras button');
@@ -3463,7 +3463,7 @@ if (window.location.pathname.includes("sobre_nosotros.html")) {
 
 
 // otros_rincones.html
-if (window.location.pathname.includes("otros_rincones.html")) {
+if (window.location.pathname.includes("otros_rincones.html") || window.location.pathname.endsWith("otros_rincones")) {
 
   // Botón de vuelta atrás
   const botonVueltaAtras = document.querySelector('.columna-boton-atras-detalles button');
